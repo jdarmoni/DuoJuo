@@ -250,13 +250,13 @@ document.addEventListener('DOMContentLoaded', function () {
     delete window.currentUser;
   } else {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  } // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-  // window.login = login
-  // window.logout = logout
-  // window.signup = signup
+  }
 
-
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.login = _util_session_api_util__WEBPACK_IMPORTED_MODULE_3__["login"];
+  window.logout = _util_session_api_util__WEBPACK_IMPORTED_MODULE_3__["logout"];
+  window.signup = _util_session_api_util__WEBPACK_IMPORTED_MODULE_3__["signup"];
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
     store: store
