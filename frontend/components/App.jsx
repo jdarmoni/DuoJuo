@@ -8,7 +8,7 @@ const App = () => {
         <div className="container-splash">
 
             <div className="masthead">
-                eggs
+                foo
 
             </div>
         </div>

@@ -106,7 +106,7 @@ var App = function App() {
     className: "container-splash"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "masthead"
-  }, "eggs"));
+  }, "foo"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -157,13 +157,120 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/session_api_util */ "./frontend/util/session_api_util.js");
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
 
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  var store;
+
+  if (window.currentUser) {
+    var preloadedState = {
+      session: {
+        id: window.currentUser.id
+      },
+      entities: {
+        users: _defineProperty({}, window.currentUser.id, window.currentUser)
+      }
+    };
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  } // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.login = login
+  // window.logout = logout
+  // window.signup = signup
+
+
   var root = document.getElementById('root');
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "eggs"), root);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    store: store
+  }), root);
 });
+
+/***/ }),
+
+/***/ "./frontend/reducers/root_reducer.jsx":
+/*!********************************************!*\
+  !*** ./frontend/reducers/root_reducer.jsx ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/AbbeyRoad/Desktop/DuoJuo/frontend/reducers/root_reducer.jsx'");
+
+/***/ }),
+
+/***/ "./frontend/store/store.js":
+/*!*********************************!*\
+  !*** ./frontend/store/store.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var _reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/root_reducer */ "./frontend/reducers/root_reducer.jsx");
+/* harmony import */ var _reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'redux-thunk'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
+ // import logger from 'redux-logger';
+
+
+
+var configureStore = function configureStore() {
+  var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1___default.a, preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(!(function webpackMissingModule() { var e = new Error("Cannot find module 'redux-thunk'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/session_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/session_api_util.js ***!
+  \*******************************************/
+/*! exports provided: signup, login, logout */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+var signup = function signup(user) {
+  return $.ajax({
+    method: 'post',
+    url: '/api/user',
+    data: {
+      user: user
+    }
+  });
+};
+var login = function login(user) {
+  return $.ajax({
+    method: 'post',
+    url: '/api/session',
+    data: {
+      user: user
+    }
+  });
+};
+var logout = function logout() {
+  return $.ajax({
+    method: 'delete',
+    url: '/api/session'
+  });
+};
 
 /***/ }),
 
