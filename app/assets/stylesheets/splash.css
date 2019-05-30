@@ -6,5 +6,24 @@
     top: 0;
     width: 100%;
     z-index: 2;
-    height: 100px;
+}
+
+.duoLogo {
+    float: left;
+    margin-top: 18px;
+    width: 158px;
+    background-position: -144px 0;
+    height: 36px;
+    width: 142px;
+    background-size: 900px;
+    background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/icon-sprite8.svg);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logged-out-nav-container {
+    margin: 0 auto;
+    max-width: 1140px;
+    min-height: 70px;
+    padding: 0 40px;
 }

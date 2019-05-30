@@ -239,7 +239,10 @@ function (_React$Component) {
         className: "logged-out-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-out-nav-container"
-      }, "foo")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "duoLogo",
+        href: ""
+      }))));
     }
   }, {
     key: "logOut",

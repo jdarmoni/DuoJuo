@@ -15,7 +15,9 @@ class Greeting extends React.Component {
             <>
                 <header className="logged-out-nav">
                     <div className="logged-out-nav-container">
-                        foo
+                        {/* <img className="logo" src={window.logoURL} /> */}
+                        <a className= "duoLogo" href=""></a>
+                        
                     </div>
                 </header>
             </>
