@@ -22,3 +22,14 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
+
+a {
+        text-decoration: none;
+}
+
+body {
+    margin: 0px;
+    font: 500 17px/20px sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}

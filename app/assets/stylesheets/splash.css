@@ -23,7 +23,7 @@
 
 .logged-out-nav-container {
     margin: 0 auto;
-    max-width: 1140px;
+    max-width: 90%;
     min-height: 70px;
     padding: 0 40px;
 }
@@ -87,6 +87,7 @@
     margin: 12px auto;
     padding: 40px;
     text-align: center;
+    margin-top: 70px; /* to counteract position fixed; 70px is height of nav bar*/
 }
 .globe {
     background: url(//d35aaqx5ub95lt.cloudfront.net/images/earth-two-rings.svg);
@@ -112,8 +113,25 @@
     background-color: #235390;
     background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/star-pattern.svg);
     width: 100%;
+        align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
 .get-started-button{
-    
+        font-size: 15px;
+    padding: 12px 24px;
+        background-color: #58a700;
+    color: #fff;
+        border-width: 0 0 4px;
+            border-color: transparent;
+    border-radius: 16px;
+    border-style: solid;
+        cursor: pointer;
+        min-width: 320px;
+
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
 }
