@@ -242,7 +242,17 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "duoLogo",
         href: ""
-      }))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "langlogin-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "site-lang"
+      }, "Site language:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "site-lang-language"
+      }, "English")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-button-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "login-button"
+      }, "Login"))))));
     }
   }, {
     key: "logOut",

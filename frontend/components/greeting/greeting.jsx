@@ -17,7 +17,16 @@ class Greeting extends React.Component {
                     <div className="logged-out-nav-container">
                         {/* <img className="logo" src={window.logoURL} /> */}
                         <a className= "duoLogo" href=""></a>
-                        
+
+                        <div className="langlogin-container">
+                            <div className="site-lang">
+                                Site language:  
+                                <span className="site-lang-language">English</span>
+                            </div>
+                            <div className="login-button-div">
+                                <button className="login-button">Login</button>
+                            </div>
+                        </div>
                     </div>
                 </header>
             </>
