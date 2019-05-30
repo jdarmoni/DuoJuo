@@ -273,31 +273,45 @@ function (_React$Component) {
         className: "flag-carousel-list"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-carousel-list-flag flag-size spanish-flag-footer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-carousel-list-text"
       }, "Spanish"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-carousel-list-flag flag-size french-flag-footer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-carousel-list-text"
       }, "French"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-carousel-list-flag flag-size german-flag-footer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-carousel-list-text"
       }, "German"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-carousel-list-flag flag-size italian-flag-footer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-carousel-list-text"
       }, "Italian"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-carousel-list-flag flag-size portuguese-flag-footer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-carousel-list-text"
       }, "Portuguese"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-carousel-list-flag flag-size dutch-flag-footer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-carousel-list-text"
       }, "Dutch"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-carousel-list-flag flag-size czech-flag-footer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-carousel-list-text"
       }, "Czech"))))))));
     }

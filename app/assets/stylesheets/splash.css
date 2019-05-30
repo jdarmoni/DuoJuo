@@ -166,7 +166,25 @@
     justify-content: center;
     text-decoration: none;
 }
+.flag-carousel-list-flag {
+        margin-right: 10px;
+}
 .flag-carousel-list-text {
         color: #fff;
     font-size: 14px;
 }
+
+.flag-size {
+    background-size: 40px;
+    display: inline-block;
+    height: 32.19512px;
+    width: 40px;
+        background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/juicy-flag-sprite-4.svg);
+}
+.spanish-flag-footer{    background-position: 0 -32.19512px;}
+.french-flag-footer{    background-position: 0 -64.39024px;}
+.german-flag-footer {    background-position: 0 -96.58537px;}
+.italian-flag-footer { background-position: 0 -160.97561px;}
+.portuguese-flag-footer {     background-position: 0 -289.7561px; }
+.dutch-flag-footer {    background-position: 0 -354.14634px; }
+.czech-flag-footer {     background-position: 0 -901.46341px;}
