@@ -120,20 +120,23 @@
 }
 
 .get-started-button{
+    display: inline-block;
         font-size: 15px;
     padding: 12px 24px;
-        background-color: #58a700;
+        background-color: #7AC70C;
     color: #fff;
         border-width: 0 0 4px;
-            border-color: transparent;
+            border-color: #58a700;
     border-radius: 16px;
     border-style: solid;
         cursor: pointer;
-        min-width: 320px;
-
+        min-width: 150px;
     font-weight: 700;
     letter-spacing: .8px;
     text-transform: uppercase;
+}
+.get-started-button:hover{
+    background-color: #8EE000;
 }
 .footer-nav{
     background: rgba(0,0,0,.25);
@@ -141,21 +144,26 @@
     display: flex;
     height: 70px;
     width: 100%;
+        bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
 }
 
 .flag-carousel {
-        margin: 15px auto;
+    margin: 15px auto;
     max-width: 840px;
     position: relative;
     white-space: nowrap;
 }
 .flag-carousel-list {
-        margin-top: 5px;
+    margin-top: 5px;
+    padding-left: 0px;
     overflow: hidden;
     width: 840px;
 }
 .flag-carousel-list li {
-        display: inline-block;
+    display: inline-block;
     min-width: 120px;
 }
 .flag-carousel-list li a {
@@ -179,7 +187,8 @@
     display: inline-block;
     height: 32.19512px;
     width: 40px;
-        background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/juicy-flag-sprite-4.svg);
+    background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/juicy-flag-sprite-4.svg);
+    
 }
 .spanish-flag-footer{    background-position: 0 -32.19512px;}
 .french-flag-footer{    background-position: 0 -64.39024px;}

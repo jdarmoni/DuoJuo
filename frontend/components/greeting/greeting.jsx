@@ -9,12 +9,11 @@ class Greeting extends React.Component {
         this.logOut = this.logOut.bind(this)
     }
 
+    //LOGGED OUT
     splashPage() {
-        //LOGGED OUT
         return (
             <>
             <div className="logged-out-container">
-
                 <header className="logged-out-nav">
                     <div className="logged-out-nav-container">
                         <a className= "duoLogo" href=""></a>

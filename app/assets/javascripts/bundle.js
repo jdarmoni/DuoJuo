@@ -229,12 +229,12 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Greeting).call(this, props));
     _this.logOut = _this.logOut.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } //LOGGED OUT
+
 
   _createClass(Greeting, [{
     key: "splashPage",
     value: function splashPage() {
-      //LOGGED OUT
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-out-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
