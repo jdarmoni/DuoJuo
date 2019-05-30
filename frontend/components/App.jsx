@@ -9,7 +9,6 @@ const App = () => {
 
             <div className="masthead">
                 foo
-
             </div>
         </div>
     )
