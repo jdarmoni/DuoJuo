@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.body {
+
+    background: #fff;
+    color: #3c3c3c;
+    font: 500 17px/20px sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
