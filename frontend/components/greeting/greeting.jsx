@@ -37,6 +37,55 @@ class Greeting extends React.Component {
                         <a className="get-started-button" href="">get started</a>
                     </div>
                 </div>
+                <footer className="footer-nav">
+                    <div className="flag-carousel">
+                            <ul className="flag-carousel-list">
+                                <li>
+                                    <a href="">
+                                        <span></span>
+                                        <span className="flag-carousel-list-text">Spanish</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span></span>
+                                        <span className="flag-carousel-list-text">French</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span></span>
+                                        <span className="flag-carousel-list-text">German</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span></span>
+                                        <span className="flag-carousel-list-text">Italian</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span></span>
+                                        <span className="flag-carousel-list-text">Portuguese</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span></span>
+                                        <span className="flag-carousel-list-text">Dutch</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span></span>
+                                        <span className="flag-carousel-list-text">Czech</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                    </div>
+                </footer>
             </div>
             </>
         )

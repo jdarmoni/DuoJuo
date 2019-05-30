@@ -135,3 +135,38 @@
     letter-spacing: .8px;
     text-transform: uppercase;
 }
+.footer-nav{
+    background: rgba(0,0,0,.25);
+    display: -ms-flexbox;
+    display: flex;
+    height: 70px;
+    width: 100%;
+}
+
+.flag-carousel {
+        margin: 15px auto;
+    max-width: 840px;
+    position: relative;
+    white-space: nowrap;
+}
+.flag-carousel-list {
+        margin-top: 5px;
+    overflow: hidden;
+    width: 840px;
+}
+.flag-carousel-list li {
+        display: inline-block;
+    min-width: 120px;
+}
+.flag-carousel-list li a {
+        align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.flag-carousel-list-text {
+        color: #fff;
+    font-size: 14px;
+}
