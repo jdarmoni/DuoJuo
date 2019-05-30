@@ -13,9 +13,10 @@ class Greeting extends React.Component {
         //LOGGED OUT
         return (
             <>
+            <div className="logged-out-container">
+
                 <header className="logged-out-nav">
                     <div className="logged-out-nav-container">
-                        {/* <img className="logo" src={window.logoURL} /> */}
                         <a className= "duoLogo" href=""></a>
 
                         <div className="langlogin-container">
@@ -29,6 +30,14 @@ class Greeting extends React.Component {
                         </div>
                     </div>
                 </header>
+                <div className="body-container">
+                    <div className="globe"></div>
+                    <div className="slogan-text-box">
+                        <h1 className="slogan-text">Learn a language for free. Forever.</h1>
+                        <a className="get-started-button" href="">get started</a>
+                    </div>
+                </div>
+            </div>
             </>
         )
     }

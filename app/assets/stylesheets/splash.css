@@ -40,6 +40,8 @@
     display: flex;
     float: right;
     align-items: center;
+    margin-top: 5px;
+
 }
 
 .site-lang {
@@ -51,7 +53,9 @@
     align-items: center;
     display: flex;
     float: right;
-    margin-top: 5px;
+}
+.site-lang-language{
+    margin-left: 5px;
 }
 .login-button-div{
     position: relative;
@@ -74,4 +78,42 @@
     font-weight: 700; 
      letter-spacing: .8px; 
     text-transform: uppercase;
+}
+
+.body-container{
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 12px auto;
+    padding: 40px;
+    text-align: center;
+}
+.globe {
+    background: url(//d35aaqx5ub95lt.cloudfront.net/images/earth-two-rings.svg);
+    background-size: 360px;
+    height: 360px;
+    min-width: 360px;
+    width: 360px;
+}
+.slogan-text-box{
+    margin: auto 48px;
+    width: 60%;
+}
+.slogan-text {
+    margin-bottom: 24px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 50px;
+}
+
+.logged-out-container {
+    background-color: #235390;
+    background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/star-pattern.svg);
+    width: 100%;
+}
+
+.get-started-button{
+    
 }

@@ -235,7 +235,9 @@ function (_React$Component) {
     key: "splashPage",
     value: function splashPage() {
       //LOGGED OUT
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logged-out-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "logged-out-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-out-nav-container"
@@ -252,7 +254,18 @@ function (_React$Component) {
         className: "login-button-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login-button"
-      }, "Login"))))));
+      }, "Login"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "body-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "globe"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slogan-text-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "slogan-text"
+      }, "Learn a language for free. Forever."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "get-started-button",
+        href: ""
+      }, "get started")))));
     }
   }, {
     key: "logOut",
