@@ -124,7 +124,7 @@ class Greeting extends React.Component {
     };
 
     render() {
-        debugger
+        
         return this.props.currentUser ? this.myBooks() : this.splashPage();
     }
 };
