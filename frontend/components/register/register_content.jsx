@@ -1,16 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import LoginFormContainer from '../greeting/login_modal_container';
-import { withRouter } from 'react-router-dom';
-import RegisterContent from './register_content'
+import LoginModalContainer from '../greeting/login_modal_container';
 
-class Register extends React.Component {
-    constructor(props){
-        super(props)
-    }
-
-    navBar(){
-        return (
+const RegisterContent = () => {
+    
+    return (
+        <>
+    <div className="logged-out-container">
         <header className="logged-out-nav">
             <div className="logged-out-nav-container">
                 <a className="duoLogo" href=""></a>
@@ -29,12 +24,13 @@ class Register extends React.Component {
                 </div>
             </div>
         </header>
-        )
-    }
 
-    render (){
-        return <RegisterContent />
-    }
+        <div className="body-container">
+            
+        </div>
+    </div>
+    </>
+    )
 }
 
-export default withRouter(Register);
+export default RegisterContent

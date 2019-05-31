@@ -7,6 +7,7 @@ class Greeting extends React.Component {
     constructor(props) {
         super(props);
         this.logOut = this.logOut.bind(this)
+        this.getStarted = this.getStarted.bind(this)
     }
     
     //LOGGED OUT
@@ -36,7 +37,7 @@ class Greeting extends React.Component {
                     <div className="globe"></div>
                     <div className="slogan-text-box">
                         <h1 className="slogan-text">Learn a language for free. Forever.</h1>
-                        <a className="get-started-button" href="">get started</a>
+                        <a className="get-started-button" onClick={this.getStarted}>get started</a>
                     </div>
                 </div>
                 <footer className="footer-nav">
@@ -96,6 +97,9 @@ class Greeting extends React.Component {
     logOut() {
         this.props.logout()
         this.props.history.replace('/')
+    }
+    getStarted() {
+        this.props.history.replace('/register')
     }
 
     //LOGGED IN!

@@ -176,7 +176,11 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container-splash"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    exact: true,
+    path: "/",
+    component: _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"]
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     exact: true,
     path: "/register",
     component: _register_register_container__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -236,6 +240,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Greeting).call(this, props));
     _this.logOut = _this.logOut.bind(_assertThisInitialized(_this));
+    _this.getStarted = _this.getStarted.bind(_assertThisInitialized(_this));
     return _this;
   } //LOGGED OUT
 
@@ -273,7 +278,7 @@ function (_React$Component) {
         className: "slogan-text"
       }, "Learn a language for free. Forever."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "get-started-button",
-        href: ""
+        onClick: this.getStarted
       }, "get started"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
         className: "footer-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -329,6 +334,11 @@ function (_React$Component) {
     value: function logOut() {
       this.props.logout();
       this.props.history.replace('/');
+    }
+  }, {
+    key: "getStarted",
+    value: function getStarted() {
+      this.props.history.replace('/register');
     } //LOGGED IN!
 
   }, {
@@ -628,9 +638,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../greeting/login_modal_container */ "./frontend/components/greeting/login_modal_container.js");
+/* harmony import */ var _register_content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./register_content */ "./frontend/components/register/register_content.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
@@ -643,7 +659,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
- // import LoginFormContainer from '../session_form/login_form_container';
+
+
 
 
 
@@ -652,11 +669,41 @@ var Register =
 function (_React$Component) {
   _inherits(Register, _React$Component);
 
-  function Register() {
+  function Register(props) {
     _classCallCheck(this, Register);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Register).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Register).call(this, props));
   }
+
+  _createClass(Register, [{
+    key: "navBar",
+    value: function navBar() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+        className: "logged-out-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logged-out-nav-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "duoLogo",
+        href: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "langlogin-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "site-lang"
+      }, "Site language:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "site-lang-language"
+      }, "English")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-button-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "login-button",
+        id: "login-button"
+      }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginModalContainer, null))));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_register_content__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+    }
+  }]);
 
   return Register;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
@@ -693,6 +740,51 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_register__WEBPACK_IMPORTED_MODULE_3__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/register/register_content.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/register/register_content.jsx ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../greeting/login_modal_container */ "./frontend/components/greeting/login_modal_container.js");
+
+
+
+var RegisterContent = function RegisterContent() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "logged-out-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "logged-out-nav"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "logged-out-nav-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "duoLogo",
+    href: ""
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "langlogin-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "site-lang"
+  }, "Site language:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "site-lang-language"
+  }, "English")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "login-button-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "login-button",
+    id: "login-button"
+  }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "body-container"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (RegisterContent);
 
 /***/ }),
 

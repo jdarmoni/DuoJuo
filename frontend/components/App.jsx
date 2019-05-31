@@ -8,7 +8,7 @@ const App = () => {
     return (
         <>
         <div className="container-splash">
-            <GreetingContainer />
+            <Route exact path ="/" component={GreetingContainer} />
         </div>
         <Route exact path="/register" component={RegisterContainer} />
     </>
