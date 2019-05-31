@@ -50,13 +50,12 @@ class LoginModal extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        debugger
-        // this.state = a user (bc we're in session) - and so the state is one user, which we merge with an empty object and then return as user
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
     renderErrors() {
-        if (this.props.formType === "signup") {
+        debugger
+        if (this.props.formType === "login") {
 
             return (
                 <ul className="error-pop-ups">

@@ -137,9 +137,11 @@ var signup = function signup(user) {
 };
 var login = function login(user) {
   return function (dispatch) {
+    debugger;
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
+      debugger;
       return dispatch(receiveErrors(err.responseJSON));
     });
   };
@@ -465,15 +467,15 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      debugger; // this.state = a user (bc we're in session) - and so the state is one user, which we merge with an empty object and then return as user
-
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
     }
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      if (this.props.formType === "signup") {
+      debugger;
+
+      if (this.props.formType === "login") {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "error-pop-ups"
         }, this.props.errors.map(function (error, i) {
@@ -735,7 +737,8 @@ __webpack_require__.r(__webpack_exports__);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
-      // returning the error messages in the state
+      debugger; // returning the error messages in the state
+
       return action.errors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
