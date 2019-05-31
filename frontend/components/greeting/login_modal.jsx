@@ -52,9 +52,10 @@ class LoginModal extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+        debugger
     }
     renderErrors() {
-        debugger
+        
         if (this.props.formType === "login") {
 
             return (
