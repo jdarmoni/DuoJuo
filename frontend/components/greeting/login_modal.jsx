@@ -52,7 +52,7 @@ class LoginModal extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        debugger
+        
     }
     renderErrors() {
         
@@ -78,27 +78,28 @@ class LoginModal extends React.Component {
                     <span className="close">&times;</span>
 
                     <form onSubmit={this.handleSubmit} className={`${this.props.formType}-form-box`}>
-                        <h1>Login</h1>
+                        <h1 className="login-modal-header">Log in</h1>
                         {this.renderErrors()}
                         <div className={`${this.props.formType}-form`}>
-                            <label>
-                                <input type="text"
-                                    placeholder="Email Address"
-                                    value={this.state.email}
-                                    onChange={this.update('email')}
-                                    className={`${this.props.formType}-input`}
-                                />
-                            </label>
+                            <div className ="login-form-div">         
+                                <label className="login-modal-label">
+                                    <input type="text"
+                                        placeholder="Email Address"
+                                        value={this.state.email}
+                                        onChange={this.update('email')}
+                                        className={`${this.props.formType}-input`}
+                                    />
+                                </label>
 
-                            <label>
-                                <input type="password"
-                                    placeholder="Password"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                    className={`${this.props.formType}-input`}
-                                />
-                            </label>
-
+                                <label className="login-modal-label">
+                                    <input type="password"
+                                        placeholder="Password"
+                                        value={this.state.password}
+                                        onChange={this.update('password')}
+                                        className={`${this.props.formType}-input`}
+                                    />
+                                </label>
+                            </div>
                             <input className={`${this.props.formType}-submit`} type="submit" value="Login" />
                         </div>
                     </form>

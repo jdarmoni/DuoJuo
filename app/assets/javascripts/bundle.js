@@ -504,7 +504,6 @@ function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
-      debugger;
     }
   }, {
     key: "renderErrors",
@@ -532,21 +531,29 @@ function (_React$Component) {
       }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "".concat(this.props.formType, "-form-box")
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Login"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "login-modal-header"
+      }, "Log in"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "".concat(this.props.formType, "-form")
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-form-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "login-modal-label"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Email Address",
         value: this.state.email,
         onChange: this.update('email'),
         className: "".concat(this.props.formType, "-input")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "login-modal-label"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         placeholder: "Password",
         value: this.state.password,
         onChange: this.update('password'),
         className: "".concat(this.props.formType, "-input")
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "".concat(this.props.formType, "-submit"),
         type: "submit",
         value: "Login"

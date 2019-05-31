@@ -9,17 +9,76 @@
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #fff;;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 45%; /* Could be more or less, depending on screen size */
+  border-radius: 16px;
 }
 
+.login-form-box {
+    text-align: center;
+}
+.login-modal-header {
+    font-size: 26px;
+    margin: 10px 130px 10px 0;
+    text-align: start;
+    font-weight: 700;
+    color: #3c3c3c;
+    -webkit-font-smoothing: antialiased;
+    font: 500 17px/20px sans-serif;
+}
+
+.login-form-div {
+    background: #f0f0f0;
+    border: 2px solid #e5e5e5;
+    border-radius: 10px;
+    display: table;
+    font-size: 16px;
+    width: 100%;
+}
+.login-modal-label {
+        display: table-row;
+}
+.login-modal-label input {
+    outline: none;
+    padding: 8px 0 8px 20px;
+    width: 100%;
+    background: transparent!important;
+    border: 0!important;
+    line-height: 24px;
+    color: #4b4b4b;
+    min-height: 48px;
+    text-align: left;
+}
+.login-submit {
+    background-color: #1CB0F6;
+    color: #fff;
+    border-width: 0 0 4px;
+    border-color: #1899d6;
+    border-radius: 18px;
+    /* border-top-right-radius: 18px; */
+    font-size: 15px;
+    line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-top: 20px;
+    padding: 15px 25px!important;
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 /* The Close Button */
 .close {
   color: #aaa;
