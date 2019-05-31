@@ -78,6 +78,7 @@
     letter-spacing: .8px;
     text-transform: uppercase;
     cursor: pointer;
+    outline: none;
 }
 /* The Close Button */
 .close {
