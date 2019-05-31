@@ -23,7 +23,7 @@
 
 .logged-out-nav-container {
     margin: 0 auto;
-    max-width: 90%;
+    max-width: 70%;
     min-height: 70px;
     padding: 0 40px;
 }
@@ -88,6 +88,7 @@
     padding: 40px;
     text-align: center;
     margin-top: 70px; /* to counteract position fixed; 70px is height of nav bar*/
+    width: 70%;
 }
 .globe {
     background: url(//d35aaqx5ub95lt.cloudfront.net/images/earth-two-rings.svg);
@@ -113,24 +114,24 @@
     background-color: #235390;
     background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/star-pattern.svg);
     width: 100%;
-        align-items: center;
-    min-height: 100vh;
+    align-items: center;
+    min-height: 90vh;
     position: relative;
     z-index: 1;
 }
 
 .get-started-button{
     display: inline-block;
-        font-size: 15px;
+    font-size: 15px;
     padding: 12px 24px;
-        background-color: #7AC70C;
+    background-color: #7AC70C;
     color: #fff;
-        border-width: 0 0 4px;
-            border-color: #58a700;
+    border-width: 0 0 4px;
+    border-color: #58a700;
     border-radius: 16px;
     border-style: solid;
-        cursor: pointer;
-        min-width: 150px;
+    cursor: pointer;
+    min-width: 150px;
     font-weight: 700;
     letter-spacing: .8px;
     text-transform: uppercase;
@@ -144,7 +145,7 @@
     display: flex;
     height: 70px;
     width: 100%;
-        bottom: 0;
+    bottom: 0;
     left: 0;
     position: absolute;
     right: 0;
@@ -167,7 +168,7 @@
     min-width: 120px;
 }
 .flag-carousel-list li a {
-        align-items: center;
+    align-items: center;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -175,10 +176,10 @@
     text-decoration: none;
 }
 .flag-carousel-list-flag {
-        margin-right: 10px;
+    margin-right: 10px;
 }
 .flag-carousel-list-text {
-        color: #fff;
+    color: #fff;
     font-size: 14px;
 }
 
