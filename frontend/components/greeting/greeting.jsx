@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import LoginFormContainer from '../session_form/login_form_container';
 import { withRouter } from 'react-router-dom';
-import LoginModal from './login_modal'
+import LoginModalContainer from './login_modal_container'
 class Greeting extends React.Component {
     constructor(props) {
         super(props);
@@ -27,7 +27,7 @@ class Greeting extends React.Component {
                                 <button className="login-button" id="login-button">Login</button>
                             </div>
 
-                                <LoginModal />
+                                <LoginModalContainer />
                               
                         </div>
                     </div>

@@ -42,7 +42,7 @@ class LoginModal extends React.Component {
             }
         }
     }
-    
+
     update(field) {
         return e => this.setState({
             [field]: e.target.value
@@ -50,11 +50,24 @@ class LoginModal extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         // this.state = a user (bc we're in session) - and so the state is one user, which we merge with an empty object and then return as user
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+    renderErrors() {
+        if (this.props.formType === "signup") {
 
-
+            return (
+                <ul className="error-pop-ups">
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
     }
 
     render() {
@@ -63,8 +76,31 @@ class LoginModal extends React.Component {
                 {/* Modal content */ }
                 < div className = "modal-content" >
                     <span className="close">&times;</span>
-                    <form action="">
-                        <h1>Log in</h1>
+
+                    <form onSubmit={this.handleSubmit} className={`${this.props.formType}-form-box`}>
+                        <h1>Login</h1>
+                        {this.renderErrors()}
+                        <div className={`${this.props.formType}-form`}>
+                            <label>
+                                <input type="text"
+                                    placeholder="Email Address"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                    className={`${this.props.formType}-input`}
+                                />
+                            </label>
+
+                            <label>
+                                <input type="password"
+                                    placeholder="Password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className={`${this.props.formType}-input`}
+                                />
+                            </label>
+
+                            <input className={`${this.props.formType}-submit`} type="submit" value="Login" />
+                        </div>
                     </form>
                     
                 </div >
