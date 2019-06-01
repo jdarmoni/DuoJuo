@@ -53,7 +53,6 @@
         padding-right: 12px;
             cursor: pointer;
     max-height: 32px;
-    padding-right: 0;
     transition: filter .2s;
 }
 .dashboard-header-span {
@@ -74,4 +73,69 @@
 .dashboard-spacer {
     flex-grow: 1;
     height: 100%;
+}
+.dashboard-divider{
+        flex-grow: 1;
+    padding: 0 16px;
+        height: 100%;
+    position: relative;
+    align-items: center;
+    display: flex;
+
+}
+.dashboard-divider::after {
+        background-color: #e5e5e5;
+    content: "";
+    height: 40px;
+    margin: 0 auto;
+    width: 2px;
+}
+.dashboard-flag-section {
+    height: 100%;
+    position: relative;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.dashboard-flag-span-parent{
+    position: relative;
+    display: flex;
+    align-items: center;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.dashboard-flag-span-child {
+    background-size: 40px;
+    display: inline-block;
+    height: 32.19512px;
+    width: 40px;
+    background-image: url(https://d35aaqx5ub95lt.cloudfront.net/images/juicy-flag-sprite-4.svg);
+}
+.dashboard-country-france{
+    background-position: 0 -64.39024px;
+}
+
+.dashboard-flag-section {
+        margin-left: 24px;
+            height: 100%;
+    
+}
+.dashboard-progress-section {
+        margin-left: 24px;
+        display: flex;
+}
+
+.dashboard-progress-span-parent {
+    position: relative;
+        display: flex;
+            -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.dashboard-number-span {
+        color: #e5e5e5;
+            font-weight: 700;
 }

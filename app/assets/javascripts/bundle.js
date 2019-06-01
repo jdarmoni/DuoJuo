@@ -247,7 +247,7 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-toppermost-div"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-header-container"
@@ -267,51 +267,77 @@ function (_React$Component) {
         href: "",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/learn.svg",
+        src: "////d35aaqx5ub95lt.cloudfront.net/images/icons/stories-inactive2.svg",
         className: "dashboard-header-icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-span"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-text"
-      }, "learn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "stories"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/learn.svg",
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/discuss-inactive.svg",
         className: "dashboard-header-icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-span"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-text"
-      }, "learn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "discuss"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/learn.svg",
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/shop-inactive2.svg",
         className: "dashboard-header-icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-span"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-text"
-      }, "learn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "shop"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/learn.svg",
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/more-inactive.svg",
         className: "dashboard-header-icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-span"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-text"
-      }, "learn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "more"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
-      })))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-divider"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-flag-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-flag-span-parent"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-flag-span-child dashboard-country-france"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-progress-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-progress-span-parent"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg",
+        className: "dashboard-progres-icon"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-number-span"
+      }, "0"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-progress-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-progress-span-parent"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-empty.svg",
+        className: "dashboard-progres-icon"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-number-span"
+      }, "0")))))));
     }
   }]);
 
