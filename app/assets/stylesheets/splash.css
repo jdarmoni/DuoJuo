@@ -72,6 +72,7 @@
     /* border-top-left-radius: 18px; */
     border-radius: 18px;
     padding: 13px 16px;
+    cursor: pointer;
 
     color: #0b3e71!important;
     font-size: 12px; 

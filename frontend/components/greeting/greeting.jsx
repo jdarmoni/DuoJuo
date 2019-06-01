@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // import LoginFormContainer from '../session_form/login_form_container';
 import { withRouter } from 'react-router-dom';
 import LoginModalContainer from './login_modal_container'
+import Dashboard from './dashboard.jsx'
 class Greeting extends React.Component {
     constructor(props) {
         super(props);
@@ -104,27 +105,7 @@ class Greeting extends React.Component {
 
     //LOGGED IN!
     myBooks() {
-
-        return (
-            <nav className="logged-in-header-link">
-                <div className="header-link-container">
-                    <ul>
-                        <li><img className="logo" src={window.logoURL} /></li>
-                        <li><Link to={`/bookshelf`}>Home</Link></li>
-                        <li className="myBooksLink"><Link to={`/bookshelf`}>My Books</Link></li>
-                        <li><Link to={`/browse`}>Browse</Link></li>
-                        <li>Community</li>
-                    </ul>
-                    <form className="searchbooks">
-                        <input type="text" placeholder="Search books" />
-                    </form>
-
-                    <hgroup className="header-group">
-                        <button className="header-button" onClick={this.logOut}>Logout</button>
-                    </hgroup>
-                </div>
-            </nav>
-        )
+            return <Dashboard />
     };
 
     render() {
