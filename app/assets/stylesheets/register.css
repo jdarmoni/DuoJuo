@@ -58,6 +58,10 @@
     margin: 10px;
     width: 205px;
 }
+.choose-language-item-div:hover {
+    background: hsla(0,0%,100%,.15);
+    border: 2px solid hsla(0,0%,100%,.5);
+}
 .flag-icon-container{
     height: 100px;
     margin: 0 auto 20px;
