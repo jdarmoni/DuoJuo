@@ -139,3 +139,8 @@
         color: #e5e5e5;
             font-weight: 700;
 }
+.dashboard-user-icon {
+    cursor: pointer;
+    border-radius: 98px;
+    height: 36px;
+}

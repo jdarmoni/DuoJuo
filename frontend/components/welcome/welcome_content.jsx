@@ -7,9 +7,16 @@ class Welcome extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    loggedIn(){
+        if (this.props.currentUser) {
+                this.props.history.replace('/')
+        }
+    }
+
     render(){
+        this.loggedIn()
         return (
-            
             <div className="welcome-margin-div">
                 <div>
                     <div className="welcome-header-banner">
