@@ -791,7 +791,15 @@ var RegisterContent = function RegisterContent() {
     className: "choose-language-list"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "choose-language-item-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Spanish"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "22.3M learners"))))))))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flag-icon-span spanish-span"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-language-title"
+  }, "Spanish"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-language-stats"
+  }, "22.3M learners"))))))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RegisterContent);

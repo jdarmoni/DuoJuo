@@ -58,3 +58,29 @@
     margin: 10px;
     width: 205px;
 }
+.flag-icon-container{
+    height: 100px;
+    margin: 0 auto 20px;
+    -ms-transform-origin: top;
+    transform-origin: top;
+    width: 100px;
+}
+.flag-icon-span{
+    -ms-transform: scale(3.33);
+    transform: scale(3.33);
+    -ms-transform-origin: top;
+    transform-origin: top;
+    background-size: 40px;
+    display: inline-block;
+    height: 32.19512px;
+    width: 40px;
+    background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/juicy-flag-sprite-4.svg);
+}
+.flag-icon-language-title{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.flag-icon-language-stats{
+    font-size: 14px;
+}
+.spanish-span{ background-position: 0 -32.19512px;}

@@ -33,11 +33,11 @@ const RegisterContent = () => {
                         <ul className="choose-language-list">
                             <li className="choose-language-item-div">
                                 <div>
-                                    <div>
-                                        <span></span>
+                                    <div className="flag-icon-container">
+                                        <span className="flag-icon-span spanish-span"></span>
                                     </div>
-                                    <div>Spanish</div>
-                                    <div>22.3M learners</div>
+                                    <div className="flag-icon-language-title">Spanish</div>
+                                    <div className="flag-icon-language-stats">22.3M learners</div>
                                 </div>
                             </li>
                         </ul>
