@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import LoginFormContainer from '../session_form/login_form_container';
+import SignupContainer from '../greeting/signup_container';
 import { withRouter } from 'react-router-dom';
 
 class Welcome extends React.Component {
@@ -14,8 +14,9 @@ class Welcome extends React.Component {
                 <div>
                     <div className="welcome-header-banner">
                         <div className="welcome-button-container">
-                            <button className="create-a-profile-button">create a profile</button>
+                            <button className="create-a-profile-button" id="login-button">create a profile</button>
                         </div>
+                        <SignupContainer />
                     </div>
                     <div className="welcome-content-container">
                         <div className="welcome-content-box">
