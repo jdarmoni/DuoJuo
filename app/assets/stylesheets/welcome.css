@@ -1,0 +1,120 @@
+.welcome-margin-div {
+    cursor: default;
+    margin: 94px auto 0!important;
+    max-width: 1140px;
+    min-width: 900px;
+}
+.welcome-header-banner {
+    background: none;
+    height: auto;
+    left: 0;
+    min-height: 70px;
+    position: fixed;
+    right: 0;
+    top: 24px;
+    z-index: 200;
+}
+.welcome-button-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    margin: 0 auto;
+    max-width: 1140px;
+    padding: 0 10px 0 0;
+    position: relative;
+    margin-right: 4%;
+}
+.create-a-profile-button {
+    border-width: 2px 2px 4px;
+    color: #1cb0f6;
+    border-color: #e5e5e5;
+    padding: 12px 16px;
+    font-size: 15px;
+    line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 16px;
+    border-style: solid;
+    transform: translateZ(0);
+    transition: filter .2s;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+}
+.create-a-profile-button:hover {
+    filter: brightness(.9);
+}   
+.welcome-content-container{
+        display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+        -ms-flex-align: center;
+    align-items: center;
+    left: 0;
+    min-height: 100vh;
+    padding-top: 70px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}    
+.welcome-content-box {
+        color: #fff;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 200px;
+    text-align: center;
+    z-index: 1;
+        display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.welcome-choose-path {
+        color: #4b4b4b;
+    font-size: 1.5em;
+    margin: 0 24px 24px;
+        font-weight: 700;
+            line-height: 40px;
+}
+/* .welcome-button-container {
+        display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+} */
+.welcome-new-button {
+        background-color: #fff;
+    border: 2px solid #e5e5e5;
+    border-radius: 16px;
+    color: #777;
+    cursor: pointer;
+    font-size: 17px;
+    letter-spacing: normal;
+    margin: 10px;
+    padding: 24px;
+    text-align: center;
+    text-transform: none;
+    width: 250px;
+}
+
+.welcome-new-image {
+    display: block;
+    height: 100px;
+    margin: 0 auto 10px;
+    width: 100px;
+}
+.welcome-new-h2 {
+    color: #4b4b4b;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0;
+    white-space: normal;
+}

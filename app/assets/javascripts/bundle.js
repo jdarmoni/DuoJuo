@@ -952,7 +952,37 @@ function (_React$Component) {
   _createClass(Welcome, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "eggs!!!!!");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "welcome-margin-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "welcome-header-banner"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "welcome-button-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "create-a-profile-button"
+      }, "create a profile"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "welcome-content-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "welcome-content-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "welcome-choose-path"
+      }, "Choose your path"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "welcome-button-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "welcome-new-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "welcome-new-image",
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/fork-placement.svg   "
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "welcome-new-h2"
+      }, "Already know some Language?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Take this placement test")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "welcome-new-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "welcome-new-image",
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/fork-basics.svg"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "welcome-new-h2"
+      }, "New to Language?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Start at the basics"))))))));
     }
   }]);
 

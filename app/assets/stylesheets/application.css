@@ -27,6 +27,12 @@ a {
         text-decoration: none;
 }
 
+h2 {
+    color: #3c3c3c;
+    font-size: 24px;
+    line-height: 26px;
+    margin: 0 0 25px;
+}
 body {
     margin: 0px;
     font: 500 17px/20px sans-serif;
