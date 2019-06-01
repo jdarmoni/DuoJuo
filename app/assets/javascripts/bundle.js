@@ -785,7 +785,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: 'signup' // navLink: <Link to="/signup">sign up instead</Link>,
+    formType: 'login' // navLink: <Link to="/signup">sign up instead</Link>,
 
   };
 };
