@@ -9,7 +9,6 @@ class Dashboard extends React.Component {
 
     }
     logout(){
-        debugger
         this.props.logout()
     }
     render() {

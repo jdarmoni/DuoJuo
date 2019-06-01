@@ -1,6 +1,9 @@
 import React from 'react';
 import LoginModalContainer from '../greeting/login_modal_container';
 
+// CURRENTLY NOT USING
+
+
 const RegisterContent = () => {
     
     return (

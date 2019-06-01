@@ -249,7 +249,6 @@ function (_React$Component) {
   _createClass(Dashboard, [{
     key: "logout",
     value: function logout() {
-      debugger;
       this.props.logout();
     }
   }, {
@@ -1041,7 +1040,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../greeting/login_modal_container */ "./frontend/components/greeting/login_modal_container.js");
-/* harmony import */ var _register_content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./register_content */ "./frontend/components/register/register_content.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1063,8 +1061,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
-
+ // import RegisterContent from './register_content'
 
 var Register =
 /*#__PURE__*/
@@ -1098,12 +1095,92 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login-button",
         id: "login-button"
-      }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginModalContainer, null))));
+      }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
+    }
+  }, {
+    key: "loggedIn",
+    value: function loggedIn() {
+      debugger;
+
+      if (this.props.currentUser) {
+        this.props.history.replace('/');
+      }
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_register_content__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      this.loggedIn();
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logged-out-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+        className: "logged-out-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logged-out-nav-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "duoLogo",
+        href: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "langlogin-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "site-lang"
+      }, "Site language:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "site-lang-language"
+      }, "English")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-button-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "login-button",
+        id: "login-button"
+      }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "register-outer-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "register-inner-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "register-inner-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "register-header"
+      }, "I want to learn..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "choose-language-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "choose-language-item-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-icon-span spanish-span"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-title"
+      }, "Spanish"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-stats"
+      }, "22.3M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "choose-language-item-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-icon-span french-span"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-title"
+      }, "French"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-stats"
+      }, "12.0M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "choose-language-item-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-icon-span german-span"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-title"
+      }, "German"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-stats"
+      }, "7.35M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "choose-language-item-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-icon-span japanese-span"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-title"
+      }, "Japanese"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-stats"
+      }, "7.73M learners"))))))))));
     }
   }]);
 
@@ -1133,8 +1210,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps() {
-  return {};
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    users: Object.values(state.entities.users),
+    session: Object.values(state.session),
+    currentUser: state.entities.users[state.session.id]
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -1142,99 +1223,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_register__WEBPACK_IMPORTED_MODULE_3__["default"]));
-
-/***/ }),
-
-/***/ "./frontend/components/register/register_content.jsx":
-/*!***********************************************************!*\
-  !*** ./frontend/components/register/register_content.jsx ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../greeting/login_modal_container */ "./frontend/components/greeting/login_modal_container.js");
-
-
-
-var RegisterContent = function RegisterContent() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "logged-out-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-    className: "logged-out-nav"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "logged-out-nav-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "duoLogo",
-    href: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "langlogin-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "site-lang"
-  }, "Site language:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "site-lang-language"
-  }, "English")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "login-button-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "login-button",
-    id: "login-button"
-  }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "register-outer-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "register-inner-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "register-inner-box"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "register-header"
-  }, "I want to learn..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "choose-language-list"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "choose-language-item-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flag-icon-span spanish-span"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-language-title"
-  }, "Spanish"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-language-stats"
-  }, "22.3M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "choose-language-item-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flag-icon-span french-span"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-language-title"
-  }, "French"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-language-stats"
-  }, "12.0M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "choose-language-item-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flag-icon-span german-span"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-language-title"
-  }, "German"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-language-stats"
-  }, "7.35M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "choose-language-item-div"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "flag-icon-span japanese-span"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-language-title"
-  }, "Japanese"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flag-icon-language-stats"
-  }, "7.73M learners"))))))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (RegisterContent);
 
 /***/ }),
 
