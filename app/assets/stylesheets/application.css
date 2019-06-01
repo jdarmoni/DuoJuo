@@ -18,13 +18,16 @@
     background: #fff;
     
     color: #3c3c3c;
-    font: 500 17px/20px sans-serif;
+    font: 700 17px/20px sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
 
 a {
         text-decoration: none;
+}
+ul {
+    list-style: none;
 }
 
 h2 {
@@ -35,7 +38,7 @@ h2 {
 }
 body {
     margin: 0px;
-    font: 500 17px/20px sans-serif;
+    font: 700 17px/20px sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
