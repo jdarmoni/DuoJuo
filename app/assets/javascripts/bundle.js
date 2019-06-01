@@ -799,7 +799,37 @@ var RegisterContent = function RegisterContent() {
     className: "flag-icon-language-title"
   }, "Spanish"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flag-icon-language-stats"
-  }, "22.3M learners"))))))))));
+  }, "22.3M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "choose-language-item-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flag-icon-span french-span"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-language-title"
+  }, "French"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-language-stats"
+  }, "12.0M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "choose-language-item-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flag-icon-span german-span"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-language-title"
+  }, "German"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-language-stats"
+  }, "7.35M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "choose-language-item-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "flag-icon-span japanese-span"
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-language-title"
+  }, "Japanese"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag-icon-language-stats"
+  }, "7.73M learners"))))))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RegisterContent);

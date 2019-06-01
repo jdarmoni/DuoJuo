@@ -40,6 +40,33 @@ const RegisterContent = () => {
                                     <div className="flag-icon-language-stats">22.3M learners</div>
                                 </div>
                             </li>
+                            <li className="choose-language-item-div">
+                                <div>
+                                    <div className="flag-icon-container">
+                                        <span className="flag-icon-span french-span"></span>
+                                    </div>
+                                    <div className="flag-icon-language-title">French</div>
+                                    <div className="flag-icon-language-stats">12.0M learners</div>
+                                </div>
+                            </li>
+                            <li className="choose-language-item-div">
+                                <div>
+                                    <div className="flag-icon-container">
+                                        <span className="flag-icon-span german-span"></span>
+                                    </div>
+                                    <div className="flag-icon-language-title">German</div>
+                                    <div className="flag-icon-language-stats">7.35M learners</div>
+                                </div>
+                            </li>
+                            <li className="choose-language-item-div">
+                                <div>
+                                    <div className="flag-icon-container">
+                                        <span className="flag-icon-span japanese-span"></span>
+                                    </div>
+                                    <div className="flag-icon-language-title">Japanese</div>
+                                    <div className="flag-icon-language-stats">7.73M learners</div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
