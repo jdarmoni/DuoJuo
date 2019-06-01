@@ -25,8 +25,25 @@ const RegisterContent = () => {
             </div>
         </header>
 
-        <div className="body-container">
-            
+        <div className="register-outer-container">
+            <div className="register-inner-container">
+                <div className="register-inner-box">
+                    <h1 className="register-header">I want to learn...</h1>
+                    <div>
+                        <ul className="choose-language-list">
+                            <li className="choose-language-item-div">
+                                <div>
+                                    <div>
+                                        <span></span>
+                                    </div>
+                                    <div>Spanish</div>
+                                    <div>22.3M learners</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </>

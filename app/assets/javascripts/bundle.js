@@ -780,8 +780,18 @@ var RegisterContent = function RegisterContent() {
     className: "login-button",
     id: "login-button"
   }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "body-container"
-  })));
+    className: "register-outer-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "register-inner-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "register-inner-box"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "register-header"
+  }, "I want to learn..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "choose-language-list"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "choose-language-item-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Spanish"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "22.3M learners"))))))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RegisterContent);
