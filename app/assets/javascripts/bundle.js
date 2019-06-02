@@ -556,14 +556,15 @@ function (_React$Component) {
     } //LOGGED IN!
 
   }, {
-    key: "myBooks",
-    value: function myBooks() {
+    key: "dashboard",
+    value: function dashboard() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
     }
   }, {
     key: "render",
     value: function render() {
-      return this.props.currentUser ? this.myBooks() : this.splashPage();
+      debugger;
+      return this.props.currentUser ? this.dashboard() : this.splashPage();
     }
   }]);
 
@@ -592,6 +593,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),

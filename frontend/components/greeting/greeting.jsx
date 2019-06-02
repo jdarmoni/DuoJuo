@@ -104,13 +104,13 @@ class Greeting extends React.Component {
     }
 
     //LOGGED IN!
-    myBooks() {
+    dashboard() {
             return <DashboardContainer />
     };
 
     render() {
-        
-        return this.props.currentUser ? this.myBooks() : this.splashPage();
+        debugger
+        return this.props.currentUser ? this.dashboard() : this.splashPage();
     }
 };
 
