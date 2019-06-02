@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore();
     }
-    debugger
+    
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 
