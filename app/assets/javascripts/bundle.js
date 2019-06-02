@@ -1418,6 +1418,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 document.addEventListener('DOMContentLoaded', function () {
   var store;
+  debugger;
 
   if (window.currentUser) {
     var preloadedState = {
