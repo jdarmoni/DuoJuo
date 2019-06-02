@@ -1418,7 +1418,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 document.addEventListener('DOMContentLoaded', function () {
   var store;
-  debugger;
 
   if (window.currentUser) {
     var preloadedState = {
@@ -1435,6 +1434,7 @@ document.addEventListener('DOMContentLoaded', function () {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])();
   }
 
+  debugger;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.login = _util_session_api_util__WEBPACK_IMPORTED_MODULE_3__["login"];
