@@ -1115,7 +1115,7 @@ function (_React$Component) {
       var language = event.currentTarget.children[0].children[1].innerText;
       var language_ac;
 
-      if (language === "France") {
+      if (language === "French") {
         language_ac = "fr";
       } else if (language === "Spanish") {
         language_ac = "es";
@@ -1125,20 +1125,21 @@ function (_React$Component) {
         language_ac = "ge";
       }
 
-      debugger; // let result = '';
-      // let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      // let charactersLength = characters.length;
-      // for (let i = 0; i < 8; i++) {
-      //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-      // }
-      // let user = {}
-      // user['username'] = result;
-      // user["email"] = result + "@gmail.com";
-      // user["password"] = "starwars";
-      // user["learning_language"] = "fr";
-      // user["learning_language_string"] ="French"
-      // debugger
-      // this.props.signup(user)
+      var result = '';
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      var charactersLength = characters.length;
+
+      for (var i = 0; i < 8; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+
+      var user = {};
+      user['username'] = result;
+      user["email"] = result + "@gmail.com";
+      user["password"] = "starwars";
+      user["learning_language_string"] = language;
+      user["learning_language"] = language_ac;
+      debugger; // this.props.signup(user)
     }
   }, {
     key: "render",
