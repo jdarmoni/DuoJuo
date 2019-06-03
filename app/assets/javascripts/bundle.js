@@ -1111,26 +1111,34 @@ function (_React$Component) {
     }
   }, {
     key: "register",
-    value: function register() {
-      var result = '';
-      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      var charactersLength = characters.length;
+    value: function register(event) {
+      var language = event.currentTarget.children[0].children[1].innerText;
+      var language_ac;
 
-      for (var i = 0; i < 8; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      if (language === "France") {
+        language_ac = "fr";
+      } else if (language === "Spanish") {
+        language_ac = "es";
+      } else if (language === "Japanese") {
+        language_ac = "jp";
+      } else if (language === "German") {
+        language_ac = "ge";
       }
 
-      var user = {};
-      user['username'] = result;
-      user["email"] = result + "@gmail.com";
-      user["password"] = "starwars";
-      user["learning_language"] = "fr";
-      user["learning_language_string"] = "French";
-      debugger;
-      this.props.signup(user); // maybe when you select a language, you hit user controller with tmp email, username and password; if you want to save the information, you will start storing the rest of the info in your params
-      // here, you will set the    
-      // t.string "learning_language"
-      // t.string "learning_language_string"
+      debugger; // let result = '';
+      // let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      // let charactersLength = characters.length;
+      // for (let i = 0; i < 8; i++) {
+      //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      // }
+      // let user = {}
+      // user['username'] = result;
+      // user["email"] = result + "@gmail.com";
+      // user["password"] = "starwars";
+      // user["learning_language"] = "fr";
+      // user["learning_language_string"] ="French"
+      // debugger
+      // this.props.signup(user)
     }
   }, {
     key: "render",
@@ -1179,7 +1187,8 @@ function (_React$Component) {
       }, "Spanish"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-icon-language-stats"
       }, "22.3M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "choose-language-item-div"
+        className: "choose-language-item-div",
+        onClick: this.register
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-icon-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1189,7 +1198,8 @@ function (_React$Component) {
       }, "French"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-icon-language-stats"
       }, "12.0M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "choose-language-item-div"
+        className: "choose-language-item-div",
+        onClick: this.register
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-icon-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1199,7 +1209,8 @@ function (_React$Component) {
       }, "German"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-icon-language-stats"
       }, "7.35M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "choose-language-item-div"
+        className: "choose-language-item-div",
+        onClick: this.register
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-icon-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {

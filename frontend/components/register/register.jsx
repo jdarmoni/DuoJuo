@@ -38,26 +38,34 @@ class Register extends React.Component {
             this.props.history.replace('/')
         }
     }
-    register(){
-        let result = '';
-        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let charactersLength = characters.length;
-        for (let i = 0; i < 8; i++) {
-            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    register(event){
+        let language = event.currentTarget.children[0].children[1].innerText;
+        let language_ac; 
+        if (language === "France") {
+            language_ac = "fr"
+        } else if (language === "Spanish") {
+            language_ac ="es"
+        } else if (language ==="Japanese") {
+            language_ac ="jp"
+        } else if (language === "German") {
+            language_ac ="ge"
         }
-
-        let user = {}
-        user['username'] = result;
-        user["email"] = result + "@gmail.com";
-        user["password"] = "starwars";
-        user["learning_language"] = "fr";
-        user["learning_language_string"] ="French"
         debugger
-        this.props.signup(user)
-        // maybe when you select a language, you hit user controller with tmp email, username and password; if you want to save the information, you will start storing the rest of the info in your params
-        // here, you will set the    
-        // t.string "learning_language"
-        // t.string "learning_language_string"
+        // let result = '';
+        // let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        // let charactersLength = characters.length;
+        // for (let i = 0; i < 8; i++) {
+        //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        // }
+
+        // let user = {}
+        // user['username'] = result;
+        // user["email"] = result + "@gmail.com";
+        // user["password"] = "starwars";
+        // user["learning_language"] = "fr";
+        // user["learning_language_string"] ="French"
+        // debugger
+        // this.props.signup(user)
 
     }
     render (){
@@ -100,7 +108,7 @@ class Register extends React.Component {
                                                 <div className="flag-icon-language-stats">22.3M learners</div>
                                             </div>
                                         </li>
-                                        <li className="choose-language-item-div">
+                                        <li className="choose-language-item-div" onClick={this.register}>
                                             <div>
                                                 <div className="flag-icon-container">
                                                     <span className="flag-icon-span french-span"></span>
@@ -109,7 +117,7 @@ class Register extends React.Component {
                                                 <div className="flag-icon-language-stats">12.0M learners</div>
                                             </div>
                                         </li>
-                                        <li className="choose-language-item-div">
+                                        <li className="choose-language-item-div" onClick={this.register}>
                                             <div>
                                                 <div className="flag-icon-container">
                                                     <span className="flag-icon-span german-span"></span>
@@ -118,7 +126,7 @@ class Register extends React.Component {
                                                 <div className="flag-icon-language-stats">7.35M learners</div>
                                             </div>
                                         </li>
-                                        <li className="choose-language-item-div">
+                                        <li className="choose-language-item-div" onClick={this.register}>
                                             <div>
                                                 <div className="flag-icon-container">
                                                     <span className="flag-icon-span japanese-span"></span>
