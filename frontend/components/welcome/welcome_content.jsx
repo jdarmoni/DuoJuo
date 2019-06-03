@@ -33,13 +33,13 @@ class Welcome extends React.Component {
                                     
                                     <button className="welcome-new-button">
                                         <img className="welcome-new-image" src="//d35aaqx5ub95lt.cloudfront.net/images/fork-placement.svg   " />
-                                        <h2 className="welcome-new-h2">Already know some Language?</h2>
+                                        <h2 className="welcome-new-h2">Already know some {this.props.currentUser.learning_language_string}?</h2>
                                         <div>Take this placement test</div>
                                     </button>
 
                                     <button className="welcome-new-button">
                                         <img className="welcome-new-image" src="//d35aaqx5ub95lt.cloudfront.net/images/fork-basics.svg"/>
-                                        <h2 className="welcome-new-h2">New to Language?</h2>
+                                        <h2 className="welcome-new-h2">New to {this.props.currentUser.learning_language_string}?</h2>
                                         <div>Start at the basics</div>
                                     </button>
 

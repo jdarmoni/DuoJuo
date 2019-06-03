@@ -64,7 +64,7 @@ class Register extends React.Component {
         user["password"] = "starwars";
         user["learning_language_string"] = language
         user["learning_language"] = language_ac;
-        debugger
+
         // this.props.signup(user)
 
     }

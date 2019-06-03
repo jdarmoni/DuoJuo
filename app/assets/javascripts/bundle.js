@@ -1138,8 +1138,7 @@ function (_React$Component) {
       user["email"] = result + "@gmail.com";
       user["password"] = "starwars";
       user["learning_language_string"] = language;
-      user["learning_language"] = language_ac;
-      debugger; // this.props.signup(user)
+      user["learning_language"] = language_ac; // this.props.signup(user)
     }
   }, {
     key: "render",
@@ -1419,14 +1418,14 @@ function (_React$Component) {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/fork-placement.svg   "
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "welcome-new-h2"
-      }, "Already know some Language?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Take this placement test")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Already know some ", this.props.currentUser.learning_language_string, "?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Take this placement test")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "welcome-new-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "welcome-new-image",
         src: "//d35aaqx5ub95lt.cloudfront.net/images/fork-basics.svg"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "welcome-new-h2"
-      }, "New to Language?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Start at the basics"))))))));
+      }, "New to ", this.props.currentUser.learning_language_string, "?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Start at the basics"))))))));
     }
   }]);
 

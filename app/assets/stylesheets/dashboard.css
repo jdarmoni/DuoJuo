@@ -113,8 +113,17 @@
     width: 40px;
     background-image: url(https://d35aaqx5ub95lt.cloudfront.net/images/juicy-flag-sprite-4.svg);
 }
-.dashboard-country-france{
+.dashboard-country-french{
     background-position: 0 -64.39024px;
+}
+.dashboard-country-german {
+        background-position: 0 -96.58537px;
+}
+.dashboard-country-spanish {
+        background-position: 0 -32.19512px;
+}
+.dashboard-country-japanese {
+        background-position: 0 -128.78049px;
 }
 
 .dashboard-flag-section {
