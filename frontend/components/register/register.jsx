@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom';
 class Register extends React.Component {
     constructor(props){
         super(props)
+        this.register = this.register.bind(this)
     }
 
     navBar(){
@@ -32,13 +33,35 @@ class Register extends React.Component {
         )
     }
     loggedIn() {
-        debugger
+        
         if (this.props.currentUser) {
             this.props.history.replace('/')
         }
     }
+    register(){
+        let result = '';
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let charactersLength = characters.length;
+        for (let i = 0; i < 8; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
 
+        let user = {}
+        user['username'] = result;
+        user["email"] = result + "@gmail.com";
+        user["password"] = "starwars";
+        user["learning_language"] = "fr";
+        user["learning_language_string"] ="French"
+        debugger
+        this.props.signup(user)
+        // maybe when you select a language, you hit user controller with tmp email, username and password; if you want to save the information, you will start storing the rest of the info in your params
+        // here, you will set the    
+        // t.string "learning_language"
+        // t.string "learning_language_string"
+
+    }
     render (){
+        debugger
         this.loggedIn()
         return (
             <>
@@ -68,7 +91,7 @@ class Register extends React.Component {
                                 <h1 className="register-header">I want to learn...</h1>
                                 <div>
                                     <ul className="choose-language-list">
-                                        <li className="choose-language-item-div">
+                                        <li className="choose-language-item-div" onClick={this.register}>
                                             <div>
                                                 <div className="flag-icon-container">
                                                     <span className="flag-icon-span spanish-span"></span>
