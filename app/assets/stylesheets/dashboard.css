@@ -113,16 +113,16 @@
     width: 40px;
     background-image: url(https://d35aaqx5ub95lt.cloudfront.net/images/juicy-flag-sprite-4.svg);
 }
-.dashboard-country-french{
+.dashboard-country-French{
     background-position: 0 -64.39024px;
 }
-.dashboard-country-german {
+.dashboard-country-German {
         background-position: 0 -96.58537px;
 }
-.dashboard-country-spanish {
+.dashboard-country-Spanish {
         background-position: 0 -32.19512px;
 }
-.dashboard-country-japanese {
+.dashboard-country-Japanese {
         background-position: 0 -128.78049px;
 }
 
@@ -152,4 +152,11 @@
     cursor: pointer;
     border-radius: 98px;
     height: 36px;
+}
+
+.dashboard-body {
+    cursor: default;
+    margin: 94px auto 0!important;
+    max-width: 1140px;
+    min-width: 900px;
 }

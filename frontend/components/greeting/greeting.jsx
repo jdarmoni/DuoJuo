@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import LoginFormContainer from '../session_form/login_form_container';
 import { withRouter } from 'react-router-dom';
 import LoginModalContainer from './login_modal_container'
-import DashboardContainer from './dashboard_container'
+import DashboardContainer from '../dashboard/dashboard_container'
 class Greeting extends React.Component {
     constructor(props) {
         super(props);
@@ -109,7 +109,7 @@ class Greeting extends React.Component {
     };
 
     render() {
-        debugger
+        
         return this.props.currentUser ? this.dashboard() : this.splashPage();
     }
 };

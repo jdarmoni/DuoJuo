@@ -197,10 +197,10 @@ var App = function App() {
 
 /***/ }),
 
-/***/ "./frontend/components/greeting/dashboard.jsx":
-/*!****************************************************!*\
-  !*** ./frontend/components/greeting/dashboard.jsx ***!
-  \****************************************************/
+/***/ "./frontend/components/dashboard/dashboard.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/dashboard/dashboard.jsx ***!
+  \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -252,9 +252,12 @@ function (_React$Component) {
       this.props.logout();
     }
   }, {
+    key: "renderAppropriateDashboard",
+    value: function renderAppropriateDashboard() {}
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-toppermost-div"
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-header"
@@ -327,7 +330,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-flag-span-parent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "dashboard-flag-span-child dashboard-country-france"
+        className: "dashboard-flag-span-child dashboard-country-" + this.props.currentUser.learning_language_string
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-progress-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -356,7 +359,7 @@ function (_React$Component) {
         onClick: this.logout
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-number-span"
-      })))))));
+      }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
     }
   }]);
 
@@ -367,23 +370,24 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/greeting/dashboard_container.js":
-/*!*************************************************************!*\
-  !*** ./frontend/components/greeting/dashboard_container.js ***!
-  \*************************************************************/
+/***/ "./frontend/components/dashboard/dashboard_container.js":
+/*!**************************************************************!*\
+  !*** ./frontend/components/dashboard/dashboard_container.js ***!
+  \**************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _dashboard_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard.jsx */ "./frontend/components/greeting/dashboard.jsx");
+/* harmony import */ var _dashboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard */ "./frontend/components/dashboard/dashboard.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 
 
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
@@ -399,7 +403,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_dashboard_jsx__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_dashboard__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -416,7 +420,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _login_modal_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./login_modal_container */ "./frontend/components/greeting/login_modal_container.js");
-/* harmony import */ var _dashboard_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard_container */ "./frontend/components/greeting/dashboard_container.js");
+/* harmony import */ var _dashboard_dashboard_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dashboard/dashboard_container */ "./frontend/components/dashboard/dashboard_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -558,12 +562,11 @@ function (_React$Component) {
   }, {
     key: "dashboard",
     value: function dashboard() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_dashboard_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
     }
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return this.props.currentUser ? this.dashboard() : this.splashPage();
     }
   }]);
@@ -1138,12 +1141,12 @@ function (_React$Component) {
       user["email"] = result + "@gmail.com";
       user["password"] = "starwars";
       user["learning_language_string"] = language;
-      user["learning_language"] = language_ac; // this.props.signup(user)
+      user["learning_language"] = language_ac;
+      this.props.signup(user);
     }
   }, {
     key: "render",
     value: function render() {
-      debugger;
       this.loggedIn();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-out-container"

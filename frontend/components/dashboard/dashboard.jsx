@@ -8,11 +8,15 @@ class Dashboard extends React.Component {
         this.logout = this.logout.bind(this)
 
     }
-    logout(){
+    logout() {
         this.props.logout()
+    }
+    renderAppropriateDashboard(){
+        
     }
     render() {
         return (
+            <>
             <div>
                 <div className="dashboard-toppermost-div"></div> {/* spacing div */}
                 <div> {/* generic div */}
@@ -20,7 +24,7 @@ class Dashboard extends React.Component {
                         <div className="dashboard-header-container">
                             {/* one little header block */}
                             <a href="" className="dashboard-header-blocks">
-                                <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/learn.svg" className="dashboard-header-icon"/>
+                                <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/learn.svg" className="dashboard-header-icon" />
                                 <span className="dashboard-header-span">
                                     <span className="dashboard-header-text">learn</span>
                                 </span>
@@ -63,14 +67,14 @@ class Dashboard extends React.Component {
                             <div className="dashboard-flag-section">
                                 <span className="dashboard-flag-span-parent">
                                     {/* need logic for determining and interpolating country */}
-                                    <span className="dashboard-flag-span-child dashboard-country-france"></span>
+                                    <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string }  ></span>
                                 </span>
                             </div>
 
                             {/* progresses */}
                             <div className="dashboard-progress-section">
                                 <span className="dashboard-progress-span-parent">
-                                    <img src="//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg" className="dashboard-progres-icon"/>
+                                    <img src="//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg" className="dashboard-progres-icon" />
                                     {/* need logic for determining and interpolating country */}
                                     <span className="dashboard-number-span">0</span>
                                 </span>
@@ -78,7 +82,7 @@ class Dashboard extends React.Component {
 
                             <div className="dashboard-progress-section">
                                 <span className="dashboard-progress-span-parent">
-                                    <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-empty.svg" className="dashboard-progres-icon"/>
+                                    <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-empty.svg" className="dashboard-progres-icon" />
                                     {/* need logic for determining and interpolating country */}
                                     <span className="dashboard-number-span">0</span>
                                 </span>
@@ -97,9 +101,12 @@ class Dashboard extends React.Component {
                     </div>
                 </div>
             </div>
+            <div>
+
+            </div>
+            </>
         )
     }
 }
 export default withRouter(Dashboard)
-
 

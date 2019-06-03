@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import Dashboard from './dashboard.jsx';
+import Dashboard from './dashboard';
 import {logout} from '../../actions/session_actions'
 
 const mapStateToProps = (state) => {
-
+    debugger
     return {
         users: Object.values(state.entities.users),
         session: Object.values(state.session),
