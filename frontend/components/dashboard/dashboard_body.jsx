@@ -13,20 +13,25 @@ class DashboardBody extends React.Component {
     logout() {
         this.props.logout()
     }
-    
+    createProfile(){
+        // if tmp === true, return below. If false, return 
+        return (
+
+            <div className="dashboard-body-create-profile">
+            <h2>Create a profile to save your progress!</h2>
+            <button className="dashboard-create-a-profile-button" id="signup-button">create a profile</button>
+            <button className="dashboard-login-button" id="login-button">Sign In</button>
+            <SignupContainer />
+            <LoginModalContainer />
+        </div>
+            )
+    }
     render() {
         return (
             <>
             {/* // right side */}
             <div className="dashboard-body-right-side">
-                <div className="dashboard-body-create-profile">
-                    <h2>Create a profile to save your progress!</h2>
-                            <button className="dashboard-create-a-profile-button" id="signup-button">create a profile</button>
-                            <button className="dashboard-login-button" id="login-button">Sign In</button>
-
-                        <SignupContainer />
-                        <LoginModalContainer />
-                </div>
+                {this.createProfile()}
                 
             </div>
 

@@ -433,11 +433,10 @@ function (_React$Component) {
       this.props.logout();
     }
   }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dashboard-body-right-side"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: "createProfile",
+    value: function createProfile() {
+      // if tmp === true, return below. If false, return 
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-body-create-profile"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Create a profile to save your progress!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "dashboard-create-a-profile-button",
@@ -445,7 +444,14 @@ function (_React$Component) {
       }, "create a profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "dashboard-login-button",
         id: "login-button"
-      }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_3__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+      }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-body-right-side"
+      }, this.createProfile()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
     }
   }]);
 
