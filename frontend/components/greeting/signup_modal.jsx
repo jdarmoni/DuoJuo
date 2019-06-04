@@ -20,7 +20,7 @@ class SignupModal extends React.Component {
         const modal = document.getElementById("myModal");
 
         // Get the button that opens the modal
-        const btn = document.getElementById("login-button");
+        const btn = document.getElementById("signup-button");
 
         // Get the <span> element that closes the modal
         const span = document.getElementsByClassName("close")[0];
@@ -50,7 +50,17 @@ class SignupModal extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
+        let user; 
+        
+        if (this.props.currentUser) {
+            user = this.props.currentUser
+            user["password"] = this.state.password
+            user["username"] = this.state.username
+            user["email"] = this.state.email
+        } else {
+            user = Object.assign({}, this.state);
+        }
+        
         this.props.processForm(user);
 
     }

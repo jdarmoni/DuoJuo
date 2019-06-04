@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
 import SignupModal from './signup_modal';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ( state) => {
+    debugger
     return {
-        errors: errors.session,
+        errors: state.errors.session,
         formType: 'login',
+        currentUser: state.entities.users[state.session.id]
         // navLink: <Link to="/signup">sign up instead</Link>,
     };
 };

@@ -21,7 +21,7 @@ class Welcome extends React.Component {
                 <div>
                     <div className="welcome-header-banner">
                         <div className="welcome-button-container">
-                            <button className="create-a-profile-button" id="login-button">create a profile</button>
+                            <button className="create-a-profile-button" id="signup-button">create a profile</button>
                         </div>
                         <SignupContainer />
                     </div>

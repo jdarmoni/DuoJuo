@@ -160,3 +160,49 @@
     max-width: 1140px;
     min-width: 900px;
 }
+.dashboard-body-right-side {
+    float: right;
+    width: 428px;
+}
+.dashboard-body-create-profile {
+        background: #fff;
+    border: 2px solid #e5e5e5;
+    border-radius: 16px;
+    display: block;
+    margin: 0 24px 24px;
+    padding: 24px;
+}
+.dashboard-create-profile-button-container {
+
+}
+
+.dashboard-create-a-profile-button {
+    color: white;
+    border-width: 0 0 4px;
+    background-color: #78c700;
+    border-color: #58a700;
+    border-radius: 18px;
+    padding: 13px 16px;
+    font-size: 15px;
+    line-height: 20px;
+        font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.dashboard-login-button {
+    margin-top: 10px;
+    color: white;
+    border-width: 0 0 4px;
+    background-color: #1bb0f6;
+    border-color: #1899d6;
+    border-radius: 18px;
+    padding: 13px 16px;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    width: 100%;
+}

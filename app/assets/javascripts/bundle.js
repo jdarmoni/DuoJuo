@@ -209,6 +209,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _dashboard_body__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dashboard_body */ "./frontend/components/dashboard/dashboard_body.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -226,6 +227,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -359,7 +361,9 @@ function (_React$Component) {
         onClick: this.logout
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-number-span"
-      }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+      }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_body__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
     }
   }]);
 
@@ -367,6 +371,88 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Dashboard));
+
+/***/ }),
+
+/***/ "./frontend/components/dashboard/dashboard_body.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/dashboard/dashboard_body.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _greeting_signup_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../greeting/signup_container */ "./frontend/components/greeting/signup_container.js");
+/* harmony import */ var _greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../greeting/login_modal_container */ "./frontend/components/greeting/login_modal_container.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+var DashboardBody =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(DashboardBody, _React$Component);
+
+  function DashboardBody(props) {
+    var _this;
+
+    _classCallCheck(this, DashboardBody);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(DashboardBody).call(this, props));
+    _this.logout = _this.logout.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(DashboardBody, [{
+    key: "logout",
+    value: function logout() {
+      this.props.logout();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-body-right-side"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-body-create-profile"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Create a profile to save your progress!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "dashboard-create-a-profile-button",
+        id: "signup-button"
+      }, "create a profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "dashboard-login-button",
+        id: "login-button"
+      }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_3__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+    }
+  }]);
+
+  return DashboardBody;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(DashboardBody));
 
 /***/ }),
 
@@ -387,7 +473,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
@@ -840,11 +925,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(_ref) {
-  var errors = _ref.errors;
+var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {
-    errors: errors.session,
-    formType: 'login' // navLink: <Link to="/signup">sign up instead</Link>,
+    errors: state.errors.session,
+    formType: 'login',
+    currentUser: state.entities.users[state.session.id] // navLink: <Link to="/signup">sign up instead</Link>,
 
   };
 };
@@ -923,7 +1009,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var modal = document.getElementById("myModal"); // Get the button that opens the modal
 
-      var btn = document.getElementById("login-button"); // Get the <span> element that closes the modal
+      var btn = document.getElementById("signup-button"); // Get the <span> element that closes the modal
 
       var span = document.getElementsByClassName("close")[0]; // When the user clicks on the button, open the modal 
 
@@ -956,7 +1042,17 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var user = Object.assign({}, this.state);
+      var user;
+
+      if (this.props.currentUser) {
+        user = this.props.currentUser;
+        user["password"] = this.state.password;
+        user["username"] = this.state.username;
+        user["email"] = this.state.email;
+      } else {
+        user = Object.assign({}, this.state);
+      }
+
       this.props.processForm(user);
     }
   }, {
@@ -1405,7 +1501,7 @@ function (_React$Component) {
         className: "welcome-button-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "create-a-profile-button",
-        id: "login-button"
+        id: "signup-button"
       }, "create a profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "welcome-content-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
