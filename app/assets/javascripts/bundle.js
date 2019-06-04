@@ -436,6 +436,7 @@ function (_React$Component) {
     key: "createProfile",
     value: function createProfile() {
       // if tmp === true, return below. If false, return 
+      // FOR TOMORROW: add tmp: boolean migration
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-body-create-profile"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Create a profile to save your progress!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

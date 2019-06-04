@@ -15,6 +15,7 @@ class DashboardBody extends React.Component {
     }
     createProfile(){
         // if tmp === true, return below. If false, return 
+        // FOR TOMORROW: add tmp: boolean migration
         return (
 
             <div className="dashboard-body-create-profile">
