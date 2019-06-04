@@ -14,11 +14,12 @@ class DashboardBody extends React.Component {
         this.props.logout()
     }
     createProfile(){
-        // if tmp === true, return below. If false, return 
-        // FOR TOMORROW: add tmp: boolean migration
-        return (
+        if (this.props.currentUser.active === false) {
 
-            <div className="dashboard-body-create-profile">
+            // FOR TOMORROW: add tmp: boolean migration
+            return (
+                
+                <div className="dashboard-body-create-profile">
             <h2>Create a profile to save your progress!</h2>
             <button className="dashboard-create-a-profile-button" id="signup-button">create a profile</button>
             <button className="dashboard-login-button" id="login-button">Sign In</button>
@@ -26,8 +27,10 @@ class DashboardBody extends React.Component {
             <LoginModalContainer />
         </div>
             )
+        }
     }
     render() {
+        debugger
         return (
             <>
             {/* // right side */}

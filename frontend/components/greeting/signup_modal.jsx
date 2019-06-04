@@ -57,7 +57,10 @@ class SignupModal extends React.Component {
             user["password"] = this.state.password
             user["username"] = this.state.username
             user["email"] = this.state.email
+            user["active"] = true;
+            user["rupees"] = 2;
         } else {
+            // only hit this ELSE on clicking a language in register
             user = Object.assign({}, this.state);
         }
         

@@ -35,7 +35,11 @@ class Register extends React.Component {
     loggedIn() {
         
         if (this.props.currentUser) {
-            this.props.history.replace('/')
+            if (this.props.currentUser.active === true) {
+                this.props.history.replace('/')
+            } else {
+                this.props.history.replace('/welcome')
+            }
         }
     }
     register(event){
@@ -64,7 +68,8 @@ class Register extends React.Component {
         user["password"] = "starwars";
         user["learning_language_string"] = language
         user["learning_language"] = language_ac;
-
+        user["active"] = false;
+        debugger
         this.props.signup(user)
 
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import DashboardBody from './dashboard_body';
+import DashboardBodyContainer from './dashboard_body_container';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -103,7 +103,7 @@ class Dashboard extends React.Component {
                 </div>
             </div>
             <div className="dashboard-body">
-                <DashboardBody />
+                <DashboardBodyContainer />
             </div>
             </>
         )
