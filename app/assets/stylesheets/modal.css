@@ -81,15 +81,29 @@
     outline: none;
 }
 /* The Close Button */
-.close {
+.close-login {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close-login:hover,
+.close-login:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close-signup {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-signup:hover,
+.close-signup:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;

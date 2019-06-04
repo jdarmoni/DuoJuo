@@ -356,6 +356,15 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-progress-span-parent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/lingot.svg",
+        className: "dashboard-progres-icon"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-number-span"
+      }, this.props.currentUser.rupees))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-progress-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-progress-span-parent"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "//s3.amazonaws.com/duolingo-images/avatar/default_2/medium",
         className: "dashboard-progres-icon dashboard-user-icon",
         onClick: this.logout
@@ -805,11 +814,11 @@ function (_React$Component) {
   _createClass(LoginModal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var modal = document.getElementById("myModal"); // Get the button that opens the modal
+      var modal = document.getElementById("myModalLogin"); // Get the button that opens the modal
 
       var btn = document.getElementById("login-button"); // Get the <span> element that closes the modal
 
-      var span = document.getElementsByClassName("close")[0]; // When the user clicks on the button, open the modal 
+      var span = document.getElementsByClassName("close-login")[0]; // When the user clicks on the button, open the modal 
 
       btn.onclick = function () {
         modal.style.display = "block";
@@ -860,12 +869,12 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "myModal",
+        id: "myModalLogin",
         className: "modal"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "close"
+        className: "close-login"
       }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "".concat(this.props.formType, "-form-box")
@@ -1052,11 +1061,11 @@ function (_React$Component) {
   _createClass(SignupModal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var modal = document.getElementById("myModal"); // Get the button that opens the modal
+      var modal = document.getElementById("myModal-Signup"); // Get the button that opens the modal
 
       var btn = document.getElementById("signup-button"); // Get the <span> element that closes the modal
 
-      var span = document.getElementsByClassName("close")[0]; // When the user clicks on the button, open the modal 
+      var span = document.getElementsByClassName("close-signup")[0]; // When the user clicks on the button, open the modal 
 
       btn.onclick = function () {
         modal.style.display = "block";
@@ -1120,12 +1129,12 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "myModal",
+        id: "myModal-Signup",
         className: "modal"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "close"
+        className: "close-signup"
       }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "".concat(this.props.formType, "-form-box")

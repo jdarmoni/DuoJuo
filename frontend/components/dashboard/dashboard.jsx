@@ -89,6 +89,14 @@ class Dashboard extends React.Component {
                                 </span>
                             </div>
 
+                                <div className="dashboard-progress-section">
+                                    <span className="dashboard-progress-span-parent">
+                                        <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/lingot.svg" className="dashboard-progres-icon" />
+                                        {/* need logic for determining and interpolating country */}
+                                        <span className="dashboard-number-span">{this.props.currentUser.rupees}</span>
+                                    </span>
+                                </div>
+
                             <div className="dashboard-progress-section">
                                 <span className="dashboard-progress-span-parent">
                                     <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/medium" className="dashboard-progres-icon dashboard-user-icon" onClick={this.logout} />

@@ -17,13 +17,13 @@ class SignupModal extends React.Component {
 
     componentDidMount() {
 
-        const modal = document.getElementById("myModal");
+        const modal = document.getElementById("myModal-Signup");
 
         // Get the button that opens the modal
         const btn = document.getElementById("signup-button");
 
         // Get the <span> element that closes the modal
-        const span = document.getElementsByClassName("close")[0];
+        const span = document.getElementsByClassName("close-signup")[0];
 
         // When the user clicks on the button, open the modal 
         btn.onclick = function () {
@@ -85,10 +85,10 @@ class SignupModal extends React.Component {
 
     render() {
         return (
-            < div id="myModal" className="modal" >
+            < div id="myModal-Signup" className="modal" >
                 {/* Modal content */}
                 < div className="modal-content" >
-                    <span className="close">&times;</span>
+                    <span className="close-signup">&times;</span>
 
                     <form onSubmit={this.handleSubmit} className={`${this.props.formType}-form-box`}>
                         <h1 className="login-modal-header">Sign up</h1>
