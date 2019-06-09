@@ -3,19 +3,19 @@ class Api::UsersController < ApplicationController
     
     @user = User.new(user_params)
     @lang = {"language_string": user_params[:learning_language]}
+    
     debugger
-    # @languages = {
-    #   "streak": 0,
-    #   "language_string": user_params[:learning_language_string],
-    #   "points": 0,
-    #   "learning": true,
-    #   "language": user_params[:language_string],
-    #   "level": 0,
-    #   "current_learning": true,
-    #   "sentences_translated": 0,
-    #   "to_next_level": 10
-    # }
-
+    @languages = {
+      # "streak": 0,
+      "language_string": @user[:learning_language_string],
+      # "points": 0,
+      # "learning": true,
+      "language": @user[:learning_language]
+      # "level": 0,
+      # "current_learning": true,
+      # "sentences_translated": 0,
+      # "to_next_level": 10
+    }
     if @user.save
       login(@user)
       render "api/users/show"
