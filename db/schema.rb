@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_145452) do
+ActiveRecord::Schema.define(version: 2019_06_09_203352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "languages", force: :cascade do |t|
+    t.integer "streak", null: false
+    t.string "language_string", null: false
+    t.integer "points", null: false
+    t.boolean "learning", null: false
+    t.string "language", null: false
+    t.integer "level", null: false
+    t.integer "sentences_translated", null: false
+    t.integer "to_next_level", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
