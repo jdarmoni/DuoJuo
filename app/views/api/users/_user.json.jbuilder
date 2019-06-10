@@ -3,4 +3,4 @@ json.extract! user, :id, :username, :email, :language_strength, :site_streak, :a
   
 json.languages @languages   
 
-json.language_data @lang
+json.language_data @language_data
