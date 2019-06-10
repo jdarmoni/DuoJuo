@@ -1627,8 +1627,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/session_api_util */ "./frontend/util/session_api_util.js");
-/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var _util_language_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/language_api_util */ "./frontend/util/language_api_util.js");
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1647,14 +1649,15 @@ document.addEventListener('DOMContentLoaded', function () {
         users: _defineProperty({}, window.currentUser.id, window.currentUser)
       }
     };
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])(preloadedState);
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_5__["default"])(preloadedState);
     delete window.currentUser;
   } else {
-    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    store = Object(_store_store__WEBPACK_IMPORTED_MODULE_5__["default"])();
   }
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.createLanguage = _util_language_api_util__WEBPACK_IMPORTED_MODULE_4__["createLanguage"];
   window.login = _util_session_api_util__WEBPACK_IMPORTED_MODULE_3__["login"];
   window.logout = _util_session_api_util__WEBPACK_IMPORTED_MODULE_3__["logout"];
   window.signup = _util_session_api_util__WEBPACK_IMPORTED_MODULE_3__["signup"];
@@ -1858,6 +1861,51 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/language_api_util.js":
+/*!********************************************!*\
+  !*** ./frontend/util/language_api_util.js ***!
+  \********************************************/
+/*! exports provided: fetchLanguages, fetchLanguage, createLanguage, updateLanguage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLanguages", function() { return fetchLanguages; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLanguage", function() { return fetchLanguage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguage", function() { return createLanguage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguage", function() { return updateLanguage; });
+var fetchLanguages = function fetchLanguages() {
+  return $.ajax({
+    method: 'get',
+    url: '/api/languages'
+  });
+};
+var fetchLanguage = function fetchLanguage(id) {
+  return $.ajax({
+    method: 'get',
+    url: "/api/languages/".concat(id)
+  });
+};
+var createLanguage = function createLanguage(language) {
+  debugger;
+  return $.ajax({
+    method: 'post',
+    url: "/api/languages/",
+    data: language
+  });
+};
+var updateLanguage = function updateLanguage(languageId) {
+  return $.ajax({
+    method: 'patch',
+    url: "/api/languages/".concat(languageId),
+    data: {
+      language: language
+    }
+  });
+};
 
 /***/ }),
 

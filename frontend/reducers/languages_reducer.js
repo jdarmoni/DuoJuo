@@ -5,8 +5,9 @@ import merge from 'lodash/merge'
 
 export default (state = {}, action) => {
     Object.freeze(state);
-    let newState;
+    debugger
     switch (action.type) {
+        
         case RECEIVE_ALL_LANGUAGES:
             return action.languages
 

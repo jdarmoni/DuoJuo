@@ -33,8 +33,10 @@ export const requestLanguage = (id)=> (dispatch) =>{
 }
 
 export const createLanguage = (language)=> (dispatch)=>{
+    debugger
     return (
         ApiUtil.createLanguage(language).then((language)=>{
+
             return dispatch(receiveLanguage(language))
         })
     )

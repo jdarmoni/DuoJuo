@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root'
 import {login, logout, signup} from './util/session_api_util'
+import {createLanguage} from './util/language_api_util'
 import configureStore from './store/store';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-
+    window.createLanguage = createLanguage
     window.login = login
     window.logout = logout
     window.signup = signup
