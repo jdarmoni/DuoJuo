@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
   def create
-    
+    debugger
     @user = User.new(user_params)
     # debugger
     # @language_data = {user_params[:learning_language]: user_params[:learning_language]}
