@@ -5,10 +5,10 @@ export const fetchLanguages = ()=>{
     })
 }
 
-export const fetchLanguage =(language)=>{
+export const fetchLanguage =(id)=>{
     return $.ajax({
         method: 'get',
-        url: `/api/languages/${language.id}`
+        url: `/api/languages/${id}`
     })
 }
 
@@ -20,10 +20,10 @@ export const createLanguage = (language)=> {
     })
 }
 
-export const updateLanguage = (language)=> {
+export const updateLanguage = (languageId)=> {
     return $.ajax({
         method: 'patch',
-        url: `/api/languages/${language.id}`,
+        url: `/api/languages/${languageId}`,
         data: {language}
     })
 }
