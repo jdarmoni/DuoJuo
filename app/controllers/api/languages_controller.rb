@@ -20,6 +20,7 @@ class Api::LanguagesController < ApplicationController
     private
 
     def lang_params
+        # removed require PROBABLY bc you've been doing it on the window, not through actions, and doont have lang key
         params.permit(:streak, :language_string, :points, :learning, :language, :level, :sentences_translated, :to_next_level)
     end
 end

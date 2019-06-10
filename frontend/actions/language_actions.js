@@ -1,4 +1,4 @@
-import * as ApiUtil from '../util/language_api_util'
+import * as APIUtil from '../util/language_api_util'
 
 export const RECEIVE_ALL_LANGUAGES = "RECEIVE_ALL_LANGUAGES"
 export const RECEIVE_LANGUAGE = "RECEIVE_LANGUAGE"
@@ -11,6 +11,7 @@ export const receiveAllLanguages=(langauges)=>{
 }
 
 export const receiveLanguage = (language) =>{
+    debugger
     return ({
         type: RECEIVE_LANGUAGE,
         language: language
@@ -19,14 +20,14 @@ export const receiveLanguage = (language) =>{
 
 export const requestAllLanguages = ()=> (dispatch)=>{
     return (
-        ApiUtil.fetchLanguages().then((languages)=>{
+        APIUtil.fetchLanguages().then((languages)=>{
             return dispatch(receiveAllLanguages(languages))
         })
     )
 }
 export const requestLanguage = (id)=> (dispatch) =>{
     return (
-        ApiUtil.fetchLanguage(id).then((language)=>{
+        APIUtil.fetchLanguage(id).then((language)=>{
             return dispatch(receiveLanguage(language))
         })
     )
@@ -35,8 +36,8 @@ export const requestLanguage = (id)=> (dispatch) =>{
 export const createLanguage = (language)=> (dispatch)=>{
     debugger
     return (
-        ApiUtil.createLanguage(language).then((language)=>{
-
+        APIUtil.createLanguage(language).then((language)=>{
+            debugger
             return dispatch(receiveLanguage(language))
         })
     )
@@ -44,7 +45,7 @@ export const createLanguage = (language)=> (dispatch)=>{
 
 export const updateLanguage = (languageId)=> (dispatch)=>{
     return (
-        ApiUtil.updateLanguage(languageId).then((language)=>{
+        APIUtil.updateLanguage(languageId).then((language)=>{
             return dispatch(receiveLanguage(language))
         })
     )
