@@ -19,6 +19,6 @@ class Api::LanguagesController < ApplicationController
     
     def language_params
 
-        params.require(:language).permit(:streak)
+        params.require(:languages).permit(:streak)
     end
 end
