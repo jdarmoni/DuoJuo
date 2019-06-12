@@ -1104,7 +1104,7 @@ function (_React$Component) {
         user["email"] = this.state.email;
         user["active"] = true;
         user["rupees"] = 2; // return
-        // instead of returning, login this new user and then logout previous user.
+        // instead of returning, update user info 
       } else {
         // only hit this ELSE on clicking a language in register
         user = Object.assign({}, this.state);
