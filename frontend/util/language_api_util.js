@@ -28,3 +28,4 @@ export const updateLanguage = (languageId)=> {
         data: {language}
     })
 }
+
