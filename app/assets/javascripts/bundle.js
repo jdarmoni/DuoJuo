@@ -158,10 +158,32 @@ var logout = function logout() {
 /*!******************************************!*\
   !*** ./frontend/actions/user_actions.js ***!
   \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: RECEIVE_USER, receiveUser, updateUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/AbbeyRoad/Desktop/DuoJuo/frontend/actions/user_actions.js: Identifier 'updateUser' has already been declared (13:13)\n\n\u001b[0m \u001b[90m 11 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m updateUser \u001b[33m=\u001b[39m(user)\u001b[33m=>\u001b[39m (dispatch)\u001b[33m=>\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m    \u001b[36mdebugger\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 | \u001b[39m    \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m 16 | \u001b[39m        updateUser(user)\u001b[33m.\u001b[39mthen((user)\u001b[33m=>\u001b[39m{\u001b[0m\n    at Object.raise (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:6344:17)\n    at ScopeHandler.checkRedeclarationInScope (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3757:12)\n    at ScopeHandler.declareName (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3723:12)\n    at Object.checkLVal (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:8034:22)\n    at Object.parseVarId (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10465:10)\n    at Object.parseVar (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10436:12)\n    at Object.parseVarStatement (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10258:10)\n    at Object.parseStatementContent (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9855:21)\n    at Object.parseStatement (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9788:17)\n    at Object.parseExportDeclaration (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10980:17)\n    at Object.maybeParseExportDeclaration (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10930:31)\n    at Object.parseExport (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10859:29)\n    at Object.parseStatementContent (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9892:27)\n    at Object.parseStatement (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9788:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10364:25)\n    at Object.parseBlockBody (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10351:10)\n    at Object.parseTopLevel (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9717:10)\n    at Object.parse (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:11233:17)\n    at parse (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:11269:38)\n    at parser (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transformation/normalize-file.js:170:34)\n    at normalizeFile (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transformation/normalize-file.js:138:11)\n    at runSync (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER", function() { return RECEIVE_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUser", function() { return receiveUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
+/* harmony import */ var _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/user_api_util */ "./frontend/util/user_api_util.js");
+
+var RECEIVE_USER = "RECEIVE_USER";
+var receiveUser = function receiveUser(user) {
+  debugger;
+  return {
+    type: RECEIVE_USER,
+    user: user
+  };
+};
+var updateUser = function updateUser(user) {
+  return function (dispatch) {
+    debugger;
+    return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["updateUser"](user).then(function (user) {
+      return dispatch(receiveUser(user));
+    });
+  };
+};
 
 /***/ }),
 
@@ -984,7 +1006,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _signup_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./signup_modal */ "./frontend/components/greeting/signup_modal.jsx");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
-/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_actions_user_actions__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -1120,8 +1141,10 @@ function (_React$Component) {
         user["username"] = this.state.username;
         user["email"] = this.state.email;
         user["active"] = true;
-        user["rupees"] = 2; // return
-        // instead of returning, update user info 
+        user["rupees"] = 2;
+        this.props.updateUser(user);
+        debugger;
+        return; // instead of returning, update user info 
       } else {
         // only hit this ELSE on clicking a language in register
         user = Object.assign({}, this.state);
@@ -1960,6 +1983,29 @@ var logout = function logout() {
   return $.ajax({
     method: 'delete',
     url: '/api/session'
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/user_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/user_api_util.js ***!
+  \****************************************/
+/*! exports provided: updateUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
+var updateUser = function updateUser(user) {
+  debugger;
+  return $.ajax({
+    method: 'patch',
+    url: "/api/user/".concat(user.id),
+    data: {
+      user: user
+    }
   });
 };
 

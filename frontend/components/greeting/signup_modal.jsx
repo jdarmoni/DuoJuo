@@ -59,7 +59,9 @@ class SignupModal extends React.Component {
             user["email"] = this.state.email
             user["active"] = true;
             user["rupees"] = 2;
-            // return
+            this.props.updateUser(user)
+            debugger
+            return
             // instead of returning, update user info 
         } else {
             // only hit this ELSE on clicking a language in register
