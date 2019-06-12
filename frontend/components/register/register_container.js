@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Register from './register'
 import { signup } from '../../actions/session_actions';
+import {updateUser} from '../../actions/user_actions'
 const mapStateToProps = (state) => {
     return {
         users: Object.values(state.entities.users),
@@ -14,6 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         signup: (user) => dispatch(signup(user)),
+        updateUser: (user)=>dispatch(updateUser(user))
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

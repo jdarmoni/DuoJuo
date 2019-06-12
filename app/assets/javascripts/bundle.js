@@ -725,7 +725,23 @@ function (_React$Component) {
   }, {
     key: "getStarted",
     value: function getStarted() {
-      this.props.history.replace('/register');
+      // this.props.history.replace('/register')
+      var result = '';
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      var charactersLength = characters.length;
+
+      for (var i = 0; i < 8; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+
+      var user = {};
+      user['username'] = result;
+      user["email"] = result + "@gmail.com";
+      user["password"] = "starwars";
+      user["active"] = false;
+      debugger;
+      this.props.signup(user);
+      debugger;
     } //LOGGED IN!
 
   }, {
@@ -736,6 +752,22 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      if (this.props.currentUser) {
+        if (this.props.currentUser.active === true) {
+          this.dashboard();
+        } else if (this.props.currentUser.language_strength) {
+          this.dashboard();
+        } else {
+          this.props.history.replace('/register');
+        }
+      } else {
+        this.splashPage();
+      } // if this.props.currentUser.active=== true
+      // dashboard
+      // else
+      // register
+
+
       return this.props.currentUser ? this.dashboard() : this.splashPage();
     }
   }]);
@@ -764,6 +796,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var mapStateToProps = function mapStateToProps(state) {
   return {
     users: Object.values(state.entities.users),
@@ -776,6 +809,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["logout"])());
+    },
+    signup: function signup(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["signup"])(user));
     }
   };
 };
@@ -1298,8 +1334,10 @@ function (_React$Component) {
     value: function loggedIn() {
       if (this.props.currentUser) {
         if (this.props.currentUser.active === true) {
+          // if you're an active user, redirect
           this.props.history.replace('/');
-        } else {
+        } else if (this.props.currentUser.learning_language_string) {
+          // if you're an inactive user who has chosen a language, redirect
           this.props.history.replace('/welcome');
         }
       }
@@ -1309,6 +1347,8 @@ function (_React$Component) {
     value: function register(event) {
       var language = event.currentTarget.children[0].children[1].innerText;
       var language_ac;
+      var user = this.props.currentUser;
+      debugger;
 
       if (language === "French") {
         language_ac = "fr";
@@ -1318,25 +1358,30 @@ function (_React$Component) {
         language_ac = "jp";
       } else if (language === "German") {
         language_ac = "ge";
-      }
+      } // new: 
 
-      var result = '';
-      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      var charactersLength = characters.length;
 
-      for (var i = 0; i < 8; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-      }
-
-      var user = {};
-      user['username'] = result;
-      user["email"] = result + "@gmail.com";
-      user["password"] = "starwars";
       user["learning_language_string"] = language;
       user["learning_language"] = language_ac;
-      user["active"] = false;
       debugger;
-      this.props.signup(user);
+      this.props.updateUser(user);
+      this.loggedIn(); // not signing up, just updating the currentUser
+      // old
+      // let result = '';
+      // let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      // let charactersLength = characters.length;
+      // for (let i = 0; i < 8; i++) {
+      //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      // }
+      // let user = {}
+      // user['username'] = result;
+      // user["email"] = result + "@gmail.com";
+      // user["password"] = "starwars";
+      // user["learning_language_string"] = language
+      // user["learning_language"] = language_ac;
+      // user["active"] = false;
+      // debugger
+      // this.props.signup(user)
     }
   }, {
     key: "render",
@@ -1442,6 +1487,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _register__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./register */ "./frontend/components/register/register.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+
 
 
 
@@ -1460,6 +1507,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     signup: function signup(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["signup"])(user));
+    },
+    updateUser: function updateUser(user) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_5__["updateUser"])(user));
     }
   };
 };
@@ -1512,6 +1562,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _welcome_content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./welcome_content */ "./frontend/components/welcome/welcome_content.jsx");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+
 
 
 
@@ -1526,7 +1578,11 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    updateUser: function updateUser(user) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["updateUser"])(user));
+    }
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_welcome_content__WEBPACK_IMPORTED_MODULE_3__["default"]));
@@ -1588,7 +1644,7 @@ function (_React$Component) {
     key: "loggedIn",
     value: function loggedIn() {
       if (this.props.currentUser) {
-        if (this.props.currentUser.active === true) {
+        if (this.props.currentUser.active === true || this.props.currentUser.language_strength) {
           this.props.history.replace('/');
         }
       }
@@ -1596,7 +1652,10 @@ function (_React$Component) {
   }, {
     key: "welcomeButton",
     value: function welcomeButton() {
-      this.props.history.replace('/');
+      var user = this.props.currentUser;
+      user['language_strength'] = 1;
+      this.props.updateUser(user);
+      this.loggedIn(); // update user again and set level === 1
     }
   }, {
     key: "render",

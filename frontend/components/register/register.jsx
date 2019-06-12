@@ -36,15 +36,19 @@ class Register extends React.Component {
         
         if (this.props.currentUser) {
             if (this.props.currentUser.active === true) {
+                // if you're an active user, redirect
                 this.props.history.replace('/')
-            } else {
+            } else if (this.props.currentUser.learning_language_string){
+                // if you're an inactive user who has chosen a language, redirect
                 this.props.history.replace('/welcome')
-            }
+            } 
         }
     }
     register(event){
         let language = event.currentTarget.children[0].children[1].innerText;
         let language_ac; 
+        let user = this.props.currentUser
+        debugger
         if (language === "French") {
             language_ac = "fr"
         } else if (language === "Spanish") {
@@ -54,23 +58,32 @@ class Register extends React.Component {
         } else if (language === "German") {
             language_ac ="ge"
         }
-        
-        let result = '';
-        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let charactersLength = characters.length;
-        for (let i = 0; i < 8; i++) {
-            result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        }
-
-        let user = {}
-        user['username'] = result;
-        user["email"] = result + "@gmail.com";
-        user["password"] = "starwars";
+        // new: 
         user["learning_language_string"] = language
         user["learning_language"] = language_ac;
-        user["active"] = false;
         debugger
-        this.props.signup(user)
+        this.props.updateUser(user)
+        this.loggedIn()
+        // not signing up, just updating the currentUser
+
+
+        // old
+        // let result = '';
+        // let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        // let charactersLength = characters.length;
+        // for (let i = 0; i < 8; i++) {
+        //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        // }
+
+        // let user = {}
+        // user['username'] = result;
+        // user["email"] = result + "@gmail.com";
+        // user["password"] = "starwars";
+        // user["learning_language_string"] = language
+        // user["learning_language"] = language_ac;
+        // user["active"] = false;
+        // debugger
+        // this.props.signup(user)
     }
     render (){
         

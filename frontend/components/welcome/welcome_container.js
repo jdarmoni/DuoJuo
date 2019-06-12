@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Welcome from './welcome_content'
-
+import {updateUser} from '../../actions/user_actions'
 const mapStateToProps = (state) => {
     
     return {
@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        updateUser: (user)=>dispatch(updateUser(user))
     };
 };
 

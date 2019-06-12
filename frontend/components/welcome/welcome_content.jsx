@@ -11,14 +11,17 @@ class Welcome extends React.Component {
 
     loggedIn(){
         if (this.props.currentUser) {
-            if(this.props.currentUser.active === true) {
+            if(this.props.currentUser.active === true || this.props.currentUser.language_strength) {
                 this.props.history.replace('/')
             }
         }
     }
     welcomeButton(){
-        
-        this.props.history.replace('/')
+        let user = this.props.currentUser
+        user['language_strength'] = 1;
+        this.props.updateUser(user)
+        this.loggedIn()
+        // update user again and set level === 1
     }
     render(){
         this.loggedIn()

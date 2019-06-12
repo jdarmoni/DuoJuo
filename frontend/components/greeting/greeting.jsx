@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import LoginModalContainer from './login_modal_container'
 import DashboardContainer from '../dashboard/dashboard_container'
+
 class Greeting extends React.Component {
     constructor(props) {
         super(props);
@@ -100,7 +101,25 @@ class Greeting extends React.Component {
         this.props.history.replace('/')
     }
     getStarted() {
-        this.props.history.replace('/register')
+        // this.props.history.replace('/register')
+
+        let result = '';
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let charactersLength = characters.length;
+        for (let i = 0; i < 8; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+
+        let user = {}
+        user['username'] = result;
+        user["email"] = result + "@gmail.com";
+        user["password"] = "starwars";
+        user["active"] = false;
+        debugger
+        this.props.signup(user)
+        
+        debugger
+
     }
 
     //LOGGED IN!
@@ -109,7 +128,22 @@ class Greeting extends React.Component {
     };
 
     render() {
-        
+        if (this.props.currentUser) {
+            if (this.props.currentUser.active === true) {
+                this.dashboard()
+            } else if (this.props.currentUser.language_strength){
+                this.dashboard()
+            }
+            else {
+                this.props.history.replace('/register')
+            }
+        } else {
+            this.splashPage()
+        }
+                // if this.props.currentUser.active=== true
+                    // dashboard
+                // else
+                    // register
         return this.props.currentUser ? this.dashboard() : this.splashPage();
     }
 };
