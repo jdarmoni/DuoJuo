@@ -17,7 +17,7 @@ class Welcome extends React.Component {
         }
     }
     welcomeButton(){
-        debugger
+        
         this.props.history.replace('/')
     }
     render(){

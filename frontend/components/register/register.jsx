@@ -71,7 +71,6 @@ class Register extends React.Component {
         user["active"] = false;
         debugger
         this.props.signup(user)
-
     }
     render (){
         

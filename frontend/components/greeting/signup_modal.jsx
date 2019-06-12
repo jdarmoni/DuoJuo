@@ -51,7 +51,7 @@ class SignupModal extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let user; 
-        
+        debugger
         if (this.props.currentUser) {
             user = this.props.currentUser
             user["password"] = this.state.password
@@ -59,11 +59,13 @@ class SignupModal extends React.Component {
             user["email"] = this.state.email
             user["active"] = true;
             user["rupees"] = 2;
+            // return
+            // instead of returning, login this new user and then logout previous user.
         } else {
             // only hit this ELSE on clicking a language in register
             user = Object.assign({}, this.state);
         }
-        
+        // you create a second user if this.props.currentUser = true
         this.props.processForm(user);
 
     }

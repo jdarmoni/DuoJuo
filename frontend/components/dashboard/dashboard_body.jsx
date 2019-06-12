@@ -30,7 +30,7 @@ class DashboardBody extends React.Component {
         }
     }
     render() {
-        debugger
+        
         return (
             <>
             {/* // right side */}

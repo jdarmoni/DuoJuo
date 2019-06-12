@@ -460,7 +460,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-body-right-side"
       }, this.createProfile()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
@@ -1096,6 +1095,7 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user;
+      debugger;
 
       if (this.props.currentUser) {
         user = this.props.currentUser;
@@ -1103,11 +1103,13 @@ function (_React$Component) {
         user["username"] = this.state.username;
         user["email"] = this.state.email;
         user["active"] = true;
-        user["rupees"] = 2;
+        user["rupees"] = 2; // return
+        // instead of returning, login this new user and then logout previous user.
       } else {
         // only hit this ELSE on clicking a language in register
         user = Object.assign({}, this.state);
-      }
+      } // you create a second user if this.props.currentUser = true
+
 
       this.props.processForm(user);
     }
@@ -1560,7 +1562,6 @@ function (_React$Component) {
   }, {
     key: "welcomeButton",
     value: function welcomeButton() {
-      debugger;
       this.props.history.replace('/');
     }
   }, {

@@ -13,11 +13,10 @@ export default (state = {}, action) => {
             case RECEIVE_LANGUAGE:
                 return merge({}, state, { [action.language.id]: action.language });
                 
-            case RECEIVE_CURRENT_USER:
-                newState = merge({}, state);
-                newState[action.currentUser.id.languages] = { };
-                return newstate;
         default:
             return state;
     }
 };
+
+// when you create a new language, that will create an object; return a newState object where, in the key of languages, newLang.
+//  like: merge({}, state, {}) state where its keyed into currentuser.languages

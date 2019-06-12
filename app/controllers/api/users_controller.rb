@@ -3,18 +3,7 @@ class Api::UsersController < ApplicationController
     
     @user = User.new(user_params)
     # debugger
-    # @language_data = {user_params[:learning_language]: user_params[:learning_language]}
-    # @language = Language.new({
-    #   learning_language: user_params[:learning_language],
-    #   language_string: @user[:learning_language_string],
-    #   points: 0,
-    #   learning: true,
-    #   language: @user[:learning_language],
-    #   level: 0,
-    #   sentences_translated: 0,
-    #   to_next_level: 10
-    # })
-    # debugger
+    @language_data = {}
     @languages = [{
       # "streak": 0,
       "language_string": @user[:learning_language_string],
