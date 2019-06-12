@@ -60,7 +60,7 @@ class SignupModal extends React.Component {
             user["active"] = true;
             user["rupees"] = 2;
             this.props.updateUser(user)
-            debugger
+            
             return
             // instead of returning, update user info 
         } else {

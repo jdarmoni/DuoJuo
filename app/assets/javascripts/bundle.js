@@ -1143,7 +1143,6 @@ function (_React$Component) {
         user["active"] = true;
         user["rupees"] = 2;
         this.props.updateUser(user);
-        debugger;
         return; // instead of returning, update user info 
       } else {
         // only hit this ELSE on clicking a language in register
