@@ -170,7 +170,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var RECEIVE_USER = "RECEIVE_USER";
 var receiveUser = function receiveUser(user) {
-  debugger;
   return {
     type: RECEIVE_USER,
     user: user
@@ -178,7 +177,6 @@ var receiveUser = function receiveUser(user) {
 };
 var updateUser = function updateUser(user) {
   return function (dispatch) {
-    debugger;
     return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["updateUser"](user).then(function (user) {
       return dispatch(receiveUser(user));
     });
@@ -1133,7 +1131,6 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user;
-      debugger;
 
       if (this.props.currentUser) {
         user = this.props.currentUser;
@@ -1142,15 +1139,13 @@ function (_React$Component) {
         user["email"] = this.state.email;
         user["active"] = true;
         user["rupees"] = 2;
-        this.props.updateUser(user);
-        return; // instead of returning, update user info 
+        this.props.updateUser(user); // instead of returning, update user info 
       } else {
         // only hit this ELSE on clicking a language in register
-        user = Object.assign({}, this.state);
-      } // you create a second user if this.props.currentUser = true
+        user = Object.assign({}, this.state); // moved this up into the else
 
-
-      this.props.processForm(user);
+        this.props.processForm(user);
+      }
     }
   }, {
     key: "renderErrors",
