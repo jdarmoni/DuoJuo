@@ -58,33 +58,18 @@ class Register extends React.Component {
         } else if (language === "German") {
             language_ac ="ge"
         }
-        // new: 
+
         user["learning_language_string"] = language
         user["learning_language"] = language_ac;
         debugger
+        // create a new language object, pass language  down through register container
+
+        // setState for learning_language & string, then call updateUser based on the state. 
+
         this.props.updateUser(user)
         this.loggedIn()
-        // not signing up, just updating the currentUser
-
-
-        // old
-        // let result = '';
-        // let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        // let charactersLength = characters.length;
-        // for (let i = 0; i < 8; i++) {
-        //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        // }
-
-        // let user = {}
-        // user['username'] = result;
-        // user["email"] = result + "@gmail.com";
-        // user["password"] = "starwars";
-        // user["learning_language_string"] = language
-        // user["learning_language"] = language_ac;
-        // user["active"] = false;
-        // debugger
-        // this.props.signup(user)
     }
+    
     render (){
         
         this.loggedIn()

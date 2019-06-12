@@ -86,6 +86,73 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/language_actions.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/language_actions.js ***!
+  \**********************************************/
+/*! exports provided: RECEIVE_ALL_LANGUAGES, RECEIVE_LANGUAGE, receiveAllLanguages, receiveLanguage, requestAllLanguages, requestLanguage, createLanguage, updateLanguage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_LANGUAGES", function() { return RECEIVE_ALL_LANGUAGES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LANGUAGE", function() { return RECEIVE_LANGUAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllLanguages", function() { return receiveAllLanguages; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveLanguage", function() { return receiveLanguage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestAllLanguages", function() { return requestAllLanguages; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestLanguage", function() { return requestLanguage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguage", function() { return createLanguage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguage", function() { return updateLanguage; });
+/* harmony import */ var _util_language_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/language_api_util */ "./frontend/util/language_api_util.js");
+
+var RECEIVE_ALL_LANGUAGES = "RECEIVE_ALL_LANGUAGES";
+var RECEIVE_LANGUAGE = "RECEIVE_LANGUAGE";
+var receiveAllLanguages = function receiveAllLanguages(langauges) {
+  return {
+    type: RECEIVE_ALL_LANGUAGES,
+    languages: langauges
+  };
+};
+var receiveLanguage = function receiveLanguage(language) {
+  debugger;
+  return {
+    type: RECEIVE_LANGUAGE,
+    language: language
+  };
+};
+var requestAllLanguages = function requestAllLanguages() {
+  return function (dispatch) {
+    return _util_language_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchLanguages"]().then(function (languages) {
+      return dispatch(receiveAllLanguages(languages));
+    });
+  };
+};
+var requestLanguage = function requestLanguage(id) {
+  return function (dispatch) {
+    return _util_language_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchLanguage"](id).then(function (language) {
+      return dispatch(receiveLanguage(language));
+    });
+  };
+};
+var createLanguage = function createLanguage(language) {
+  return function (dispatch) {
+    debugger;
+    return _util_language_api_util__WEBPACK_IMPORTED_MODULE_0__["createLanguage"](language).then(function (language) {
+      debugger;
+      return dispatch(receiveLanguage(language));
+    });
+  };
+};
+var updateLanguage = function updateLanguage(languageId) {
+  return function (dispatch) {
+    return _util_language_api_util__WEBPACK_IMPORTED_MODULE_0__["updateLanguage"](languageId).then(function (language) {
+      return dispatch(receiveLanguage(language));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -1358,30 +1425,15 @@ function (_React$Component) {
         language_ac = "jp";
       } else if (language === "German") {
         language_ac = "ge";
-      } // new: 
-
+      }
 
       user["learning_language_string"] = language;
       user["learning_language"] = language_ac;
-      debugger;
+      debugger; // create a new language object, pass language  down through register container
+      // setState for learning_language & string, then call updateUser based on the state. 
+
       this.props.updateUser(user);
-      this.loggedIn(); // not signing up, just updating the currentUser
-      // old
-      // let result = '';
-      // let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      // let charactersLength = characters.length;
-      // for (let i = 0; i < 8; i++) {
-      //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-      // }
-      // let user = {}
-      // user['username'] = result;
-      // user["email"] = result + "@gmail.com";
-      // user["password"] = "starwars";
-      // user["learning_language_string"] = language
-      // user["learning_language"] = language_ac;
-      // user["active"] = false;
-      // debugger
-      // this.props.signup(user)
+      this.loggedIn();
     }
   }, {
     key: "render",
@@ -1773,10 +1825,13 @@ document.addEventListener('DOMContentLoaded', function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _user_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user_reducer */ "./frontend/reducers/user_reducer.js");
+/* harmony import */ var _languages_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./languages_reducer */ "./frontend/reducers/languages_reducer.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _user_reducer__WEBPACK_IMPORTED_MODULE_1__["default"] // users should point to a combined users
+  users: _user_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  languages: _languages_reducer__WEBPACK_IMPORTED_MODULE_2__["default"] // users should point to a combined users
 
 }));
 
@@ -1798,6 +1853,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 }));
+
+/***/ }),
+
+/***/ "./frontend/reducers/languages_reducer.js":
+/*!************************************************!*\
+  !*** ./frontend/reducers/languages_reducer.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_language_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/language_actions */ "./frontend/actions/language_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_2__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState;
+
+  switch (action.type) {
+    case _actions_language_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_LANGUAGES"]:
+      return action.languages;
+
+    case _actions_language_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LANGUAGE"]:
+      debugger;
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.language.id, action.language));
+
+    default:
+      return state;
+  }
+}); // when you create a new language, that will create an object; return a newState object where, in the key of languages, newLang.
+//  like: merge({}, state, {}) state where its keyed into currentuser.languages
 
 /***/ }),
 
