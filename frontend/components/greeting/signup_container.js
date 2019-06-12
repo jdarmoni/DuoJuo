@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
 import SignupModal from './signup_modal';
+import {updateUser} from '../../actions/user_actions'
 
 const mapStateToProps = ( state) => {
     
@@ -17,6 +18,7 @@ const mapStateToProps = ( state) => {
 const mapDispatchToProps = dispatch => {
     return {
         processForm: (user) => dispatch(signup(user)),
+        updateUser: (user)=> dispatch(updateUser(user))
     };
 };
 
