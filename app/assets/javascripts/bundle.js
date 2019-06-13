@@ -659,6 +659,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -691,6 +693,8 @@ function (_React$Component) {
   _createClass(FrenchCourseContent, [{
     key: "render",
     value: function render() {
+      var _React$createElement;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "course-content-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -703,35 +707,33 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "lessons-row-container"
+        className: "lessons-row-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        "class": "lesson-anchor-box",
+        className: "lesson-anchor-box",
         href: "javascript:;"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "_2albn"
+        className: "_2albn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "_3zkuO _39IKr"
+        className: "lesson-progress-rings"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "_2xGPj"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "_2xGPj"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", (_React$createElement = {
         height: "106",
         version: "1.1",
         width: "106",
-        xmlns: "http://www.w3.org/2000/svg",
-        xmlnsHref: "http://www.w3.org/1999/xlink",
+        xmlns: "http://www.w3.org/2000/svg"
+      }, _defineProperty(_React$createElement, "xmlns", "http://www.w3.org/1999/xlink"), _defineProperty(_React$createElement, "style", {
+        overflow: 'hidden',
+        position: 'relative',
+        left: '-0.934596px',
+        top: '-0.895924px'
+      }), _React$createElement), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("desc", {
         style: {
-          overflow: hidden,
-          position: relative,
-          left: '-0.934596px',
-          top: '-0.895924px'
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("desc", {
-        style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }, "Created with Rapha\xEBl 2.2.0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", {
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("linearGradient", {
         id: "ys2dy_________231.42857142857142-_ffd900:_________5-_ffd900-_ffd900:_________75-_ffd900_______",
@@ -741,35 +743,35 @@ function (_React$Component) {
         y2: "1",
         gradientTransform: "matrix(1,0,0,1,0,0)",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
         offset: "0%",
         stopColor: "#ffd900",
         stopOpacity: "1",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
         offset: "33.333333333333336%",
         stopColor: "#ffd900",
         stopOpacity: "1",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
         offset: "66.66666666666667%",
         stopColor: "#ffd900",
         stopOpacity: "1",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
         offset: "100%",
         stopColor: "#ffd900",
         stopOpacity: "1",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
         cx: "53",
@@ -779,7 +781,7 @@ function (_React$Component) {
         stroke: "#000",
         strokeWidth: "0",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         fill: "url('https://www.duolingo.com/#ys2dy_________231.42857142857142-_ffd900:_________5-_ffd900-_ffd900:_________75-_ffd900_______')",
@@ -789,7 +791,7 @@ function (_React$Component) {
         fillOpacity: "1",
         strokeWidth: "0",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0),
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)',
           opacity: 1,
           fillOpacity: 1
         }
@@ -799,7 +801,7 @@ function (_React$Component) {
         d: "M53,53L19.95504050148714,94.4370685708056A53,53,0,0,1,52.99999999999999,0A4,4,0,1,0,52.99999999999999,8Z",
         strokeWidth: "0",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
         cx: "22.44899970892205",
@@ -809,7 +811,7 @@ function (_React$Component) {
         stroke: "#000",
         strokeWidth: "0",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
         cx: "53",
@@ -819,7 +821,7 @@ function (_React$Component) {
         stroke: "#000",
         strokeWidth: "0",
         style: {
-          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
         }
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "course-image-span-container"
@@ -833,7 +835,7 @@ function (_React$Component) {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "_378Tf _3qO9M _33VdW"
-      }, "Basics 1")))))), "eggs", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "eggs"))));
+      }, "Basics 1"))))))))));
     }
   }]);
 
