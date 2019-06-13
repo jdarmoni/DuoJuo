@@ -709,18 +709,130 @@ function (_React$Component) {
         href: "javascript:;"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "_2albn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "course-image-span-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "_3zkuO _39IKr"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "_2xGPj"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        height: "106",
+        version: "1.1",
+        width: "106",
+        xmlns: "http://www.w3.org/2000/svg",
+        xmlnsHref: "http://www.w3.org/1999/xlink",
+        style: {
+          overflow: hidden,
+          position: relative,
+          left: '-0.934596px',
+          top: '-0.895924px'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("desc", {
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }, "Created with Rapha\xEBl 2.2.0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", {
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("linearGradient", {
+        id: "ys2dy_________231.42857142857142-_ffd900:_________5-_ffd900-_ffd900:_________75-_ffd900_______",
+        x1: "0.7974733888824044",
+        y1: "0",
+        x2: "0",
+        y2: "1",
+        gradientTransform: "matrix(1,0,0,1,0,0)",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
+        offset: "0%",
+        stopColor: "#ffd900",
+        stopOpacity: "1",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
+        offset: "33.333333333333336%",
+        stopColor: "#ffd900",
+        stopOpacity: "1",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
+        offset: "66.66666666666667%",
+        stopColor: "#ffd900",
+        stopOpacity: "1",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
+        offset: "100%",
+        stopColor: "#ffd900",
+        stopOpacity: "1",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+        cx: "53",
+        cy: "53",
+        r: "53",
+        fill: "#ffd900",
+        stroke: "#000",
+        strokeWidth: "0",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        fill: "url('https://www.duolingo.com/#ys2dy_________231.42857142857142-_ffd900:_________5-_ffd900-_ffd900:_________75-_ffd900_______')",
+        stroke: "#000000",
+        d: "M53,53L94.43706857080556,86.0449594985129A53,53,0,0,1,19.955040501487105,94.43706857080556Z",
+        opacity: "1",
+        fillOpacity: "1",
+        strokeWidth: "0",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0),
+          opacity: 1,
+          fillOpacity: 1
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        fill: "#e5e5e5",
+        stroke: "#000000",
+        d: "M53,53L19.95504050148714,94.4370685708056A53,53,0,0,1,52.99999999999999,0A4,4,0,1,0,52.99999999999999,8Z",
+        strokeWidth: "0",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+        cx: "22.44899970892205",
+        cy: "91.30974264093345",
+        r: "4",
+        fill: "#ffd900",
+        stroke: "#000",
+        strokeWidth: "0",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+        cx: "53",
+        cy: "53",
+        r: "45",
+        fill: "#ffffff",
+        stroke: "#000",
+        strokeWidth: "0",
+        style: {
+          "-webkit-tap-highlight-color": rgba(0, 0, 0, 0)
+        }
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "course-image-span-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "course-image-span"
+        className: "course-image-span"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "course-crown-div"
+        className: "course-crown-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         alt: "crown",
-        "class": "course-crown-image",
+        className: "course-crown-image",
         src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "_378Tf _3qO9M _33VdW"
+        className: "_378Tf _3qO9M _33VdW"
       }, "Basics 1")))))), "eggs", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "eggs"))));
     }
   }]);
