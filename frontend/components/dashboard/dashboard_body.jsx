@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import SignupContainer from '../greeting/signup_container'
 import LoginModalContainer from '../greeting/login_modal_container'
+import FrenchCourseContent from '../french_courses/french_course_content'
 
 class DashboardBody extends React.Component {
     constructor(props) {
@@ -32,16 +33,20 @@ class DashboardBody extends React.Component {
         
         return (
             <>
-            {/* // right side */}
-            <div className="dashboard-body-right-side">
-                {this.createProfile()}
-                
-            </div>
+                <div className="dashboard-body-wrapper">
 
-            {/* // left side */}
-            <div>
-            {/* this is where the course modules will go */}
-            </div>
+                    {/* // right side */}
+                    <div className="dashboard-body-right-side">
+                        {this.createProfile()}
+                        
+                    </div>
+
+                    {/* // left side */}
+                    <div>
+                            <FrenchCourseContent/>
+                    {/* this is where the course modules will go */}
+                    </div>
+                </div>
         </>
         )
     } 

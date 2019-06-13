@@ -157,7 +157,7 @@
 .dashboard-body {
     cursor: default;
     margin: 94px auto 0!important;
-    max-width: 1140px;
+    max-width: 91%;
     min-width: 900px;
 }
 .dashboard-body-right-side {
@@ -206,3 +206,4 @@
     text-transform: uppercase;
     width: 100%;
 }
+
