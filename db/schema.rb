@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_203352) do
+ActiveRecord::Schema.define(version: 2019_06_12_234742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_06_09_203352) do
     t.integer "level", null: false
     t.integer "sentences_translated", null: false
     t.integer "to_next_level", null: false
+    t.integer "user_id"
+    t.index ["user_id", "language_string"], name: "index_languages_on_user_id_and_language_string", unique: true
   end
 
   create_table "users", force: :cascade do |t|

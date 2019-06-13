@@ -51,6 +51,9 @@ class LoginModal extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
+        // if (this.props.currentUser) {
+            // this.props.logout(this.props.currentUser)
+        // }
         this.props.processForm(user);
         
     }
