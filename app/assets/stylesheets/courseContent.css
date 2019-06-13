@@ -1,5 +1,42 @@
 .course-content-container {
     margin-right: 404px;
     height: 100px;
+}
+.course-module-container {
+    border: 0!important;
+    margin-bottom: 30px;
+    padding: 0 0 24px;
+    margin: 0 24px 24px;
+}
+.skill-tree {
+    padding-bottom: 0;
+}
 
+.global-practice {
+        background: none;
+    /* color: #afafaf; */
+    border-color: #e5e5e5;
+    border-width: 2px 2px 4px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 40px;
+    border-style: solid;
+    bottom: 40px;
+    right: auto;
+    height: 72px;
+    width: 72px;
+    z-index: 199;
+    padding: 0!important;
+    position: fixed;
+}
+
+.global-practice:hover {
+        background-color:#afafafb5;
+}
+
+.global-practice img {
+        height: 32px;
+    margin-top: 18px;
 }

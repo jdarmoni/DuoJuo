@@ -693,7 +693,16 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "course-content-container"
-      }, "eggs");
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "course-module-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-tree"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "global-practice",
+        href: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
+      })), "eggs", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "eggs"))));
     }
   }]);
 
