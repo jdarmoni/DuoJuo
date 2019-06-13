@@ -14,14 +14,18 @@ class Api::LanguagesController < ApplicationController
     def show
     end
 
+    # Language.new({ language: "fr", language_string: "French", learning: true, level: 0, points: 0, sentences_translated: 0, streak: 0, to_next_level: 10})
+    
+
+
     def update
     end
 
     private
 
     def lang_params
-        # removed require PROBABLY bc you've been doing it on the window, not through actions, and doont have lang key
-        params.permit(:streak, :language_string, :points, :learning, :language, :level, :sentences_translated, :to_next_level)
+        # removed require PROBABLY bc you've been doing it on the window, not through actions, and doont have lang key  
+        params.permit(:streak, :language_string, :points, :learning, :language, :level, :sentences_translated, :to_next_level, :user_id)
     end
 end
 

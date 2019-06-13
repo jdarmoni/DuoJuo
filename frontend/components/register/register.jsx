@@ -48,6 +48,7 @@ class Register extends React.Component {
         let language = event.currentTarget.children[0].children[1].innerText;
         let language_ac; 
         let user = this.props.currentUser
+        let newLang ={};
         debugger
         if (language === "French") {
             language_ac = "fr"
@@ -61,9 +62,18 @@ class Register extends React.Component {
 
         user["learning_language_string"] = language
         user["learning_language"] = language_ac;
-        debugger
         // create a new language object, pass language  down through register container
-
+        newLang['streak'] = 0;
+        newLang['language_string'] = language;
+        newLang['points'] = 0;
+        newLang['learning'] = true;
+        newLang['language'] = language_ac;
+        newLang['level'] = 0;
+        newLang['sentences_translated'] = 0;
+        newLang['to_next_level'] = 10;
+        newLang['user_id'] = this.props.currentUser.id
+        this.props.createLanguage(newLang)
+        debugger
         // setState for learning_language & string, then call updateUser based on the state. 
 
         this.props.updateUser(user)

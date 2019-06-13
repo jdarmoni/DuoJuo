@@ -1418,6 +1418,7 @@ function (_React$Component) {
       var language = event.currentTarget.children[0].children[1].innerText;
       var language_ac;
       var user = this.props.currentUser;
+      var newLang = {};
       debugger;
 
       if (language === "French") {
@@ -1431,9 +1432,19 @@ function (_React$Component) {
       }
 
       user["learning_language_string"] = language;
-      user["learning_language"] = language_ac;
-      debugger; // create a new language object, pass language  down through register container
-      // setState for learning_language & string, then call updateUser based on the state. 
+      user["learning_language"] = language_ac; // create a new language object, pass language  down through register container
+
+      newLang['streak'] = 0;
+      newLang['language_string'] = language;
+      newLang['points'] = 0;
+      newLang['learning'] = true;
+      newLang['language'] = language_ac;
+      newLang['level'] = 0;
+      newLang['sentences_translated'] = 0;
+      newLang['to_next_level'] = 10;
+      newLang['user_id'] = this.props.currentUser.id;
+      this.props.createLanguage(newLang);
+      debugger; // setState for learning_language & string, then call updateUser based on the state. 
 
       this.props.updateUser(user);
       this.loggedIn();
@@ -1543,6 +1554,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _register__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./register */ "./frontend/components/register/register.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_language_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/language_actions */ "./frontend/actions/language_actions.js");
+
 
 
 
@@ -1565,6 +1578,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     updateUser: function updateUser(user) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_5__["updateUser"])(user));
+    },
+    createLanguage: function createLanguage(language) {
+      return dispatch(Object(_actions_language_actions__WEBPACK_IMPORTED_MODULE_6__["createLanguage"])(language));
     }
   };
 };
@@ -31386,7 +31402,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
