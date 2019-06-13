@@ -40,3 +40,54 @@
         height: 32px;
     margin-top: 18px;
 }
+.lessons-row-container {
+        margin-bottom: 40px;
+        text-align: center;
+}
+.lesson-anchor-box {
+     width: 144px;
+    color: #3c3c3c;
+    display: inline-block;
+    min-width: 100px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;   
+}
+
+.course-image-span-container{
+    background: #ce82ff;
+    position: relative;
+    z-index: 1;
+    height: 72px;
+    width: 72px;
+    border-radius: 98px;
+    display: inline-block;
+    height: 62px;
+    margin: 8px 0 25px;
+    width: 62px;
+    cursor: pointer;
+}
+
+.course-image-span{
+    display: inline-block;
+    background-position: 0 0;
+    background-size: 72px;
+    height: 72px;
+    width: 72px;
+    background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/skills-purple.svg);
+}
+.course-crown-div {
+    bottom: -20px;
+    position: absolute;
+    right: -24px;
+    color: transparent;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.course-crown-image {
+        color: transparent;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}

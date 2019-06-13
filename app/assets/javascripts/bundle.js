@@ -702,7 +702,26 @@ function (_React$Component) {
         href: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
-      })), "eggs", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "eggs"))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "lessons-row-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        "class": "lesson-anchor-box",
+        href: "javascript:;"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "_2albn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "class": "course-image-span-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "class": "course-image-span"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "course-crown-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "crown",
+        "class": "course-crown-image",
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "class": "_378Tf _3qO9M _33VdW"
+      }, "Basics 1")))))), "eggs", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "eggs"))));
     }
   }]);
 
