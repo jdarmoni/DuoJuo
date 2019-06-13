@@ -16,10 +16,9 @@ class DashboardBody extends React.Component {
     createProfile(){
         if (this.props.currentUser.active === false) {
 
-            // FOR TOMORROW: add tmp: boolean migration
             return (
                 
-                <div className="dashboard-body-create-profile">
+        <div className="dashboard-body-create-profile">
             <h2>Create a profile to save your progress!</h2>
             <button className="dashboard-create-a-profile-button" id="signup-button">create a profile</button>
             <button className="dashboard-login-button" id="login-button">Sign In</button>
@@ -41,7 +40,7 @@ class DashboardBody extends React.Component {
 
             {/* // left side */}
             <div>
-
+            {/* this is where the course modules will go */}
             </div>
         </>
         )
