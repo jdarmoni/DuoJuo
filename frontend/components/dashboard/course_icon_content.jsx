@@ -1,13 +1,25 @@
 import React from 'react'
-import Basics1Container from './basics_1_container'
-import Basics2 from './basics_2'
-import Row3 from './row_3'
-class FrenchCourseContent extends React.Component {
+import Basics1Container from '../french_courses/basics_1_container'
+import Basics2 from '../french_courses/basics_2'
+import Row3 from '../french_courses/row_3'
+
+class CourseIconContent extends React.Component {
     constructor(props){
         super(props)
     }
-
+    languages(){
+        // if (this.props.currentLanguage === french) {
+            return (
+                <>
+                <Basics1Container />
+                <Basics2 />
+                <Row3 />
+                </>
+            )
+        
+    }
     render(){
+        debugger
         return (
             // convert into component
             <div className="course-content-container">
@@ -17,7 +29,8 @@ class FrenchCourseContent extends React.Component {
                             <a className="global-practice" href="/">
                                 <img src="//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg" />
                             </a>
-                            {/* for one module */}
+
+                            {/* eventually this.languages() */}
                             <Basics1Container />
                             <Basics2 />
                             <Row3 />
@@ -30,4 +43,4 @@ class FrenchCourseContent extends React.Component {
     }
 }
 
-export default FrenchCourseContent
+export default CourseIconContent

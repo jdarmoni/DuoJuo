@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import SignupContainer from '../greeting/signup_container'
 import LoginModalContainer from '../greeting/login_modal_container'
-import FrenchCourseContent from '../french_courses/french_course_content'
+import CourseIconContainer from './course_icon_container'
 
 class DashboardBody extends React.Component {
     constructor(props) {
@@ -43,7 +43,7 @@ class DashboardBody extends React.Component {
 
                     {/* // left side */}
                     <div>
-                            <FrenchCourseContent/>
+                            <CourseIconContainer/>
                     {/* this is where the course modules will go */}
                     </div>
                 </div>
