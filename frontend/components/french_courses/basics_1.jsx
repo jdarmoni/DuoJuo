@@ -5,13 +5,38 @@ class Basics1 extends React.Component{
     constructor(props) {
         super(props)
     }
+    componentDidMount(){
+        const modal = document.getElementById("skm-bscs1");
+
+        // Get the button that opens the modal
+        const btn = document.getElementById("bscs1-a");
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+           
+             if (event.target == modal) {
+                
+                modal.style.display = "none";
+            }
+        }
+
+
+        btn.onclick = function () {
+            
+            modal.style.display = "block";
+            return
+        }
+
+        // When the user clicks on the button, open the modal 
+        
+    }
 
     render () {
         return (
 
         
         <div className="lessons-row-container">
-            <a className="lesson-anchor-box" href="javascript:;">
+            <a className="lesson-anchor-box" id="bscs1-a" href="javascript:;">
                 <div className="_2albn">
                     <div>
                         <div className="lesson-progress-rings">

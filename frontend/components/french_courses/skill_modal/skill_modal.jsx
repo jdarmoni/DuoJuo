@@ -1,10 +1,10 @@
 import React from 'react';
 
 const SkillModal = ()=> {
-
+        
     return (
         
-    <div className="skill-modal-container skm-pointer">
+    <div className="skill-modal-container skm-pointer" id="skm-bscs1">
         <div>
             <div className="skill-modal-icon-containers">
                 <button className="skill-modal-button">

@@ -15,7 +15,7 @@
     min-width: 200px;
     position: absolute;
     border-radius: 16px;
-    display: block;
+    display: none;
 }
 .skm-pointer::after {
     border-bottom: 10px solid #ce82ff!important;

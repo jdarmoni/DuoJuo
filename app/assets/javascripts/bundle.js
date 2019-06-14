@@ -811,6 +811,25 @@ function (_React$Component) {
   }
 
   _createClass(Basics1, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
+
+      var btn = document.getElementById("bscs1-a"); // When the user clicks anywhere outside of the modal, close it
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      btn.onclick = function () {
+        modal.style.display = "block";
+        return;
+      }; // When the user clicks on the button, open the modal 
+
+    }
+  }, {
     key: "render",
     value: function render() {
       var _React$createElement;
@@ -819,6 +838,7 @@ function (_React$Component) {
         className: "lessons-row-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "lesson-anchor-box",
+        id: "bscs1-a",
         href: "javascript:;"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "_2albn"
@@ -1633,7 +1653,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var SkillModal = function SkillModal() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "skill-modal-container skm-pointer"
+    className: "skill-modal-container skm-pointer",
+    id: "skm-bscs1"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "skill-modal-icon-containers"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
