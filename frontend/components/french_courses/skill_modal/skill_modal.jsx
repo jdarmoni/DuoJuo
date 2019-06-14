@@ -16,7 +16,7 @@ const SkillModal = ()=> {
             </div>
             <div className="skill-modal-info">
                 <div className="_1eGmL">
-                    eggs
+                    Level {1}
                     {/* <!-- react-text: 15102 -->Level<!-- /react-text --><!-- react-text: 15103 --> <!-- /react-text --><!-- react-text: 15104 -->0/5<!-- /react-text --> */}
                 </div>
                 <div className="skill-modal-complete">{}% Complete</div>

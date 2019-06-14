@@ -1673,7 +1673,7 @@ var SkillModal = function SkillModal() {
     className: "skill-modal-info"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "_1eGmL"
-  }, "eggs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Level ", 1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "skill-modal-complete"
   }, "% Complete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "skm-start-btn-container"

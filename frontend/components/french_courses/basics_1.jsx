@@ -13,16 +13,12 @@ class Basics1 extends React.Component{
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
-           
              if (event.target == modal) {
-                
                 modal.style.display = "none";
             }
         }
 
-
         btn.onclick = function () {
-            
             modal.style.display = "block";
             return
         }
@@ -33,7 +29,6 @@ class Basics1 extends React.Component{
 
     render () {
         return (
-
         
         <div className="lessons-row-container">
             <a className="lesson-anchor-box" id="bscs1-a" href="javascript:;">
