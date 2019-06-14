@@ -646,10 +646,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/french_courses/french_course_content.jsx":
-/*!**********************************************************************!*\
-  !*** ./frontend/components/french_courses/french_course_content.jsx ***!
-  \**********************************************************************/
+/***/ "./frontend/components/french_courses/basics_1.jsx":
+/*!*********************************************************!*\
+  !*** ./frontend/components/french_courses/basics_1.jsx ***!
+  \*********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -679,34 +679,23 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var FrenchCourseContent =
+var Basics1 =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(FrenchCourseContent, _React$Component);
+  _inherits(Basics1, _React$Component);
 
-  function FrenchCourseContent(props) {
-    _classCallCheck(this, FrenchCourseContent);
+  function Basics1(props) {
+    _classCallCheck(this, Basics1);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(FrenchCourseContent).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Basics1).call(this, props));
   }
 
-  _createClass(FrenchCourseContent, [{
+  _createClass(Basics1, [{
     key: "render",
     value: function render() {
       var _React$createElement;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "course-content-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "course-module-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "skill-tree"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "global-practice",
-        href: "/"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lessons-row-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "lesson-anchor-box",
@@ -835,7 +824,110 @@ function (_React$Component) {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "_378Tf _3qO9M _33VdW"
-      }, "Basics 1"))))))))));
+      }, "Basics 1"))))));
+    }
+  }]);
+
+  return Basics1;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Basics1);
+
+/***/ }),
+
+/***/ "./frontend/components/french_courses/basics_1_container.js":
+/*!******************************************************************!*\
+  !*** ./frontend/components/french_courses/basics_1_container.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _basics_1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basics_1 */ "./frontend/components/french_courses/basics_1.jsx");
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  debugger;
+  return {
+    users: Object.values(state.entities.users),
+    session: Object.values(state.session),
+    currentUser: state.entities.users[state.session.id],
+    languages: state.entities.languages
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_basics_1__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/french_courses/french_course_content.jsx":
+/*!**********************************************************************!*\
+  !*** ./frontend/components/french_courses/french_course_content.jsx ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _basics_1_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basics_1_container */ "./frontend/components/french_courses/basics_1_container.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var FrenchCourseContent =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(FrenchCourseContent, _React$Component);
+
+  function FrenchCourseContent(props) {
+    _classCallCheck(this, FrenchCourseContent);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(FrenchCourseContent).call(this, props));
+  }
+
+  _createClass(FrenchCourseContent, [{
+    key: "render",
+    value: function render() {
+      return (// convert into component
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "course-content-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "course-module-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-tree"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "global-practice",
+          href: "/"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_basics_1_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))))
+      );
     }
   }]);
 
