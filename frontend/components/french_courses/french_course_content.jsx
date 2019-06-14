@@ -1,6 +1,7 @@
 import React from 'react'
 import Basics1Container from './basics_1_container'
-
+import Basics2 from './basics_2'
+import Row3 from './row_3'
 class FrenchCourseContent extends React.Component {
     constructor(props){
         super(props)
@@ -18,7 +19,8 @@ class FrenchCourseContent extends React.Component {
                             </a>
                             {/* for one module */}
                             <Basics1Container />
-
+                            <Basics2 />
+                            <Row3 />
                             
                         </div>
                     </div>

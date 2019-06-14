@@ -100,3 +100,22 @@
     font-size: 15px;
     text-align: center;
 }
+
+.bscs1{
+        /* background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/skills-purple.svg); */
+        background-position: 0 0px;
+}
+.bscs2{
+       /* background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/skills-purple.svg); */
+       background-position: 0 -72px;
+}
+.grtngs{
+        background-position: 0 -2160px;
+}
+.people {
+        background-position: 0 -2448px;
+}
+.travel {
+        background-position: 0 -2520px;
+
+}
