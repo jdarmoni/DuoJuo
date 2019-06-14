@@ -4,8 +4,8 @@ const SkillModal = ()=> {
 
     return (
         
-        <div className="_2EYQL _3zOQV _2HujR _1ZY-H _2Y0wx _2JTTg">
-        <div>
+        <div className="skill-modal-container">
+            <div>
             <div className="_2dtnx">
                 <button className="_1FxPb _3RFcO _3hso2 _2vmUZ _1X3l0 eJd0I _3yrdh _2wXoR _1AM95 _2PUh7 H7AnT">
                     <img alt="Tips and notes" className="rwFvx" src="//d35aaqx5ub95lt.cloudfront.net/images/explanations-lightbulb.svg"/>

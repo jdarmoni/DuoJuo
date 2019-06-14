@@ -1633,7 +1633,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var SkillModal = function SkillModal() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "_2EYQL _3zOQV _2HujR _1ZY-H _2Y0wx _2JTTg"
+    className: "skill-modal-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "_2dtnx"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

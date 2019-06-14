@@ -1,0 +1,18 @@
+.skill-modal-container {
+    margin-left: -75px;
+    width: 300px;
+    animation-duration: .3s;
+    animation-name: L;
+    border: 0!important;
+    color: #fff;
+    cursor: default;
+    margin-top: 20px;
+    padding: 24px;
+    -ms-transform-origin: center top;
+    transform-origin: center top;
+    z-index: 201;
+    background: #ce82ff;
+        min-width: 200px;
+    position: absolute;
+    border-radius: 16px;
+}
