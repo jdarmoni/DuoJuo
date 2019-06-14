@@ -1,4 +1,5 @@
 import React from 'react'
+import SkillModal from './skill_modal/skill_modal'
 
 class Basics1 extends React.Component{
     constructor(props) {
@@ -39,6 +40,7 @@ class Basics1 extends React.Component{
                             <span className="_378Tf _3qO9M _33VdW">Basics 1</span>
                         </div>
                     </div>
+                    <SkillModal />
                 </div>
             </a>
         </div>
@@ -47,3 +49,5 @@ class Basics1 extends React.Component{
 }
 
 export default Basics1 
+
+    
