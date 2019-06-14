@@ -1,6 +1,6 @@
 .skill-modal-container {
     margin-left: -75px;
-    width: 300px;
+    width: 250px;
     animation-duration: .3s;
     animation-name: L;
     border: 0!important;
@@ -12,7 +12,83 @@
     transform-origin: center top;
     z-index: 201;
     background: #ce82ff;
-        min-width: 200px;
+    min-width: 200px;
     position: absolute;
     border-radius: 16px;
+    display: block;
+}
+.skm-pointer::after {
+    border-bottom: 10px solid #ce82ff!important;
+    left: 50%!important;
+    top: -20px;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+.skill-modal-icon-containers {
+    float: right;
+}
+.skill-modal-button {
+    background: none;
+    color: #fff;
+    border-width: 2px 2px 4px;
+    border-color: #a568cc;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 16px;
+    border-style: solid;
+    flex-grow: 0;
+    height: 48px;
+    margin-left: 8px;
+    padding: 5px 0 0!important;
+    width: 48px;
+}
+.light-bulb-img{
+    height: 26px;
+    width: 21px;
+}
+.key-img {
+    height: 26px;
+    width: 21px;
+}
+.skill-modal-info{
+    text-align: left;
+}
+.skill-modal-complete{
+    padding-top: 5px;
+        font: 500 17px/20px sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+.skm-start-btn-container{
+        display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 24px;
+}
+.skm-start-btn {
+        color: #ce82ff;
+            border-width: 0 0 4px;    
+    padding: 13px 16px;
+    font-size: 15px;
+    line-height: 20px;
+        display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 16px;
+    border-style: solid;
+        font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    border-color: hsl(277, 100%, 88%);
+    flex-grow: 1;
 }

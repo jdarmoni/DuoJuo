@@ -1633,31 +1633,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var SkillModal = function SkillModal() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "skill-modal-container"
+    className: "skill-modal-container skm-pointer"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "_2dtnx"
+    className: "skill-modal-icon-containers"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "_1FxPb _3RFcO _3hso2 _2vmUZ _1X3l0 eJd0I _3yrdh _2wXoR _1AM95 _2PUh7 H7AnT"
+    className: "skill-modal-button"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     alt: "Tips and notes",
-    className: "rwFvx",
+    className: "light-bulb-img",
     src: "//d35aaqx5ub95lt.cloudfront.net/images/explanations-lightbulb.svg"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "_1FxPb _3RFcO _3hso2 _2vmUZ _1X3l0 eJd0I _3yrdh _2wXoR _1AM95 _2PUh7 H7AnT"
+    className: "skill-modal-button"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     alt: "Test out of level 0",
-    className: "_3Gihx",
+    className: "key-img",
     src: "//d35aaqx5ub95lt.cloudfront.net/images/key.svg"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "I1Bp8"
+    className: "skill-modal-info"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "_1eGmL"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "_2yvEQ"
+  }, "eggs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "skill-modal-complete"
   }, "% Complete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "IeiLn"
+    className: "skm-start-btn-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "_1N4Qn _2arQ0 _2vmUZ _1X3l0 eJd0I _3yrdh _2wXoR _1AM95 _1dlWz mucpb _3ntRm"
+    className: "skm-start-btn"
   }, "Start"))));
 };
 
