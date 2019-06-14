@@ -57,7 +57,7 @@
 .course-image-span-container{
     background: #ce82ff;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
     height: 72px;
     width: 72px;
     border-radius: 98px;
@@ -81,13 +81,13 @@
     color: transparent;
     height: 50px;
     width: 50px;
-    z-index: 1;
+    /* z-index: 1; */
 }
 .course-crown-image {
         color: transparent;
     height: 100%;
     width: 100%;
-    z-index: 1;
+    /* z-index: 1; */
 }
 .lesson-progress-rings {
         left: calc(50% - 90px / 2);
