@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import Basics2 from './basics_2';
+import Row3 from './row_3';
 
 const mapStateToProps = (state) => {
-
+    
     return {
         users: Object.values(state.entities.users),
         // session: Object.values(state.session),
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Basics2);
+)(Row3);

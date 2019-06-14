@@ -850,7 +850,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
