@@ -1,5 +1,5 @@
 class LanguageData < ApplicationRecord 
-    validates :streak, :language_string, :points, :learning, :language, :level, :sentences_translated, :to_next_level, presence: true
+    validates :streak, :user_id, :language_string, :points, :learning, :language, :level, :sentences_translated, :to_next_level, presence: true
 
     belongs_to :user,
         primary_key: :id,
