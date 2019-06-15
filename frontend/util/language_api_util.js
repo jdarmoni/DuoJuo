@@ -13,7 +13,7 @@ export const fetchLanguage =(id)=>{
 }
 
 export const createLanguage = (language)=> {
-    debugger
+    
     return $.ajax({
         method: 'post',
         url: `/api/languages/`,

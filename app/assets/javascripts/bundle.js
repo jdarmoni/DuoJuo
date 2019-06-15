@@ -3246,7 +3246,6 @@ var fetchLanguage = function fetchLanguage(id) {
   });
 };
 var createLanguage = function createLanguage(language) {
-  debugger;
   return $.ajax({
     method: 'post',
     url: "/api/languages/",
