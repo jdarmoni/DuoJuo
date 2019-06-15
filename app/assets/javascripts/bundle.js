@@ -775,7 +775,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _skill_modal_skill_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_modal/skill_modal */ "./frontend/components/french_courses/skill_modal/skill_modal.jsx");
+/* harmony import */ var _skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_modal/skill_modal_container */ "./frontend/components/french_courses/skill_modal/skill_modal_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -815,7 +815,8 @@ function (_React$Component) {
     value: function componentDidMount() {
       var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
 
-      var btn = document.getElementById("bscs1-a"); // When the user clicks anywhere outside of the modal, close it
+      var btn = document.getElementById("bscs1-a");
+      debugger; // When the user clicks anywhere outside of the modal, close it
 
       window.onclick = function (event) {
         if (event.target == modal) {
@@ -826,14 +827,14 @@ function (_React$Component) {
       btn.onclick = function () {
         modal.style.display = "block";
         return;
-      }; // When the user clicks on the button, open the modal 
-
+      };
     }
   }, {
     key: "render",
     value: function render() {
       var _React$createElement;
 
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lessons-row-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -964,7 +965,9 @@ function (_React$Component) {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "_378Tf _3qO9M _33VdW"
-      }, "Basics 1"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
+      }, "Basics 1"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        idt: "skm-bscs1"
+      }))));
     }
   }]);
 
@@ -1649,40 +1652,101 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-var SkillModal = function SkillModal() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "skill-modal-container skm-pointer",
-    id: "skm-bscs1"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "skill-modal-icon-containers"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "skill-modal-button"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    alt: "Tips and notes",
-    className: "light-bulb-img",
-    src: "//d35aaqx5ub95lt.cloudfront.net/images/explanations-lightbulb.svg"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "skill-modal-button"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    alt: "Test out of level 0",
-    className: "key-img",
-    src: "//d35aaqx5ub95lt.cloudfront.net/images/key.svg"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "skill-modal-info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "_1eGmL"
-  }, "Level ", 1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "skill-modal-complete"
-  }, "% Complete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "skm-start-btn-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "skm-start-btn"
-  }, "Start"))));
-};
+
+var SkillModal =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SkillModal, _React$Component);
+
+  function SkillModal(props) {
+    _classCallCheck(this, SkillModal);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SkillModal).call(this, props));
+  }
+
+  _createClass(SkillModal, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-modal-container skm-pointer",
+        id: this.props.idt
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-modal-icon-containers"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "skill-modal-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "Tips and notes",
+        className: "light-bulb-img",
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/explanations-lightbulb.svg"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "skill-modal-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "Test out of level 0",
+        className: "key-img",
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/key.svg"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-modal-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "_1eGmL"
+      }, "Level ", 1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-modal-complete"
+      }, "% Complete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skm-start-btn-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "skm-start-btn"
+      }, "Start"))));
+    }
+  }]);
+
+  return SkillModal;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (SkillModal);
+
+/***/ }),
+
+/***/ "./frontend/components/french_courses/skill_modal/skill_modal_container.js":
+/*!*********************************************************************************!*\
+  !*** ./frontend/components/french_courses/skill_modal/skill_modal_container.js ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _skill_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_modal */ "./frontend/components/french_courses/skill_modal/skill_modal.jsx");
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_skill_modal__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
