@@ -1,8 +1,8 @@
 class Api::LanguageDataController < ApplicationController
+    
     def create
-        debugger
         @newLanguage = LanguageData.new(lang_data_params)
-        debugger
+
         if @newLanguage.save
             render :show
         end

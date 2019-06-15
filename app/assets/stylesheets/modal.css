@@ -47,7 +47,6 @@
         display: table-row;
 }
 .login-modal-label input {
-    outline: none;
     padding: 8px 0 8px 20px;
     width: 100%;
     background: transparent!important;
@@ -78,7 +77,6 @@
     letter-spacing: .8px;
     text-transform: uppercase;
     cursor: pointer;
-    outline: none;
 }
 /* The Close Button */
 .close-login {
