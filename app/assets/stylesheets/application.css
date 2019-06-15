@@ -38,6 +38,9 @@ h2 {
     line-height: 26px;
     margin: 0 0 25px;
 }
+button {
+    outline: none;
+}
 body {
     margin: 0px;
     font: 700 17px/20px sans-serif;
