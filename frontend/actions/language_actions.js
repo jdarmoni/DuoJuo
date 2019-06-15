@@ -11,7 +11,7 @@ export const receiveAllLanguages=(langauges)=>{
 }
 
 export const receiveLanguage = (language) =>{
-    debugger
+    
     return ({
         type: RECEIVE_LANGUAGE,
         language: language
@@ -34,10 +34,10 @@ export const requestLanguage = (id)=> (dispatch) =>{
 }
 
 export const createLanguage = (language)=> (dispatch)=>{
-    debugger
+    
     return (
         APIUtil.createLanguage(language).then((language)=>{
-            debugger
+            
             return dispatch(receiveLanguage(language))
         })
     )

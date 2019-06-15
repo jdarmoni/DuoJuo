@@ -49,7 +49,7 @@ class Register extends React.Component {
         let language_ac; 
         let user = this.props.currentUser
         let newLang ={};
-        debugger
+        
         if (language === "French") {
             language_ac = "fr"
         } else if (language === "Spanish") {
@@ -72,10 +72,19 @@ class Register extends React.Component {
         newLang['sentences_translated'] = 0;
         newLang['to_next_level'] = 10;
         newLang['user_id'] = this.props.currentUser.id
-        this.props.createLanguage(newLang)
-        // this.props.createLanguage_Date(lang_data) - then make an association with users and render it in the Json
+        this.props.createLanguage(newLang);
+        let newLangData = {}
+        newLangData = newLang
         debugger
-        // setState for learning_language & string, then call updateUser based on the state. 
+        newLangData['level_percent'] = 0;
+        newLangData['max_level'] = false;
+        newLangData['language_strength'] = 0;
+        newLangData['fluency_score'] = 0;
+        newLangData['first_time'] = false;
+        debugger
+
+        this.props.createLanguageData(newLangData) 
+        debugger
 
         this.props.updateUser(user)
         this.loggedIn()

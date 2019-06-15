@@ -114,7 +114,6 @@ var receiveAllLanguages = function receiveAllLanguages(langauges) {
   };
 };
 var receiveLanguage = function receiveLanguage(language) {
-  debugger;
   return {
     type: RECEIVE_LANGUAGE,
     language: language
@@ -136,9 +135,7 @@ var requestLanguage = function requestLanguage(id) {
 };
 var createLanguage = function createLanguage(language) {
   return function (dispatch) {
-    debugger;
     return _util_language_api_util__WEBPACK_IMPORTED_MODULE_0__["createLanguage"](language).then(function (language) {
-      debugger;
       return dispatch(receiveLanguage(language));
     });
   };
@@ -147,6 +144,40 @@ var updateLanguage = function updateLanguage(languageId) {
   return function (dispatch) {
     return _util_language_api_util__WEBPACK_IMPORTED_MODULE_0__["updateLanguage"](languageId).then(function (language) {
       return dispatch(receiveLanguage(language));
+    });
+  };
+};
+
+/***/ }),
+
+/***/ "./frontend/actions/language_data_actions.js":
+/*!***************************************************!*\
+  !*** ./frontend/actions/language_data_actions.js ***!
+  \***************************************************/
+/*! exports provided: RECEIVE_LANGUAGE_DATA, receiveLanguageData, createLanguageData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LANGUAGE_DATA", function() { return RECEIVE_LANGUAGE_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveLanguageData", function() { return receiveLanguageData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
+/* harmony import */ var _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/language_data_api_util */ "./frontend/util/language_data_api_util.js");
+
+var RECEIVE_LANGUAGE_DATA = "RECEIVE_LANGUAGE_DATA";
+var receiveLanguageData = function receiveLanguageData(language_data) {
+  debugger;
+  return {
+    type: RECEIVE_LANGUAGE_DATA,
+    language_data: language_data
+  };
+};
+var createLanguageData = function createLanguageData(language_data) {
+  return function (dispatch) {
+    debugger;
+    return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["createLanguageData"](language_data).then(function (language_data) {
+      debugger;
+      return dispatch(receiveLanguageData(language_data));
     });
   };
 };
@@ -1913,9 +1944,7 @@ function (_React$Component) {
       user["email"] = result + "@gmail.com";
       user["password"] = "starwars";
       user["active"] = false;
-      debugger;
       this.props.signup(user);
-      debugger;
     } //LOGGED IN!
 
   }, {
@@ -2526,7 +2555,6 @@ function (_React$Component) {
       var language_ac;
       var user = this.props.currentUser;
       var newLang = {};
-      debugger;
 
       if (language === "French") {
         language_ac = "fr";
@@ -2550,10 +2578,18 @@ function (_React$Component) {
       newLang['sentences_translated'] = 0;
       newLang['to_next_level'] = 10;
       newLang['user_id'] = this.props.currentUser.id;
-      this.props.createLanguage(newLang); // this.props.createLanguage_Date(lang_data) - then make an association with users and render it in the Json
-
-      debugger; // setState for learning_language & string, then call updateUser based on the state. 
-
+      this.props.createLanguage(newLang);
+      var newLangData = {};
+      newLangData = newLang;
+      debugger;
+      newLangData['level_percent'] = 0;
+      newLangData['max_level'] = false;
+      newLangData['language_strength'] = 0;
+      newLangData['fluency_score'] = 0;
+      newLangData['first_time'] = false;
+      debugger;
+      this.props.createLanguageData(newLangData);
+      debugger;
       this.props.updateUser(user);
       this.loggedIn();
     }
@@ -2663,6 +2699,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
 /* harmony import */ var _actions_language_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/language_actions */ "./frontend/actions/language_actions.js");
+/* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
+
 
 
 
@@ -2689,6 +2727,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     createLanguage: function createLanguage(language) {
       return dispatch(Object(_actions_language_actions__WEBPACK_IMPORTED_MODULE_6__["createLanguage"])(language));
+    },
+    createLanguageData: function createLanguageData(language_data) {
+      return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_7__["createLanguageData"])(language_data));
     }
   };
 };
@@ -3224,6 +3265,27 @@ var updateLanguage = function updateLanguage(languageId) {
 
 /***/ }),
 
+/***/ "./frontend/util/language_data_api_util.js":
+/*!*************************************************!*\
+  !*** ./frontend/util/language_data_api_util.js ***!
+  \*************************************************/
+/*! exports provided: createLanguageData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
+var createLanguageData = function createLanguageData(language_data) {
+  debugger;
+  return $.ajax({
+    method: 'post',
+    url: "/api/language_data/",
+    data: language_data
+  });
+};
+
+/***/ }),
+
 /***/ "./frontend/util/session_api_util.js":
 /*!*******************************************!*\
   !*** ./frontend/util/session_api_util.js ***!
@@ -3274,7 +3336,6 @@ var logout = function logout() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 var updateUser = function updateUser(user) {
-  debugger;
   return $.ajax({
     method: 'patch',
     url: "/api/user/".concat(user.id),

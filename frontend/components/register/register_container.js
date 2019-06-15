@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import Register from './register'
 import { signup } from '../../actions/session_actions';
 import {updateUser} from '../../actions/user_actions';
-import {createLanguage} from '../../actions/language_actions'
+import {createLanguage} from '../../actions/language_actions';
+import {createLanguageData} from '../../actions/language_data_actions'
+
 const mapStateToProps = (state) => {
     return {
         users: Object.values(state.entities.users),
@@ -17,7 +19,8 @@ const mapDispatchToProps = dispatch => {
     return {
         signup: (user) => dispatch(signup(user)),
         updateUser: (user)=>dispatch(updateUser(user)),
-        createLanguage: (language)=>dispatch(createLanguage(language))
+        createLanguage: (language)=>dispatch(createLanguage(language)),
+        createLanguageData: (language_data)=>dispatch(createLanguageData(language_data))
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

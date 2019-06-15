@@ -115,10 +115,10 @@ class Greeting extends React.Component {
         user["email"] = result + "@gmail.com";
         user["password"] = "starwars";
         user["active"] = false;
-        debugger
+        
         this.props.signup(user)
         
-        debugger
+        
 
     }
 
