@@ -2550,7 +2550,8 @@ function (_React$Component) {
       newLang['sentences_translated'] = 0;
       newLang['to_next_level'] = 10;
       newLang['user_id'] = this.props.currentUser.id;
-      this.props.createLanguage(newLang);
+      this.props.createLanguage(newLang); // this.props.createLanguage_Date(lang_data) - then make an association with users and render it in the Json
+
       debugger; // setState for learning_language & string, then call updateUser based on the state. 
 
       this.props.updateUser(user);

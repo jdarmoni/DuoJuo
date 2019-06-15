@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginModalContainer from '../greeting/login_modal_container';
 
-// CURRENTLY NOT USING
+// CURRENTLY NOT USING - example of functional component
 
 
 const RegisterContent = () => {
