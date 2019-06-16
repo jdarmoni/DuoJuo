@@ -7,7 +7,7 @@ export default (state = { id: null }, action) => {
             
             return { id: action.currentUser.id }
         case LOGOUT_CURRENT_USER:
-        
+            
             return { id: null }
         default:
             return state;

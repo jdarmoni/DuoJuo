@@ -3,12 +3,12 @@ import * as APIUtil from '../util/language_api_util'
 export const RECEIVE_ALL_LANGUAGES = "RECEIVE_ALL_LANGUAGES"
 export const RECEIVE_LANGUAGE = "RECEIVE_LANGUAGE"
 
-export const receiveAllLanguages=(langauges)=>({
-     
+export const receiveAllLanguages=(langauges)=>{
+    return ({
         type: RECEIVE_ALL_LANGUAGES,
         languages: langauges
-    
-})
+    })
+}
 
 export const receiveLanguage = (language) =>{
     

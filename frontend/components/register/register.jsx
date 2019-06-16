@@ -73,8 +73,6 @@ class Register extends React.Component {
         newLang['to_next_level'] = 10;
         newLang['user_id'] = this.props.currentUser.id
         this.props.createLanguage(newLang);
-        debugger
-        this.props.createLanguageData({ user_id: this.props.currentUser.id} )
         let newLangData = {}
         newLangData = newLang
         debugger
@@ -83,9 +81,9 @@ class Register extends React.Component {
         newLangData['language_strength'] = 0;
         newLangData['fluency_score'] = 0;
         newLangData['first_time'] = false;
-        // newLangData['lang_data_id'] = this.props.currentUser.language_data.id
+        
 
-        // this.props.createLang(newLangData) 
+        this.props.createLanguageData(newLangData) 
         
 
         this.props.updateUser(user)

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
         resource :session, only: [:create, :destroy] 
         resources :languages, only: [:index, :show, :create, :update]
         resources :language_data, only: [:create]
-        resources :lang, only: [:create]
     end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     root "static_pages#root"

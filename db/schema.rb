@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_16_200716) do
+ActiveRecord::Schema.define(version: 2019_06_15_165020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "lang", force: :cascade do |t|
+  create_table "language_data", force: :cascade do |t|
     t.integer "streak", null: false
     t.string "language_string", null: false
     t.string "language", null: false
@@ -32,12 +32,7 @@ ActiveRecord::Schema.define(version: 2019_06_16_200716) do
     t.integer "level", null: false
     t.integer "sentences_translated", null: false
     t.integer "to_next_level", null: false
-    t.integer "language_data_id", null: false
-  end
-
-  create_table "language_data", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "lang_id"
   end
 
   create_table "languages", force: :cascade do |t|

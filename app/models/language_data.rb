@@ -1,16 +1,8 @@
-class LanguageData < ApplicationRecord
-    # doesn't need to know lang IDs (re: schema)
-    validates :user_id, presence: true
+class LanguageData < ApplicationRecord 
+    validates :streak, :user_id, :language_string, :points, :learning, :language, :level, :sentences_translated, :to_next_level, presence: true
 
     belongs_to :user,
-        class_name: :User,
         primary_key: :id,
-        foreign_key: :user_id
-
-    # has_many :langs,
-    #     primary_key: :id,
-    #     foreign_key: :language_data_id,
-    #     class_name: :Lang
-
-    
+        foreign_key: :user_id,
+        class_name: :User
 end
