@@ -10,7 +10,7 @@ class Basics1 extends React.Component{
 
         // Get the button that opens the modal
         const btn = document.getElementById("bscs1-a");
-        debugger
+        
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
              if (event.target == modal) {
@@ -25,7 +25,7 @@ class Basics1 extends React.Component{
     }
 
     render () {
-        debugger
+        
         return (
         
         <div className="lessons-row-container">

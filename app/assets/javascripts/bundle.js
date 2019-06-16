@@ -846,8 +846,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
 
-      var btn = document.getElementById("bscs1-a");
-      debugger; // When the user clicks anywhere outside of the modal, close it
+      var btn = document.getElementById("bscs1-a"); // When the user clicks anywhere outside of the modal, close it
 
       window.onclick = function (event) {
         if (event.target == modal) {
@@ -865,7 +864,6 @@ function (_React$Component) {
     value: function render() {
       var _React$createElement;
 
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lessons-row-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -2579,14 +2577,19 @@ function (_React$Component) {
       newLang['to_next_level'] = 10;
       newLang['user_id'] = this.props.currentUser.id;
       this.props.createLanguage(newLang);
+      debugger;
+      this.props.createLanguageData({
+        user_id: this.props.currentUser.id
+      });
       var newLangData = {};
       newLangData = newLang;
       newLangData['level_percent'] = 0;
       newLangData['max_level'] = false;
       newLangData['language_strength'] = 0;
       newLangData['fluency_score'] = 0;
-      newLangData['first_time'] = false;
-      this.props.createLanguageData(newLangData);
+      newLangData['first_time'] = false; // newLangData['lang_data_id'] = this.props.currentUser.language_data.id
+      // this.props.createLang(newLangData) 
+
       this.props.updateUser(user);
       this.loggedIn();
     }
