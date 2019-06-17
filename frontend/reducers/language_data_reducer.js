@@ -6,7 +6,7 @@ export default (state = {}, action) => {
     Object.freeze(state);
     let newState;
     switch (action.type) {
-
+        
         case RECEIVE_LANGUAGE_DATA:
             debugger
             return merge({}, state, { [action.language_data.id]: action.language_data });
