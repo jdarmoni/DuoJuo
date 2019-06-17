@@ -75,15 +75,16 @@ class Register extends React.Component {
         this.props.createLanguage(newLang);
         let newLangData = {}
         newLangData = newLang
-        debugger
+        
+        // delete newLangData['streak'];
         newLangData['level_percent'] = 0;
         newLangData['max_level'] = false;
         newLangData['language_strength'] = 0;
         newLangData['fluency_score'] = 0;
         newLangData['first_time'] = false;
         
-
         this.props.createLanguageData(newLangData) 
+        debugger
         
 
         this.props.updateUser(user)

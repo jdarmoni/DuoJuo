@@ -4,8 +4,8 @@ class Api::LanguagesController < ApplicationController
     end
 
     def create
-        
         @newLanguage = Language.new(lang_params)
+        
         if @newLanguage.save
             render :show
         end

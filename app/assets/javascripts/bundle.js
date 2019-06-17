@@ -166,7 +166,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var RECEIVE_LANGUAGE_DATA = "RECEIVE_LANGUAGE_DATA";
 var receiveLanguageData = function receiveLanguageData(language_data) {
-  debugger;
   return {
     type: RECEIVE_LANGUAGE_DATA,
     language_data: language_data
@@ -174,9 +173,7 @@ var receiveLanguageData = function receiveLanguageData(language_data) {
 };
 var createLanguageData = function createLanguageData(language_data) {
   return function (dispatch) {
-    debugger;
     return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["createLanguageData"](language_data).then(function (language_data) {
-      debugger;
       return dispatch(receiveLanguageData(language_data));
     });
   };
@@ -846,8 +843,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
 
-      var btn = document.getElementById("bscs1-a");
-      debugger; // When the user clicks anywhere outside of the modal, close it
+      var btn = document.getElementById("bscs1-a"); // When the user clicks anywhere outside of the modal, close it
 
       window.onclick = function (event) {
         if (event.target == modal) {
@@ -865,7 +861,6 @@ function (_React$Component) {
     value: function render() {
       var _React$createElement;
 
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lessons-row-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -2466,9 +2461,6 @@ function (_React$Component) {
   !*** ./frontend/components/register/register.jsx ***!
   \***************************************************/
 /*! exports provided: default */
-<<<<<<< HEAD
-/***/ (function(module, exports) {
-=======
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2583,13 +2575,15 @@ function (_React$Component) {
       newLang['user_id'] = this.props.currentUser.id;
       this.props.createLanguage(newLang);
       var newLangData = {};
-      newLangData = newLang;
+      newLangData = newLang; // delete newLangData['streak'];
+
       newLangData['level_percent'] = 0;
       newLangData['max_level'] = false;
       newLangData['language_strength'] = 0;
       newLangData['fluency_score'] = 0;
       newLangData['first_time'] = false;
       this.props.createLanguageData(newLangData);
+      debugger;
       this.props.updateUser(user);
       this.loggedIn();
     }
@@ -2677,9 +2671,8 @@ function (_React$Component) {
 
   return Register;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
->>>>>>> parent of 680b60f... logic for Lang table
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/AbbeyRoad/Desktop/DuoJuo/frontend/components/register/register.jsx: Unexpected token (86:1)\n\n\u001b[0m \u001b[90m 84 | \u001b[39m        newLangData[\u001b[32m'fluency_score'\u001b[39m] \u001b[33m=\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 85 | \u001b[39m        newLangData[\u001b[32m'first_time'\u001b[39m] \u001b[33m=\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 86 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 87 | \u001b[39m        \u001b[90m// newLangData['lang_data_id'] = this.props.currentUser.language_data.id\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 88 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 89 | \u001b[39m        \u001b[90m// this.props.createLang(newLangData) \u001b[39m\u001b[0m\n    at Object.raise (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:6344:17)\n    at Object.unexpected (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:7659:16)\n    at Object.jsxParseIdentifier (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3377:12)\n    at Object.jsxParseNamespacedName (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3387:23)\n    at Object.jsxParseElementName (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3398:21)\n    at Object.jsxParseOpeningElementAt (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3480:22)\n    at Object.jsxParseElementAt (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3513:33)\n    at Object.jsxParseElement (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3587:17)\n    at Object.parseExprAtom (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3594:19)\n    at Object.parseExprSubscripts (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:8413:23)\n    at Object.parseMaybeUnary (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:8393:21)\n    at Object.parseExprOps (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:8280:23)\n    at Object.parseMaybeConditional (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:8253:23)\n    at Object.parseMaybeAssign (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:8200:21)\n    at Object.parseExpression (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:8148:23)\n    at Object.parseStatementContent (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9917:23)\n    at Object.parseStatement (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9788:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10364:25)\n    at Object.parseBlockBody (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10351:10)\n    at Object.parseBlock (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10335:10)\n    at Object.parseFunctionBody (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9408:24)\n    at Object.parseFunctionBodyAndFinish (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9378:10)\n    at Object.parseMethod (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9332:10)\n    at Object.pushClassMethod (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10767:30)\n    at Object.parseClassMemberWithIsStatic (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10692:12)\n    at Object.parseClassMember (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10631:10)\n    at withTopicForbiddingContext (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10586:14)\n    at Object.withTopicForbiddingContext (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9683:14)\n    at Object.parseClassBody (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10563:10)\n    at Object.parseClass (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10537:22)");
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Register));
 
 /***/ }),
 
@@ -32571,7 +32564,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
