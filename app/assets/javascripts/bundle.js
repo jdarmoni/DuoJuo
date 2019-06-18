@@ -1710,6 +1710,11 @@ function (_React$Component) {
   }
 
   _createClass(SkillModal, [{
+    key: "debugger",
+    value: function _debugger() {
+      debugger;
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1738,7 +1743,8 @@ function (_React$Component) {
       }, "% Complete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skm-start-btn-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "skm-start-btn"
+        className: "skm-start-btn",
+        onClick: this["debugger"].bind(this)
       }, "Start"))));
     }
   }]);
@@ -1765,7 +1771,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  return {};
+  return {
+    user: Object.values(state.entities.users)[0]
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -3269,7 +3277,6 @@ var updateLanguage = function updateLanguage(languageId) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
 var createLanguageData = function createLanguageData(language_data) {
-  debugger;
   return $.ajax({
     method: 'post',
     url: "/api/language_data/",
@@ -32564,7 +32571,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

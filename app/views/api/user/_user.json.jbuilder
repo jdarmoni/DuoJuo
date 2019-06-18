@@ -1,8 +1,8 @@
 lang_data = user.language_data
 language = nil
 
-if lang_data
-    language = lang_data.language
+if lang_data[0] != nil
+    language = lang_data[0].language
 end
 
 json.extract! user, :id, :username, :email, :language_strength, :site_streak, :active, :rupees,  :learning_language, :learning_language_string, :rupees

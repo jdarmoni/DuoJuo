@@ -4,6 +4,9 @@ class SkillModal extends React.Component {
     constructor(props){
         super(props)
     }
+    debugger(){
+        debugger
+    }
     render(){
         return (  
             <div className="skill-modal-container skm-pointer" id={this.props.idt}>
@@ -24,7 +27,7 @@ class SkillModal extends React.Component {
                         <div className="skill-modal-complete">{}% Complete</div>
                     </div>
                     <div className="skm-start-btn-container">
-                        <button className="skm-start-btn">Start</button>
+                        <button className="skm-start-btn" onClick={this.debugger.bind(this)}>Start</button>
                     </div>
                 </div>
             </div>    

@@ -14,7 +14,7 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Language
 
-    has_one :language_data,
+  has_many :language_data,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :LanguageData
