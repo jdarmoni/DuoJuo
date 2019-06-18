@@ -2521,7 +2521,22 @@ function (_React$Component) {
         className: "second-skill-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "third-skill-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "3"))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-header-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-header-content-frame"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "skill-x-button",
+        href: "/"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-progress-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-progress-container-anon"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-progress-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-progress-green"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "3"))));
     }
   }]);
 
