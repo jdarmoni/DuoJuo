@@ -2515,7 +2515,13 @@ function (_React$Component) {
   _createClass(LessonBody, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "3"))));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "first-skill-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "second-skill-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "third-skill-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "3"))));
     }
   }]);
 
