@@ -89,9 +89,9 @@
 
 .challenge {
     transform: translateZ(0);
-    
-        margin: auto;
-            -ms-flex-align: initial;
+    width: 100%;
+    margin: auto;
+    -ms-flex-align: initial;
     align-items: initial;
     -ms-flex-pack: initial;
     justify-content: initial
@@ -204,27 +204,12 @@
 }
 
 .skill-footer-content-frame {
-    background: #fff;
-    border-top: 2px solid #e5e5e5;
-    max-height: 140px;
-    min-height: 140px;
-    overflow: hidden;
+
     bottom: 20px;
     transition: max-height .3s ease-in-out;
     width: 100%;
 }
-@media (min-width: 1000px) {
-    .skill-f-c-f {
-        margin-left: calc(50% - 500px);
-    }
-}
 
-@media (min-width: 700px) {
-.skill-f-c-f {
-    min-height: 140px;
-    width: 100%;
-    }
-}
 .skill-f-c-f {
     max-width: 1000px;
     position: relative;
@@ -280,7 +265,7 @@ line-height: 20px;
 }
 @media (min-width: 700px) {
 .challenge {
-        max-height: 350px;
+    max-height: 350px;
     max-width: 600px;
     overflow: visible;
     }
@@ -298,4 +283,23 @@ line-height: 20px;
 .challenge-prompt-text-container {
     height: 170px;
 }
+.skill-f-c-f {
+    min-height: 140px;
+    width: 100%;
+    }
+
+    .skill-footer-content-frame{
+        background: #fff;
+    border-top: 2px solid #e5e5e5;
+    max-height: 140px;
+    min-height: 140px;
+    overflow: hidden;
+    }
 }
+
+@media (min-width: 1000px) {
+    .skill-f-c-f {
+        margin-left: calc(50% - 500px);
+    }
+}
+
