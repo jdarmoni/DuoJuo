@@ -117,6 +117,63 @@
     width: 100%;
 }
 
+@media screen and (max-height: 500px) {
+.challenge-translate-prompt {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    }
+}
+@media (min-width: 700px) {
+.challenge-translate-prompt {
+    margin-bottom: 24px;
+    margin-top: 24px;
+    }
+.challenge-listen {
+    margin-right: 15px;
+    }  
+
+}
+.challenge-translate-prompt {
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    text-align: left;
+    width: 100%;
+}
+
+.challenge-listen {
+        background-color: #1bb0f6;
+    color: #fff;
+    border-width: 0 0 4px;
+        border-color: #1799d6;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    padding: 13px 16px;
+    font-size: 15px;
+    line-height: 20px;
+        display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+        cursor: pointer;
+            border-radius: 16px;
+    border-style: solid;
+    touch-action: manipulation;
+        transform: translateZ(0);
+    transition: filter .2s;
+            float: left;
+    height: 40px;
+    margin-right: 10px;
+    width: 40px;
+}
+.c-l-s-d {
+    height: 16px;
+    margin: -100%;
+    width: 21px;
+    display: inline-block;
+}
+
 
 /* Footer */
 
