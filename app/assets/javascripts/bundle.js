@@ -174,6 +174,7 @@ var receiveLanguageData = function receiveLanguageData(language_data) {
 var createLanguageData = function createLanguageData(language_data) {
   return function (dispatch) {
     return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["createLanguageData"](language_data).then(function (language_data) {
+      debugger;
       return dispatch(receiveLanguageData(language_data));
     });
   };
@@ -2536,7 +2537,15 @@ function (_React$Component) {
         className: "skill-progress-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-progress-green"
-      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "3"))));
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "2", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-footer-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-footer-content-frame"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-f-c-f"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-skip-button"
+      }, "Skip"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "cherries"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "croissants")))))));
     }
   }]);
 
@@ -3107,12 +3116,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _user_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user_reducer */ "./frontend/reducers/user_reducer.js");
 /* harmony import */ var _languages_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./languages_reducer */ "./frontend/reducers/languages_reducer.js");
+/* harmony import */ var _language_data_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./language_data_reducer */ "./frontend/reducers/language_data_reducer.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _user_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  languages: _languages_reducer__WEBPACK_IMPORTED_MODULE_2__["default"] // users should point to a combined users
+  languages: _languages_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  language_data: _language_data_reducer__WEBPACK_IMPORTED_MODULE_3__["default"] // users should point to a combined users
 
 }));
 
@@ -3134,6 +3146,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 }));
+
+/***/ }),
+
+/***/ "./frontend/reducers/language_data_reducer.js":
+/*!****************************************************!*\
+  !*** ./frontend/reducers/language_data_reducer.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_2__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState;
+
+  switch (action.type) {
+    case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LANGUAGE_DATA"]:
+      debugger;
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.language_data.id, action.language_data));
+
+    default:
+      return state;
+  }
+});
 
 /***/ }),
 
@@ -3388,6 +3436,7 @@ var updateLanguage = function updateLanguage(languageId) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
 var createLanguageData = function createLanguageData(language_data) {
+  debugger;
   return $.ajax({
     method: 'post',
     url: "/api/language_data/",

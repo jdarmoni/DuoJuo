@@ -23,8 +23,24 @@ class LessonBody extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div>2</div>
-                        <div>3</div>
+                        <div>2
+                            <br/>
+                            <br/>
+                            <br/>
+                            2
+
+                        </div>
+                        <div className="skill-footer-container">
+                            <div className="skill-footer-content-frame">
+                                <div className="skill-f-c-f">
+                                    <div className="skill-skip-button">
+                                        Skip
+                                    </div>
+                                    <div>cherries</div>
+                                    <div>croissants</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

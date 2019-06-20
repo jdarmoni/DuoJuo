@@ -86,6 +86,7 @@ class Register extends React.Component {
         this.props.createLanguageData(newLangData) 
         debugger
         
+        
 
         this.props.updateUser(user)
         this.loggedIn()

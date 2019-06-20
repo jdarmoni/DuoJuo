@@ -64,7 +64,7 @@
     height: 16px;
 }
 .skill-progress-green::after {
-        background: #fff;
+    background: #fff;
     border-radius: 98px;
     content: "";
     display: block;
@@ -72,5 +72,37 @@
     margin: 0 10px 0 15px;
     opacity: .2;
     transform: translate3d(0,4px,0);
+}
+.skill-footer-container {
+    z-index: 100;
+}
 
+.skill-footer-content-frame {
+    background: #fff;
+    border-top: 2px solid #e5e5e5;
+    max-height: 140px;
+    min-height: 140px;
+    overflow: hidden;
+    bottom: 20px;
+    transition: max-height .3s ease-in-out;
+    width: 100%;
+}
+@media (min-width: 1000px) {
+    .skill-f-c-f {
+        margin-left: calc(50% - 500px);
+    }
+}
+
+@media (min-width: 700px) {
+.skill-f-c-f {
+    min-height: 140px;
+    width: 100%;
+    }
+}
+.skill-f-c-f {
+    max-width: 1000px;
+    position: relative;
+    -ms-touch-action: none;
+    touch-action: none;
+    -webkit-touch-callout: none;
 }
