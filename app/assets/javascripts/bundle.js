@@ -2639,7 +2639,13 @@ function (_React$Component) {
   _createClass(TranslateSentence, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "eggs");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "challenge challenge-translate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "challenge-header"
+      }, "Write this in English"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "challenge-subbox"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "cherries "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "tomatoes")));
     }
   }]);
 

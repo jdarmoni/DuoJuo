@@ -87,8 +87,35 @@
     opacity: 1;
 }
 
+.challenge {
+    transform: translateZ(0);
+    max-height: 350px;
+    max-width: 600px;
+    overflow: visible;
+        margin: auto;
+            -ms-flex-align: initial;
+    align-items: initial;
+    -ms-flex-pack: initial;
+    justify-content: initial
+}
 
+.challenge-header {
+        font-size: 32px;
+    line-height: 40px;
+        margin: 0;
+    text-align: left;
+    width: 100%;
+}
 
+.challenge-subbox{
+        display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 100%;
+}
 
 
 /* Footer */
