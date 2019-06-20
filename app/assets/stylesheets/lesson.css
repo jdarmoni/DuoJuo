@@ -89,9 +89,7 @@
 
 .challenge {
     transform: translateZ(0);
-    max-height: 350px;
-    max-width: 600px;
-    overflow: visible;
+    
         margin: auto;
             -ms-flex-align: initial;
     align-items: initial;
@@ -100,8 +98,6 @@
 }
 
 .challenge-header {
-        font-size: 32px;
-    line-height: 40px;
         margin: 0;
     text-align: left;
     width: 100%;
@@ -117,24 +113,7 @@
     width: 100%;
 }
 
-@media screen and (max-height: 500px) {
-.challenge-translate-prompt {
-    margin-bottom: 8px;
-    margin-top: 8px;
-    }
-}
-@media (min-width: 700px) {
-.challenge-translate-prompt {
-    margin-bottom: 24px;
-    margin-top: 24px;
-    }
-.challenge-listen {
-    margin-right: 15px;
-    }  
-.challenge-prompt-text-container {
-    height: 170px;
-}
-}
+
 .challenge-translate-prompt {
     -ms-flex-positive: 0;
     flex-grow: 0;
@@ -176,6 +155,8 @@
     display: inline-block;
 }
 
+
+
 .challenge-sentence {
     color: #3c3c3c;
     font: 500 17px/20px sans-serif;
@@ -192,6 +173,28 @@
     margin-bottom: 24px;
     text-align: left;
     width: 100%;
+}
+.c-p-t-c-sub {
+    flex-grow: 1;
+    flex-direction: column;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.challenge-textarea {
+        resize: none;
+    flex-grow: 1;
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: #f7f7f7;
+    border-color: #e5e5e5;
+    border-radius: 10px;
+    padding: 10px 12px;
+    line-height: 24px;
+    border: 2px solid #e5e5e5;
+    color: #3c3c3c;
+    text-align: left;
 }
 
 /* Footer */
@@ -267,4 +270,32 @@ line-height: 20px;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+@media screen and (max-height: 500px) {
+.challenge-translate-prompt {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    }
+}
+@media (min-width: 700px) {
+.challenge {
+        max-height: 350px;
+    max-width: 600px;
+    overflow: visible;
+    }
+.challenge-header {
+    font-size: 32px;
+    line-height: 40px;
+    }
+.challenge-translate-prompt {
+    margin-bottom: 24px;
+    margin-top: 24px;
+    }
+.challenge-listen {
+    margin-right: 15px;
+    }  
+.challenge-prompt-text-container {
+    height: 170px;
+}
 }

@@ -18,7 +18,9 @@ class TranslateSentence extends React.Component {
                     </div>
                 </div>
                 <div className="challenge-prompt-text-container">
-
+                    <div className="c-p-t-c-sub">
+                        <textarea className="challenge-textarea" placeholder="Type in English"></textarea>
+                    </div>
                 </div>
             </div>
         )
