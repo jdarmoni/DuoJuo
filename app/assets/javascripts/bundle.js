@@ -2545,7 +2545,13 @@ function (_React$Component) {
         className: "skill-f-c-f"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-skip-button"
-      }, "Skip"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "cherries"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "croissants")))))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "skill-f-bs"
+      }, "Skip")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "skill-check-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "skill-f-bs"
+      }, " Check"))))))));
     }
   }]);
 

@@ -106,3 +106,42 @@
     touch-action: none;
     -webkit-touch-callout: none;
 }
+.skill-skip-button {
+        position: absolute;
+    top: 50%;
+        left: 40px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.skill-f-bs {
+    margin-bottom: 10px;
+    min-width: 150px;
+    width: 100%;
+        font-size: 17px!important;
+        background: none;
+    color: #afafaf;
+    border-width: 2px 2px 4px;
+        border-color: #e5e5e5;
+    padding: 12px 16px;
+line-height: 20px;
+        display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+        cursor: pointer;
+    white-space: nowrap;
+        border-radius: 16px;
+    border-style: solid;
+        transform: translateZ(0);
+    transition: filter .2s;
+        font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+}
+.skill-check-button {
+        position: absolute;
+    right: 40px;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

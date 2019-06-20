@@ -34,10 +34,12 @@ class LessonBody extends React.Component {
                             <div className="skill-footer-content-frame">
                                 <div className="skill-f-c-f">
                                     <div className="skill-skip-button">
-                                        Skip
+                                        <button className="skill-f-bs">Skip</button>
                                     </div>
-                                    <div>cherries</div>
-                                    <div>croissants</div>
+                                    {/* <div>cherries</div> */}
+                                    <div className="skill-check-button">
+                                        <button className="skill-f-bs"> Check</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
