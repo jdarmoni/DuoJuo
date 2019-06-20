@@ -2649,7 +2649,7 @@ function (_React$Component) {
         className: "challenge-translate-prompt"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "challenge-listen"
-      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "c-l-s-d"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         xmlns: "http://www.w3.org/2000/svg",
@@ -2740,7 +2740,9 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
         opacity: "1",
         transform: "matrix(1,0,0,1,0,0)"
-      })))))))), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "tomatoes")));
+      })))))))), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "challenge-sentence"
+      }, "le chien est epouvantable"))));
     }
   }]);
 
