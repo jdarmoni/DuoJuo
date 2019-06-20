@@ -1,4 +1,5 @@
 import React from 'react'
+import TranslateSentenceContainer from '../lessons/translate_sentence/translate_sentence_container'
 class LessonBody extends React.Component {
     constructor(props) {
         super(props)
@@ -23,11 +24,10 @@ class LessonBody extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div>2
-                            <br/>
-                            <br/>
-                            <br/>
-                            2
+                        <div className="skill-lesson-body">
+                            {/* where the actual component goes! */}
+                            
+                            <TranslateSentenceContainer />
 
                         </div>
                         <div className="skill-footer-container">
