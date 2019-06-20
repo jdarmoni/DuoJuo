@@ -2742,7 +2742,9 @@ function (_React$Component) {
         transform: "matrix(1,0,0,1,0,0)"
       })))))))), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "challenge-sentence"
-      }, "le chien est epouvantable"))));
+      }, "le chien est epouvantable"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "challenge-prompt-text-container"
+      }));
     }
   }]);
 

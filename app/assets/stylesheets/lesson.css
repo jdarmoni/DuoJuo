@@ -131,7 +131,9 @@
 .challenge-listen {
     margin-right: 15px;
     }  
-
+.challenge-prompt-text-container {
+    height: 170px;
+}
 }
 .challenge-translate-prompt {
     -ms-flex-positive: 0;
@@ -178,6 +180,18 @@
     color: #3c3c3c;
     font: 500 17px/20px sans-serif;
     line-height: 39px;    
+}
+.challenge-prompt-text-container {
+        display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    height: 87px;
+    margin-bottom: 24px;
+    text-align: left;
+    width: 100%;
 }
 
 /* Footer */
