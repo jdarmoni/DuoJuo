@@ -73,6 +73,26 @@
     opacity: .2;
     transform: translate3d(0,4px,0);
 }
+
+/* Body */
+.skill-lesson-body{
+    display: flex;
+    font-size: 19px;
+    text-align: center;
+    display: -ms-flexbox;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+
+
+
+
+/* Footer */
+
 .skill-footer-container {
     z-index: 100;
 }
