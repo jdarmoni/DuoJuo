@@ -1564,6 +1564,7 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit() {
       // document.getElementById('challenge-textarea').value
+      // if above matches CORRECT ANSWER, this.props.updatLanguageData({level = level+1})
       debugger;
     }
   }, {

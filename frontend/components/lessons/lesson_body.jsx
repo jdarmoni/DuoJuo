@@ -5,10 +5,14 @@ import {grandLessonsObj} from './grand_lessons_obj/grand_lessons_obj';
 class LessonBody extends React.Component {
     constructor(props) {
         super(props)
+        
     }
+
     handleSubmit(){
         // document.getElementById('challenge-textarea').value
+        // if above matches CORRECT ANSWER, this.props.updatLanguageData({level = level+1})
         debugger   
+
     }
 
     render(){
