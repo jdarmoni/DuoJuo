@@ -25,8 +25,8 @@ class LessonBody extends React.Component {
                             </div>
                         </div>
                         <div className="skill-lesson-body">
-                            {/* where the actual component goes! */}
-                            
+                            {/* you probably want an array of different container types, and each time you complete one, iterate through the list */}
+
                             <TranslateSentenceContainer sentence={"Le chien est epouvantable"}/>
 
                         </div>
