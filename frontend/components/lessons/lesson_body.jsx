@@ -10,7 +10,7 @@ class LessonBody extends React.Component {
     render(){
          
         debugger
-            let currentLesson = grandLessonsObj["fr"]["Basics-1"][0] // another key for current level
+            let currentLesson = grandLessonsObj[this.props.mini_lang]["Basics-1"][this.props.level] // another key for current level
         
         return (
             <div className="first-skill-div">
@@ -31,7 +31,7 @@ class LessonBody extends React.Component {
                             </div>
                         </div>
                         <div className="skill-lesson-body">
-                            {/* you probably want an array of different container types, and each time you complete one, iterate through the list */}
+                            {/* where the lesson component goes */}
 
                             {currentLesson}
 
@@ -42,7 +42,7 @@ class LessonBody extends React.Component {
                                     <div className="skill-skip-button">
                                         <button className="skill-f-bs">Skip</button>
                                     </div>
-                                    {/* <div>cherries</div> */}
+
                                     <div className="skill-check-button">
                                         <button className="skill-f-bs"> Check</button>
                                     </div>

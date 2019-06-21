@@ -1562,7 +1562,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       debugger;
-      var currentLesson = _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"]["fr"]["Basics-1"][0]; // another key for current level
+      var currentLesson = _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang]["Basics-1"][this.props.level]; // another key for current level
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-skill-div"

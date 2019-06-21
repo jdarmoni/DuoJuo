@@ -1,9 +1,7 @@
 class Api::LanguageDataController < ApplicationController
     def create
         @newLanguage = LanguageData.new(lang_data_params)
-        # @eggs = User.find_by(id: params[:user_id]).language_data
-
-        debugger
+        
         if @newLanguage.save
             render :show
         end
