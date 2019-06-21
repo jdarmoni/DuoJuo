@@ -1,5 +1,6 @@
 import React from 'react'
 import TranslateSentenceContainer from '../lessons/translate_sentence/translate_sentence_container'
+
 class LessonBody extends React.Component {
     constructor(props) {
         super(props)
