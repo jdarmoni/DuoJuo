@@ -10,7 +10,8 @@ class LessonBody extends React.Component {
     render(){
          
         debugger
-            let currentLesson = grandLessonsObj[this.props.mini_lang]["Basics-1"][this.props.level] // another key for current level
+        let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
+        let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
         
         return (
             <div className="first-skill-div">

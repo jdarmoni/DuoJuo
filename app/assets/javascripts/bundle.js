@@ -320,7 +320,6 @@ var App = function App() {
     path: "/welcome",
     component: _welcome_welcome_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
-    exact: true,
     path: "/skill/",
     component: _lessons_lesson_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }));
@@ -1498,11 +1497,14 @@ __webpack_require__.r(__webpack_exports__);
 var grandLessonsObj = {
   "fr": {
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "Le chien est epouvantable"
+      sentence: "Le chien est epouvantable",
+      correct: ["the dog is scary"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "I am a girl, not a boy"
+      sentence: "Je suis un fil, pas un fille",
+      correct: ["I am a boy, not a girl"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "The girl, the woman"
+      sentence: "La fille, la femme",
+      correct: [""]
     })]
   },
   "jp": {},
@@ -1562,7 +1564,8 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       debugger;
-      var currentLesson = _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang]["Basics-1"][this.props.level]; // another key for current level
+      var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
+      var currentLesson = _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url][this.props.level]; // another key for current level
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-skill-div"
