@@ -1,11 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SkillModal extends React.Component {
     constructor(props){
         super(props)
     }
-    debugger(){
+    lessonURL(){
         debugger
+        // this.props.history.replace(`/skill/${this.props.url}`)
     }
     render(){
         return (  
@@ -27,7 +29,7 @@ class SkillModal extends React.Component {
                         <div className="skill-modal-complete">{}% Complete</div>
                     </div>
                     <div className="skm-start-btn-container">
-                        <button className="skm-start-btn" onClick={this.debugger.bind(this)}>Start</button>
+                        <button className="skm-start-btn" onClick={this.lessonURL.bind(this)}>Start</button>
                     </div>
                 </div>
             </div>    
@@ -35,4 +37,4 @@ class SkillModal extends React.Component {
 }
 }
 
-export default SkillModal
+export default withRouter(SkillModal)

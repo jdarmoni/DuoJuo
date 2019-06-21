@@ -222,7 +222,7 @@
 }
 .skill-skip-button {
         position: absolute;
-    top: 50%;
+        top: 50%;
 }
 
 .skill-f-bs {
@@ -297,8 +297,8 @@ line-height: 20px;
     }
     .skill-skip-button {
          left: 40px;
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+        /* -ms-transform: translateY(-50%);
+        transform: translateY(-50%); */
     }
     .skill-f-bs {
         font-size: 17px!important;

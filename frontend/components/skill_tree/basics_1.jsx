@@ -1,10 +1,12 @@
 import React from 'react'
 import SkillModalContainer from './skill_modal/skill_modal_container'
+import { withRouter } from 'react-router-dom';
 
 class Basics1 extends React.Component{
     constructor(props) {
         super(props)
     }
+
     componentDidMount(){
         const modal = document.getElementById("skm-bscs1");
 
@@ -59,7 +61,7 @@ class Basics1 extends React.Component{
                         </div>
                     </div>
                     {/* to reuse modal, pass down / create a name for the ID of the new modal Div (not the a tag id of the lesson icon!) */}
-                    <SkillModalContainer idt={"skm-bscs1"}/>
+                        <SkillModalContainer idt={"skm-bscs1"} url={"Basics-1"}/>
                 </div>
             </a>
         </div>
@@ -67,6 +69,6 @@ class Basics1 extends React.Component{
         }
 }
 
-export default Basics1 
+export default withRouter(Basics1)
 
     

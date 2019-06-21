@@ -1,7 +1,7 @@
 import React from 'react'
-import Basics1Container from '../french_courses/basics_1_container'
-import Basics2 from '../french_courses/basics_2'
-import Row3 from '../french_courses/row_3'
+import Basics1Container from '../skill_tree/basics_1_container'
+import Basics2 from '../skill_tree/basics_2'
+import Row3 from '../skill_tree/row_3'
 
 class CourseIconContent extends React.Component {
     constructor(props){
