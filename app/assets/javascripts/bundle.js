@@ -2541,7 +2541,9 @@ function (_React$Component) {
         className: "skill-progress-green"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-lesson-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lessons_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lessons_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        sentence: "Le chien est epouvantable"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-footer-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-footer-content-frame"
@@ -2742,7 +2744,7 @@ function (_React$Component) {
         transform: "matrix(1,0,0,1,0,0)"
       })))))))), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "challenge-sentence"
-      }, "Le chien est epouvantable")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "challenge-prompt-text-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "c-p-t-c-sub"

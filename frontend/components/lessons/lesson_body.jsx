@@ -27,7 +27,7 @@ class LessonBody extends React.Component {
                         <div className="skill-lesson-body">
                             {/* where the actual component goes! */}
                             
-                            <TranslateSentenceContainer />
+                            <TranslateSentenceContainer sentence={"Le chien est epouvantable"}/>
 
                         </div>
                         <div className="skill-footer-container">
