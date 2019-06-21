@@ -1479,6 +1479,39 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./frontend/components/lessons/grand_lessons_obj/grand_lessons_obj.jsx":
+/*!*****************************************************************************!*\
+  !*** ./frontend/components/lessons/grand_lessons_obj/grand_lessons_obj.jsx ***!
+  \*****************************************************************************/
+/*! exports provided: grandLessonsObj */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "grandLessonsObj", function() { return grandLessonsObj; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../translate_sentence/translate_sentence_container */ "./frontend/components/lessons/translate_sentence/translate_sentence_container.js");
+
+ // a ul of skill containers
+
+var grandLessonsObj = {
+  "fr": {
+    "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "Le chien est epouvantable"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "I am a girl, not a boy"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "The girl, the woman"
+    })]
+  },
+  "jp": {},
+  "ge": {},
+  "esp": {}
+};
+
+/***/ }),
+
 /***/ "./frontend/components/lessons/lesson_body.jsx":
 /*!*****************************************************!*\
   !*** ./frontend/components/lessons/lesson_body.jsx ***!
@@ -1491,6 +1524,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lessons_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lessons/translate_sentence/translate_sentence_container */ "./frontend/components/lessons/translate_sentence/translate_sentence_container.js");
+/* harmony import */ var _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./grand_lessons_obj/grand_lessons_obj */ "./frontend/components/lessons/grand_lessons_obj/grand_lessons_obj.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1512,6 +1546,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var LessonBody =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1526,6 +1561,9 @@ function (_React$Component) {
   _createClass(LessonBody, [{
     key: "render",
     value: function render() {
+      debugger;
+      var currentLesson = _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"]["fr"]["Basics-1"][0]; // another key for current level
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-skill-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1549,9 +1587,7 @@ function (_React$Component) {
         className: "skill-progress-green"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-lesson-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lessons_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        sentence: "Le chien est epouvantable"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, currentLesson), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-footer-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-footer-content-frame"
@@ -1591,8 +1627,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  var mini_lang = Object.values(state.entities.users)[0].learning_language;
   return {
-    user: Object.values(state.entities.users)[0]
+    user: Object.values(state.entities.users)[0],
+    mini_lang: mini_lang,
+    level: Object.values(state.entities.users)[0].language_data[mini_lang][0].level
   };
 };
 

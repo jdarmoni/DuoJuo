@@ -1,5 +1,6 @@
 import React from 'react'
 import TranslateSentenceContainer from '../lessons/translate_sentence/translate_sentence_container'
+import {grandLessonsObj} from './grand_lessons_obj/grand_lessons_obj';
 
 class LessonBody extends React.Component {
     constructor(props) {
@@ -7,6 +8,10 @@ class LessonBody extends React.Component {
     }
 
     render(){
+         
+        debugger
+            let currentLesson = grandLessonsObj["fr"]["Basics-1"][0] // another key for current level
+        
         return (
             <div className="first-skill-div">
                 <div className="second-skill-div">
@@ -28,7 +33,7 @@ class LessonBody extends React.Component {
                         <div className="skill-lesson-body">
                             {/* you probably want an array of different container types, and each time you complete one, iterate through the list */}
 
-                            <TranslateSentenceContainer sentence={"Le chien est epouvantable"}/>
+                            {currentLesson}
 
                         </div>
                         <div className="skill-footer-container">
