@@ -98,6 +98,8 @@
 }
 
 .challenge-header {
+        font-size: 25px;
+    line-height: 24px;
         margin: 0;
     text-align: left;
     width: 100%;
@@ -195,6 +197,7 @@
     border: 2px solid #e5e5e5;
     color: #3c3c3c;
     text-align: left;
+        font-size: 100%;
 }
 
 /* Footer */
@@ -220,16 +223,12 @@
 .skill-skip-button {
         position: absolute;
     top: 50%;
-        left: 40px;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
 }
 
 .skill-f-bs {
     margin-bottom: 10px;
     min-width: 150px;
     width: 100%;
-        font-size: 17px!important;
         background: none;
     color: #afafaf;
     border-width: 2px 2px 4px;
@@ -253,48 +252,8 @@ line-height: 20px;
         position: absolute;
     right: 40px;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-@media screen and (max-height: 500px) {
-.challenge-translate-prompt {
-    margin-bottom: 8px;
-    margin-top: 8px;
-    }
-}
-@media (min-width: 700px) {
-.challenge {
-    max-height: 350px;
-    max-width: 600px;
-    overflow: visible;
-    }
-.challenge-header {
-    font-size: 32px;
-    line-height: 40px;
-    }
-.challenge-translate-prompt {
-    margin-bottom: 24px;
-    margin-top: 24px;
-    }
-.challenge-listen {
-    margin-right: 15px;
-    }  
-.challenge-prompt-text-container {
-    height: 170px;
-}
-.skill-f-c-f {
-    min-height: 140px;
-    width: 100%;
-    }
-
-    .skill-footer-content-frame{
-        background: #fff;
-    border-top: 2px solid #e5e5e5;
-    max-height: 140px;
-    min-height: 140px;
-    overflow: hidden;
-    }
+    /* -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
 }
 
 @media (min-width: 1000px) {
@@ -303,3 +262,65 @@ line-height: 20px;
     }
 }
 
+@media (min-width: 700px) {
+    
+    .challenge-translate {
+        max-height: 350px;
+        max-width: 600px;
+        overflow: visible;
+    }
+    .challenge-header {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .challenge-translate-prompt {
+        margin-bottom: 24px;
+        margin-top: 24px;
+    }
+    .challenge-listen {
+        margin-right: 15px;
+    }  
+    .challenge-prompt-text-container {
+        height: 170px;
+    }
+    .skill-f-c-f {
+        min-height: 140px;
+        width: 100%;
+    }
+    
+    .skill-footer-content-frame{
+        background: #fff;
+        border-top: 2px solid #e5e5e5;
+        max-height: 140px;
+        min-height: 140px;
+        overflow: hidden;
+    }
+    .skill-skip-button {
+         left: 40px;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .skill-f-bs {
+        font-size: 17px!important;
+    }
+}
+
+
+
+@media screen and (max-height: 500px) {
+    .challenge-translate-prompt {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    }
+}
+
+/* @media (max-height: 650px) and (min-width: 700px)
+.Mlxjr {
+    height: 80px;
+    padding-top: 40px;
+}
+@media (min-width: 700px)
+.Mlxjr {
+    height: 100px;
+    padding: 50px 40px 0;
+} */
