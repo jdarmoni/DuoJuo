@@ -1492,7 +1492,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../translate_sentence/translate_sentence_container */ "./frontend/components/lessons/translate_sentence/translate_sentence_container.js");
 
- // a ul of skill containers
+ // this doesn't solve how you can save progress in each module
 
 var grandLessonsObj = {
   "fr": {
@@ -1561,6 +1561,12 @@ function (_React$Component) {
   }
 
   _createClass(LessonBody, [{
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      // document.getElementById('challenge-textarea').value
+      debugger;
+    }
+  }, {
     key: "render",
     value: function render() {
       debugger;
@@ -1603,7 +1609,8 @@ function (_React$Component) {
       }, "Skip")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-check-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "skill-f-bs"
+        className: "skill-f-bs",
+        onClick: this.handleSubmit.bind(this)
       }, " Check"))))))));
     }
   }]);
@@ -1689,6 +1696,10 @@ function (_React$Component) {
   }
 
   _createClass(TranslateSentence, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {// tell the backend what the correct sentence is and have that returned in the lesson body state
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1800,6 +1811,7 @@ function (_React$Component) {
         className: "c-p-t-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "challenge-textarea",
+        id: "challenge-textarea",
         placeholder: "Type in English"
       })))));
     }
@@ -1827,7 +1839,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  return {};
+  return {
+    users: Object.values(state.entities.users)
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {

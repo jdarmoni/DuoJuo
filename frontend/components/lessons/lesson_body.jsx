@@ -6,6 +6,10 @@ class LessonBody extends React.Component {
     constructor(props) {
         super(props)
     }
+    handleSubmit(){
+        // document.getElementById('challenge-textarea').value
+        debugger   
+    }
 
     render(){
          
@@ -45,7 +49,7 @@ class LessonBody extends React.Component {
                                     </div>
 
                                     <div className="skill-check-button">
-                                        <button className="skill-f-bs"> Check</button>
+                                        <button className="skill-f-bs" onClick={this.handleSubmit.bind(this)}> Check</button>
                                     </div>
                                 </div>
                             </div>

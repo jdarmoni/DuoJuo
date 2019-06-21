@@ -4,7 +4,9 @@ class TranslateSentence extends React.Component {
     constructor(props){
         super(props);
     }
-
+    componentDidMount(){
+        // tell the backend what the correct sentence is and have that returned in the lesson body state
+    }
     render(){
         return (
             <div className="challenge challenge-translate">
@@ -18,7 +20,7 @@ class TranslateSentence extends React.Component {
                     </div>
                     <div className="challenge-prompt-text-container">
                         <div className="c-p-t-c-sub">
-                            <textarea className="challenge-textarea" placeholder="Type in English"></textarea>
+                            <textarea className="challenge-textarea" id="challenge-textarea" placeholder="Type in English"></textarea>
                         </div>
                     </div>
                 </div>
