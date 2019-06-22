@@ -5,9 +5,6 @@ import {grandLessonsObj} from './grand_lessons_obj/grand_lessons_obj';
 class LessonBody extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = {
-        //     guess: ""
-        // } 
     }
 
     handleSubmit(){
@@ -20,12 +17,6 @@ class LessonBody extends React.Component {
         }
     }
 
-    // update(guess) {
-    //     debugger
-    //     return e => this.setState({
-    //         [guess]: e.target.value
-    //     })
-    // }
 
     render(){
 

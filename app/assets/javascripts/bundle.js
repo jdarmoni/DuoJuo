@@ -1557,9 +1557,7 @@ function (_React$Component) {
   function LessonBody(props) {
     _classCallCheck(this, LessonBody);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(LessonBody).call(this, props)); // this.state = {
-    //     guess: ""
-    // } 
+    return _possibleConstructorReturn(this, _getPrototypeOf(LessonBody).call(this, props));
   }
 
   _createClass(LessonBody, [{
@@ -1572,13 +1570,7 @@ function (_React$Component) {
       if (guess === correct) {
         debugger; // update the level by 1
       }
-    } // update(guess) {
-    //     debugger
-    //     return e => this.setState({
-    //         [guess]: e.target.value
-    //     })
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -1725,20 +1717,7 @@ function (_React$Component) {
 
       if (challengeTextArea) {
         document.getElementById('skill-check-button').setAttribute('data-guess', correct);
-      } // tell the backend what the correct sentence is and have that returned in the lesson body state
-      // let langData = this.props.langData
-      // langData['correct'] = this.props.correct
-      // this.props.updateLangData({})
-      // parent component will check if correct matches the guess and then iterate up the level
-      // ver 2: 
-
-
-      if (this.state.guess === this.props.correct) {// let langData = this.props.langData
-        // langData['level'] = this.props.langData.level + 1
-        // this.props.updateLangData({langData})
       }
-
-      document.getElementsByClassName('skill-f-bs');
     }
   }, {
     key: "update",
