@@ -12,8 +12,18 @@ class LessonBody extends React.Component {
         let guess = document.getElementById('challenge-textarea').value
         debugger
         if (guess.toLowerCase() === correct.toLowerCase() ) {
-            debugger
-            // update the level by 1
+
+            let langData = this.props.user.language_data[this.props.mini_lang][0]
+        
+            if (langData.max_level === false) {
+                langData['level'] = langData.level + 1;
+                document.getElementById('challenge-textarea').value = "";
+                this.props.updateLangData(langData)
+            } else {
+                // redirect to finished scene
+                langData['level'] = 0;
+                this.props.updateLangData(langData)
+            }
         }
     }
 

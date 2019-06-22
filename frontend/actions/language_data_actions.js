@@ -14,7 +14,16 @@ export const createLanguageData = (language_data) => (dispatch) => {
     
     return (
         APIUtil.createLanguageData(language_data).then((language_data) => {
-            debugger
+            
+            return dispatch(receiveLanguageData(language_data))
+        })
+    )
+}
+
+export const updateLanguageData = (language_data) => (dispatch) => {
+    return (
+        APIUtil.updateLanguageData(language_data).then((language_data)=> {
+            
             return dispatch(receiveLanguageData(language_data))
         })
     )

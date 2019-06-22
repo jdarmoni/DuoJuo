@@ -6,6 +6,7 @@ class TranslateSentence extends React.Component {
         
     }
     componentDidMount(){
+        
         let correct = this.props.correct
         let challengeTextArea = document.getElementById('challenge-textarea')
         if (challengeTextArea) {
@@ -15,6 +16,12 @@ class TranslateSentence extends React.Component {
    
 
     render(){
+        if (document.getElementById('skill-check-button')) {
+            let correct = this.props.correct
+            let challengeTextArea = document.getElementById('challenge-textarea')
+            document.getElementById('skill-check-button').setAttribute('data-guess', correct)
+        }
+        
         return (
             <>
             <div className="challenge challenge-translate">

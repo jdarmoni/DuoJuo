@@ -154,7 +154,7 @@ var updateLanguage = function updateLanguage(languageId) {
 /*!***************************************************!*\
   !*** ./frontend/actions/language_data_actions.js ***!
   \***************************************************/
-/*! exports provided: RECEIVE_LANGUAGE_DATA, receiveLanguageData, createLanguageData */
+/*! exports provided: RECEIVE_LANGUAGE_DATA, receiveLanguageData, createLanguageData, updateLanguageData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -162,6 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LANGUAGE_DATA", function() { return RECEIVE_LANGUAGE_DATA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveLanguageData", function() { return receiveLanguageData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguageData", function() { return updateLanguageData; });
 /* harmony import */ var _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/language_data_api_util */ "./frontend/util/language_data_api_util.js");
 
 var RECEIVE_LANGUAGE_DATA = "RECEIVE_LANGUAGE_DATA";
@@ -174,7 +175,13 @@ var receiveLanguageData = function receiveLanguageData(language_data) {
 var createLanguageData = function createLanguageData(language_data) {
   return function (dispatch) {
     return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["createLanguageData"](language_data).then(function (language_data) {
-      debugger;
+      return dispatch(receiveLanguageData(language_data));
+    });
+  };
+};
+var updateLanguageData = function updateLanguageData(language_data) {
+  return function (dispatch) {
+    return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["updateLanguageData"](language_data).then(function (language_data) {
       return dispatch(receiveLanguageData(language_data));
     });
   };
@@ -1568,7 +1575,17 @@ function (_React$Component) {
       debugger;
 
       if (guess.toLowerCase() === correct.toLowerCase()) {
-        debugger; // update the level by 1
+        var langData = this.props.user.language_data[this.props.mini_lang][0];
+
+        if (langData.max_level === false) {
+          langData['level'] = langData.level + 1;
+          document.getElementById('challenge-textarea').value = "";
+          this.props.updateLangData(langData);
+        } else {
+          // redirect to finished scene
+          langData['level'] = 0;
+          this.props.updateLangData(langData);
+        }
       }
     }
   }, {
@@ -1639,6 +1656,8 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lesson_body__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lesson_body */ "./frontend/components/lessons/lesson_body.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
+
 
 
 
@@ -1652,7 +1671,11 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    updateLangData: function updateLangData(language_data) {
+      return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_2__["updateLanguageData"])(language_data));
+    }
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_lesson_body__WEBPACK_IMPORTED_MODULE_0__["default"]));
@@ -1714,6 +1737,12 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      if (document.getElementById('skill-check-button')) {
+        var correct = this.props.correct;
+        var challengeTextArea = document.getElementById('challenge-textarea');
+        document.getElementById('skill-check-button').setAttribute('data-guess', correct);
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "challenge challenge-translate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -3708,18 +3737,27 @@ var updateLanguage = function updateLanguage(languageId) {
 /*!*************************************************!*\
   !*** ./frontend/util/language_data_api_util.js ***!
   \*************************************************/
-/*! exports provided: createLanguageData */
+/*! exports provided: createLanguageData, updateLanguageData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguageData", function() { return updateLanguageData; });
 var createLanguageData = function createLanguageData(language_data) {
-  debugger;
   return $.ajax({
     method: 'post',
     url: "/api/language_data/",
     data: language_data
+  });
+};
+var updateLanguageData = function updateLanguageData(language_data) {
+  return $.ajax({
+    method: 'patch',
+    url: "api/language_data/".concat(language_data.id),
+    data: {
+      language_data: language_data
+    }
   });
 };
 

@@ -1,5 +1,7 @@
 import LessonBody from './lesson_body'
 import {connect } from 'react-redux'
+import { updateLanguageData} from '../../actions/language_data_actions'
+
 const mapStateToProps=(state)=> {
     
     const mini_lang = Object.values(state.entities.users)[0].learning_language
@@ -11,7 +13,9 @@ const mapStateToProps=(state)=> {
     }
 }
 const mapDispatchToProps=(dispatch)=>{
-    return {}
+    return {
+        updateLangData: (language_data)=> dispatch(updateLanguageData(language_data))
+    }
 }
 
 export default connect (mapStateToProps, mapDispatchToProps)(LessonBody)
