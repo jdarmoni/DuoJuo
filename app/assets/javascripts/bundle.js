@@ -3145,7 +3145,8 @@ function (_React$Component) {
   _createClass(SkillModal, [{
     key: "lessonURL",
     value: function lessonURL() {
-      debugger; // this.props.history.replace(`/skill/${this.props.url}`)
+      debugger;
+      this.props.history.replace("/skill/".concat(this.props.url));
     }
   }, {
     key: "render",
