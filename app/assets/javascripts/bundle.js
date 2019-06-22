@@ -1511,7 +1511,7 @@ var grandLessonsObj = {
       correct: ["I am a boy, not a girl"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "La fille, la femme",
-      correct: [""]
+      correct: ["the girl, the woman"]
     })]
   },
   "jp": {},
@@ -1562,9 +1562,17 @@ function (_React$Component) {
   _inherits(LessonBody, _React$Component);
 
   function LessonBody(props) {
+    var _this;
+
     _classCallCheck(this, LessonBody);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(LessonBody).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LessonBody).call(this, props));
+    _this.state = {
+      "default": true,
+      correct: false,
+      wrong: false
+    };
+    return _this;
   }
 
   _createClass(LessonBody, [{
@@ -1572,20 +1580,49 @@ function (_React$Component) {
     value: function handleSubmit() {
       var correct = document.getElementById('skill-check-button').getAttribute('data-guess');
       var guess = document.getElementById('challenge-textarea').value;
+      debugger;
 
       if (guess.toLowerCase() === correct.toLowerCase()) {
         var langData = this.props.user.language_data[this.props.mini_lang][0];
 
         if (langData.max_level === false) {
-          langData['level'] = langData.level + 1;
+          langData['level'] = langData.level + 1; // if (langData.level > 2) {
+          //     langData['max_level'] = true;
+          // }
+
           document.getElementById('challenge-textarea').value = "";
           this.props.updateLangData(langData);
-        } else {
-          // redirect to finished scene
-          langData['level'] = 0;
-          this.props.updateLangData(langData);
-        }
+        } // else {
+        //     // redirect to finished scene
+        //     langData['level'] = 0;
+        //     this.props.updateLangData(langData)
+        // }
+
       }
+    }
+  }, {
+    key: "renderFooter",
+    value: function renderFooter() {
+      if (this.state["default"] === true) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-footer-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-footer-content-frame"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-f-c-f"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-skip-button"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "skill-f-bs"
+        }, "Skip")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-check-button"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "skill-f-bs",
+          id: "skill-check-button",
+          "data-guess": "eggs ",
+          onClick: this.handleSubmit.bind(this)
+        }, " Check")))));
+      } else if (this.state.wrong === true) {} else {}
     }
   }, {
     key: "render",
@@ -1616,24 +1653,7 @@ function (_React$Component) {
         className: "skill-progress-green"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-lesson-body"
-      }, currentLesson), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "skill-footer-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "skill-footer-content-frame"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "skill-f-c-f"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "skill-skip-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "skill-f-bs"
-      }, "Skip")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "skill-check-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "skill-f-bs",
-        id: "skill-check-button",
-        "data-guess": "eggs ",
-        onClick: this.handleSubmit.bind(this)
-      }, " Check"))))))));
+      }, currentLesson), this.renderFooter())));
     }
   }]);
 

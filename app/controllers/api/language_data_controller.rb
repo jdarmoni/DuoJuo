@@ -9,7 +9,7 @@ class Api::LanguageDataController < ApplicationController
 
     def update
         @newLanguage = LanguageData.find(params[:id])
-        debugger
+        
         if @newLanguage.update(lang_data_params)
             
             render :show
