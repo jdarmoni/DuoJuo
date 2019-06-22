@@ -12,6 +12,17 @@ class TranslateSentence extends React.Component {
         // let langData = this.props.langData
         // langData['correct'] = this.props.correct
         // this.props.updateLangData({})
+        
+        // parent component will check if correct matches the guess and then iterate up the level
+
+        // ver 2: 
+        if (this.state.guess === this.props.correct) {
+            // let langData = this.props.langData
+            // langData['level'] = this.props.langData.level + 1
+            // this.props.updateLangData({langData})
+
+        }
+
     }
     update(guess){
         debugger
@@ -22,6 +33,7 @@ class TranslateSentence extends React.Component {
 
     render(){
         return (
+            <>
             <div className="challenge challenge-translate">
                 <h1 className="challenge-header">Write this in English</h1>
                 <div className="challenge-subbox">
@@ -38,6 +50,20 @@ class TranslateSentence extends React.Component {
                     </div>
                 </div>
             </div>
+            {/* <div className="skill-footer-container">
+                <div className="skill-footer-content-frame">
+                    <div className="skill-f-c-f">
+                        <div className="skill-skip-button">
+                            <button className="skill-f-bs">Skip</button>
+                        </div>
+
+                        <div className="skill-check-button">
+                            <button className="skill-f-bs" > Check</button>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+            </>
         )
     }
 }

@@ -1714,10 +1714,17 @@ function (_React$Component) {
 
   _createClass(TranslateSentence, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// tell the backend what the correct sentence is and have that returned in the lesson body state
+    value: function componentDidMount() {
+      // tell the backend what the correct sentence is and have that returned in the lesson body state
       // let langData = this.props.langData
       // langData['correct'] = this.props.correct
       // this.props.updateLangData({})
+      // parent component will check if correct matches the guess and then iterate up the level
+      // ver 2: 
+      if (this.state.guess === this.props.correct) {// let langData = this.props.langData
+        // langData['level'] = this.props.langData.level + 1
+        // this.props.updateLangData({langData})
+      }
     }
   }, {
     key: "update",
@@ -1732,7 +1739,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "challenge challenge-translate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "challenge-header"
@@ -1844,7 +1851,7 @@ function (_React$Component) {
         id: "challenge-textarea",
         placeholder: "Type in English",
         onChange: this.update('guess').bind(this)
-      })))));
+      }))))));
     }
   }]);
 
