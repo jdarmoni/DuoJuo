@@ -1,9 +1,11 @@
 import TranslateSentence from './translate_sentence'
 import { connect } from 'react-redux'
 const mapStateToProps = (state) => {
-
+    let user = Object.values(state.entities.users)[0];
+    debugger
     return {
-        users: Object.values(state.entities.users)
+        user: user,
+        lang_data: user.language_data[user.learning_language][0]
     }
 }
 const mapDispatchToProps = (dispatch) => {

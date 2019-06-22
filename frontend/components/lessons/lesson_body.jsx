@@ -5,21 +5,29 @@ import {grandLessonsObj} from './grand_lessons_obj/grand_lessons_obj';
 class LessonBody extends React.Component {
     constructor(props) {
         super(props)
-        
+        // this.state = {
+        //     guess: ""
+        // } 
     }
 
     handleSubmit(){
-        // document.getElementById('challenge-textarea').value
+        let guess = document.getElementById('challenge-textarea').value
         // if above matches CORRECT ANSWER, this.props.updatLanguageData({level = level+1})
         debugger   
-
     }
+
+    // update(guess) {
+    //     debugger
+    //     return e => this.setState({
+    //         [guess]: e.target.value
+    //     })
+    // }
 
     render(){
          
-        debugger
         let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
         let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
+        debugger
         
         return (
             <div className="first-skill-div">

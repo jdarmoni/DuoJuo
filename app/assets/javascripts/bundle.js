@@ -1557,23 +1557,31 @@ function (_React$Component) {
   function LessonBody(props) {
     _classCallCheck(this, LessonBody);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(LessonBody).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(LessonBody).call(this, props)); // this.state = {
+    //     guess: ""
+    // } 
   }
 
   _createClass(LessonBody, [{
     key: "handleSubmit",
     value: function handleSubmit() {
-      // document.getElementById('challenge-textarea').value
-      // if above matches CORRECT ANSWER, this.props.updatLanguageData({level = level+1})
+      var guess = document.getElementById('challenge-textarea').value; // if above matches CORRECT ANSWER, this.props.updatLanguageData({level = level+1})
+
       debugger;
-    }
+    } // update(guess) {
+    //     debugger
+    //     return e => this.setState({
+    //         [guess]: e.target.value
+    //     })
+    // }
+
   }, {
     key: "render",
     value: function render() {
-      debugger;
       var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
       var currentLesson = _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url][this.props.level]; // another key for current level
 
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-skill-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1707,6 +1715,9 @@ function (_React$Component) {
   _createClass(TranslateSentence, [{
     key: "componentDidMount",
     value: function componentDidMount() {// tell the backend what the correct sentence is and have that returned in the lesson body state
+      // let langData = this.props.langData
+      // langData['correct'] = this.props.correct
+      // this.props.updateLangData({})
     }
   }, {
     key: "update",
@@ -1859,8 +1870,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  var user = Object.values(state.entities.users)[0];
+  debugger;
   return {
-    users: Object.values(state.entities.users)
+    user: user,
+    lang_data: user.language_data[user.learning_language][0]
   };
 };
 

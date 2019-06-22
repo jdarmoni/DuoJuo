@@ -9,6 +9,9 @@ class TranslateSentence extends React.Component {
     }
     componentDidMount(){
         // tell the backend what the correct sentence is and have that returned in the lesson body state
+        // let langData = this.props.langData
+        // langData['correct'] = this.props.correct
+        // this.props.updateLangData({})
     }
     update(guess){
         debugger
