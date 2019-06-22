@@ -1570,7 +1570,7 @@ function (_React$Component) {
       debugger;
 
       if (guess === correct) {
-        level += 1;
+        debugger; // update the level by 1
       }
     } // update(guess) {
     //     debugger
@@ -1585,7 +1585,6 @@ function (_React$Component) {
       var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
       var currentLesson = _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url][this.props.level]; // another key for current level
 
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-skill-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1892,7 +1891,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   var user = Object.values(state.entities.users)[0];
-  debugger;
   return {
     user: user,
     lang_data: user.language_data[user.learning_language][0]

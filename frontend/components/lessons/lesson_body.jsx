@@ -15,7 +15,8 @@ class LessonBody extends React.Component {
         let guess = document.getElementById('challenge-textarea').value
         debugger
         if (guess === correct ) {
-            level +=1;
+            debugger
+            // update the level by 1
         }
     }
 
@@ -30,7 +31,7 @@ class LessonBody extends React.Component {
 
         let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
         let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
-        debugger
+        
         
         return (
             <div className="first-skill-div">
