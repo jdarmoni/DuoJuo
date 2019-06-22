@@ -3,9 +3,7 @@ import React from 'react'
 class TranslateSentence extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            guess: ""
-        }
+        
     }
     componentDidMount(){
         let correct = this.props.correct
@@ -14,12 +12,7 @@ class TranslateSentence extends React.Component {
             document.getElementById('skill-check-button').setAttribute('data-guess', correct)        
         }
     }
-    update(guess){
-        debugger
-        return e => this.setState({
-            [guess]: e.target.value
-        })
-    }
+   
 
     render(){
         return (

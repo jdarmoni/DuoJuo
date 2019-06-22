@@ -11,18 +11,16 @@ class LessonBody extends React.Component {
         let correct = document.getElementById('skill-check-button').getAttribute('data-guess')
         let guess = document.getElementById('challenge-textarea').value
         debugger
-        if (guess === correct ) {
+        if (guess.toLowerCase() === correct.toLowerCase() ) {
             debugger
             // update the level by 1
         }
     }
 
-
     render(){
 
         let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
         let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
-        
         
         return (
             <div className="first-skill-div">
