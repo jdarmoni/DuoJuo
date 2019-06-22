@@ -11,9 +11,12 @@ class LessonBody extends React.Component {
     }
 
     handleSubmit(){
+        let correct = document.getElementById('skill-check-button').getAttribute('data-guess')
         let guess = document.getElementById('challenge-textarea').value
-        // if above matches CORRECT ANSWER, this.props.updatLanguageData({level = level+1})
-        debugger   
+        debugger
+        if (guess === correct ) {
+            level +=1;
+        }
     }
 
     // update(guess) {
@@ -24,7 +27,7 @@ class LessonBody extends React.Component {
     // }
 
     render(){
-         
+
         let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
         let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
         debugger
@@ -61,7 +64,7 @@ class LessonBody extends React.Component {
                                     </div>
 
                                     <div className="skill-check-button">
-                                        <button className="skill-f-bs" onClick={this.handleSubmit.bind(this)}> Check</button>
+                                        <button className="skill-f-bs" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> Check</button>
                                     </div>
                                 </div>
                             </div>

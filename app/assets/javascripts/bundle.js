@@ -1565,9 +1565,13 @@ function (_React$Component) {
   _createClass(LessonBody, [{
     key: "handleSubmit",
     value: function handleSubmit() {
-      var guess = document.getElementById('challenge-textarea').value; // if above matches CORRECT ANSWER, this.props.updatLanguageData({level = level+1})
-
+      var correct = document.getElementById('skill-check-button').getAttribute('data-guess');
+      var guess = document.getElementById('challenge-textarea').value;
       debugger;
+
+      if (guess === correct) {
+        level += 1;
+      }
     } // update(guess) {
     //     debugger
     //     return e => this.setState({
@@ -1619,6 +1623,8 @@ function (_React$Component) {
         className: "skill-check-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "skill-f-bs",
+        id: "skill-check-button",
+        "data-guess": "eggs ",
         onClick: this.handleSubmit.bind(this)
       }, " Check"))))))));
     }
@@ -1715,16 +1721,25 @@ function (_React$Component) {
   _createClass(TranslateSentence, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // tell the backend what the correct sentence is and have that returned in the lesson body state
+      var correct = this.props.correct;
+      var challengeTextArea = document.getElementById('challenge-textarea');
+
+      if (challengeTextArea) {
+        document.getElementById('skill-check-button').setAttribute('data-guess', correct);
+      } // tell the backend what the correct sentence is and have that returned in the lesson body state
       // let langData = this.props.langData
       // langData['correct'] = this.props.correct
       // this.props.updateLangData({})
       // parent component will check if correct matches the guess and then iterate up the level
       // ver 2: 
+
+
       if (this.state.guess === this.props.correct) {// let langData = this.props.langData
         // langData['level'] = this.props.langData.level + 1
         // this.props.updateLangData({langData})
       }
+
+      document.getElementsByClassName('skill-f-bs');
     }
   }, {
     key: "update",
@@ -1849,8 +1864,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "challenge-textarea",
         id: "challenge-textarea",
-        placeholder: "Type in English",
-        onChange: this.update('guess').bind(this)
+        placeholder: "Type in English"
       }))))));
     }
   }]);

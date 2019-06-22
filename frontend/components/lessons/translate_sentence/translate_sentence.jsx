@@ -8,6 +8,11 @@ class TranslateSentence extends React.Component {
         }
     }
     componentDidMount(){
+        let correct = this.props.correct
+        let challengeTextArea = document.getElementById('challenge-textarea')
+        if (challengeTextArea) {
+            document.getElementById('skill-check-button').setAttribute('data-guess', correct)        
+        }
         // tell the backend what the correct sentence is and have that returned in the lesson body state
         // let langData = this.props.langData
         // langData['correct'] = this.props.correct
@@ -22,6 +27,7 @@ class TranslateSentence extends React.Component {
             // this.props.updateLangData({langData})
 
         }
+        document.getElementsByClassName('skill-f-bs')
 
     }
     update(guess){
@@ -45,7 +51,7 @@ class TranslateSentence extends React.Component {
                     </div>
                     <div className="challenge-prompt-text-container">
                         <div className="c-p-t-c-sub">
-                            <textarea className="challenge-textarea" id="challenge-textarea" placeholder="Type in English" onChange={this.update('guess').bind(this)}></textarea>
+                            <textarea className="challenge-textarea" id="challenge-textarea" placeholder="Type in English"></textarea>
                         </div>
                     </div>
                 </div>
