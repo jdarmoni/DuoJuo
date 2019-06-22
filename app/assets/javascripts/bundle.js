@@ -1572,7 +1572,6 @@ function (_React$Component) {
     value: function handleSubmit() {
       var correct = document.getElementById('skill-check-button').getAttribute('data-guess');
       var guess = document.getElementById('challenge-textarea').value;
-      debugger;
 
       if (guess.toLowerCase() === correct.toLowerCase()) {
         var langData = this.props.user.language_data[this.props.mini_lang][0];

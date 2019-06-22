@@ -10,7 +10,7 @@ class LessonBody extends React.Component {
     handleSubmit(){
         let correct = document.getElementById('skill-check-button').getAttribute('data-guess')
         let guess = document.getElementById('challenge-textarea').value
-        debugger
+        
         if (guess.toLowerCase() === correct.toLowerCase() ) {
 
             let langData = this.props.user.language_data[this.props.mini_lang][0]

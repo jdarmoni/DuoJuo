@@ -9,7 +9,7 @@ class Api::LanguageDataController < ApplicationController
 
     def update
         @newLanguage = LanguageData.find(params[:id])
-        
+        debugger
         if @newLanguage.update(lang_data_params)
             
             render :show
@@ -17,6 +17,6 @@ class Api::LanguageDataController < ApplicationController
     end
 
     def lang_data_params
-        params.permit(:streak, :user_id, :language_string, :points, :learning, :language, :level, :sentences_translated, :to_next_level, :level_percent, :max_level, :language_strength, :fluency_score, :first_time)
+        params.require(:language_data).permit(:streak, :user_id, :language_string, :points, :learning, :language, :level, :sentences_translated, :to_next_level, :level_percent, :max_level, :language_strength, :fluency_score, :first_time)
     end
 end
