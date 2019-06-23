@@ -79,11 +79,7 @@ class LessonBody extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="skill-skip-button">
-                                <button className="skill-f-bs">Continue</button>
-                            </div> */}
-
-
+                         
                             <div className="skill-check-button">
                                 <button className="skill-f-bs s-c-b-correct" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> continue</button>
                             </div>
@@ -92,7 +88,43 @@ class LessonBody extends React.Component {
                 </div>
             )
          } else {
-             
+            //  COULD interpolate correct/wrong into classNames, and use an if correct/wrong return method for rendering the top sub-content div
+            return (
+                <div className="skill-footer-container">
+                    <div className="skill-footer-content-frame s-f-c-f-correct wrong">
+                        <div className="skill-f-c-f">
+                            {/*  */}
+                            <div className="skill-correct-container wrong">
+                                <div className="skill-correct-content wrong">
+                                    <div className="skill-correct-icon-div wrong">
+                                        <span className="skill-correct-image"></span>
+                                    </div>
+                                    <div className="correct-sub-content-container">
+                                        <div>
+                                            <h2 className="correct-h2-text">You are correct</h2>
+                                        </div>
+                                        <div className="correct-bottom-content-container">
+                                            <a className="crct-bottom-a" href="">
+                                                <div className="crct-mini-image mini-flag"></div>
+                                                <span className="crct-bottom-span">REPORT</span>
+                                            </a>
+                                            <a className="crct-bottom-a" href="">
+                                                <div className="crct-mini-image mini-speech"></div>
+                                                <span className="crct-bottom-span">DISCUSS</span>
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="skill-check-button">
+                                <button className="skill-f-bs s-c-b-correct" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
          }
     }
     render(){
