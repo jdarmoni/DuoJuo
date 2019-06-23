@@ -128,7 +128,7 @@ class LessonBody extends React.Component {
                                             </a>
                                             <a className="crct-bottom-a" href="">
                                                 <div className="crct-mini-image mini-i-speech"></div>
-                                                <span className="crct-bottom-span wrong-color-text">DISCUSS</span>
+                                                <span className="crct-bottom-span wrong-color-text">DISCUSS ({Math.floor(Math.random() * 100)})</span>
 
                                             </a>
                                         </div>

@@ -1715,7 +1715,7 @@ function (_React$Component) {
           className: "crct-mini-image mini-i-speech"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "crct-bottom-span wrong-color-text"
-        }, "DISCUSS")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "DISCUSS (", Math.floor(Math.random() * 100), ")")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "skill-check-button"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "skill-f-bs s-c-b-correct s-c-b-wrong",
