@@ -1567,16 +1567,29 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(LessonBody).call(this, props));
     _this.state = {
+      correctAnswer: "",
       "default": false,
-      correct: true,
-      wrong: false
+      correct: false,
+      wrong: true
     };
     return _this;
   }
 
   _createClass(LessonBody, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var correctAnswer = "first";
+
+      if (document.getElementById('skill-check-button')) {
+        this.setState({
+          correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess')
+        });
+      }
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit() {
+      // replace correct with this.state.correctAnswer
       var correct = document.getElementById('skill-check-button').getAttribute('data-guess');
       var guess = document.getElementById('challenge-textarea').value;
       debugger;
@@ -1669,41 +1682,43 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "skill-footer-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "skill-footer-content-frame s-f-c-f-correct wrong"
+          className: "skill-footer-content-frame s-f-c-f-correct wrong-color"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "skill-f-c-f"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "skill-correct-container wrong"
+          className: "skill-correct-container wrong-color"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "skill-correct-content wrong"
+          className: "skill-correct-content"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "skill-correct-icon-div wrong"
+          className: "skill-correct-icon-div"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "skill-correct-image"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "correct-sub-content-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-          className: "correct-h2-text"
-        }, "You are correct")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "correct-bottom-content-container"
+          className: "correct-h2-text wrong-color-text"
+        }, "Correct solution:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "incorrect-answer-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " ", this.state.correctAnswer)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "correct-bottom-content-container wrong-color-text"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "crct-bottom-a",
           href: ""
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "crct-mini-image mini-flag"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "crct-bottom-span"
+          className: "crct-bottom-span wrong-color-text"
         }, "REPORT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "crct-bottom-a",
           href: ""
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "crct-mini-image mini-speech"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "crct-bottom-span"
+          className: "crct-bottom-span wrong-color-text"
         }, "DISCUSS")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "skill-check-button"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "skill-f-bs s-c-b-correct",
+          className: "skill-f-bs s-c-b-correct s-c-b-wrong",
           id: "skill-check-button",
           "data-guess": "eggs ",
           onClick: this.handleSubmit.bind(this)

@@ -6,13 +6,23 @@ class LessonBody extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            correctAnswer: "",
             default: false,
-            correct: true,
-            wrong: false
+            correct: false,
+            wrong: true
         }
     }
-
+    componentDidMount(){
+        let correctAnswer = "first";
+        if (document.getElementById('skill-check-button')) {
+            this.setState({
+                correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess')
+            })
+        } 
+        
+    }
     handleSubmit(){
+        // replace correct with this.state.correctAnswer
         let correct = document.getElementById('skill-check-button').getAttribute('data-guess')
         let guess = document.getElementById('challenge-textarea').value
         debugger
@@ -88,29 +98,37 @@ class LessonBody extends React.Component {
                 </div>
             )
          } else {
+           
             //  COULD interpolate correct/wrong into classNames, and use an if correct/wrong return method for rendering the top sub-content div
             return (
                 <div className="skill-footer-container">
-                    <div className="skill-footer-content-frame s-f-c-f-correct wrong">
+                    <div className="skill-footer-content-frame s-f-c-f-correct wrong-color">
                         <div className="skill-f-c-f">
                             {/*  */}
-                            <div className="skill-correct-container wrong">
-                                <div className="skill-correct-content wrong">
-                                    <div className="skill-correct-icon-div wrong">
+                            <div className="skill-correct-container wrong-color">
+                                <div className="skill-correct-content">
+                                    <div className="skill-correct-icon-div">
                                         <span className="skill-correct-image"></span>
                                     </div>
                                     <div className="correct-sub-content-container">
                                         <div>
-                                            <h2 className="correct-h2-text">You are correct</h2>
+                                            <h2 className="correct-h2-text wrong-color-text">Correct solution:
+                                            <div className="incorrect-answer-div">
+                                                <span> {this.state.correctAnswer} 
+                                                    
+
+                                                </span>
+                                            </div>
+                                            </h2>
                                         </div>
-                                        <div className="correct-bottom-content-container">
+                                        <div className="correct-bottom-content-container wrong-color-text">
                                             <a className="crct-bottom-a" href="">
                                                 <div className="crct-mini-image mini-flag"></div>
-                                                <span className="crct-bottom-span">REPORT</span>
+                                                <span className="crct-bottom-span wrong-color-text">REPORT</span>
                                             </a>
                                             <a className="crct-bottom-a" href="">
                                                 <div className="crct-mini-image mini-speech"></div>
-                                                <span className="crct-bottom-span">DISCUSS</span>
+                                                <span className="crct-bottom-span wrong-color-text">DISCUSS</span>
 
                                             </a>
                                         </div>
@@ -119,7 +137,7 @@ class LessonBody extends React.Component {
                             </div>
 
                             <div className="skill-check-button">
-                                <button className="skill-f-bs s-c-b-correct" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> continue</button>
+                                <button className="skill-f-bs s-c-b-correct s-c-b-wrong" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> continue</button>
                             </div>
                         </div>
                     </div>
@@ -128,7 +146,6 @@ class LessonBody extends React.Component {
          }
     }
     render(){
-
         let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
         let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
         

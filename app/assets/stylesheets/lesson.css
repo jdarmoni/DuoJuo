@@ -225,6 +225,10 @@
 .skill-correct-content {
     display: flex;
 }
+.wrong-color {
+    background-color: #ffc1c1;
+    color: #ea2b2b;
+}
 
 .skill-correct-icon-div {
     display: none;
@@ -252,8 +256,15 @@
     color: #58a700;
     margin: 0;
 }
+.incorrect-answer-div {
+    font-size: 15px;
+    font-weight: 500!important;
+    margin-top: 5px;
+}
 .correct-bottom-content-container {
     margin-top: 20px;
+    color: #58a700;
+
 }
 .crct-mini-image {
     background-position: 50%;
@@ -264,7 +275,7 @@
     margin-right: 5px;
     vertical-align: middle;
     width: 20px;
-    color: #58a700;
+    /* color: #58a700; */
 }
 .mini-flag {
     background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/grading-ribbon-flag-correct.svg);
@@ -274,7 +285,7 @@
 }
 .crct-bottom-a {
     margin-right: 30px;
-    color: #58a700;
+    /* color: #58a700; */
     display: inline-block;
     opacity: .7;
     padding: 0;
@@ -338,12 +349,20 @@
     border-color: #58a700;
     border-width: 0 0 4px;
 }
+.s-c-b-wrong {
+    background-color: #ff4b4b;
+    border-color: #ea2b2a;
+}
 
 .s-f-c-f-correct {
     background-color: #b8f28b;
     color: #58a700;
     transition: max-height .3s ease-in-out;
     width: 100%;
+}
+.wrong-color {
+    background-color: #ffc1c1;
+    color: #ea2b2b;
 }
     
 
@@ -392,6 +411,10 @@
         transition: max-height .3s ease-in-out;
         width: 100%;
     }
+    .wrong-color {
+        background-color: #ffc1c1;
+        color: #ea2b2b;
+    }
     .skill-correct-icon-div {
         display: block;
         background: #fff;
@@ -411,6 +434,13 @@
     .correct-h2-text {
         line-height: 30px;
         margin-bottom: 12px;
+    }
+    .wrong-color-text {
+        color: #ea2b2b;
+    }
+    .incorrect-answer-div {
+        font-size: 17px;
+        margin-top: 0;
     }
 
     .skill-skip-button {
