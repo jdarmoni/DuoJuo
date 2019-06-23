@@ -1568,9 +1568,9 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(LessonBody).call(this, props));
     _this.state = {
       correctAnswer: "",
-      "default": false,
+      "default": true,
       correct: false,
-      wrong: true
+      wrong: false
     };
     return _this;
   }
@@ -1578,6 +1578,7 @@ function (_React$Component) {
   _createClass(LessonBody, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      debugger;
       var correctAnswer = "first";
 
       if (document.getElementById('skill-check-button')) {
@@ -1587,29 +1588,57 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      if (document.getElementById('skill-check-button')) {
+        var correct = document.getElementById('skill-check-button').getAttribute('data-guess');
+
+        if (correct !== this.state.correctAnswer) {
+          this.setState({
+            correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess')
+          });
+        }
+      }
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit() {
-      // replace correct with this.state.correctAnswer
-      var correct = document.getElementById('skill-check-button').getAttribute('data-guess');
-      var guess = document.getElementById('challenge-textarea').value;
-      debugger;
+      if (this.state["default"]) {
+        // debugger
+        // let correct = document.getElementById('skill-check-button').getAttribute('data-guess')
+        var guess = document.getElementById('challenge-textarea').value;
 
-      if (guess.toLowerCase() === correct.toLowerCase()) {
+        if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
+          // debugger
+          this.setState({
+            correct: true,
+            wrong: false,
+            "default": false
+          });
+        } else {
+          // debugger
+          this.setState({
+            correct: false,
+            wrong: true,
+            "default": false
+          });
+        }
+      }
+
+      if (!this.state["default"]) {
+        // debugger
         var langData = this.props.user.language_data[this.props.mini_lang][0];
 
         if (langData.max_level === false) {
-          langData['level'] = langData.level + 1; // if (langData.level > 2) {
-          //     langData['max_level'] = true;
-          // }
-
+          // debugger
+          langData['level'] = langData.level + 1;
           document.getElementById('challenge-textarea').value = "";
-          this.props.updateLangData(langData); // if this.state.default === false
-        } // else {
-        //     // redirect to finished scene
-        //     langData['level'] = 0;
-        //     this.props.updateLangData(langData)
-        // }
-
+          this.props.updateLangData(langData).then(this.setState({
+            "default": true,
+            wrong: false,
+            correct: true
+          }));
+        }
       }
     }
   }, {
