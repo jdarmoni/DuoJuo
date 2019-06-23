@@ -58,7 +58,9 @@ class LessonBody extends React.Component {
                             {/*  */}
                             <div className="skill-correct-container">
                                 <div className="skill-correct-content">
-                                    <div></div>
+                                    <div className="skill-correct-icon-div">
+                                        <span className="skill-correct-image"></span>
+                                    </div>
                                     <div>
                                         <div></div>
                                         <div></div>
