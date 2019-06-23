@@ -234,7 +234,6 @@
     animation-timing-function: ease-in-out;
 }
 .skill-correct-image {
-    /* display: none; */
     background-position: -166px -90px;
     height: 31px;
     width: 41px;
@@ -252,6 +251,8 @@
 .skill-skip-button {
         position: absolute;
         top: 50%;
+            -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .skill-f-bs {
@@ -281,8 +282,8 @@ line-height: 20px;
         position: absolute;
     right: 40px;
     top: 50%;
-    /* -ms-transform: translateY(-50%);
-    transform: translateY(-50%); */
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .s-c-b-correct {
@@ -356,7 +357,6 @@ line-height: 20px;
         width: 80px;
     }
     .skill-correct-image {
-        /* display: block;  */
         margin: 27px 0 0 20px;
     }
 
