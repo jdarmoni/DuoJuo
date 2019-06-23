@@ -1637,23 +1637,25 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "skill-correct-image"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "for the whole left section"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "top half"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "You are correct")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "report"
+          className: "correct-sub-content-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          className: "correct-h2-text"
+        }, "You are correct")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "correct-bottom-content-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "crct-bottom-a",
           href: ""
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "min-image"
+          className: "crct-mini-image mini-flag"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: true
+          className: "crct-bottom-span"
         }, "REPORT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          className: "crct-bottom-a",
           href: ""
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "mini-image"
+          className: "crct-mini-image mini-speech"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: true
+          className: "crct-bottom-span"
         }, "DISCUSS")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "skill-check-button"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
