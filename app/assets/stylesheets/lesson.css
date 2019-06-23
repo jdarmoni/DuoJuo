@@ -245,6 +245,10 @@
     display: inline-block;
     vertical-align: middle;
 }
+.skill-incorrect-image {
+    background-position: -208px -90px;
+    width: 31px;
+}
 .correct-sub-content-container {
     display: -ms-flexbox;
     display: flex;
@@ -280,8 +284,14 @@
 .mini-flag {
     background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/grading-ribbon-flag-correct.svg);
 }
+.mini-i-flag { 
+    background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/grading-ribbon-flag-incorrect.svg);
+}
 .mini-speech {
     background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/grading-ribbon-discuss-correct.svg);
+}
+.mini-i-speech {
+    background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/grading-ribbon-discuss-incorrect.svg);
 }
 .crct-bottom-a {
     margin-right: 30px;
@@ -427,6 +437,9 @@
     }
     .skill-correct-image {
         margin: 27px 0 0 20px;
+    }
+    .skill-incorrect-image {
+        margin: 26px 0 0 25px;
     }
     .correct-sub-content-container {
         padding: 0;

@@ -1692,7 +1692,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "skill-correct-icon-div"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "skill-correct-image"
+          className: "skill-correct-image skill-incorrect-image"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "correct-sub-content-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -1705,14 +1705,14 @@ function (_React$Component) {
           className: "crct-bottom-a",
           href: ""
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "crct-mini-image mini-flag"
+          className: "crct-mini-image mini-i-flag"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "crct-bottom-span wrong-color-text"
         }, "REPORT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "crct-bottom-a",
           href: ""
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "crct-mini-image mini-speech"
+          className: "crct-mini-image mini-i-speech"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "crct-bottom-span wrong-color-text"
         }, "DISCUSS")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

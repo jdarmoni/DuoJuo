@@ -108,7 +108,7 @@ class LessonBody extends React.Component {
                             <div className="skill-correct-container wrong-color">
                                 <div className="skill-correct-content">
                                     <div className="skill-correct-icon-div">
-                                        <span className="skill-correct-image"></span>
+                                        <span className="skill-correct-image skill-incorrect-image"></span>
                                     </div>
                                     <div className="correct-sub-content-container">
                                         <div>
@@ -123,11 +123,11 @@ class LessonBody extends React.Component {
                                         </div>
                                         <div className="correct-bottom-content-container wrong-color-text">
                                             <a className="crct-bottom-a" href="">
-                                                <div className="crct-mini-image mini-flag"></div>
+                                                <div className="crct-mini-image mini-i-flag"></div>
                                                 <span className="crct-bottom-span wrong-color-text">REPORT</span>
                                             </a>
                                             <a className="crct-bottom-a" href="">
-                                                <div className="crct-mini-image mini-speech"></div>
+                                                <div className="crct-mini-image mini-i-speech"></div>
                                                 <span className="crct-bottom-span wrong-color-text">DISCUSS</span>
 
                                             </a>
