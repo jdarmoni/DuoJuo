@@ -61,9 +61,21 @@ class LessonBody extends React.Component {
                                     <div className="skill-correct-icon-div">
                                         <span className="skill-correct-image"></span>
                                     </div>
-                                    <div>
-                                        <div></div>
-                                        <div></div>
+                                    <div className="for the whole left section">
+                                        <div className="top half">
+                                            <h2>You are correct</h2>
+                                        </div>
+                                        <div className="report">
+                                            <a href="">
+                                                <div className="min-image"></div>
+                                                <span className>REPORT</span>
+                                            </a>
+                                            <a href="">
+                                                <div className="mini-image"></div>
+                                                <span className>DISCUSS</span>
+
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

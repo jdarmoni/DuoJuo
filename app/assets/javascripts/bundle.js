@@ -1636,7 +1636,25 @@ function (_React$Component) {
           className: "skill-correct-icon-div"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "skill-correct-image"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "for the whole left section"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "top half"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "You are correct")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "report"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: ""
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "min-image"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: true
+        }, "REPORT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: ""
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "mini-image"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: true
+        }, "DISCUSS")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "skill-check-button"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "skill-f-bs s-c-b-correct",
