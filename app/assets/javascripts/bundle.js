@@ -1499,7 +1499,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../translate_sentence/translate_sentence_container */ "./frontend/components/lessons/translate_sentence/translate_sentence_container.js");
 
- // this doesn't solve how you can save progress in each module
 
 var grandLessonsObj = {
   "fr": {
@@ -1568,8 +1567,8 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(LessonBody).call(this, props));
     _this.state = {
-      "default": true,
-      correct: false,
+      "default": false,
+      correct: true,
       wrong: false
     };
     return _this;
@@ -1591,7 +1590,7 @@ function (_React$Component) {
           // }
 
           document.getElementById('challenge-textarea').value = "";
-          this.props.updateLangData(langData);
+          this.props.updateLangData(langData); // if this.state.default === false
         } // else {
         //     // redirect to finished scene
         //     langData['level'] = 0;
@@ -1622,7 +1621,26 @@ function (_React$Component) {
           "data-guess": "eggs ",
           onClick: this.handleSubmit.bind(this)
         }, " Check")))));
-      } else if (this.state.wrong === true) {} else {}
+      } else if (this.state.correct === true) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-footer-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-footer-content-frame s-f-c-f-correct"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-f-c-f"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-correct-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-correct-content"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "skill-check-button"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "skill-f-bs s-c-b-correct",
+          id: "skill-check-button",
+          "data-guess": "eggs ",
+          onClick: this.handleSubmit.bind(this)
+        }, " continue")))));
+      } else {}
     }
   }, {
     key: "render",

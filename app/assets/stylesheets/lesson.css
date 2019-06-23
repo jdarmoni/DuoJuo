@@ -256,6 +256,21 @@ line-height: 20px;
     transform: translateY(-50%); */
 }
 
+.s-c-b-correct {
+    background-color: #78c800;
+    color: #fff;
+    border-color: #58a700;
+    border-width: 0 0 4px;
+}
+
+.s-f-c-f-correct {
+    background-color: #b8f28b;
+    color: #58a700;
+    transition: max-height .3s ease-in-out;
+    width: 100%;
+}
+    
+
 @media (min-width: 1000px) {
     .skill-f-c-f {
         margin-left: calc(50% - 500px);
@@ -295,6 +310,12 @@ line-height: 20px;
         min-height: 140px;
         overflow: hidden;
     }
+    .s-f-c-f-correct {
+        background-color: #b8f28b;
+        color: #58a700;
+        transition: max-height .3s ease-in-out;
+        width: 100%;
+}
     .skill-skip-button {
          left: 40px;
         /* -ms-transform: translateY(-50%);
@@ -303,14 +324,21 @@ line-height: 20px;
     .skill-f-bs {
         font-size: 17px!important;
     }
+    .s-f-c-f-correct {
+        min-height: 140px;
+        overflow: hidden;
+}
 }
 
 
 
 @media screen and (max-height: 500px) {
     .challenge-translate-prompt {
-    margin-bottom: 8px;
-    margin-top: 8px;
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+    .s-f-c-f-correct {
+        bottom: 20px;
     }
 }
 

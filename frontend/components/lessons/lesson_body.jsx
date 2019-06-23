@@ -6,8 +6,8 @@ class LessonBody extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            default: true,
-            correct: false,
+            default: false,
+            correct: true,
             wrong: false
         }
     }
@@ -25,7 +25,7 @@ class LessonBody extends React.Component {
                 //     langData['max_level'] = true;
                 // }
                 document.getElementById('challenge-textarea').value = "";
-                this.props.updateLangData(langData)
+                this.props.updateLangData(langData) // if this.state.default === false
              } // else {
             //     // redirect to finished scene
             //     langData['level'] = 0;
@@ -50,8 +50,33 @@ class LessonBody extends React.Component {
                     </div>
                 </div>
             )
-        } else if (this.state.wrong === true) {
+        } else if (this.state.correct === true) {
+            return (
+                <div className="skill-footer-container">
+                    <div className="skill-footer-content-frame s-f-c-f-correct">
+                        <div className="skill-f-c-f">
+                            {/*  */}
+                            <div className="skill-correct-container">
+                                <div className="skill-correct-content">
+                                    <div></div>
+                                    <div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* <div className="skill-skip-button">
+                                <button className="skill-f-bs">Continue</button>
+                            </div> */}
 
+
+                            <div className="skill-check-button">
+                                <button className="skill-f-bs s-c-b-correct" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
          } else {
              
          }
