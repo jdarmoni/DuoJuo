@@ -191,16 +191,11 @@ class LessonBody extends React.Component {
     }
     render(){
         // set currentLesson to an array so that you can use skip button
+        // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
         if (this.state.currentLesson === "") {
             let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
             this.setState({currentLesson: grandLessonsObj[this.props.mini_lang][url]})
-        }
-        // let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
-        // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
-
-        // let arrayOfLessons = grandLessonsObj[this.props.mini_lang][url]
-        debugger
-        
+        }        
         return (
             <div className="first-skill-div">
                 <div className="second-skill-div">
@@ -222,24 +217,10 @@ class LessonBody extends React.Component {
                         <div className="skill-lesson-body">
                             {/* where the lesson component goes */}
 
-                            {/* {currentLesson} */}
                             {this.state.currentLesson[this.props.level]}
 
                         </div>
                         {this.renderFooter()}
-                        {/* <div className="skill-footer-container">
-                            <div className="skill-footer-content-frame">
-                                <div className="skill-f-c-f">
-                                    <div className="skill-skip-button">
-                                        <button className="skill-f-bs">Skip</button>
-                                    </div>
-
-                                    <div className="skill-check-button">
-                                        <button className="skill-f-bs" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> Check</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
 
                     </div>
                 </div>

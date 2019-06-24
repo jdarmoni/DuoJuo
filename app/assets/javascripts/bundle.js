@@ -1779,17 +1779,14 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       // set currentLesson to an array so that you can use skip button
+      // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
       if (this.state.currentLesson === "") {
         var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
         this.setState({
           currentLesson: _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url]
         });
-      } // let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
-      // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
-      // let arrayOfLessons = grandLessonsObj[this.props.mini_lang][url]
+      }
 
-
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-skill-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
