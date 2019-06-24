@@ -1570,7 +1570,8 @@ function (_React$Component) {
       correctAnswer: "",
       "default": true,
       correct: false,
-      wrong: false
+      wrong: false,
+      lessonLength: 0
     };
     return _this;
   }
@@ -1578,12 +1579,13 @@ function (_React$Component) {
   _createClass(LessonBody, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
       var correctAnswer = "first";
+      var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
 
       if (document.getElementById('skill-check-button')) {
         this.setState({
-          correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess')
+          correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess'),
+          lessonLength: _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url].length
         });
       }
     }
@@ -1599,24 +1601,28 @@ function (_React$Component) {
           });
         }
       }
+
+      if (this.state.lessonLength === this.props.user.language_data.fr[0].level) {
+        debugger; // let langData = this.props.user.language_data[this.props.mini_lang][0];
+        // langData['level'] = 0;
+        // this.props.updateLangData(langData);
+      }
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit() {
+      debugger;
+
       if (this.state["default"]) {
-        // debugger
-        // let correct = document.getElementById('skill-check-button').getAttribute('data-guess')
         var guess = document.getElementById('challenge-textarea').value;
 
         if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
-          // debugger
           this.setState({
             correct: true,
             wrong: false,
             "default": false
           });
         } else {
-          // debugger
           this.setState({
             correct: false,
             wrong: true,
@@ -1626,11 +1632,9 @@ function (_React$Component) {
       }
 
       if (!this.state["default"]) {
-        // debugger
         var langData = this.props.user.language_data[this.props.mini_lang][0];
 
         if (langData.max_level === false) {
-          // debugger
           langData['level'] = langData.level + 1;
           document.getElementById('challenge-textarea').value = "";
           this.props.updateLangData(langData).then(this.setState({
@@ -3633,7 +3637,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
   switch (action.type) {
     case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LANGUAGE_DATA"]:
-      debugger;
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.language_data.id, action.language_data));
 
     default:
@@ -3895,10 +3898,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguageData", function() { return updateLanguageData; });
 var createLanguageData = function createLanguageData(language_data) {
+  debugger;
   return $.ajax({
     method: 'post',
     url: "/api/language_data/",
-    data: language_data
+    data: {
+      language_data: language_data
+    }
   });
 };
 var updateLanguageData = function updateLanguageData(language_data) {

@@ -9,18 +9,21 @@ class LessonBody extends React.Component {
             correctAnswer: "",
             default: true,
             correct: false,
-            wrong: false
+            wrong: false,
+            lessonLength: 0
         }
     }
     componentDidMount(){
-        debugger
+        
         let correctAnswer = "first";
+        let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
+
         if (document.getElementById('skill-check-button')) {
             this.setState({
-                correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess')
+                correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess'),
+                lessonLength: grandLessonsObj[this.props.mini_lang][url].length
             })
         } 
-        
     }
     componentDidUpdate(){
         if (document.getElementById('skill-check-button')) {
@@ -31,22 +34,25 @@ class LessonBody extends React.Component {
                 })
             }
         } 
+        if (this.state.lessonLength === this.props.user.language_data.fr[0].level) {
+            debugger
+            // let langData = this.props.user.language_data[this.props.mini_lang][0];
+            // langData['level'] = 0;
+            // this.props.updateLangData(langData);
+        }
     }
     handleSubmit(){
+        debugger
         if (this.state.default) {
-            // debugger
-            // let correct = document.getElementById('skill-check-button').getAttribute('data-guess')
             let guess = document.getElementById('challenge-textarea').value
 
             if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
-                // debugger
                 this.setState({
                     correct: true,
                     wrong: false,
                     default: false
                 })
             } else {
-                // debugger
                 this.setState({
                     correct: false,
                     wrong: true,
@@ -55,10 +61,9 @@ class LessonBody extends React.Component {
             }               
         }
         if (!this.state.default) {
-            // debugger
+            
             let langData = this.props.user.language_data[this.props.mini_lang][0]
             if (langData.max_level === false) {
-                // debugger
                 langData['level'] = langData.level + 1;
                 document.getElementById('challenge-textarea').value = "";
                 this.props.updateLangData(langData).then(
