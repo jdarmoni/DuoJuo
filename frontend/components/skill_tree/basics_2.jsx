@@ -1,10 +1,10 @@
 import React from 'react'
-
+import SkillModalContainer from './skill_modal/skill_modal_container'
 class Basics2 extends React.Component {
     constructor(props) {
         super(props)
     }
-
+// to use a modal, need to have a component did mount!
     render() {
         return (
 
@@ -40,6 +40,7 @@ class Basics2 extends React.Component {
                                 <span className="_378Tf _3qO9M _33VdW">Greetings</span>
                             </div>
                         </div>
+                        {/* place for modal container */}
                     </div>
                 </a>
 
@@ -73,6 +74,8 @@ class Basics2 extends React.Component {
                                 <span className="_378Tf _3qO9M _33VdW">Basics 2</span>
                             </div>
                         </div>
+                        {/* place for modal container */}
+
                     </div>
                 </a>
 

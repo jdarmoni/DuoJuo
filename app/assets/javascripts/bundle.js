@@ -1511,9 +1511,12 @@ var grandLessonsObj = {
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "La fille, la femme",
       correct: ["the girl, the woman"]
-    })]
+    })],
+    "Greetings-1": []
   },
-  "jp": {},
+  "jp": {
+    "Hiragana-1": []
+  },
   "ge": {},
   "esp": {}
 };
@@ -1571,7 +1574,8 @@ function (_React$Component) {
       "default": true,
       correct: false,
       wrong: false,
-      lessonLength: 0
+      lessonLength: 0,
+      currentLesson: ""
     };
     return _this;
   }
@@ -1646,6 +1650,18 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "skip",
+    value: function skip() {
+      // if you have array of lesson obs, 
+      var array = this.state.currentLesson;
+      debugger;
+      array.push(array.splice(this.props.level, 1)[0]);
+      debugger;
+      this.setState({
+        currentLesson: array
+      }); // https://stackoverflow.com/questions/24909371/move-item-in-object-to-last-position
+    }
+  }, {
     key: "renderFooter",
     value: function renderFooter() {
       if (this.state["default"] === true) {
@@ -1658,7 +1674,8 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "skill-skip-button"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "skill-f-bs"
+          className: "skill-f-bs",
+          onClick: this.skip.bind(this)
         }, "Skip")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "skill-check-button"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1761,9 +1778,18 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
-      var currentLesson = _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url][this.props.level]; // another key for current level
+      // set currentLesson to an array so that you can use skip button
+      if (this.state.currentLesson === "") {
+        var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
+        this.setState({
+          currentLesson: _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url]
+        });
+      } // let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
+      // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
+      // let arrayOfLessons = grandLessonsObj[this.props.mini_lang][url]
 
+
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-skill-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1787,7 +1813,7 @@ function (_React$Component) {
         className: "skill-progress-green"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-lesson-body"
-      }, currentLesson), this.renderFooter())));
+      }, this.state.currentLesson[this.props.level]), this.renderFooter())));
     }
   }]);
 
@@ -2611,6 +2637,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_modal/skill_modal_container */ "./frontend/components/skill_tree/skill_modal/skill_modal_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -2633,6 +2660,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Basics2 =
 /*#__PURE__*/
 function (_React$Component) {
@@ -2642,7 +2670,8 @@ function (_React$Component) {
     _classCallCheck(this, Basics2);
 
     return _possibleConstructorReturn(this, _getPrototypeOf(Basics2).call(this, props));
-  }
+  } // to use a modal, need to have a component did mount!
+
 
   _createClass(Basics2, [{
     key: "render",

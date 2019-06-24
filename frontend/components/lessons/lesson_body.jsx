@@ -10,7 +10,8 @@ class LessonBody extends React.Component {
             default: true,
             correct: false,
             wrong: false,
-            lessonLength: 0
+            lessonLength: 0,
+            currentLesson: ""
         }
     }
     componentDidMount(){
@@ -76,6 +77,17 @@ class LessonBody extends React.Component {
             }
         }
     }
+    skip(){
+        // if you have array of lesson obs, 
+        let array = this.state.currentLesson
+        debugger
+        array.push(array.splice(this.props.level, 1)[0]);
+        debugger
+        this.setState({
+            currentLesson: array
+        })
+        // https://stackoverflow.com/questions/24909371/move-item-in-object-to-last-position
+    }
     renderFooter(){
         if (this.state.default === true) {
             return (
@@ -83,7 +95,7 @@ class LessonBody extends React.Component {
                     <div className="skill-footer-content-frame">
                         <div className="skill-f-c-f">
                             <div className="skill-skip-button">
-                                <button className="skill-f-bs">Skip</button>
+                                <button className="skill-f-bs" onClick={this.skip.bind(this)}>Skip</button>
                             </div>
 
                             <div className="skill-check-button">
@@ -178,8 +190,16 @@ class LessonBody extends React.Component {
          }
     }
     render(){
-        let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
-        let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
+        // set currentLesson to an array so that you can use skip button
+        if (this.state.currentLesson === "") {
+            let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
+            this.setState({currentLesson: grandLessonsObj[this.props.mini_lang][url]})
+        }
+        // let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
+        // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
+
+        // let arrayOfLessons = grandLessonsObj[this.props.mini_lang][url]
+        debugger
         
         return (
             <div className="first-skill-div">
@@ -202,7 +222,8 @@ class LessonBody extends React.Component {
                         <div className="skill-lesson-body">
                             {/* where the lesson component goes */}
 
-                            {currentLesson}
+                            {/* {currentLesson} */}
+                            {this.state.currentLesson[this.props.level]}
 
                         </div>
                         {this.renderFooter()}
