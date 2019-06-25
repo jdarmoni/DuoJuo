@@ -1652,7 +1652,7 @@ function (_React$Component) {
   }, {
     key: "skip",
     value: function skip() {
-      // if you have array of lesson obs, 
+      // APPARENTLY SKIP SHOULD STILL RESULT IN WRONG ANSWER, I.E, add: default: false, wrong: true to setState
       var array = this.state.currentLesson;
       debugger;
       array.push(array.splice(this.props.level, 1)[0]);

@@ -78,7 +78,8 @@ class LessonBody extends React.Component {
         }
     }
     skip(){
-        // if you have array of lesson obs, 
+        // APPARENTLY SKIP SHOULD STILL RESULT IN WRONG ANSWER, I.E, add: default: false, wrong: true to setState
+
         let array = this.state.currentLesson
         debugger
         array.push(array.splice(this.props.level, 1)[0]);

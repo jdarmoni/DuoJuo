@@ -82,7 +82,9 @@
     display: -ms-flexbox;
     -ms-flex-direction: column;
     flex-direction: column;
-    height: 100%;
+    /*************** using vh!!!! **************/
+    height: 66vh;
+    /*************** using vh!!!! **************/
     width: 100%;
     opacity: 1;
 }
@@ -385,6 +387,7 @@
 @media (min-width: 700px) {
     
     .challenge-translate {
+        /* height: 66vh; */
         max-height: 350px;
         max-width: 600px;
         overflow: visible;
