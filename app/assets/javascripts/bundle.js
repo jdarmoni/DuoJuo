@@ -2377,41 +2377,10 @@ var Root = function Root(_ref) {
 
 /***/ }),
 
-/***/ "./frontend/components/skill_tree/basics_1_container.js":
-/*!**************************************************************!*\
-  !*** ./frontend/components/skill_tree/basics_1_container.js ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _basics_1_skill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basics_1_skill */ "./frontend/components/skill_tree/basics_1_skill.jsx");
-
-
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    users: Object.values(state.entities.users),
-    session: Object.values(state.session),
-    currentUser: state.entities.users[state.session.id],
-    languages: state.entities.languages
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_basics_1_skill__WEBPACK_IMPORTED_MODULE_1__["default"]));
-
-/***/ }),
-
-/***/ "./frontend/components/skill_tree/basics_1_skill.jsx":
-/*!***********************************************************!*\
-  !*** ./frontend/components/skill_tree/basics_1_skill.jsx ***!
-  \***********************************************************/
+/***/ "./frontend/components/skill_tree/basics_1.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/skill_tree/basics_1.jsx ***!
+  \*****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2445,18 +2414,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Basics1Skill =
+var Basics1 =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Basics1Skill, _React$Component);
+  _inherits(Basics1, _React$Component);
 
-  function Basics1Skill(props) {
-    _classCallCheck(this, Basics1Skill);
+  function Basics1(props) {
+    _classCallCheck(this, Basics1);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Basics1Skill).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Basics1).call(this, props));
   }
 
-  _createClass(Basics1Skill, [{
+  _createClass(Basics1, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
@@ -2614,10 +2583,41 @@ function (_React$Component) {
     }
   }]);
 
-  return Basics1Skill;
+  return Basics1;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Basics1Skill);
+/* harmony default export */ __webpack_exports__["default"] = (Basics1);
+
+/***/ }),
+
+/***/ "./frontend/components/skill_tree/basics_1_container.js":
+/*!**************************************************************!*\
+  !*** ./frontend/components/skill_tree/basics_1_container.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _basics_1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basics_1 */ "./frontend/components/skill_tree/basics_1.jsx");
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    users: Object.values(state.entities.users),
+    session: Object.values(state.session),
+    currentUser: state.entities.users[state.session.id],
+    languages: state.entities.languages
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_basics_1__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 

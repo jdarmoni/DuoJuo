@@ -2,7 +2,7 @@ import React from 'react'
 import SkillModalContainer from './skill_modal/skill_modal_container'
 import { withRouter } from 'react-router-dom';
 
-class Basics1Skill extends React.Component {
+class Basics1 extends React.Component {
     constructor(props){
         super(props) 
 
@@ -65,4 +65,4 @@ class Basics1Skill extends React.Component {
     }
 }
 
-export default Basics1Skill
+export default Basics1
