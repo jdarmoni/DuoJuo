@@ -1,5 +1,5 @@
 import React from 'react'
-import Basics1Container from '../skill_tree/basics_1_container'
+import Basics1 from '../skill_tree/basics_1'
 import Basics2 from '../skill_tree/basics_2'
 import Row3 from '../skill_tree/row_3'
 
@@ -31,7 +31,7 @@ class CourseIconContent extends React.Component {
                             </a>
 
                             {/* eventually this.languages() */}
-                            <Basics1Container />
+                            <Basics1 />
                             <Basics2 />
                             <Row3 />
                             
