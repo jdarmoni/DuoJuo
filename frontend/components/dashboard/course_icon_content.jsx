@@ -33,7 +33,7 @@ class CourseIconContent extends React.Component {
                             {/* eventually this.languages() */}
                             <Row1 />
                             <Basics2 />
-                            <Row1 />
+                            <Row3 />
                             
                         </div>
                     </div>

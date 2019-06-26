@@ -442,7 +442,7 @@ function (_React$Component) {
           href: "/"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_basics_2__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], null)))))
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_basics_2__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_3__WEBPACK_IMPORTED_MODULE_3__["default"], null)))))
       );
     }
   }]);
