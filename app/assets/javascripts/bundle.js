@@ -1788,6 +1788,12 @@ function (_React$Component) {
         });
       }
 
+      var progressBar = document.getElementById('skill-p-g');
+
+      if (progressBar) {
+        progressBar.style = "opacity: 1;width: ".concat(this.props.level / this.state.currentLesson.length * 100, "%;");
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "first-skill-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1808,7 +1814,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-progress-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "skill-progress-green"
+        className: "skill-progress-green",
+        id: "skill-p-g"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-lesson-body"
       }, this.state.currentLesson[this.props.level]), this.renderFooter())));

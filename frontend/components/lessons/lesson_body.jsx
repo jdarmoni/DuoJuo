@@ -196,7 +196,12 @@ class LessonBody extends React.Component {
         if (this.state.currentLesson === "") {
             let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
             this.setState({currentLesson: grandLessonsObj[this.props.mini_lang][url]})
-        }        
+        }
+      
+        let progressBar = document.getElementById('skill-p-g')
+        if (progressBar){
+            progressBar.style=`opacity: 1;width: ${this.props.level / this.state.currentLesson.length * 100}%;`;
+        }
         return (
             <div className="first-skill-div">
                 <div className="second-skill-div">
@@ -207,7 +212,7 @@ class LessonBody extends React.Component {
                                 <div className="skill-progress-button">
                                     <div className="skill-progress-container-anon">
                                         <div className="skill-progress-container">
-                                            <div className="skill-progress-green">
+                                            <div className="skill-progress-green" id="skill-p-g">
                                                 
                                             </div>
                                         </div>
