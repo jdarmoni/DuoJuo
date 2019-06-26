@@ -1,6 +1,6 @@
 import React from 'react'
 import Row1 from '../skill_tree/row1'
-import Basics2 from '../skill_tree/basics_2'
+import Row2 from '../skill_tree/row_2'
 import Row3 from '../skill_tree/row_3'
 
 class CourseIconContent extends React.Component {
@@ -12,7 +12,7 @@ class CourseIconContent extends React.Component {
             return (
                 <>
                 <Row1 />
-                <Basics2 />
+                <Row2 />
                 <Row3 />
                 </>
             )
@@ -32,7 +32,7 @@ class CourseIconContent extends React.Component {
 
                             {/* eventually this.languages() */}
                             <Row1 />
-                            <Basics2 />
+                            <Row2 />
                             <Row3 />
                             
                         </div>
