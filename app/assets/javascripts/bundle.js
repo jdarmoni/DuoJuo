@@ -1512,7 +1512,7 @@ var grandLessonsObj = {
       sentence: "La fille, la femme",
       correct: ["the girl, the woman"]
     })],
-    "Greetings-1": [],
+    "Greetings": [],
     "Basics-2": []
   },
   "jp": {
@@ -3409,6 +3409,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../skill_modal/skill_modal_container */ "./frontend/components/skill_tree/skill_modal/skill_modal_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3431,6 +3432,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Greetings =
 /*#__PURE__*/
 function (_React$Component) {
@@ -3445,9 +3447,9 @@ function (_React$Component) {
   _createClass(Greetings, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
+      var modal = document.getElementById("skm-grtngs1"); // Get the button that opens the modal
 
-      var btn = document.getElementById("bscs1-a"); // When the user clicks anywhere outside of the modal, close it
+      var btn = document.getElementById("grtngs-a"); // When the user clicks anywhere outside of the modal, close it
 
       window.onclick = function (event) {
         if (event.target == modal) {
@@ -3467,6 +3469,7 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "lesson-anchor-box",
+        id: "grtngs-a",
         href: "javascript:;"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "_2albn"
@@ -3592,7 +3595,10 @@ function (_React$Component) {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "_378Tf _3qO9M _33VdW"
-      }, "Greetings")))));
+      }, "Greetings"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        idt: "skm-grtngs1",
+        url: "Greetings"
+      })));
     }
   }]);
 

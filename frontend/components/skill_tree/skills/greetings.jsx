@@ -1,4 +1,5 @@
 import React from 'react';
+import SkillModalContainer from '../skill_modal/skill_modal_container'
 
 class Greetings extends React.Component {
     constructor(props) {
@@ -6,10 +7,10 @@ class Greetings extends React.Component {
 
     }
     componentDidMount() {
-        const modal = document.getElementById("skm-bscs1");
+        const modal = document.getElementById("skm-grtngs1");
 
         // Get the button that opens the modal
-        const btn = document.getElementById("bscs1-a");
+        const btn = document.getElementById("grtngs-a");
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
@@ -26,7 +27,7 @@ class Greetings extends React.Component {
 
     render() {
         return (
-            <a className="lesson-anchor-box" href="javascript:;">
+            <a className="lesson-anchor-box" id="grtngs-a" href="javascript:;">
                 <div className="_2albn">
                     <div>
                         <div className="lesson-progress-rings">
@@ -55,7 +56,7 @@ class Greetings extends React.Component {
                             <span className="_378Tf _3qO9M _33VdW">Greetings</span>
                         </div>
                     </div>
-                    {/* place for modal container */}
+                    <SkillModalContainer idt={"skm-grtngs1"} url={"Greetings"} />
                 </div>
             </a>
 
