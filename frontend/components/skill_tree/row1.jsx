@@ -1,7 +1,7 @@
 import React from 'react'
 import SkillModalContainer from './skill_modal/skill_modal_container'
 import { withRouter } from 'react-router-dom';
-import Basics1Container from './basics_1_container';
+import Basics1Container from './skills/basics_1_container';
 
 class Basics1 extends React.Component{
     constructor(props) {

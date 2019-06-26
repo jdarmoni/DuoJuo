@@ -1,5 +1,6 @@
 import React from 'react'
 import SkillModalContainer from './skill_modal/skill_modal_container'
+
 class Basics2 extends React.Component {
     constructor(props) {
         super(props)

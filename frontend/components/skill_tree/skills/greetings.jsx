@@ -1,10 +1,8 @@
-import React from 'react'
-import SkillModalContainer from './skill_modal/skill_modal_container'
-import { withRouter } from 'react-router-dom';
+import React from 'react';
 
-class Basics1 extends React.Component {
-    constructor(props){
-        super(props) 
+class Greetings extends React.Component {
+    constructor(props) {
+        super(props)
 
     }
     componentDidMount() {
@@ -26,9 +24,9 @@ class Basics1 extends React.Component {
         }
     }
 
-    render(){
+    render() {
         return (
-            <a className="lesson-anchor-box" id="bscs1-a" href="javascript:;">
+            <a className="lesson-anchor-box" href="javascript:;">
                 <div className="_2albn">
                     <div>
                         <div className="lesson-progress-rings">
@@ -48,21 +46,21 @@ class Basics1 extends React.Component {
                             </div>
                         </div>
                         <span className="course-image-span-container">
-                            <span className="course-image-span bscs1"></span>
+                            <span className="course-image-span grtngs"></span>
                             <div className="course-crown-div">
                                 <img alt="crown" className="course-crown-image" src="//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg" />
                             </div>
                         </span>
                         <div>
-                            <span className="_378Tf _3qO9M _33VdW">Basics 1</span>
+                            <span className="_378Tf _3qO9M _33VdW">Greetings</span>
                         </div>
                     </div>
-                    {/* to reuse modal, pass down / create a name for the ID of the new modal Div (not the a tag id of the lesson icon!) */}
-                    <SkillModalContainer idt={"skm-bscs1"} url={"Basics-1"} />
+                    {/* place for modal container */}
                 </div>
             </a>
+
         )
     }
 }
 
-export default Basics1
+export default Greetings
