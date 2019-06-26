@@ -1498,6 +1498,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../translate_sentence/translate_sentence_container */ "./frontend/components/lessons/translate_sentence/translate_sentence_container.js");
+/* harmony import */ var _mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mark_meaning/mark_meaning_container */ "./frontend/components/lessons/mark_meaning/mark_meaning_container.js");
+
 
 
 var grandLessonsObj = {
@@ -1511,6 +1513,9 @@ var grandLessonsObj = {
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "La fille, la femme",
       correct: ["the girl, the woman"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      sentence: ["a French woman"],
+      correct: "une femme francaise"
     })],
     "Greetings": [],
     "Basics-2": []
@@ -1863,6 +1868,225 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_lesson_body__WEBPACK_IMPORTED_MODULE_0__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/lessons/mark_meaning/mark_meaning.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/lessons/mark_meaning/mark_meaning.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var MarkMeaning =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(MarkMeaning, _React$Component);
+
+  function MarkMeaning(props) {
+    _classCallCheck(this, MarkMeaning);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(MarkMeaning).call(this, props));
+  }
+
+  _createClass(MarkMeaning, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var correct = this.props.correct;
+      var challengeTextArea = document.getElementById('challenge-textarea');
+
+      if (challengeTextArea) {
+        document.getElementById('skill-check-button').setAttribute('data-guess', correct);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (document.getElementById('skill-check-button')) {
+        var correct = this.props.correct;
+        var challengeTextArea = document.getElementById('challenge-textarea');
+        document.getElementById('skill-check-button').setAttribute('data-guess', correct);
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "challenge challenge-translate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "challenge-header"
+      }, "Mark the correct meaning"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "challenge-subbox"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "challenge-translate-prompt"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "challenge-listen"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-l-s-d"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 94 73",
+        width: "94",
+        height: "73",
+        preserveAspectRatio: "xMidYMid meet",
+        style: {
+          width: '100%',
+          height: '100%'
+          /* transform: translate3d(0px, 0px, 0px); */
+
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+        id: "__lottie_element_2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("rect", {
+        width: "94",
+        height: "73",
+        x: "0",
+        y: "0"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+        id: "__lottie_element_4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M0,0 L1000,0 L1000,1038 L0,1038z"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("clipPath", {
+        id: "__lottie_element_9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M0,0 L1338,0 L1338,738 L0,738z"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        clipPath: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        clipPath: "",
+        transform: "matrix(0.26499998569488525,0,0,0.26499998569488525,-84.5,-101.53498840332031)",
+        opacity: "1",
+        style: {
+          display: 'block'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        style: {
+          display: 'block'
+        },
+        transform: "matrix(1.3600000143051147,0,0,1.3600000143051147,516.219970703125,522.4000244140625)",
+        opacity: "0.8557684239998765"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "miter",
+        fillOpacity: "0",
+        strokeMiterlimit: "4",
+        stroke: "rgb(255,255,255)",
+        strokeOpacity: "1",
+        strokeWidth: "22.488120633823932",
+        d: " M48.93299865722656,-88.35800170898438 C79.9729995727539,-71.11699676513672 101,-37.99399948120117 101,0 C101,38.016998291015625 79.947998046875,71.15699768066406 48.87699890136719,88.38899993896484"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        style: {
+          display: 'block'
+        },
+        transform: "matrix(1.3600000143051147,0,0,1.3600000143051147,516.219970703125,522.4000244140625)",
+        opacity: "1"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        strokeLinecap: "round",
+        strokeLinejoin: "miter",
+        fillOpacity: "0",
+        strokeMiterlimit: "4",
+        stroke: "rgb(255,255,255)",
+        strokeOpacity: "1",
+        strokeWidth: "20.51122522539184",
+        d: " M24.180999755859375,-43.02399826049805 C39.20000076293945,-34.55799865722656 49.35300064086914,-18.454999923706055 49.35300064086914,0 C49.35300064086914,18.476999282836914 39.17599868774414,34.59600067138672 24.12700080871582,43.05400085449219"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        clipPath: "url(#__lottie_element_9)",
+        transform: "matrix(1.0370399951934814,0,0,0.9629600048065186,136.53640747070312,163.66775512695312)",
+        opacity: "1",
+        style: {
+          display: 'block'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        transform: "matrix(1,0,0,1,260.93701171875,373.6780090332031)",
+        opacity: "1",
+        style: {
+          display: 'block'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        opacity: "1",
+        transform: "matrix(6,0,0,6,0,0)"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        fill: "rgb(255,255,255)",
+        fillOpacity: "1",
+        d: " M-8.293000221252441,-11.675000190734863 C-8.293000221252441,-11.675000190734863 -0.12300000339746475,-11.675000190734863 -0.12300000339746475,-11.675000190734863 C2.9070000648498535,-11.675000190734863 5.367000102996826,-9.21500015258789 5.367000102996826,-6.184999942779541 C5.367000102996826,-6.184999942779541 5.367000102996826,6.425000190734863 5.367000102996826,6.425000190734863 C5.367000102996826,9.454999923706055 2.9070000648498535,11.914999961853027 -0.12300000339746475,11.914999961853027 C-0.12300000339746475,11.914999961853027 -8.293000221252441,11.914999961853027 -8.293000221252441,11.914999961853027 C-11.322999954223633,11.914999961853027 -13.782999992370605,9.454999923706055 -13.782999992370605,6.425000190734863 C-13.782999992370605,6.425000190734863 -13.782999992370605,-6.184999942779541 -13.782999992370605,-6.184999942779541 C-13.782999992370605,-9.21500015258789 -11.322999954223633,-11.675000190734863 -8.293000221252441,-11.675000190734863z M-4.980999946594238,-11.656999588012695 C-4.980999946594238,-11.656999588012695 10.218999862670898,-22.32699966430664 10.218999862670898,-22.32699966430664 C11.24899959564209,-23.047000885009766 12.659000396728516,-22.797000885009766 13.369000434875488,-21.777000427246094 C13.638999938964844,-21.39699935913086 13.779000282287598,-20.937000274658203 13.779000282287598,-20.476999282836914 C13.779000282287598,-20.476999282836914 13.779000282287598,20.472999572753906 13.779000282287598,20.472999572753906 C13.779000282287598,21.722999572753906 12.769000053405762,22.732999801635742 11.519000053405762,22.732999801635742 C11.059000015258789,22.732999801635742 10.609000205993652,22.593000411987305 10.218999862670898,22.322999954223633 C10.218999862670898,22.322999954223633 -4.980999946594238,11.652999877929688 -4.980999946594238,11.652999877929688 C-5.580999851226807,11.232999801635742 -5.940999984741211,10.543000221252441 -5.940999984741211,9.803000450134277 C-5.940999984741211,9.803000450134277 -5.940999984741211,-9.807000160217285 -5.940999984741211,-9.807000160217285 C-5.940999984741211,-10.536999702453613 -5.580999851226807,-11.22700023651123 -4.980999946594238,-11.656999588012695z"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        opacity: "1",
+        transform: "matrix(1,0,0,1,0,0)"
+      })))))))), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "challenge-sentence"
+      }, this.props.sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: ""
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null))))))));
+    }
+  }]);
+
+  return MarkMeaning;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (MarkMeaning);
+
+/***/ }),
+
+/***/ "./frontend/components/lessons/mark_meaning/mark_meaning_container.js":
+/*!****************************************************************************!*\
+  !*** ./frontend/components/lessons/mark_meaning/mark_meaning_container.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mark_meaning__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mark_meaning */ "./frontend/components/lessons/mark_meaning/mark_meaning.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  var user = Object.values(state.entities.users)[0];
+  return {
+    user: user,
+    lang_data: user.language_data[user.learning_language][0]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_mark_meaning__WEBPACK_IMPORTED_MODULE_0__["default"]));
 
 /***/ }),
 
