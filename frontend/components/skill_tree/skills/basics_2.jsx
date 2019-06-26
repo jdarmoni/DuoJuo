@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Basics2 extends React.Component {
+class Basics22 extends React.Component {
     constructor(props){
         super(props)
 
@@ -64,4 +64,4 @@ class Basics2 extends React.Component {
     }
 }
 
-export default Basics2
+export default Basics22

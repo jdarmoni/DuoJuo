@@ -2389,6 +2389,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_modal/skill_modal_container */ "./frontend/components/skill_tree/skill_modal/skill_modal_container.js");
+/* harmony import */ var _skill_tree_skills_basics_2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../skill_tree/skills/basics_2 */ "./frontend/components/skill_tree/skills/basics_2.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -2412,6 +2413,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Basics2 =
 /*#__PURE__*/
 function (_React$Component) {
@@ -2427,7 +2429,7 @@ function (_React$Component) {
   _createClass(Basics2, [{
     key: "render",
     value: function render() {
-      var _React$createElement, _React$createElement2;
+      var _React$createElement;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lessons-row-container"
@@ -2558,134 +2560,7 @@ function (_React$Component) {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "_378Tf _3qO9M _33VdW"
-      }, "Greetings"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "lesson-anchor-box",
-        href: "javascript:;"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "_2albn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "lesson-progress-rings"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "_2xGPj"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", (_React$createElement2 = {
-        height: "106",
-        version: "1.1",
-        width: "106",
-        xmlns: "http://www.w3.org/2000/svg"
-      }, _defineProperty(_React$createElement2, "xmlns", "http://www.w3.org/1999/xlink"), _defineProperty(_React$createElement2, "style", {
-        overflow: 'hidden',
-        position: 'relative',
-        left: '-0.934596px',
-        top: '-0.895924px'
-      }), _React$createElement2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("desc", {
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }, "Created with Rapha\xEBl 2.2.0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", {
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("linearGradient", {
-        id: "ys2dy_________231.42857142857142-_ffd900:_________5-_ffd900-_ffd900:_________75-_ffd900_______",
-        x1: "0.7974733888824044",
-        y1: "0",
-        x2: "0",
-        y2: "1",
-        gradientTransform: "matrix(1,0,0,1,0,0)",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
-        offset: "0%",
-        stopColor: "#ffd900",
-        stopOpacity: "1",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
-        offset: "33.333333333333336%",
-        stopColor: "#ffd900",
-        stopOpacity: "1",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
-        offset: "66.66666666666667%",
-        stopColor: "#ffd900",
-        stopOpacity: "1",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
-        offset: "100%",
-        stopColor: "#ffd900",
-        stopOpacity: "1",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-        cx: "53",
-        cy: "53",
-        r: "53",
-        fill: "#ffd900",
-        stroke: "#000",
-        strokeWidth: "0",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        fill: "url('https://www.duolingo.com/#ys2dy_________231.42857142857142-_ffd900:_________5-_ffd900-_ffd900:_________75-_ffd900_______')",
-        stroke: "#000000",
-        d: "M53,53L94.43706857080556,86.0449594985129A53,53,0,0,1,19.955040501487105,94.43706857080556Z",
-        opacity: "1",
-        fillOpacity: "1",
-        strokeWidth: "0",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)',
-          opacity: 1,
-          fillOpacity: 1
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        fill: "#e5e5e5",
-        stroke: "#000000",
-        d: "M53,53L19.95504050148714,94.4370685708056A53,53,0,0,1,52.99999999999999,0A4,4,0,1,0,52.99999999999999,8Z",
-        strokeWidth: "0",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-        cx: "22.44899970892205",
-        cy: "91.30974264093345",
-        r: "4",
-        fill: "#ffd900",
-        stroke: "#000",
-        strokeWidth: "0",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-        cx: "53",
-        cy: "53",
-        r: "45",
-        fill: "#ffffff",
-        stroke: "#000",
-        strokeWidth: "0",
-        style: {
-          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
-        }
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "course-image-span-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "course-image-span bscs2"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "course-crown-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        alt: "crown",
-        className: "course-crown-image",
-        src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "_378Tf _3qO9M _33VdW"
-      }, "Basics 2"))))));
+      }, "Greetings"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_skills_basics_2__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
@@ -3437,6 +3312,211 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_basics_1__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/skill_tree/skills/basics_2.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/skill_tree/skills/basics_2.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Basics22 =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Basics22, _React$Component);
+
+  function Basics22(props) {
+    _classCallCheck(this, Basics22);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Basics22).call(this, props));
+  }
+
+  _createClass(Basics22, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
+
+      var btn = document.getElementById("bscs1-a"); // When the user clicks anywhere outside of the modal, close it
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      btn.onclick = function () {
+        modal.style.display = "block";
+        return;
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _React$createElement;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "lesson-anchor-box",
+        href: "javascript:;"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "_2albn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "lesson-progress-rings"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "_2xGPj"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", (_React$createElement = {
+        height: "106",
+        version: "1.1",
+        width: "106",
+        xmlns: "http://www.w3.org/2000/svg"
+      }, _defineProperty(_React$createElement, "xmlns", "http://www.w3.org/1999/xlink"), _defineProperty(_React$createElement, "style", {
+        overflow: 'hidden',
+        position: 'relative',
+        left: '-0.934596px',
+        top: '-0.895924px'
+      }), _React$createElement), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("desc", {
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }, "Created with Rapha\xEBl 2.2.0"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("defs", {
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("linearGradient", {
+        id: "ys2dy_________231.42857142857142-_ffd900:_________5-_ffd900-_ffd900:_________75-_ffd900_______",
+        x1: "0.7974733888824044",
+        y1: "0",
+        x2: "0",
+        y2: "1",
+        gradientTransform: "matrix(1,0,0,1,0,0)",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
+        offset: "0%",
+        stopColor: "#ffd900",
+        stopOpacity: "1",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
+        offset: "33.333333333333336%",
+        stopColor: "#ffd900",
+        stopOpacity: "1",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
+        offset: "66.66666666666667%",
+        stopColor: "#ffd900",
+        stopOpacity: "1",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("stop", {
+        offset: "100%",
+        stopColor: "#ffd900",
+        stopOpacity: "1",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+        cx: "53",
+        cy: "53",
+        r: "53",
+        fill: "#ffd900",
+        stroke: "#000",
+        strokeWidth: "0",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        fill: "url('https://www.duolingo.com/#ys2dy_________231.42857142857142-_ffd900:_________5-_ffd900-_ffd900:_________75-_ffd900_______')",
+        stroke: "#000000",
+        d: "M53,53L94.43706857080556,86.0449594985129A53,53,0,0,1,19.955040501487105,94.43706857080556Z",
+        opacity: "1",
+        fillOpacity: "1",
+        strokeWidth: "0",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)',
+          opacity: 1,
+          fillOpacity: 1
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        fill: "#e5e5e5",
+        stroke: "#000000",
+        d: "M53,53L19.95504050148714,94.4370685708056A53,53,0,0,1,52.99999999999999,0A4,4,0,1,0,52.99999999999999,8Z",
+        strokeWidth: "0",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+        cx: "22.44899970892205",
+        cy: "91.30974264093345",
+        r: "4",
+        fill: "#ffd900",
+        stroke: "#000",
+        strokeWidth: "0",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
+        cx: "53",
+        cy: "53",
+        r: "45",
+        fill: "#ffffff",
+        stroke: "#000",
+        strokeWidth: "0",
+        style: {
+          "WebkitTapHighlightColor": 'rgba(0, 0, 0, 0)'
+        }
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "course-image-span-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "course-image-span bscs2"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "course-crown-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "crown",
+        className: "course-crown-image",
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "_378Tf _3qO9M _33VdW"
+      }, "Basics 2")))));
+    }
+  }]);
+
+  return Basics22;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Basics22);
 
 /***/ }),
 
