@@ -73,12 +73,17 @@
 
 } */
 
- .m-m-label input[type="radio"]:checked {
+ /* .m-m-label input[type="radio"]:checked {
     color: #1cb0f6;
     border-color: #1bb0f6;
     background-color: #ddf4ff;
-}
+} */
+/* .radio-selected {
+    color: #1cb0f6;
+    border-color: #1bb0f6;
+    background-color: #ddf4ff;
 
+} */
 .m-m-input {
         position: absolute;
     visibility: hidden;
