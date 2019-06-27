@@ -62,11 +62,18 @@
     border-color: #1cb0f6;
     color: #1caff6;
 }
-.m-m-label:after {
+/* .m-m-radios:checked .m-m-label {
+    color: #1cb0f6;
+    border-color: #1bb0f6;
+    background-color: #ddf4ff;
+
+} */
+input[type="radio"]:checked {
     color: #1cb0f6;
     border-color: #1bb0f6;
     background-color: #ddf4ff;
 }
+
 .m-m-input {
         position: absolute;
     visibility: hidden;
