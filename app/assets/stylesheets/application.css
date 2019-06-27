@@ -16,6 +16,13 @@
 * {
     font-family: din-round,sans-serif!important;
 }
+
+/* html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+} */
 .body {
     background: #fff;
     color: #3c3c3c;

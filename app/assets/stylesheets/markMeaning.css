@@ -16,22 +16,24 @@
     margin-bottom: 10px;
 }
 .m-m-label {
-        cursor: pointer;
+    cursor: pointer;
     font-size: 19px;
     line-height: 27px;
     position: relative;
     text-align: center;
     width: 100%;
     color: #4b4b4b;
-            border-width: 2px 2px 4px;
-            border-color: #e5e5e5;
+    border-width: 2px 2px 4px;
+    border-color: #e5e5e5;
     padding: 12px 16px;
-        border-radius: 16px;
+    border-radius: 16px;
     border-style: solid;
-        transform: translateZ(0);
+    transform: translateZ(0);
     transition: filter .2s;
-        display: -ms-inline-flexbox;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    box-sizing: border-box;
+
 }
 .m-m-number {
     border: 2px solid #e5e5e5;

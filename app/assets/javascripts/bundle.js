@@ -1514,7 +1514,7 @@ var grandLessonsObj = {
       sentence: "La fille, la femme",
       correct: ["the girl, the woman"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      sentence: ["a French woman"],
+      sentence: ["A French woman"],
       correct: "Un femme Francaise",
       phrase1: "Un femme Francaise",
       phrase2: "Il est un pamplemousse",
@@ -2010,7 +2010,8 @@ function (_React$Component) {
         id: "radio2",
         className: "m-m-input",
         onChange: this.selected.bind(this),
-        checked: this.state.answer === "radio2"
+        checked: this.state.answer === "radio2",
+        value: this.props.phrase2
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-choice-div"
       }, this.props.phrase2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -2026,7 +2027,8 @@ function (_React$Component) {
         id: "radio3",
         className: "m-m-input",
         onChange: this.selected.bind(this),
-        checked: this.state.answer === "radio3"
+        checked: this.state.answer === "radio3",
+        value: this.props.phrase3
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-choice-div"
       }, this.props.phrase3))))))));
