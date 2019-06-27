@@ -42,12 +42,13 @@ class MarkMeaning extends React.Component {
                             {/* you'll interpolate above span from props later  */}
                         </div>
 
-                        <div className="mark-meaning-content">
+                        <div className="mark-meaning-content" id="m-m-c">
                             <ul className="m-m-ul">
                                 <li className="m-m-li">
                                     <label className="m-m-label" htmlFor="radio1">
                                         <div className="m-m-number">1</div>
-                                        <input type="radio" name="radios" id="radio1" className="m-m-input" onChange={this.selected.bind(this)} checked={this.state.answer ==="radio1"}/>
+                                        <input type="radio" name="radios" id="radio1" className="m-m-input" onChange={this.selected.bind(this)} checked={this.state.answer ==="radio1"}
+                                        value={this.props.phrase1}/>
                                         <div className="m-m-choice-div">{this.props.phrase1}</div>
                                     </label>
                                 </li>

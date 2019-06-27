@@ -43,10 +43,24 @@ class LessonBody extends React.Component {
         }
     }
     handleSubmit(){
+        let textArea = document.getElementById('challenge-textarea')
+        let markMeaning = document.getElementById('m-m-c')
+        let guess;
         
         if (this.state.default) {
-            let guess = document.getElementById('challenge-textarea').value
+            if (textArea) {
+                guess = document.getElementById('challenge-textarea').value
+            } else if (markMeaning) {
 
+                if (document.getElementById('radio1').checked === true) {
+                    guess = document.getElementById('radio1').value
+                } else if (document.getElementById('radio2').checked === true) {
+                    guess = 'radio2'
+                } else {
+                    guess = 'radio3'
+                }
+            }
+            debugger
             if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
                 this.setState({
                     correct: true,
@@ -62,11 +76,11 @@ class LessonBody extends React.Component {
             }               
         }
         if (!this.state.default) {
-            
             let langData = this.props.user.language_data[this.props.mini_lang][0]
+            debugger   
             if (langData.max_level === false) {
                 langData['level'] = langData.level + 1;
-                document.getElementById('challenge-textarea').value = "";
+                if (textArea) { document.getElementById('challenge-textarea').value = ""; }
                 this.props.updateLangData(langData).then(
                     this.setState({
                         default: true,

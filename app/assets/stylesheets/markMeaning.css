@@ -85,17 +85,18 @@
 }
 .m-m-choice-div {
         -ms-flex-align: center;
-    align-items: center;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -ms-flex-pack: center;
-    justify-content: center;
-    overflow: hidden;
-    text-align: center;
-    text-overflow: ellipsis;
-    white-space: normal;
+        align-items: center;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        -ms-flex-pack: center;
+        justify-content: center;
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: normal;
+        font-weight: 400
 }
 
 @media (min-width: 700px) {

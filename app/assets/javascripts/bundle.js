@@ -1515,9 +1515,10 @@ var grandLessonsObj = {
       correct: ["the girl, the woman"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: ["a French woman"],
-      phrase1: "il est francais",
-      phrase2: "il est un pamplemousse",
-      phrase3: "je suis le jeunne fille"
+      correct: "Un femme Francaise",
+      phrase1: "Un femme Francaise",
+      phrase2: "Il est un pamplemousse",
+      phrase3: "Je suis le jeunne fille"
     })],
     "Greetings": [],
     "Basics-2": []
@@ -1622,8 +1623,24 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit() {
+      var textArea = document.getElementById('challenge-textarea');
+      var markMeaning = document.getElementById('m-m-c');
+      var guess;
+
       if (this.state["default"]) {
-        var guess = document.getElementById('challenge-textarea').value;
+        if (textArea) {
+          guess = document.getElementById('challenge-textarea').value;
+        } else if (markMeaning) {
+          if (document.getElementById('radio1').checked === true) {
+            guess = document.getElementById('radio1').value;
+          } else if (document.getElementById('radio2').checked === true) {
+            guess = 'radio2';
+          } else {
+            guess = 'radio3';
+          }
+        }
+
+        debugger;
 
         if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
           this.setState({
@@ -1642,10 +1659,15 @@ function (_React$Component) {
 
       if (!this.state["default"]) {
         var langData = this.props.user.language_data[this.props.mini_lang][0];
+        debugger;
 
         if (langData.max_level === false) {
           langData['level'] = langData.level + 1;
-          document.getElementById('challenge-textarea').value = "";
+
+          if (textArea) {
+            document.getElementById('challenge-textarea').value = "";
+          }
+
           this.props.updateLangData(langData).then(this.setState({
             "default": true,
             wrong: false,
@@ -1954,7 +1976,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "challenge-sentence"
       }, this.props.sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "mark-meaning-content"
+        className: "mark-meaning-content",
+        id: "m-m-c"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "m-m-ul"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1970,7 +1993,8 @@ function (_React$Component) {
         id: "radio1",
         className: "m-m-input",
         onChange: this.selected.bind(this),
-        checked: this.state.answer === "radio1"
+        checked: this.state.answer === "radio1",
+        value: this.props.phrase1
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-choice-div"
       }, this.props.phrase1))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
