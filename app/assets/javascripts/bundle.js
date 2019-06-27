@@ -1926,6 +1926,11 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "selected",
+    value: function selected() {
+      debugger;
+    }
+  }, {
     key: "render",
     value: function render() {
       if (document.getElementById('skill-check-button')) {
@@ -1974,7 +1979,8 @@ function (_React$Component) {
         type: "radio",
         name: "radios",
         id: "radio2",
-        className: "m-m-input"
+        className: "m-m-input",
+        onChange: this.selected.bind(this)
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-choice-div"
       }, this.props.phrase2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {

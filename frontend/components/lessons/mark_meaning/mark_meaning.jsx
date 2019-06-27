@@ -13,6 +13,9 @@ class MarkMeaning extends React.Component {
             document.getElementById('skill-check-button').setAttribute('data-guess', correct)
         }
     }
+    selected(){
+        debugger
+    }
 
 
     render() {
@@ -45,7 +48,7 @@ class MarkMeaning extends React.Component {
                                 <li className="m-m-li">
                                     <label className="m-m-label" htmlFor="radio2">
                                         <div className="m-m-number">2</div>
-                                        <input type="radio" name="radios" id="radio2" className="m-m-input"/>
+                                        <input type="radio" name="radios" id="radio2" className="m-m-input" onChange={this.selected.bind(this)}  />
                                         <div className="m-m-choice-div">{this.props.phrase2}</div>
                                     </label>
                                 </li>

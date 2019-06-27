@@ -70,7 +70,7 @@
 
 } */
 
- .m-m-label input[type="radio"]:checked+label {
+ .m-m-label input[type="radio"]:checked {
     color: #1cb0f6;
     border-color: #1bb0f6;
     background-color: #ddf4ff;
