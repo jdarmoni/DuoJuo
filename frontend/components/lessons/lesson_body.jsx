@@ -36,14 +36,14 @@ class LessonBody extends React.Component {
             }
         } 
         if (this.state.lessonLength === this.props.user.language_data.fr[0].level) {
-            debugger
+            
             // let langData = this.props.user.language_data[this.props.mini_lang][0];
             // langData['level'] = 0;
             // this.props.updateLangData(langData);
         }
     }
     handleSubmit(){
-        debugger
+        
         if (this.state.default) {
             let guess = document.getElementById('challenge-textarea').value
 
@@ -81,9 +81,9 @@ class LessonBody extends React.Component {
         // APPARENTLY SKIP SHOULD STILL RESULT IN WRONG ANSWER, I.E, add: default: false, wrong: true to setState
 
         let array = this.state.currentLesson
-        debugger
+        
         array.push(array.splice(this.props.level, 1)[0]);
-        debugger
+        
         this.setState({
             currentLesson: array
         })

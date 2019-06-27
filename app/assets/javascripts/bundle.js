@@ -1614,8 +1614,7 @@ function (_React$Component) {
         }
       }
 
-      if (this.state.lessonLength === this.props.user.language_data.fr[0].level) {
-        debugger; // let langData = this.props.user.language_data[this.props.mini_lang][0];
+      if (this.state.lessonLength === this.props.user.language_data.fr[0].level) {// let langData = this.props.user.language_data[this.props.mini_lang][0];
         // langData['level'] = 0;
         // this.props.updateLangData(langData);
       }
@@ -1623,8 +1622,6 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit() {
-      debugger;
-
       if (this.state["default"]) {
         var guess = document.getElementById('challenge-textarea').value;
 
@@ -1662,9 +1659,7 @@ function (_React$Component) {
     value: function skip() {
       // APPARENTLY SKIP SHOULD STILL RESULT IN WRONG ANSWER, I.E, add: default: false, wrong: true to setState
       var array = this.state.currentLesson;
-      debugger;
       array.push(array.splice(this.props.level, 1)[0]);
-      debugger;
       this.setState({
         currentLesson: array
       }); // https://stackoverflow.com/questions/24909371/move-item-in-object-to-last-position
@@ -1910,9 +1905,15 @@ function (_React$Component) {
   _inherits(MarkMeaning, _React$Component);
 
   function MarkMeaning(props) {
+    var _this;
+
     _classCallCheck(this, MarkMeaning);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(MarkMeaning).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(MarkMeaning).call(this, props));
+    _this.state = {
+      answer: ""
+    };
+    return _this;
   }
 
   _createClass(MarkMeaning, [{
@@ -1927,8 +1928,11 @@ function (_React$Component) {
     }
   }, {
     key: "selected",
-    value: function selected() {
+    value: function selected(e) {
       debugger;
+      this.setState({
+        answer: e.target.valueOf().id
+      });
     }
   }, {
     key: "render",
@@ -1965,7 +1969,8 @@ function (_React$Component) {
         name: "radios",
         id: "radio1",
         className: "m-m-input",
-        defaultChecked: true
+        onChange: this.selected.bind(this),
+        checked: this.state.answer === "radio1"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-choice-div"
       }, this.props.phrase1))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1980,7 +1985,8 @@ function (_React$Component) {
         name: "radios",
         id: "radio2",
         className: "m-m-input",
-        onChange: this.selected.bind(this)
+        onChange: this.selected.bind(this),
+        checked: this.state.answer === "radio2"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-choice-div"
       }, this.props.phrase2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1994,7 +2000,9 @@ function (_React$Component) {
         type: "radio",
         name: "radios",
         id: "radio3",
-        className: "m-m-input"
+        className: "m-m-input",
+        onChange: this.selected.bind(this),
+        checked: this.state.answer === "radio3"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-choice-div"
       }, this.props.phrase3))))))));
