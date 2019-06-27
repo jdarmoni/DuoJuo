@@ -346,6 +346,7 @@
     font-weight: 700;
     letter-spacing: .8px;
     text-transform: uppercase;
+    outline: none;
 }
 .skill-check-button {
     position: absolute;
