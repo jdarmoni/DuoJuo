@@ -34,27 +34,27 @@ class MarkMeaning extends React.Component {
                             {/* you'll interpolate above span from props later  */}
                         </div>
 
-                        <div className="">
-                            <ul>
-                                <li>
-                                    <label htmlFor="">
-                                        <div>1</div>
-                                        <input type="radio"/>
-                                        <div></div>
+                        <div className="mark-meaning-content">
+                            <ul className="m-m-ul">
+                                <li className="m-m-li">
+                                    <label className="m-m-label">
+                                        <div className="m-m-number">1</div>
+                                        <input type="radio"  className="m-m-input"/>
+                                        <div className="m-m-choice-div">C'est un Anglais</div>
                                     </label>
                                 </li>
-                                <li>
-                                    <label htmlFor="">
-                                        <div>1</div>
-                                        <input type="radio"/>
-                                        <div></div>
+                                <li className="m-m-li">
+                                    <label className="m-m-label">
+                                        <div className="m-m-number">2</div>
+                                        <input type="radio" className="m-m-input"/>
+                                        <div className="m-m-choice-div">response</div>
                                     </label>
                                 </li>
-                                <li>
-                                    <label htmlFor="">
-                                        <div>1</div>
-                                        <input type="radio"/>
-                                        <div></div>
+                                <li className="m-m-li">
+                                    <label className="m-m-label">
+                                        <div className="m-m-number">3</div>
+                                        <input type="radio" className="m-m-input"/>
+                                        <div className="m-m-choice-div">response</div>
                                     </label>
                                 </li>
                             </ul>
