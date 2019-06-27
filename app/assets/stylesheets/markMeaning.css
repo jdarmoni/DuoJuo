@@ -62,13 +62,15 @@
     border-color: #1cb0f6;
     color: #1caff6;
 }
+
 /* .m-m-radios:checked .m-m-label {
     color: #1cb0f6;
     border-color: #1bb0f6;
     background-color: #ddf4ff;
 
 } */
-input[type="radio"]:checked {
+
+ .m-m-label input[type="radio"]:checked+label {
     color: #1cb0f6;
     border-color: #1bb0f6;
     background-color: #ddf4ff;

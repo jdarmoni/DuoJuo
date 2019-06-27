@@ -1952,26 +1952,27 @@ function (_React$Component) {
         className: "m-m-li"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "m-m-label",
-        htmlFor: "radio1",
-        name: "m-m-radios"
+        htmlFor: "radio1"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-number"
       }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
+        name: "radios",
         id: "radio1",
-        className: "m-m-input"
+        className: "m-m-input",
+        defaultChecked: true
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-choice-div"
       }, this.props.phrase1))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "m-m-li"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "m-m-label",
-        htmlFor: "radio2",
-        name: "m-m-radios"
+        htmlFor: "radio2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-number"
       }, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
+        name: "radios",
         id: "radio2",
         className: "m-m-input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1980,12 +1981,12 @@ function (_React$Component) {
         className: "m-m-li"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "m-m-label",
-        htmlFor: "radio3",
-        name: "m-m-radios"
+        htmlFor: "radio3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "m-m-number"
       }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
+        name: "radios",
         id: "radio3",
         className: "m-m-input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
