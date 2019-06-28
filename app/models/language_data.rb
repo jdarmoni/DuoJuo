@@ -5,4 +5,9 @@ class LanguageData < ApplicationRecord
         primary_key: :id,
         foreign_key: :user_id,
         class_name: :User
+
+    has_many :skills,
+        primary_key: :id,
+        foreign_key: :language_data_id,
+        class_name: :Skill
 end
