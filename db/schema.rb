@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_172311) do
+ActiveRecord::Schema.define(version: 2019_06_28_213619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 2019_06_28_172311) do
     t.integer "num_sessions_for_level"
     t.integer "num_levels"
     t.boolean "locked", null: false
-    t.boolean "changed"
     t.integer "progress_percent"
     t.boolean "mastered"
   end
