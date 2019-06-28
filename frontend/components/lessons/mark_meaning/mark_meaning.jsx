@@ -8,6 +8,7 @@ class MarkMeaning extends React.Component {
         }
 
     }
+    
     componentDidMount() {
 
         let correct = this.props.correct
@@ -47,7 +48,14 @@ class MarkMeaning extends React.Component {
                                 <li className="m-m-li">
                                     <label className="m-m-label" htmlFor="radio1">
                                         <div className="m-m-number">1</div>
-                                        <input type="radio" name="radios" id="radio1" className="m-m-input" onChange={this.selected.bind(this)} checked={this.state.answer ==="radio1"} value={this.props.phrase1}/>
+                                        <input 
+                                        type="radio" 
+                                        name="radios" 
+                                        id="radio1" 
+                                        className="m-m-input" 
+                                        onChange={this.selected.bind(this)} 
+                                        checked={this.state.answer ==="radio1"} 
+                                        value={this.props.phrase1}/>
                                         <div className="m-m-choice-div">{this.props.phrase1}</div>
                                     </label>
                                 </li>
@@ -55,7 +63,14 @@ class MarkMeaning extends React.Component {
                                 <li className="m-m-li">
                                     <label className="m-m-label" htmlFor="radio2">
                                         <div className="m-m-number">2</div>
-                                        <input type="radio" name="radios" id="radio2" className="m-m-input" onChange={this.selected.bind(this)} checked={this.state.answer === "radio2"} value={this.props.phrase2}/>
+                                        <input 
+                                        type="radio" 
+                                        name="radios" 
+                                        id="radio2" 
+                                        className="m-m-input" 
+                                        onChange={this.selected.bind(this)} 
+                                        checked={this.state.answer === "radio2"} 
+                                        value={this.props.phrase2}/>
                                         <div className="m-m-choice-div">{this.props.phrase2}</div>
                                     </label>
                                 </li>
@@ -63,7 +78,14 @@ class MarkMeaning extends React.Component {
                                 <li className="m-m-li">
                                     <label className="m-m-label" htmlFor="radio3">
                                         <div className="m-m-number">3</div>
-                                        <input type="radio" name="radios" id="radio3" className="m-m-input" onChange={this.selected.bind(this)} checked={this.state.answer === "radio3"} value={this.props.phrase3}/>
+                                        <input 
+                                        type="radio" 
+                                        name="radios" 
+                                        id="radio3" 
+                                        className="m-m-input" 
+                                        onChange={this.selected.bind(this)} 
+                                        checked={this.state.answer === "radio3"} 
+                                        value={this.props.phrase3}/>
                                         <div className="m-m-choice-div">{this.props.phrase3}</div>
                                     </label>
                                 </li>

@@ -3211,9 +3211,11 @@ function (_React$Component) {
 
       var btn = document.getElementById("bscs1-a"); // When the user clicks anywhere outside of the modal, close it
 
-      window.onclick = function (event) {
+      modal.onclick = function (event) {
         if (event.target == modal) {
           modal.style.display = "none";
+          return;
+          debugger; // why does this get hit
         }
       };
 
@@ -3665,7 +3667,8 @@ function (_React$Component) {
       var btn = document.getElementById("grtngs-a"); // When the user clicks anywhere outside of the modal, close it
 
       window.onclick = function (event) {
-        if (event.target == modal) {
+        if (event.target !== modal) {
+          debugger;
           modal.style.display = "none";
         }
       };

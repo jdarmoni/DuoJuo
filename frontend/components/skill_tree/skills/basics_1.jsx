@@ -14,12 +14,15 @@ class Basics1 extends React.Component {
         const btn = document.getElementById("bscs1-a");
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
+        modal.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+                return
+                debugger
+                // why does this get hit
             }
         }
-
+        
         btn.onclick = function () {
             modal.style.display = "block";
             return
