@@ -1904,14 +1904,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
-  var mini_lang = Object.values(state.entities.users)[0].learning_language; // const lessonName = 
-  // const lesson = Object.values(state.entities.users)[0].language_data[mini_lang].skills
-
+  var mini_lang = Object.values(state.entities.users)[0].learning_language;
+  var skillName = ownProps.location.pathname.split('/')[ownProps.location.pathname.split('/').length - 1];
+  var allSkills = Object.values(state.entities.users)[0].language_data[mini_lang].skills;
+  var currentSkill;
+  allSkills.forEach(function (skill) {
+    if (skill.url_title === skillName) {
+      currentSkill = skill;
+    }
+  });
   debugger;
   return {
     user: Object.values(state.entities.users)[0],
     mini_lang: mini_lang,
-    level: Object.values(state.entities.users)[0].language_data[mini_lang].level
+    level: currentSkill.skill_level
   };
 };
 
