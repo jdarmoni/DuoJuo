@@ -1654,7 +1654,7 @@ function (_React$Component) {
         }
       }
 
-      if (this.state.lessonLength === this.props.user.language_data.fr.level) {// let langData = this.props.user.language_data[this.props.mini_lang];
+      if (this.state.lessonLength === this.props.skill.skill_level) {// let langData = this.props.user.language_data[this.props.mini_lang];
         // langData['level'] = 0;
         // this.props.updateLangData(langData);
       }
@@ -1695,6 +1695,7 @@ function (_React$Component) {
       }
 
       if (!this.state["default"]) {
+        debugger;
         var langData = this.props.user.language_data[this.props.mini_lang]; // if (langData.max_level === false) {
 
         langData['level'] = langData.level + 1;
@@ -1715,7 +1716,7 @@ function (_React$Component) {
     value: function skip() {
       // APPARENTLY SKIP SHOULD STILL RESULT IN WRONG ANSWER, I.E, add: default: false, wrong: true to setState
       var array = this.state.currentLesson;
-      array.push(array.splice(this.props.level, 1)[0]);
+      array.push(array.splice(this.props.skill.skill_level, 1)[0]);
       this.setState({
         currentLesson: array
       }); // https://stackoverflow.com/questions/24909371/move-item-in-object-to-last-position
@@ -1849,7 +1850,7 @@ function (_React$Component) {
       var progressBar = document.getElementById('skill-p-g');
 
       if (progressBar) {
-        progressBar.style = "opacity: 1;width: ".concat(this.props.level / this.state.currentLesson.length * 100, "%;");
+        progressBar.style = "opacity: 1;width: ".concat(this.props.skill.skill / this.state.currentLesson.length * 100, "%;");
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1876,7 +1877,7 @@ function (_React$Component) {
         id: "skill-p-g"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-lesson-body"
-      }, this.state.currentLesson[this.props.level]), this.renderFooter())));
+      }, this.state.currentLesson[this.props.skill.skill_level]), this.renderFooter())));
     }
   }]);
 
@@ -1899,6 +1900,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lesson_body__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lesson_body */ "./frontend/components/lessons/lesson_body.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
+/* harmony import */ var _actions_skill_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/skill_actions */ "./frontend/actions/skill_actions.js");
+
 
 
 
@@ -1917,7 +1920,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     user: Object.values(state.entities.users)[0],
     mini_lang: mini_lang,
-    level: currentSkill.skill_level
+    skill: currentSkill
   };
 };
 
@@ -1925,6 +1928,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     updateLangData: function updateLangData(language_data) {
       return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_2__["updateLanguageData"])(language_data));
+    },
+    updateSkill: function updateSkill(skill_data) {
+      return dispatch(Object(_actions_skill_actions__WEBPACK_IMPORTED_MODULE_3__["updateSkill"])(skill_data));
     }
   };
 };

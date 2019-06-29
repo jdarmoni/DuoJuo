@@ -36,7 +36,7 @@ class LessonBody extends React.Component {
             }
         } 
         
-        if (this.state.lessonLength === this.props.user.language_data.fr.level) {
+        if (this.state.lessonLength === this.props.skill.skill_level) {
             
             // let langData = this.props.user.language_data[this.props.mini_lang];
             // langData['level'] = 0;
@@ -77,6 +77,7 @@ class LessonBody extends React.Component {
             }               
         }
         if (!this.state.default) {
+            debugger
             let langData = this.props.user.language_data[this.props.mini_lang]
                
             // if (langData.max_level === false) {
@@ -97,7 +98,7 @@ class LessonBody extends React.Component {
 
         let array = this.state.currentLesson
         
-        array.push(array.splice(this.props.level, 1)[0]);
+        array.push(array.splice(this.props.skill.skill_level, 1)[0]);
         
         this.setState({
             currentLesson: array
@@ -215,7 +216,7 @@ class LessonBody extends React.Component {
       
         let progressBar = document.getElementById('skill-p-g')
         if (progressBar){
-            progressBar.style=`opacity: 1;width: ${this.props.level / this.state.currentLesson.length * 100}%;`;
+            progressBar.style=`opacity: 1;width: ${this.props.skill.skill / this.state.currentLesson.length * 100}%;`;
         }
         return (
             <div className="first-skill-div">
@@ -238,7 +239,7 @@ class LessonBody extends React.Component {
                         <div className="skill-lesson-body">
                             {/* where the lesson component goes */}
 
-                            {this.state.currentLesson[this.props.level]}
+                            {this.state.currentLesson[this.props.skill.skill_level]}
 
                         </div>
                         {this.renderFooter()}
