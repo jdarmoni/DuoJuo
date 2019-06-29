@@ -3,7 +3,7 @@ import * as APIUtil from '../util/skill_api_util'
 export const RECEIVE_SKILL = "RECEIVE_SKILL"
 
 export const receiveSkill = (skill) => {
-    debugger
+    
     return ({
         type: RECEIVE_SKILL,
         skill: skill
@@ -11,7 +11,7 @@ export const receiveSkill = (skill) => {
 }
 
 export const createSkill = (skill) => (dispatch) => {
-    debugger
+    
     return (
         APIUtil.createSkill(skill).then((skill) => {
 

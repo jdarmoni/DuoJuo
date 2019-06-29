@@ -8,7 +8,7 @@ class Api::UserController < ApplicationController
   def create
     
     @user = User.new(user_params)
-    # debugger
+    
     @language_data = {}
     @languages = [{
       # "streak": 0,

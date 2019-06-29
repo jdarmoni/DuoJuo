@@ -274,7 +274,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var RECEIVE_SKILL = "RECEIVE_SKILL";
 var receiveSkill = function receiveSkill(skill) {
-  debugger;
   return {
     type: RECEIVE_SKILL,
     skill: skill
@@ -282,7 +281,6 @@ var receiveSkill = function receiveSkill(skill) {
 };
 var createSkill = function createSkill(skill) {
   return function (dispatch) {
-    debugger;
     return _util_skill_api_util__WEBPACK_IMPORTED_MODULE_0__["createSkill"](skill).then(function (skill) {
       return dispatch(receiveSkill(skill));
     });
@@ -2456,6 +2454,7 @@ function (_React$Component) {
       newLangData['fluency_score'] = 0;
       newLangData['first_time'] = false;
       this.props.createLanguageData(newLangData).then(function (payload) {
+        // IF LANGUAGE === FRENCH
         var Basics1 = {
           "language_string": "French",
           language_data_id: payload.language_data.id,
@@ -2483,7 +2482,6 @@ function (_React$Component) {
           disabled: false,
           locked: false
         };
-        debugger;
 
         _this2.props.createSkill(Basics1);
 
@@ -2491,7 +2489,6 @@ function (_React$Component) {
 
         _this2.props.createSkill(Basics2);
       });
-      debugger;
       this.props.updateUser(user);
       this.loggedIn();
     }
@@ -2614,7 +2611,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
@@ -3472,11 +3468,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
     currentUser: state.entities.users[state.session.id],
-    languages: state.entities.languages
+    languages: state.entities.languages,
+    basics_1: Object.values(state.entities.users)[0].language_data.fr.skills[0]
   };
 };
 
@@ -3754,7 +3752,6 @@ function (_React$Component) {
 
       window.onclick = function (event) {
         if (event.target !== modal) {
-          debugger;
           modal.style.display = "none";
         }
       };
@@ -4237,7 +4234,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return action.languages;
 
     case _actions_language_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LANGUAGE"]:
-      debugger;
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.language.id, action.language));
 
     default:
@@ -4369,7 +4365,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
   switch (action.type) {
     case _actions_skill_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SKILL"]:
-      debugger;
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.skill.id, action.skill));
 
     default:

@@ -10,7 +10,7 @@ export default (state = {}, action) => {
             return action.languages
             
             case RECEIVE_LANGUAGE:
-                debugger
+                
                 return merge({}, state, { [action.language.id]: action.language });
                 
         default:

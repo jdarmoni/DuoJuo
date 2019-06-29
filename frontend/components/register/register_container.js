@@ -9,7 +9,7 @@ import {createLanguageData} from '../../actions/language_data_actions'
 import {createSkill} from '../../actions/skill_actions'
 
 const mapStateToProps = (state) => {
-    debugger
+    
     return {
         users: Object.values(state.entities.users),
         session: Object.values(state.session),
