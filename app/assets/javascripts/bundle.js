@@ -598,7 +598,7 @@ function (_React$Component) {
       }, "discuss"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
+        href: "https://jdarmoni.github.io/DuoProject/",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/shop-inactive2.svg",
@@ -607,7 +607,7 @@ function (_React$Component) {
         className: "dashboard-header-span"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-text"
-      }, "shop"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Juoduo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "",
