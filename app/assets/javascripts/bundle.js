@@ -1654,7 +1654,9 @@ function (_React$Component) {
         }
       }
 
-      if (this.state.lessonLength === this.props.user.language_data.fr[0].level) {// let langData = this.props.user.language_data[this.props.mini_lang][0];
+      debugger;
+
+      if (this.state.lessonLength === this.props.user.language_data.fr.level) {// let langData = this.props.user.language_data[this.props.mini_lang];
         // langData['level'] = 0;
         // this.props.updateLangData(langData);
       }
@@ -1697,22 +1699,20 @@ function (_React$Component) {
       }
 
       if (!this.state["default"]) {
-        var langData = this.props.user.language_data[this.props.mini_lang][0];
-        debugger;
+        var langData = this.props.user.language_data[this.props.mini_lang];
+        debugger; // if (langData.max_level === false) {
 
-        if (langData.max_level === false) {
-          langData['level'] = langData.level + 1;
+        langData['level'] = langData.level + 1;
 
-          if (textArea) {
-            document.getElementById('challenge-textarea').value = "";
-          }
-
-          this.props.updateLangData(langData).then(this.setState({
-            "default": true,
-            wrong: false,
-            correct: true
-          }));
+        if (textArea) {
+          document.getElementById('challenge-textarea').value = "";
         }
+
+        this.props.updateLangData(langData).then(this.setState({
+          "default": true,
+          wrong: false,
+          correct: true
+        })); // }
       }
     }
   }, {
@@ -1910,10 +1910,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   var mini_lang = Object.values(state.entities.users)[0].learning_language;
+  debugger;
   return {
     user: Object.values(state.entities.users)[0],
     mini_lang: mini_lang,
-    level: Object.values(state.entities.users)[0].language_data[mini_lang][0].level
+    level: Object.values(state.entities.users)[0].language_data[mini_lang].level
   };
 };
 

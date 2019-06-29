@@ -35,9 +35,10 @@ class LessonBody extends React.Component {
                 })
             }
         } 
-        if (this.state.lessonLength === this.props.user.language_data.fr[0].level) {
+        debugger
+        if (this.state.lessonLength === this.props.user.language_data.fr.level) {
             
-            // let langData = this.props.user.language_data[this.props.mini_lang][0];
+            // let langData = this.props.user.language_data[this.props.mini_lang];
             // langData['level'] = 0;
             // this.props.updateLangData(langData);
         }
@@ -76,9 +77,9 @@ class LessonBody extends React.Component {
             }               
         }
         if (!this.state.default) {
-            let langData = this.props.user.language_data[this.props.mini_lang][0]
+            let langData = this.props.user.language_data[this.props.mini_lang]
             debugger   
-            if (langData.max_level === false) {
+            // if (langData.max_level === false) {
                 langData['level'] = langData.level + 1;
                 if (textArea) { document.getElementById('challenge-textarea').value = ""; }
                 this.props.updateLangData(langData).then(
@@ -88,7 +89,7 @@ class LessonBody extends React.Component {
                         correct: true
                     })
                 )
-            }
+            // }
         }
     }
     skip(){
