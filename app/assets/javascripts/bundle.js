@@ -514,6 +514,12 @@ function (_React$Component) {
     key: "renderAppropriateDashboard",
     value: function renderAppropriateDashboard() {}
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      debugger;
+      this.forceUpdate();
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2412,7 +2418,6 @@ function (_React$Component) {
       newLangData['fluency_score'] = 0;
       newLangData['first_time'] = false;
       this.props.createLanguageData(newLangData);
-      debugger;
       this.props.updateUser(user);
       this.loggedIn();
     }
@@ -4371,7 +4376,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguageData", function() { return updateLanguageData; });
 var createLanguageData = function createLanguageData(language_data) {
-  debugger;
   return $.ajax({
     method: 'post',
     url: "/api/language_data/",

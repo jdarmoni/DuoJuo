@@ -84,7 +84,7 @@ class Register extends React.Component {
         newLangData['first_time'] = false;
         
         this.props.createLanguageData(newLangData) 
-        debugger
+        
         
         
 
