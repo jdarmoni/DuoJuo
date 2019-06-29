@@ -21,6 +21,7 @@ export const createSkill = (skill) => (dispatch) => {
 }
 
 export const updateSkill = (skill) => (dispatch) => {
+    
     return (
         APIUtil.updateSkill(skill).then((skill) => {
 

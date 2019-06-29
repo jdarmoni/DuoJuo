@@ -16,7 +16,7 @@ const mapStateToProps=(state, ownProps)=> {
             currentSkill = skill
         }
     });
-    debugger
+    
     return {
         user: Object.values(state.entities.users)[0],
         mini_lang: mini_lang, 

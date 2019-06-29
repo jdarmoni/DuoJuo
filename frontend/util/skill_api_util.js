@@ -8,7 +8,7 @@ export const createSkill = (skill) => {
 }
 
 export const updateSkill = (skill) => {
-
+    
     return $.ajax({
         method: 'patch',
         url: `api/skills/${skill.id}`,

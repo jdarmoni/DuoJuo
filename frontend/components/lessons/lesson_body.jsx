@@ -77,13 +77,13 @@ class LessonBody extends React.Component {
             }               
         }
         if (!this.state.default) {
-            debugger
-            let langData = this.props.user.language_data[this.props.mini_lang]
+            
+            let skill = this.props.skill
                
             // if (langData.max_level === false) {
-                langData['level'] = langData.level + 1;
+                skill['skill_level'] = skill.skill_level + 1;
                 if (textArea) { document.getElementById('challenge-textarea').value = ""; }
-                this.props.updateLangData(langData).then(
+                this.props.updateSkill(skill).then(
                     this.setState({
                         default: true,
                         wrong: false,

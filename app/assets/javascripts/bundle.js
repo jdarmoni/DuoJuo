@@ -1695,16 +1695,15 @@ function (_React$Component) {
       }
 
       if (!this.state["default"]) {
-        debugger;
-        var langData = this.props.user.language_data[this.props.mini_lang]; // if (langData.max_level === false) {
+        var skill = this.props.skill; // if (langData.max_level === false) {
 
-        langData['level'] = langData.level + 1;
+        skill['skill_level'] = skill.skill_level + 1;
 
         if (textArea) {
           document.getElementById('challenge-textarea').value = "";
         }
 
-        this.props.updateLangData(langData).then(this.setState({
+        this.props.updateSkill(skill).then(this.setState({
           "default": true,
           wrong: false,
           correct: true
@@ -1916,7 +1915,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
       currentSkill = skill;
     }
   });
-  debugger;
   return {
     user: Object.values(state.entities.users)[0],
     mini_lang: mini_lang,
