@@ -18,7 +18,7 @@ class MarkMeaning extends React.Component {
         }
     }
     selected(e){
-        debugger
+        
         this.setState({
             answer: e.target.valueOf().id
         })

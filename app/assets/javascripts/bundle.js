@@ -1695,12 +1695,17 @@ function (_React$Component) {
       }
 
       if (!this.state["default"]) {
+        var numLessons = this.state.currentLesson.length;
         var skill = this.props.skill; // if (langData.max_level === false) {
 
         skill['skill_level'] = skill.skill_level + 1;
 
         if (textArea) {
           document.getElementById('challenge-textarea').value = "";
+        }
+
+        if (numLessons === skill.skill_level) {
+          skill['skill_level'] = 0;
         }
 
         this.props.updateSkill(skill).then(this.setState({
@@ -1998,7 +2003,6 @@ function (_React$Component) {
   }, {
     key: "selected",
     value: function selected(e) {
-      debugger;
       this.setState({
         answer: e.target.valueOf().id
       });
