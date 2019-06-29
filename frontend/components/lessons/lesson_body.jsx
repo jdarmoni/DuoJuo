@@ -78,13 +78,13 @@ class LessonBody extends React.Component {
         }
         if (!this.state.default) {
             
-            let numLessons = this.state.currentLesson.length;
             let skill = this.props.skill
+            debugger
                
             // if (langData.max_level === false) {
                 skill['skill_level'] = skill.skill_level + 1;
                 if (textArea) { document.getElementById('challenge-textarea').value = ""; }
-                if (numLessons === skill.skill_level) { 
+                if (this.state.lessonLength === skill.skill_level) { 
                     skill['skill_level'] = 0;
                     
                 }

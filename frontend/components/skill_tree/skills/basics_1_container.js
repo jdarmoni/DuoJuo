@@ -8,7 +8,6 @@ const mapStateToProps = (state) => {
         session: Object.values(state.session),
         currentUser: state.entities.users[state.session.id],
         languages: state.entities.languages,
-        basics_1: Object.values(state.entities.users)[0].language_data.fr.skills[0]
 
     };
 };

@@ -1559,7 +1559,13 @@ var grandLessonsObj = {
       phrase2: "Il est un pamplemousse",
       phrase3: "Je suis le jeunne fille"
     })],
-    "Greetings": [],
+    "Greetings": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "Bonjour, je cache des oeufs",
+      correct: ["Hello, I am hiding eggs"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "Tu va me dire ou est le lait maitenant",
+      correct: ["You will tell me where the milk is now"]
+    })],
     "Basics-2": []
   },
   "jp": {
@@ -1695,8 +1701,8 @@ function (_React$Component) {
       }
 
       if (!this.state["default"]) {
-        var numLessons = this.state.currentLesson.length;
-        var skill = this.props.skill; // if (langData.max_level === false) {
+        var skill = this.props.skill;
+        debugger; // if (langData.max_level === false) {
 
         skill['skill_level'] = skill.skill_level + 1;
 
@@ -1704,7 +1710,7 @@ function (_React$Component) {
           document.getElementById('challenge-textarea').value = "";
         }
 
-        if (numLessons === skill.skill_level) {
+        if (this.state.lessonLength === skill.skill_level) {
           skill['skill_level'] = 0;
         }
 
@@ -3485,8 +3491,7 @@ var mapStateToProps = function mapStateToProps(state) {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
     currentUser: state.entities.users[state.session.id],
-    languages: state.entities.languages,
-    basics_1: Object.values(state.entities.users)[0].language_data.fr.skills[0]
+    languages: state.entities.languages
   };
 };
 
