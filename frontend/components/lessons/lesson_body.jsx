@@ -86,9 +86,12 @@ class LessonBody extends React.Component {
                 if (textArea) { document.getElementById('challenge-textarea').value = ""; }
                 if (this.state.lessonLength === skill.skill_level) { 
                     skill['skill_level'] = 0;
-                    
+                    let user = this.props.user;
+                    user['rupees'] = user.rupees + 1;
+                    debugger
+                    this.props.updateUser(user);
                 }
-
+                
                 this.props.updateSkill(skill).then(
                     this.setState({
                         default: true,

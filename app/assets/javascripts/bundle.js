@@ -1712,6 +1712,10 @@ function (_React$Component) {
 
         if (this.state.lessonLength === skill.skill_level) {
           skill['skill_level'] = 0;
+          var user = this.props.user;
+          user['rupees'] = user.rupees + 1;
+          debugger;
+          this.props.updateUser(user);
         }
 
         this.props.updateSkill(skill).then(this.setState({
@@ -1911,6 +1915,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
 /* harmony import */ var _actions_skill_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/skill_actions */ "./frontend/actions/skill_actions.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+
 
 
 
@@ -1940,6 +1946,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     updateSkill: function updateSkill(skill_data) {
       return dispatch(Object(_actions_skill_actions__WEBPACK_IMPORTED_MODULE_3__["updateSkill"])(skill_data));
+    },
+    updateUser: function updateUser(user) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["updateUser"])(user));
     }
   };
 };
