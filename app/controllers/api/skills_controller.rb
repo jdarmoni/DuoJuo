@@ -10,14 +10,19 @@ class Api::SkillsController < ApplicationController
 
     def create
         @skill = Skill.new(skill_params)
-        
+        debugger
         if @skill.save
             render :show    
         end
     end
     
     def update
-
+        @skill = Skill.find(params[:id])
+        
+        if @skill.update(skill_params)
+            
+            render :show
+        end
     end
 
     def skill_params 
