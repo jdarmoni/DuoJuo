@@ -15,10 +15,7 @@ class Dashboard extends React.Component {
     renderAppropriateDashboard(){
         
     }
-    componentDidMount(){
-        debugger
-        this.forceUpdate();
-    }
+
     render() {
         return (
             <>

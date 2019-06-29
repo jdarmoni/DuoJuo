@@ -514,12 +514,6 @@ function (_React$Component) {
     key: "renderAppropriateDashboard",
     value: function renderAppropriateDashboard() {}
   }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      debugger;
-      this.forceUpdate();
-    }
-  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
