@@ -10,7 +10,7 @@ class Api::SkillsController < ApplicationController
 
     def create
         @skill = Skill.new(skill_params)
-        debugger
+        
         if @skill.save
             render :show    
         end

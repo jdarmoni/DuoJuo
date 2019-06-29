@@ -2465,9 +2465,31 @@ function (_React$Component) {
           disabled: false,
           locked: false
         };
+        var Greetings = {
+          "language_string": "French",
+          language_data_id: payload.language_data.id,
+          url_title: "Greetings",
+          language_mini: "fr",
+          skill_level: 0,
+          disabled: false,
+          locked: false
+        };
+        var Basics2 = {
+          "language_string": "French",
+          language_data_id: payload.language_data.id,
+          url_title: "Basics-2",
+          language_mini: "fr",
+          skill_level: 0,
+          disabled: false,
+          locked: false
+        };
         debugger;
 
         _this2.props.createSkill(Basics1);
+
+        _this2.props.createSkill(Greetings);
+
+        _this2.props.createSkill(Basics2);
       });
       debugger;
       this.props.updateUser(user);
