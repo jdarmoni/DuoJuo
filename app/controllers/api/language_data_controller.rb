@@ -1,4 +1,5 @@
 class Api::LanguageDataController < ApplicationController
+
     def create
         
         @newLanguage = LanguageData.new(lang_data_params)

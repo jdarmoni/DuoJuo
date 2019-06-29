@@ -11,6 +11,5 @@ json.extract! user, :id, :username, :email, :language_strength, :site_streak, :a
 json.languages user.languages   
 
 json.language_data do
-    json.set! language, lang_data
-    json.set! "skills", lang_data[0].skills
+    json.partial! "api/language_data/lang_data.json", language_data: lang_data[0]
 end
