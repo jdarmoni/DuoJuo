@@ -2,7 +2,7 @@ export const createSkill = (skill) => {
 
     return $.ajax({
         method: 'post',
-        url: `/api/skill/`,
+        url: `/api/skills/`,
         data: { skill }
     })
 }
@@ -11,7 +11,7 @@ export const updateSkill = (skill) => {
 
     return $.ajax({
         method: 'patch',
-        url: `api/skill/${skill.id}`,
+        url: `api/skills/${skill.id}`,
         data: { skill }
     })
 }

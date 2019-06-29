@@ -45,6 +45,7 @@ class Register extends React.Component {
         }
     }
     register(event){
+        // what if i created a blank languageData objct first
         let language = event.currentTarget.children[0].children[1].innerText;
         let language_ac; 
         let user = this.props.currentUser
@@ -83,11 +84,16 @@ class Register extends React.Component {
         newLangData['fluency_score'] = 0;
         newLangData['first_time'] = false;
         
-        this.props.createLanguageData(newLangData) 
+        this.props.createLanguageData(newLangData).then((payload)=>{
+            let Basics1 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "fr", skill_level: 0, disabled: false, locked: false }
+            debugger    
+            this.props.createSkill(Basics1)
+            
+        })
         
         
-        
-
+            
+        debugger
         this.props.updateUser(user)
         this.loggedIn()
     }

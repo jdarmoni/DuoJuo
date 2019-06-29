@@ -257,6 +257,47 @@ var logout = function logout() {
 
 /***/ }),
 
+/***/ "./frontend/actions/skill_actions.js":
+/*!*******************************************!*\
+  !*** ./frontend/actions/skill_actions.js ***!
+  \*******************************************/
+/*! exports provided: RECEIVE_SKILL, receiveSkill, createSkill, updateSkill */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SKILL", function() { return RECEIVE_SKILL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSkill", function() { return receiveSkill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSkill", function() { return createSkill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateSkill", function() { return updateSkill; });
+/* harmony import */ var _util_skill_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/skill_api_util */ "./frontend/util/skill_api_util.js");
+
+var RECEIVE_SKILL = "RECEIVE_SKILL";
+var receiveSkill = function receiveSkill(skill) {
+  debugger;
+  return {
+    type: RECEIVE_SKILL,
+    skill: skill
+  };
+};
+var createSkill = function createSkill(skill) {
+  return function (dispatch) {
+    debugger;
+    return _util_skill_api_util__WEBPACK_IMPORTED_MODULE_0__["createSkill"](skill).then(function (skill) {
+      return dispatch(receiveSkill(skill));
+    });
+  };
+};
+var updateSkill = function updateSkill(skill) {
+  return function (dispatch) {
+    return _util_skill_api_util__WEBPACK_IMPORTED_MODULE_0__["updateSkill"](skill).then(function (skill) {
+      return dispatch(receiveSkill(skill));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/user_actions.js":
 /*!******************************************!*\
   !*** ./frontend/actions/user_actions.js ***!
@@ -2375,6 +2416,9 @@ function (_React$Component) {
   }, {
     key: "register",
     value: function register(event) {
+      var _this2 = this;
+
+      // what if i created a blank languageData objct first
       var language = event.currentTarget.children[0].children[1].innerText;
       var language_ac;
       var user = this.props.currentUser;
@@ -2411,7 +2455,21 @@ function (_React$Component) {
       newLangData['language_strength'] = 0;
       newLangData['fluency_score'] = 0;
       newLangData['first_time'] = false;
-      this.props.createLanguageData(newLangData);
+      this.props.createLanguageData(newLangData).then(function (payload) {
+        var Basics1 = {
+          "language_string": "French",
+          language_data_id: payload.language_data.id,
+          url_title: "Basics-1",
+          language_mini: "fr",
+          skill_level: 0,
+          disabled: false,
+          locked: false
+        };
+        debugger;
+
+        _this2.props.createSkill(Basics1);
+      });
+      debugger;
       this.props.updateUser(user);
       this.loggedIn();
     }
@@ -2522,6 +2580,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
 /* harmony import */ var _actions_language_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/language_actions */ "./frontend/actions/language_actions.js");
 /* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
+/* harmony import */ var _actions_skill_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/skill_actions */ "./frontend/actions/skill_actions.js");
+
 
 
 
@@ -2532,10 +2592,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id] // need to pass langData
+
   };
 };
 
@@ -2552,6 +2614,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     createLanguageData: function createLanguageData(language_data) {
       return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_7__["createLanguageData"])(language_data));
+    },
+    createSkill: function createSkill(skill) {
+      return dispatch(Object(_actions_skill_actions__WEBPACK_IMPORTED_MODULE_8__["createSkill"])(skill));
     }
   };
 };
@@ -4051,6 +4116,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user_reducer */ "./frontend/reducers/user_reducer.js");
 /* harmony import */ var _languages_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./languages_reducer */ "./frontend/reducers/languages_reducer.js");
 /* harmony import */ var _language_data_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./language_data_reducer */ "./frontend/reducers/language_data_reducer.js");
+/* harmony import */ var _skills_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./skills_reducer */ "./frontend/reducers/skills_reducer.js");
+
 
 
 
@@ -4058,7 +4125,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _user_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   languages: _languages_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  language_data: _language_data_reducer__WEBPACK_IMPORTED_MODULE_3__["default"] // users should point to a combined users
+  language_data: _language_data_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  skills: _skills_reducer__WEBPACK_IMPORTED_MODULE_4__["default"] // users should point to a combined users
 
 }));
 
@@ -4253,6 +4321,42 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./frontend/reducers/skills_reducer.js":
+/*!*********************************************!*\
+  !*** ./frontend/reducers/skills_reducer.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_skill_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/skill_actions */ "./frontend/actions/skill_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_2__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState;
+
+  switch (action.type) {
+    case _actions_skill_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SKILL"]:
+      debugger;
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.skill.id, action.skill));
+
+    default:
+      return state;
+  }
+});
+
+/***/ }),
+
 /***/ "./frontend/reducers/user_reducer.js":
 /*!*******************************************!*\
   !*** ./frontend/reducers/user_reducer.js ***!
@@ -4424,6 +4528,38 @@ var logout = function logout() {
   return $.ajax({
     method: 'delete',
     url: '/api/session'
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/skill_api_util.js":
+/*!*****************************************!*\
+  !*** ./frontend/util/skill_api_util.js ***!
+  \*****************************************/
+/*! exports provided: createSkill, updateSkill */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSkill", function() { return createSkill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateSkill", function() { return updateSkill; });
+var createSkill = function createSkill(skill) {
+  return $.ajax({
+    method: 'post',
+    url: "/api/skills/",
+    data: {
+      skill: skill
+    }
+  });
+};
+var updateSkill = function updateSkill(skill) {
+  return $.ajax({
+    method: 'patch',
+    url: "api/skills/".concat(skill.id),
+    data: {
+      skill: skill
+    }
   });
 };
 
