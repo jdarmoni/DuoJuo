@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Basics1 from './basics_1';
 
 const mapStateToProps = (state) => {
-    debugger
+    
     return {
         users: Object.values(state.entities.users),
         session: Object.values(state.session),

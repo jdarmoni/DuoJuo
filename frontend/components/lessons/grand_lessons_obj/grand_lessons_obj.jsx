@@ -11,6 +11,8 @@ import MarkMeaningContainer from '../mark_meaning/mark_meaning_container'
         "jp": {
             "Hiragana-1": []
         },
-        "ge": {},
+        "ge": {
+            "Basics-1": []
+        },
         "esp": {}
     }
