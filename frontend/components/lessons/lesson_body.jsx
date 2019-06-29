@@ -35,7 +35,7 @@ class LessonBody extends React.Component {
                 })
             }
         } 
-        debugger
+        
         if (this.state.lessonLength === this.props.user.language_data.fr.level) {
             
             // let langData = this.props.user.language_data[this.props.mini_lang];
@@ -61,7 +61,7 @@ class LessonBody extends React.Component {
                     guess = 'radio3'
                 }
             }
-            debugger
+            
             if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
                 this.setState({
                     correct: true,
@@ -78,7 +78,7 @@ class LessonBody extends React.Component {
         }
         if (!this.state.default) {
             let langData = this.props.user.language_data[this.props.mini_lang]
-            debugger   
+               
             // if (langData.max_level === false) {
                 langData['level'] = langData.level + 1;
                 if (textArea) { document.getElementById('challenge-textarea').value = ""; }

@@ -1654,8 +1654,6 @@ function (_React$Component) {
         }
       }
 
-      debugger;
-
       if (this.state.lessonLength === this.props.user.language_data.fr.level) {// let langData = this.props.user.language_data[this.props.mini_lang];
         // langData['level'] = 0;
         // this.props.updateLangData(langData);
@@ -1681,8 +1679,6 @@ function (_React$Component) {
           }
         }
 
-        debugger;
-
         if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
           this.setState({
             correct: true,
@@ -1699,8 +1695,7 @@ function (_React$Component) {
       }
 
       if (!this.state["default"]) {
-        var langData = this.props.user.language_data[this.props.mini_lang];
-        debugger; // if (langData.max_level === false) {
+        var langData = this.props.user.language_data[this.props.mini_lang]; // if (langData.max_level === false) {
 
         langData['level'] = langData.level + 1;
 
@@ -1908,8 +1903,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(state) {
-  var mini_lang = Object.values(state.entities.users)[0].learning_language;
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var mini_lang = Object.values(state.entities.users)[0].learning_language; // const lessonName = 
+  // const lesson = Object.values(state.entities.users)[0].language_data[mini_lang].skills
+
   debugger;
   return {
     user: Object.values(state.entities.users)[0],
