@@ -3225,7 +3225,7 @@ function (_React$Component) {
         className: "_1eGmL"
       }, "Level ", 1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-modal-complete"
-      }, "% Complete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.level / 4 * 100, "% Complete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skm-start-btn-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "skm-start-btn",
@@ -3472,7 +3472,8 @@ function (_React$Component) {
         className: "_378Tf _3qO9M _33VdW"
       }, "Basics 1"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         idt: "skm-bscs1",
-        url: "Basics-1"
+        url: "Basics-1",
+        level: this.props.level
       })));
     }
   }]);
@@ -3501,11 +3502,18 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state) {
   debugger;
   var skills = state.entities.users[52].language_data[state.entities.users[52].learning_language].skills;
+  var level;
+  skills.forEach(function (skill) {
+    if (skill.url_title === "Basics-1") {
+      level = skill.skill_level;
+    }
+  });
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
     currentUser: state.entities.users[state.session.id],
-    languages: state.entities.languages
+    languages: state.entities.languages,
+    level: level
   };
 };
 
@@ -3716,7 +3724,8 @@ function (_React$Component) {
         className: "_378Tf _3qO9M _33VdW"
       }, "Basics 2"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         idt: "skm-bscs2",
-        url: "Basics-2"
+        url: "Basics-2",
+        level: 2
       })));
     }
   }]);
@@ -3927,7 +3936,8 @@ function (_React$Component) {
         className: "_378Tf _3qO9M _33VdW"
       }, "Greetings"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         idt: "skm-grtngs1",
-        url: "Greetings"
+        url: "Greetings",
+        level: 2
       })));
     }
   }]);
