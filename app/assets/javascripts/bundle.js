@@ -2505,6 +2505,7 @@ function (_React$Component) {
           url_title: "Basics-1",
           language_mini: "fr",
           skill_level: 0,
+          num_levels: 4,
           disabled: false,
           locked: false
         };
@@ -2514,6 +2515,7 @@ function (_React$Component) {
           url_title: "Greetings",
           language_mini: "fr",
           skill_level: 0,
+          num_levels: 4,
           disabled: false,
           locked: false
         };
@@ -2523,6 +2525,7 @@ function (_React$Component) {
           url_title: "Basics-2",
           language_mini: "fr",
           skill_level: 0,
+          num_levels: 4,
           disabled: false,
           locked: false
         };
