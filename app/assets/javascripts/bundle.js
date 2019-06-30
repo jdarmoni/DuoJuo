@@ -1675,6 +1675,7 @@ function (_React$Component) {
       var textArea = document.getElementById('challenge-textarea');
       var markMeaning = document.getElementById('m-m-c');
       var guess;
+      debugger;
 
       if (this.state["default"]) {
         if (textArea) {
@@ -1705,28 +1706,40 @@ function (_React$Component) {
       }
 
       if (!this.state["default"]) {
-        var skill = this.props.skill;
-        debugger; // if (langData.max_level === false) {
-
-        skill['skill_level'] = skill.skill_level + 1;
-
-        if (textArea) {
-          document.getElementById('challenge-textarea').value = "";
-        }
-
-        if (this.state.lessonLength === skill.skill_level) {
-          skill['skill_level'] = 0;
-          var user = this.props.user;
-          user['rupees'] = user.rupees + 1;
+        // wrong answer should add answer to back of array and not update the level:
+        if (this.state.wrong) {
+          var array = this.state.currentLesson;
+          array.push(array.splice(this.props.skill.skill_level, 1)[0]);
+          this.setState({
+            currentLesson: array,
+            "default": true,
+            wrong: false,
+            correct: false
+          });
+        } else {
+          // correct answer updates the user's level
+          var skill = this.props.skill;
           debugger;
-          this.props.updateUser(user);
-        }
+          skill['skill_level'] = skill.skill_level + 1;
 
-        this.props.updateSkill(skill).then(this.setState({
-          "default": true,
-          wrong: false,
-          correct: true
-        })); // }
+          if (textArea) {
+            document.getElementById('challenge-textarea').value = "";
+          }
+
+          if (this.state.lessonLength === skill.skill_level) {
+            skill['skill_level'] = 0;
+            var user = this.props.user;
+            user['rupees'] = user.rupees + 1;
+            debugger;
+            this.props.updateUser(user);
+          }
+
+          this.props.updateSkill(skill).then(this.setState({
+            "default": true,
+            wrong: false,
+            correct: false
+          }));
+        }
       }
     }
   }, {

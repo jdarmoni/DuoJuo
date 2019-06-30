@@ -47,7 +47,7 @@ class LessonBody extends React.Component {
         let textArea = document.getElementById('challenge-textarea')
         let markMeaning = document.getElementById('m-m-c')
         let guess;
-        
+        debugger
         if (this.state.default) {
             if (textArea) {
                 guess = document.getElementById('challenge-textarea').value
@@ -77,12 +77,25 @@ class LessonBody extends React.Component {
             }               
         }
         if (!this.state.default) {
-            
-            let skill = this.props.skill
-            debugger
-               
-            // if (langData.max_level === false) {
+            // wrong answer should add answer to back of array and not update the level:
+            if (this.state.wrong) {
+                let array = this.state.currentLesson
+
+                array.push(array.splice(this.props.skill.skill_level, 1)[0]);
+    
+                this.setState({
+                    currentLesson: array,
+                    default: true,
+                    wrong: false,
+                    correct: false
+                })
+
+            } else {
+                // correct answer updates the user's level
+                let skill = this.props.skill
+                debugger
                 skill['skill_level'] = skill.skill_level + 1;
+
                 if (textArea) { document.getElementById('challenge-textarea').value = ""; }
                 if (this.state.lessonLength === skill.skill_level) { 
                     skill['skill_level'] = 0;
@@ -96,10 +109,10 @@ class LessonBody extends React.Component {
                     this.setState({
                         default: true,
                         wrong: false,
-                        correct: true
+                        correct: false
                     })
                 )
-            // }
+            }
         }
     }
     skip(){
