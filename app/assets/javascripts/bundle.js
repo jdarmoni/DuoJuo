@@ -3517,7 +3517,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   debugger;
-  var skills = state.entities.users[52].language_data[state.entities.users[52].learning_language].skills;
+  var user = Object.values(state.entities.users)[0];
+  var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
     if (skill.url_title === "Basics-1") {
@@ -3769,7 +3770,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   debugger;
-  var skills = state.entities.users[52].language_data[state.entities.users[52].learning_language].skills;
+  var user = Object.values(state.entities.users)[0];
+  var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
     if (skill.url_title === "Basics-2") {
@@ -4021,7 +4023,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   debugger;
-  var skills = state.entities.users[52].language_data[state.entities.users[52].learning_language].skills;
+  var user = Object.values(state.entities.users)[0];
+  var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
     if (skill.url_title === "Greetings") {
