@@ -12,6 +12,7 @@ class Welcome extends React.Component {
     loggedIn(){
         if (this.props.currentUser) {
             if(this.props.currentUser.active === true || this.props.currentUser.language_strength) {
+                debugger
                 this.props.history.replace('/')
             }
         }

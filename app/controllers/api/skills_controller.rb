@@ -26,6 +26,6 @@ class Api::SkillsController < ApplicationController
     end
 
     def skill_params 
-        params.require(:skill).permit(:language_data_id, :language_string, :url_title, :language_mini, :skill_level, :disabled, :locked)
+        params.require(:skill).permit(:language_data_id, :language_string, :url_title, :language_mini, :skill_level, :num_levels, :disabled, :locked)
     end
 end

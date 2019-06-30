@@ -37,6 +37,7 @@ class Register extends React.Component {
         if (this.props.currentUser) {
             if (this.props.currentUser.active === true) {
                 // if you're an active user, redirect
+                
                 this.props.history.replace('/')
             } else if (this.props.currentUser.learning_language_string){
                 // if you're an inactive user who has chosen a language, redirect

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Greetings from './greetings';
 
 const mapStateToProps = (state) => {
-    debugger
+    
     let user = Object.values(state.entities.users)[0]
     let skills = user.language_data[user.learning_language].skills
     let currentSkill;

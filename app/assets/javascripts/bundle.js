@@ -759,6 +759,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-body-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -860,6 +861,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _login_modal_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./login_modal_container */ "./frontend/components/greeting/login_modal_container.js");
 /* harmony import */ var _dashboard_dashboard_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dashboard/dashboard_container */ "./frontend/components/dashboard/dashboard_container.js");
+/* harmony import */ var _register_register_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../register/register_container */ "./frontend/components/register/register_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -880,6 +882,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
  // import LoginFormContainer from '../session_form/login_form_container';
+
 
 
 
@@ -1022,21 +1025,23 @@ function (_React$Component) {
     value: function render() {
       if (this.props.currentUser) {
         if (this.props.currentUser.active === true) {
-          this.dashboard();
+          return this.dashboard();
         } else if (this.props.currentUser.language_strength) {
-          this.dashboard();
+          return this.dashboard();
         } else {
           this.props.history.replace('/register');
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_register_register_container__WEBPACK_IMPORTED_MODULE_4__["default"], null);
         }
       } else {
-        this.splashPage();
-      } // if this.props.currentUser.active=== true
-      // dashboard
-      // else
-      // register
+        return this.splashPage();
+      } // if (this.props.currentUser.language_data) {
+      //     
+      //     return this.dashboard()
+      // } else {
+      //     
+      //     return this.splashPage()
+      // }
 
-
-      return this.props.currentUser ? this.dashboard() : this.splashPage();
     }
   }]);
 
@@ -3212,7 +3217,6 @@ function (_React$Component) {
   _createClass(SkillModal, [{
     key: "lessonURL",
     value: function lessonURL() {
-      debugger;
       this.props.history.replace("/skill/".concat(this.props.url));
     }
   }, {
@@ -3516,7 +3520,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   var user = Object.values(state.entities.users)[0];
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
@@ -3769,7 +3772,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   var user = Object.values(state.entities.users)[0];
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
@@ -4022,7 +4024,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   var user = Object.values(state.entities.users)[0];
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
@@ -4145,6 +4146,7 @@ function (_React$Component) {
     value: function loggedIn() {
       if (this.props.currentUser) {
         if (this.props.currentUser.active === true || this.props.currentUser.language_strength) {
+          debugger;
           this.props.history.replace('/');
         }
       }

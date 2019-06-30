@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import LoginModalContainer from './login_modal_container'
 import DashboardContainer from '../dashboard/dashboard_container'
-
+import RegisterContainer from '../register/register_container'
 class Greeting extends React.Component {
     constructor(props) {
         super(props);
@@ -14,6 +14,7 @@ class Greeting extends React.Component {
     
     //LOGGED OUT
     splashPage() {
+        
         return (
             <>    
             <div className="logged-out-container">
@@ -124,27 +125,37 @@ class Greeting extends React.Component {
 
     //LOGGED IN!
     dashboard() {
+            
             return <DashboardContainer />
     };
 
     render() {
+        
         if (this.props.currentUser) {
             if (this.props.currentUser.active === true) {
-                this.dashboard()
+                
+                return this.dashboard()
             } else if (this.props.currentUser.language_strength){
-                this.dashboard()
+                
+                return this.dashboard()
             }
             else {
+                
                 this.props.history.replace('/register')
+                return <RegisterContainer />
             }
         } else {
-            this.splashPage()
+            
+            return this.splashPage()
         }
-                // if this.props.currentUser.active=== true
-                    // dashboard
-                // else
-                    // register
-        return this.props.currentUser ? this.dashboard() : this.splashPage();
+
+        // if (this.props.currentUser.language_data) {
+        //     
+        //     return this.dashboard()
+        // } else {
+        //     
+        //     return this.splashPage()
+        // }
     }
 };
 

@@ -6,10 +6,11 @@ class SkillModal extends React.Component {
         super(props)
     }
     lessonURL(){
-        debugger
+
         this.props.history.replace(`/skill/${this.props.url}`)
     }
     render(){
+
         return (  
             <div className="skill-modal-container skm-pointer" id={this.props.idt}>
                 <div>
