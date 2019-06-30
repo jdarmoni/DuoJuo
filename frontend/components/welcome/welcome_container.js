@@ -6,10 +6,11 @@ import {updateUser} from '../../actions/user_actions'
 const mapStateToProps = (state) => {
     debugger
     return {
-        users: Object.values(state.entities.users),
+        currentUser: Object.values(state.entities.users)[0],
         session: Object.values(state.session),
-        currentUser: state.entities.users[state.session.id]
+        // currentUser: state.entities.users[state.session.id]
     };
+    
 };
 
 const mapDispatchToProps = dispatch => {

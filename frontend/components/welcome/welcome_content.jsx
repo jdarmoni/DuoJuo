@@ -26,6 +26,7 @@ class Welcome extends React.Component {
     }
     render(){
         this.loggedIn()
+        debugger
         return (
             <div className="welcome-margin-div">
                 <div>

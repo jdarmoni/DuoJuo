@@ -1,7 +1,9 @@
 import {
     RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER
-} from '../actions/session_actions'
-import {RECEIVE_LANGUAGE_DATA} from '../actions/language_data_actions'
+} from '../actions/session_actions';
+import {RECEIVE_LANGUAGE_DATA} from '../actions/language_data_actions';
+import {RECEIVE_SKILL} from '../actions/skill_actions';
+
 import merge from 'lodash/merge'
 
 export default (state = {}, action) => {
@@ -15,7 +17,10 @@ export default (state = {}, action) => {
         // case RECEIVE_LANGUAGE_DATA:
         //     // comment this out to repair
         //     debugger
-        //     return merge({}, Object.values(state)[0], { ["language_data"]: {[action.language_data.language]:  action.language_data }});
+        //     return merge({}, state[action.language_data.user_id], { ["language_data"]: {[action.language_data.language]:  action.language_data }});
+        // case RECEIVE_SKILL:
+        //     debugger
+        //     return merge({}, Object.values(state[0]).language_data, {["skills"]: action.skill} )
         default:
             return state;
     }
