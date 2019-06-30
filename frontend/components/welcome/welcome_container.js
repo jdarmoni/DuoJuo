@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Welcome from './welcome_content'
 import {updateUser} from '../../actions/user_actions'
 const mapStateToProps = (state) => {
-    
+    debugger
     return {
         users: Object.values(state.entities.users),
         session: Object.values(state.session),

@@ -87,6 +87,7 @@ class Register extends React.Component {
         
         this.props.createLanguageData(newLangData).then((payload)=>{
             // IF LANGUAGE === FRENCH
+
             let Basics1 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
             let Greetings = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
             let Basics2 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }

@@ -759,7 +759,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-body-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1712,6 +1711,10 @@ function (_React$Component) {
 
       if (!this.state["default"]) {
         // wrong answer should add answer to back of array and not update the level:
+        if (textArea) {
+          document.getElementById('challenge-textarea').value = "";
+        }
+
         if (this.state.wrong) {
           var array = this.state.currentLesson;
           array.push(array.splice(this.props.skill.skill_level, 1)[0]);
@@ -1726,10 +1729,6 @@ function (_React$Component) {
           var skill = this.props.skill;
           debugger;
           skill['skill_level'] = skill.skill_level + 1;
-
-          if (textArea) {
-            document.getElementById('challenge-textarea').value = "";
-          }
 
           if (this.state.lessonLength === skill.skill_level) {
             skill['skill_level'] = 0;
@@ -1886,7 +1885,7 @@ function (_React$Component) {
       var progressBar = document.getElementById('skill-p-g');
 
       if (progressBar) {
-        progressBar.style = "opacity: 1;width: ".concat(this.props.skill.skill / this.state.currentLesson.length * 100, "%;");
+        progressBar.style = "opacity: 1;width: ".concat(this.props.skill.skill_level / this.state.currentLesson.length * 100, "%;");
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3520,7 +3519,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   var user = Object.values(state.entities.users)[0];
+  debugger;
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
@@ -4071,6 +4072,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
@@ -4526,9 +4528,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_2__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -4539,11 +4543,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       // i added this so that you don't accumulate users throughout login/logouts
       return {};
+    // case RECEIVE_LANGUAGE_DATA:
+    //     // comment this out to repair
+    //     debugger
+    //     return merge({}, Object.values(state)[0], { ["language_data"]: {[action.language_data.language]:  action.language_data }});
 
     default:
       return state;

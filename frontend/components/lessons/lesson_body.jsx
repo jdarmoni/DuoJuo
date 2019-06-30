@@ -78,6 +78,8 @@ class LessonBody extends React.Component {
         }
         if (!this.state.default) {
             // wrong answer should add answer to back of array and not update the level:
+            if (textArea) { document.getElementById('challenge-textarea').value = ""; }
+
             if (this.state.wrong) {
                 let array = this.state.currentLesson
 
@@ -96,7 +98,6 @@ class LessonBody extends React.Component {
                 debugger
                 skill['skill_level'] = skill.skill_level + 1;
 
-                if (textArea) { document.getElementById('challenge-textarea').value = ""; }
                 if (this.state.lessonLength === skill.skill_level) { 
                     skill['skill_level'] = 0;
                     let user = this.props.user;
@@ -238,7 +239,7 @@ class LessonBody extends React.Component {
       
         let progressBar = document.getElementById('skill-p-g')
         if (progressBar){
-            progressBar.style=`opacity: 1;width: ${this.props.skill.skill / this.state.currentLesson.length * 100}%;`;
+            progressBar.style=`opacity: 1;width: ${this.props.skill.skill_level / this.state.currentLesson.length * 100}%;`;
         }
         return (
             <div className="first-skill-div">
