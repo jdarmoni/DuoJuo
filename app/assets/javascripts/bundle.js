@@ -390,17 +390,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  var currentLanguage;
-  Object.values(state.entities.users)[0].languages.forEach(function (lang) {
-    if (lang.learning = true) {
-      currentLanguage = lang;
-    }
-  });
+  // let currentLanguage;
+  // debugger
+  // Object.values(state.entities.users)[0].languages.forEach(lang => {
+  //     debugger
+  //     if(lang.learning === true) {
+  //         currentLanguage = lang
+  //     }
+  // });
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
-    currentUser: state.entities.users[state.session.id],
-    currentLanguage: currentLanguage
+    currentUser: state.entities.users[state.session.id] // currentLanguage: currentLanguage
+
   };
 };
 
@@ -3497,6 +3499,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
+  var skills = state.entities.users[52].language_data[state.entities.users[52].learning_language].skills;
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
