@@ -26,7 +26,7 @@ class SkillModal extends React.Component {
                             Level {1}
                             {/* <!-- react-text: 15102 -->Level<!-- /react-text --><!-- react-text: 15103 --> <!-- /react-text --><!-- react-text: 15104 -->0/5<!-- /react-text --> */}
                         </div>
-                        <div className="skill-modal-complete">{(this.props.level / 4) * 100}% Complete</div>
+                        <div className="skill-modal-complete">{(this.props.skill.skill_level / this.props.skill.num_levels) * 100}% Complete</div>
                     </div>
                     <div className="skm-start-btn-container">
                         <button className="skm-start-btn" onClick={this.lessonURL.bind(this)}>Start</button>

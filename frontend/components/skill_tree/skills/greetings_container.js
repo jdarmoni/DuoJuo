@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import Basics1 from './basics_1';
+import Greetings from './greetings';
 
 const mapStateToProps = (state) => {
     debugger
     let skills = state.entities.users[52].language_data[state.entities.users[52].learning_language].skills
     let currentSkill;
     skills.forEach(skill => {
-        if(skill.url_title === "Basics-1") {
+        if (skill.url_title === "Greetings") {
             currentSkill = skill
         }
     });
@@ -24,4 +24,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Basics1);
+)(Greetings);
