@@ -4553,17 +4553,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return {};
 
     case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LANGUAGE_DATA"]:
-      // comment this out to repair
+      var newUserObj = Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data)));
+      debugger; // the followng is to assign it a key:
+
+      return Object.assign({}, _defineProperty({}, action.language_data.user_id, newUserObj));
+
+    case _actions_skill_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_SKILL"]:
       debugger;
-      return Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data)));
-    // case RECEIVE_SKILL:
-    //     debugger
-    //     return merge({}, Object.values(state[0]).language_data, {["skills"]: action.skill} )
+      return Object.assign({}, Object.values(state)[0].language_data, _defineProperty({}, "skills", action.skill));
 
     default:
       return state;
   }
-}); // return merge({}, Object.values(state)[0], { ["language_data"]: { [action.language_data.language]: action.language_data } });
+}); // NEED: 96: 
+// return merge({}, Object.values(state)[0], { ["language_data"]: { [action.language_data.language]: action.language_data } });
 // Object.values(state.entities.users)
 //     (11)[85, "naLqRMm4", "naLqRMm4@gmail.com", null, null, false, null, "fr", "French", Array(0), { … }]
 // 0: 85

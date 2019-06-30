@@ -15,17 +15,19 @@ export default (state = {}, action) => {
             // i added this so that you don't accumulate users throughout login/logouts
             return {}
         case RECEIVE_LANGUAGE_DATA:
-            // comment this out to repair
+
+            let newUserObj = Object.assign({}, state[action.language_data.user_id], { ["language_data"]: {[action.language_data.language]:  action.language_data }});
             debugger
-            return Object.assign({}, state[action.language_data.user_id], { ["language_data"]: {[action.language_data.language]:  action.language_data }});
-        // case RECEIVE_SKILL:
-        //     debugger
-        //     return merge({}, Object.values(state[0]).language_data, {["skills"]: action.skill} )
+            // the followng is to assign it a key:
+            return Object.assign({}, {[action.language_data.user_id]: newUserObj})
+        case RECEIVE_SKILL:
+            debugger
+            return Object.assign({}, Object.values(state)[0].language_data, {["skills"]: action.skill} )
         default:
             return state;
     }
 }
-
+// NEED: 96: 
 // return merge({}, Object.values(state)[0], { ["language_data"]: { [action.language_data.language]: action.language_data } });
 
 
