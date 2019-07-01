@@ -209,7 +209,9 @@
 
 /* FLAG DROP DOWN */
 
+
 .flag-container-list {
+    display: none;
     z-index: 220;
     left: 50%;
     top: calc(100% + 10px - 2px);
@@ -223,6 +225,9 @@
     background-color: #fff;
     box-sizing: border-box;
     position: absolute;
+}
+.dashboard-flag-section:hover .flag-container-list {
+    display: block;
 }
 
 .flag-box-sizer {
