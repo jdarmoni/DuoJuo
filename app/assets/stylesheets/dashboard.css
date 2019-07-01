@@ -246,13 +246,19 @@
     font-weight: 700;
     padding: 8px 12px;
 }
+
 .flag-language-box:first-child {
     background-color: #ddf4ff;
-
 }
+
+.flag-language-box:hover {
+    background-color: #f7f7f7
+}
+
 .flag-language-box-t-span {
     padding-left: 5px;
 }
+
 .add-n-c {
     color: #afafaf;
     font-size: 17px;
