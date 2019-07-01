@@ -113,6 +113,7 @@
     width: 40px;
     background-image: url(https://d35aaqx5ub95lt.cloudfront.net/images/juicy-flag-sprite-4.svg);
 }
+
 .dashboard-country-French{
     background-position: 0 -64.39024px;
 }
@@ -256,7 +257,7 @@
 }
 
 .flag-language-box-t-span {
-    padding-left: 5px;
+    padding-left: 12px;
 }
 
 .add-n-c {

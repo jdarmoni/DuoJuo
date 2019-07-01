@@ -68,19 +68,20 @@ class Dashboard extends React.Component {
                             <div className="dashboard-divider"></div>
                             <div className="dashboard-flag-section">
                                 <span className="dashboard-flag-span-parent">
-                                    {/* need logic for determining and interpolating country */}
                                     <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string }  ></span>
                                     <div className="dashboard-drop-down"> {/*  no styling*/}
                                         {/* stylings */}
                                         <div className="flag-container-list">
                                             <div> {/* no stylings*/}
                                                 <div className="flag-box-sizer">
+                                                    {/* each of these after the first one should have an onClick to return a new newState with a new language_data object */}
                                                     <div className="flag-language-box">
                                                             <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string}  ></span>
                                                             <span className="flag-language-box-t-span">{this.props.currentUser.learning_language_string}</span>
                                                     </div>
                                                 </div>
                                                 <div className="flag-language-box">
+                                                    {/* this div will link to courses component! */}
                                                     <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/add-course.svg" />
                                                     <span className="flag-language-box-t-span add-n-c">Add a new course</span>    
                                                 </div>

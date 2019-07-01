@@ -1,6 +1,7 @@
 .logged-out-nav {
-    background: linear-gradient(180deg,#0b3e71,rgba(11,65,118,.5));
-    background-color: rgba(11,65,118,.8);
+    /* background: linear-gradient(180deg,#0b3e71,rgba(11,65,118,.5));
+    background-color: rgba(11,65,118,.8); */
+        background-color: #235390;
     background-repeat: repeat-x;
     position: fixed;
     top: 0;

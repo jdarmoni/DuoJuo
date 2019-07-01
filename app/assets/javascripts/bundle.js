@@ -3626,9 +3626,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   var user = Object.values(state.entities.users)[0];
-  debugger;
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
