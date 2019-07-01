@@ -631,7 +631,25 @@ function (_React$Component) {
         className: "dashboard-flag-span-parent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-flag-span-child dashboard-country-" + this.props.currentUser.learning_language_string
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dashboard-drop-down"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-container-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-box-sizer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-language-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-flag-span-child dashboard-country-" + this.props.currentUser.learning_language_string
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-language-box-t-span"
+      }, this.props.currentUser.learning_language_string))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-language-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/add-course.svg"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-language-box-t-span add-n-c"
+      }, "Add a new course"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-progress-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-progress-span-parent"

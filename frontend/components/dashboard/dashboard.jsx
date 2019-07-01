@@ -70,6 +70,23 @@ class Dashboard extends React.Component {
                                 <span className="dashboard-flag-span-parent">
                                     {/* need logic for determining and interpolating country */}
                                     <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string }  ></span>
+                                    <div className="dashboard-drop-down"> {/*  no styling*/}
+                                        {/* stylings */}
+                                        <div className="flag-container-list">
+                                            <div> {/* no stylings*/}
+                                                <div className="flag-box-sizer">
+                                                    <div className="flag-language-box">
+                                                            <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string}  ></span>
+                                                            <span className="flag-language-box-t-span">{this.props.currentUser.learning_language_string}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flag-language-box">
+                                                    <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/add-course.svg" />
+                                                    <span className="flag-language-box-t-span add-n-c">Add a new course</span>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </span>
                             </div>
 
