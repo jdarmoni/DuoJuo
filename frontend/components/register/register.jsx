@@ -87,10 +87,23 @@ class Register extends React.Component {
         
         this.props.createLanguageData(newLangData).then((payload)=>{
             // IF LANGUAGE === FRENCH
+            let Basics1;
+            let Greetings;
+            let Basics2;
+            if (language==="French") {
 
-            let Basics1 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
-            let Greetings = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
-            let Basics2 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Basics1 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Greetings = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Basics2 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+            } else if (language==="Japanese") {
+                Basics1 = { "language_string": "Japanese", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "jp", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Greetings = { "language_string": "Japanese", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "jp", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Basics2 = { "language_string": "Japanese", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "jp", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+            } else if (language==="Spanish"){
+                Basics1 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Greetings = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Basics2 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+            }
                 
             this.props.createSkill(Basics1)
             this.props.createSkill(Greetings)

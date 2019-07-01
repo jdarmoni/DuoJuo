@@ -1575,12 +1575,33 @@ var grandLessonsObj = {
     "Basics-2": []
   },
   "jp": {
-    "Hiragana-1": []
+    "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "あなたは私の中央ビジネス地区への道を示すことができました",
+      correct: ["Could you show me the way to the central business district"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "私はインサイダー取引で非難されています",
+      correct: ["I have been accused of insider trading"]
+    })],
+    "Intro": []
   },
   "ge": {
     "Basics-1": []
   },
-  "esp": {}
+  "es": {
+    "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "el cerdo esta durmiendo",
+      correct: ["the pig is sleeping"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "Soy el chico que bebe leche",
+      correct: ["I am the boy who drinks milk"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "eres un pájaro?",
+      correct: ["are you a bird?"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "dime porque sueño",
+      correct: ["tell me why i dream"]
+    })]
+  }
 };
 
 /***/ }),
@@ -2503,36 +2524,104 @@ function (_React$Component) {
       newLangData['first_time'] = false;
       this.props.createLanguageData(newLangData).then(function (payload) {
         // IF LANGUAGE === FRENCH
-        var Basics1 = {
-          "language_string": "French",
-          language_data_id: payload.language_data.id,
-          url_title: "Basics-1",
-          language_mini: "fr",
-          skill_level: 0,
-          num_levels: 4,
-          disabled: false,
-          locked: false
-        };
-        var Greetings = {
-          "language_string": "French",
-          language_data_id: payload.language_data.id,
-          url_title: "Greetings",
-          language_mini: "fr",
-          skill_level: 0,
-          num_levels: 4,
-          disabled: false,
-          locked: false
-        };
-        var Basics2 = {
-          "language_string": "French",
-          language_data_id: payload.language_data.id,
-          url_title: "Basics-2",
-          language_mini: "fr",
-          skill_level: 0,
-          num_levels: 4,
-          disabled: false,
-          locked: false
-        };
+        var Basics1;
+        var Greetings;
+        var Basics2;
+
+        if (language === "French") {
+          Basics1 = {
+            "language_string": "French",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-1",
+            language_mini: "fr",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Greetings = {
+            "language_string": "French",
+            language_data_id: payload.language_data.id,
+            url_title: "Greetings",
+            language_mini: "fr",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Basics2 = {
+            "language_string": "French",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-2",
+            language_mini: "fr",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+        } else if (language === "Japanese") {
+          Basics1 = {
+            "language_string": "Japanese",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-1",
+            language_mini: "jp",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Greetings = {
+            "language_string": "Japanese",
+            language_data_id: payload.language_data.id,
+            url_title: "Greetings",
+            language_mini: "jp",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Basics2 = {
+            "language_string": "Japanese",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-2",
+            language_mini: "jp",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+        } else if (language === "Spanish") {
+          Basics1 = {
+            "language_string": "Spanish",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-1",
+            language_mini: "es",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Greetings = {
+            "language_string": "Spanish",
+            language_data_id: payload.language_data.id,
+            url_title: "Greetings",
+            language_mini: "es",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Basics2 = {
+            "language_string": "Spanish",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-2",
+            language_mini: "es",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+        }
 
         _this2.props.createSkill(Basics1);
 
