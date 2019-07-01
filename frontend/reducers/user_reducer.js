@@ -12,17 +12,27 @@ export default (state = {}, action) => {
         case RECEIVE_CURRENT_USER:
             return merge({}, state, { [action.currentUser.id]: action.currentUser })
         case LOGOUT_CURRENT_USER:
-            // i added this so that you don't accumulate users throughout login/logouts
             return {}
+
         case RECEIVE_LANGUAGE_DATA:
 
             let newUserObj = Object.assign({}, state[action.language_data.user_id], { ["language_data"]: {[action.language_data.language]:  action.language_data }});
-            debugger
-            // the followng is to assign it a key:
+            
+            // the following is to assign it a key: [ed: make legible with explicit var names later]
             return Object.assign({}, {[action.language_data.user_id]: newUserObj})
         case RECEIVE_SKILL:
             debugger
-            return Object.assign({}, Object.values(state)[0].language_data, {["skills"]: action.skill} )
+            let languageData = Object.values(state)[0].language_data;
+            let miniLang = action.skill.language_mini;
+            let userID = Object.values(state)[0].id
+
+            languageData[miniLang].skills.push(action.skill)
+            debugger
+
+            let newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], { ["language_data"]: languageData })
+
+            return Object.assign({}, { [userID]: newUserObj2 })
+  
         default:
             return state;
     }

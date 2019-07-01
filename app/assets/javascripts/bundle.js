@@ -4165,7 +4165,6 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       this.loggedIn();
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "welcome-margin-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -4549,18 +4548,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
-      // i added this so that you don't accumulate users throughout login/logouts
       return {};
 
     case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LANGUAGE_DATA"]:
-      var newUserObj = Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data)));
-      debugger; // the followng is to assign it a key:
+      var newUserObj = Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data))); // the following is to assign it a key: [ed: make legible with explicit var names later]
 
       return Object.assign({}, _defineProperty({}, action.language_data.user_id, newUserObj));
 
     case _actions_skill_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_SKILL"]:
       debugger;
-      return Object.assign({}, Object.values(state)[0].language_data, _defineProperty({}, "skills", action.skill));
+      var languageData = Object.values(state)[0].language_data;
+      var miniLang = action.skill.language_mini;
+      var userID = Object.values(state)[0].id;
+      languageData[miniLang].skills.push(action.skill);
+      debugger;
+      var newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], _defineProperty({}, "language_data", languageData));
+      return Object.assign({}, _defineProperty({}, userID, newUserObj2));
 
     default:
       return state;
