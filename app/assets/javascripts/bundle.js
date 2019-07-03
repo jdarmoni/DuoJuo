@@ -171,7 +171,6 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_ALL_LANGUAGE_DATAS = "RECEIVE_ALL_LANGUAGE_DATAS";
 var RECEIVE_LANGUAGE_DATA = "RECEIVE_LANGUAGE_DATA";
 var getLanguageDatas = function getLanguageDatas(language_datas) {
-  debugger;
   return {
     type: RECEIVE_ALL_LANGUAGE_DATAS,
     payload: language_datas
@@ -185,9 +184,7 @@ var receiveLanguageData = function receiveLanguageData(language_data) {
 };
 var fetchLanguageDatas = function fetchLanguageDatas(user) {
   return function (dispatch) {
-    debugger;
     return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchLanguageDatas"](user).then(function (language_datas) {
-      debugger;
       return dispatch(getLanguageDatas(language_datas));
     });
   };
@@ -977,6 +974,17 @@ function (_React$Component) {
       this.props.logout();
     }
   }, {
+    key: "renderBody",
+    value: function renderBody() {
+      debugger;
+
+      if (this.props.languageData.length > 0) {
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "dashboard-body"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_body_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }
+    }
+  }, {
     key: "renderAppropriateDashboard",
     value: function renderAppropriateDashboard() {}
   }, {
@@ -1128,9 +1136,7 @@ function (_React$Component) {
         onClick: this.logout
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-number-span"
-      }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dashboard-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_body_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+      }))))))), this.renderBody());
     }
   }]);
 
@@ -1292,7 +1298,8 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    languageData: Object.values(state.entities.language_data)
   };
 };
 

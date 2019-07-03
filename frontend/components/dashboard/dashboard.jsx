@@ -12,6 +12,14 @@ class Dashboard extends React.Component {
     logout() {
         this.props.logout()
     }
+    renderBody(){
+        debugger
+        if(this.props.languageData.length > 0) {
+            <div className="dashboard-body">
+                <DashboardBodyContainer />
+            </div>
+        }
+    }
     renderAppropriateDashboard(){
         
     }
@@ -145,9 +153,8 @@ class Dashboard extends React.Component {
                     </div>
                 </div>
             </div>
-            <div className="dashboard-body">
-                <DashboardBodyContainer />
-            </div>
+
+            {this.renderBody()}
             </>
         )
     }
