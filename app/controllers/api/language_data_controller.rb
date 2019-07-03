@@ -1,5 +1,11 @@
 class Api::LanguageDataController < ApplicationController
 
+    def index 
+        debugger
+        @language_datas = User.find(params[:userID]).language_data
+        render :index
+    end
+
     def create
         
         @newLanguage = LanguageData.new(lang_data_params)

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Dashboard from './dashboard';
 import {logout} from '../../actions/session_actions'
-
+import { fetchLanguageDatas} from '../../actions/language_data_actions'
 const mapStateToProps = (state) => {
 
     return {
@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
     };
 };
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    fetchLanguageDatas: (user) => dispatch(fetchLanguageDatas())
 });
 
 export default connect(
