@@ -154,10 +154,58 @@ var updateLanguage = function updateLanguage(languageId) {
 /*!***************************************************!*\
   !*** ./frontend/actions/language_data_actions.js ***!
   \***************************************************/
-/*! exports provided: RECEIVE_ALL_LANGUAGE_DATAS, RECEIVE_LANGUAGE_DATA, receiveLanguageData, fetchLanguageDatas, createLanguageData, updateLanguageData */
-/***/ (function(module, exports) {
+/*! exports provided: RECEIVE_ALL_LANGUAGE_DATAS, RECEIVE_LANGUAGE_DATA, getLanguageDatas, receiveLanguageData, fetchLanguageDatas, createLanguageData, updateLanguageData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/AbbeyRoad/Desktop/DuoJuo/frontend/actions/language_data_actions.js: Identifier 'fetchLanguageDatas' has already been declared (22:13)\n\n\u001b[0m \u001b[90m 20 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m fetchLanguageDatas \u001b[33m=\u001b[39m (user)\u001b[33m=>\u001b[39m (dispatch) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 23 | \u001b[39m    \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m 24 | \u001b[39m        \u001b[33mAPIUtil\u001b[39m\u001b[33m.\u001b[39mfetchLanguageDatas(user)\u001b[33m.\u001b[39mthen( (language_datas)\u001b[33m=>\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m 25 | \u001b[39m            \u001b[36mreturn\u001b[39m (dispatch(fetchLanguageDatas(language_datas)))\u001b[0m\n    at Object.raise (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:6344:17)\n    at ScopeHandler.checkRedeclarationInScope (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3757:12)\n    at ScopeHandler.declareName (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:3723:12)\n    at Object.checkLVal (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:8034:22)\n    at Object.parseVarId (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10465:10)\n    at Object.parseVar (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10436:12)\n    at Object.parseVarStatement (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10258:10)\n    at Object.parseStatementContent (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9855:21)\n    at Object.parseStatement (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9788:17)\n    at Object.parseExportDeclaration (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10980:17)\n    at Object.maybeParseExportDeclaration (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10930:31)\n    at Object.parseExport (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10859:29)\n    at Object.parseStatementContent (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9892:27)\n    at Object.parseStatement (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9788:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10364:25)\n    at Object.parseBlockBody (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:10351:10)\n    at Object.parseTopLevel (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:9717:10)\n    at Object.parse (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:11233:17)\n    at parse (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/parser/lib/index.js:11269:38)\n    at parser (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transformation/normalize-file.js:170:34)\n    at normalizeFile (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transformation/normalize-file.js:138:11)\n    at runSync (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Users/AbbeyRoad/Desktop/DuoJuo/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_LANGUAGE_DATAS", function() { return RECEIVE_ALL_LANGUAGE_DATAS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LANGUAGE_DATA", function() { return RECEIVE_LANGUAGE_DATA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getLanguageDatas", function() { return getLanguageDatas; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveLanguageData", function() { return receiveLanguageData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLanguageDatas", function() { return fetchLanguageDatas; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguageData", function() { return updateLanguageData; });
+/* harmony import */ var _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/language_data_api_util */ "./frontend/util/language_data_api_util.js");
+
+var RECEIVE_ALL_LANGUAGE_DATAS = "RECEIVE_ALL_LANGUAGE_DATAS";
+var RECEIVE_LANGUAGE_DATA = "RECEIVE_LANGUAGE_DATA";
+var getLanguageDatas = function getLanguageDatas(language_datas) {
+  debugger;
+  return {
+    type: RECEIVE_ALL_LANGUAGE_DATAS,
+    payload: language_datas
+  };
+};
+var receiveLanguageData = function receiveLanguageData(language_data) {
+  return {
+    type: RECEIVE_LANGUAGE_DATA,
+    language_data: language_data
+  };
+};
+var fetchLanguageDatas = function fetchLanguageDatas(user) {
+  return function (dispatch) {
+    debugger;
+    return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchLanguageDatas"](user).then(function (language_datas) {
+      debugger;
+      return dispatch(getLanguageDatas(language_datas));
+    });
+  };
+};
+var createLanguageData = function createLanguageData(language_data) {
+  return function (dispatch) {
+    return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["createLanguageData"](language_data).then(function (language_data) {
+      return dispatch(receiveLanguageData(language_data));
+    });
+  };
+};
+var updateLanguageData = function updateLanguageData(language_data) {
+  return function (dispatch) {
+    return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["updateLanguageData"](language_data).then(function (language_data) {
+      return dispatch(receiveLanguageData(language_data));
+    });
+  };
+};
 
 /***/ }),
 
@@ -933,21 +981,12 @@ function (_React$Component) {
     value: function renderAppropriateDashboard() {}
   }, {
     key: "restOfFlags",
-    value: function restOfFlags() {
-      var language = this.props.currentUser.language_data.learning_language_string; // for each languageData thats not 'language' (currentUser's LanguageData)
-
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "flag-language-box",
-        onClick: this.getLangData.bind(this)
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "dashboard-flag-span-child dashboard-country-" + this.props.currentUser.learning_language_string
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "flag-language-box-t-span"
-      }, this.props.currentUser.learning_language_string));
-    }
-  }, {
-    key: "getLangData",
-    value: function getLangData() {// some type of fetch
+    value: function restOfFlags() {//     let language = this.props.currentUser.language_data.learning_language_string;
+      //     // for each languageData thats not 'language' (currentUser's LanguageData)
+      // <div className="flag-language-box" onClick={this.getLangData.bind(this)}>
+      //         <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string}  ></span>
+      //         <span className="flag-language-box-t-span">{this.props.currentUser.learning_language_string}</span>
+      //     </div>
     }
   }, {
     key: "componentDidMount",
@@ -957,6 +996,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      this.props.fetchLanguageDatas(this.props.currentUser);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-toppermost-div"
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1262,7 +1302,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["logout"])());
     },
     fetchLanguageDatas: function fetchLanguageDatas(user) {
-      return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchLanguageDatas"])());
+      return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchLanguageDatas"])(user));
     }
   };
 };
@@ -5164,6 +5204,48 @@ var updateLanguage = function updateLanguage(languageId) {
     url: "/api/languages/".concat(languageId),
     data: {
       language: language
+    }
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/language_data_api_util.js":
+/*!*************************************************!*\
+  !*** ./frontend/util/language_data_api_util.js ***!
+  \*************************************************/
+/*! exports provided: fetchLanguageDatas, createLanguageData, updateLanguageData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLanguageDatas", function() { return fetchLanguageDatas; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguageData", function() { return updateLanguageData; });
+var fetchLanguageDatas = function fetchLanguageDatas(user) {
+  return $.ajax({
+    method: 'get',
+    url: '/api/language_data',
+    data: {
+      userId: user.id
+    }
+  });
+};
+var createLanguageData = function createLanguageData(language_data) {
+  return $.ajax({
+    method: 'post',
+    url: "/api/language_data/",
+    data: {
+      language_data: language_data
+    }
+  });
+};
+var updateLanguageData = function updateLanguageData(language_data) {
+  return $.ajax({
+    method: 'patch',
+    url: "api/language_data/".concat(language_data.id),
+    data: {
+      language_data: language_data
     }
   });
 };

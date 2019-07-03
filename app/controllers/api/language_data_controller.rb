@@ -2,7 +2,7 @@ class Api::LanguageDataController < ApplicationController
 
     def index 
         debugger
-        @language_datas = User.find(params[:userID]).language_data
+        @language_datas = User.find(params[:userId]).language_data
         render :index
     end
 

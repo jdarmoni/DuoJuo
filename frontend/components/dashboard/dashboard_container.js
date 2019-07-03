@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
-    fetchLanguageDatas: (user) => dispatch(fetchLanguageDatas())
+    fetchLanguageDatas: (user) => dispatch(fetchLanguageDatas(user))
 });
 
 export default connect(

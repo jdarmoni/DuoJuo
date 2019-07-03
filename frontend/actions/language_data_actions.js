@@ -3,7 +3,8 @@ import * as APIUtil from '../util/language_data_api_util'
 export const RECEIVE_ALL_LANGUAGE_DATAS = "RECEIVE_ALL_LANGUAGE_DATAS"
 export const RECEIVE_LANGUAGE_DATA = "RECEIVE_LANGUAGE_DATA"
 
-export const fetchLanguageDatas = (language_datas)=> {
+export const getLanguageDatas = (language_datas)=> {
+    debugger
     return ({
         type: RECEIVE_ALL_LANGUAGE_DATAS,
         payload: language_datas
@@ -20,9 +21,11 @@ export const receiveLanguageData = (language_data) => {
 
 
 export const fetchLanguageDatas = (user)=> (dispatch) => {
+    debugger
     return (
         APIUtil.fetchLanguageDatas(user).then( (language_datas)=>{
-            return (dispatch(fetchLanguageDatas(language_datas)))
+            debugger
+            return (dispatch(getLanguageDatas(language_datas)))
         })
     )
 }
