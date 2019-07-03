@@ -498,7 +498,8 @@ function (_React$Component) {
       }
 
       user["learning_language_string"] = language;
-      user["learning_language"] = language_ac; // create a new language object, pass language  down through register container
+      user["learning_language"] = language_ac; // <<<*******!!!!!!!!!
+      // create a new language object, pass language  down through register container
 
       newLang['streak'] = 0;
       newLang['language_string'] = language;
@@ -5081,7 +5082,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return {};
 
     case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LANGUAGE_DATA"]:
-      var newUserObj = Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data))); // the following is to assign it a key: [ed: make legible with explicit var names later]
+      var newUserObj = Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data)));
+      debugger; // the following is to assign it a key: [ed: make legible with explicit var names later]
 
       return Object.assign({}, _defineProperty({}, action.language_data.user_id, newUserObj));
 
@@ -5091,6 +5093,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var userID = Object.values(state)[0].id;
       languageData[miniLang].skills.push(action.skill);
       var newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], _defineProperty({}, "language_data", languageData));
+      debugger;
       return Object.assign({}, _defineProperty({}, userID, newUserObj2));
 
     default:

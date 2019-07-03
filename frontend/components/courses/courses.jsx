@@ -77,7 +77,7 @@ class Courses extends React.Component {
         }
 
         user["learning_language_string"] = language
-        user["learning_language"] = language_ac;
+        user["learning_language"] = language_ac; // <<<*******!!!!!!!!!
         // create a new language object, pass language  down through register container
         newLang['streak'] = 0;
         newLang['language_string'] = language;
@@ -125,8 +125,6 @@ class Courses extends React.Component {
             this.props.createSkill(Basics2)
 
         })
-
-
 
         debugger
         this.props.updateUser(user)

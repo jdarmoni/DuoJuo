@@ -17,7 +17,8 @@ export default (state = {}, action) => {
         case RECEIVE_LANGUAGE_DATA:
 
             let newUserObj = Object.assign({}, state[action.language_data.user_id], { ["language_data"]: {[action.language_data.language]:  action.language_data }});
-            
+            debugger
+
             // the following is to assign it a key: [ed: make legible with explicit var names later]
             return Object.assign({}, {[action.language_data.user_id]: newUserObj})
         case RECEIVE_SKILL:
@@ -29,7 +30,7 @@ export default (state = {}, action) => {
             languageData[miniLang].skills.push(action.skill)
             
             let newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], { ["language_data"]: languageData })
-
+            debugger
             return Object.assign({}, { [userID]: newUserObj2 })
   
         default:
