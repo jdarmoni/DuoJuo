@@ -1,3 +1,11 @@
+export const fetchLanguageDatas = (user) => {
+    return $.ajax({
+        method: 'get',
+        url: '/api/language_data',
+        data: user.id
+    })
+}
+
 export const createLanguageData = (language_data) => {
     
     return $.ajax({

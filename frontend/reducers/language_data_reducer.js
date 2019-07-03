@@ -9,7 +9,7 @@ export default (state = {}, action) => {
     switch (action.type) {
         
         case RECEIVE_LANGUAGE_DATA:
-            debugger
+            
             return merge({}, state, { [action.language_data.id]: action.language_data });
 
         default:

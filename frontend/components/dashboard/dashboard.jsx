@@ -27,6 +27,9 @@ class Dashboard extends React.Component {
     getLangData(){
         // some type of fetch
     }
+    componentDidMount(){
+        this.props.fetchLanguageDatas(this.props.currentUser)
+    }
 
     render() {
         return (
