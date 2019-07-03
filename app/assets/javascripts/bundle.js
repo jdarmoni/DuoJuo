@@ -343,6 +343,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _welcome_welcome_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./welcome/welcome_container */ "./frontend/components/welcome/welcome_container.js");
 /* harmony import */ var _lessons_lesson_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lessons/lesson_container */ "./frontend/components/lessons/lesson_container.js");
+/* harmony import */ var _courses_courses_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./courses/courses_container */ "./frontend/components/courses/courses_container.js");
+
 
 
 
@@ -368,10 +370,412 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
     path: "/skill/",
     component: _lessons_lesson_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    path: "/courses",
+    component: _courses_courses_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/courses/courses.jsx":
+/*!*************************************************!*\
+  !*** ./frontend/components/courses/courses.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../greeting/login_modal_container */ "./frontend/components/greeting/login_modal_container.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+ // import RegisterContent from './register_content'
+
+var Courses =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Courses, _React$Component);
+
+  function Courses(props) {
+    var _this;
+
+    _classCallCheck(this, Courses);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Courses).call(this, props));
+    _this.register = _this.register.bind(_assertThisInitialized(_this));
+    return _this;
+  } // LanguageData objects are kept track of in their slice of state - so even though the USER state for languageData object is singular, you’ll have the UL from state.entities.languageData[]
+  // NEED TO: Add reducers for state.entities.langaugeData
+
+
+  _createClass(Courses, [{
+    key: "navBar",
+    value: function navBar() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+        className: "logged-out-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logged-out-nav-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "duoLogo",
+        href: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "langlogin-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "site-lang"
+      }, "Site language:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "site-lang-language"
+      }, "English")))));
+    }
+  }, {
+    key: "selectedNew",
+    value: function selectedNew() {
+      if (this.props.currentUser) {
+        if (this.props.currentUser.active === true) {
+          // if you're an active user, redirect
+          this.props.history.replace('/');
+        } else if (this.props.currentUser.learning_language_string) {
+          // if you're an inactive user who has chosen a language, redirect
+          this.props.history.replace('/welcome');
+        }
+      }
+    }
+  }, {
+    key: "register",
+    value: function register(event) {
+      var _this2 = this;
+
+      var language = event.currentTarget.children[0].children[1].innerText;
+      var currentLanguageDatas = this.props.language_data; // array of objects
+
+      debugger;
+
+      for (var i = 0; i < currentLanguageDatas.length; i++) {
+        debugger; // if you already have the selected lang in your langData objs, abort!
+
+        if (currentLanguageDatas[i].language_string === language) {
+          return;
+        }
+      } // NEXT: create a user object to pass into updateUser at the end
+
+
+      var language_ac;
+      var user = this.props.currentUser;
+      var newLang = {};
+
+      if (language === "French") {
+        language_ac = "fr";
+      } else if (language === "Spanish") {
+        language_ac = "es";
+      } else if (language === "Japanese") {
+        language_ac = "jp";
+      } else if (language === "German") {
+        language_ac = "ge";
+      }
+
+      user["learning_language_string"] = language;
+      user["learning_language"] = language_ac; // create a new language object, pass language  down through register container
+
+      newLang['streak'] = 0;
+      newLang['language_string'] = language;
+      newLang['points'] = 0;
+      newLang['learning'] = true;
+      newLang['language'] = language_ac;
+      newLang['level'] = 0;
+      newLang['sentences_translated'] = 0;
+      newLang['to_next_level'] = 10;
+      newLang['user_id'] = this.props.currentUser.id;
+      debugger;
+      this.props.createLanguage(newLang);
+      var newLangData = {};
+      newLangData = newLang; // delete newLangData['streak'];
+
+      newLangData['level_percent'] = 0;
+      newLangData['max_level'] = false;
+      newLangData['language_strength'] = 0;
+      newLangData['fluency_score'] = 0;
+      newLangData['first_time'] = false;
+      this.props.createLanguageData(newLangData).then(function (payload) {
+        // IF LANGUAGE === FRENCH
+        var Basics1;
+        var Greetings;
+        var Basics2;
+
+        if (language === "French") {
+          Basics1 = {
+            "language_string": "French",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-1",
+            language_mini: "fr",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Greetings = {
+            "language_string": "French",
+            language_data_id: payload.language_data.id,
+            url_title: "Greetings",
+            language_mini: "fr",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Basics2 = {
+            "language_string": "French",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-2",
+            language_mini: "fr",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+        } else if (language === "Japanese") {
+          Basics1 = {
+            "language_string": "Japanese",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-1",
+            language_mini: "jp",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Greetings = {
+            "language_string": "Japanese",
+            language_data_id: payload.language_data.id,
+            url_title: "Greetings",
+            language_mini: "jp",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Basics2 = {
+            "language_string": "Japanese",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-2",
+            language_mini: "jp",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+        } else if (language === "Spanish") {
+          Basics1 = {
+            "language_string": "Spanish",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-1",
+            language_mini: "es",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Greetings = {
+            "language_string": "Spanish",
+            language_data_id: payload.language_data.id,
+            url_title: "Greetings",
+            language_mini: "es",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+          Basics2 = {
+            "language_string": "Spanish",
+            language_data_id: payload.language_data.id,
+            url_title: "Basics-2",
+            language_mini: "es",
+            skill_level: 0,
+            num_levels: 4,
+            disabled: false,
+            locked: false
+          };
+        }
+
+        _this2.props.createSkill(Basics1);
+
+        _this2.props.createSkill(Greetings);
+
+        _this2.props.createSkill(Basics2);
+      });
+      debugger;
+      this.props.updateUser(user); // this.selectedNew()
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logged-out-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+        className: "logged-out-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logged-out-nav-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "duoLogo",
+        href: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "langlogin-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "site-lang"
+      }, "Site language:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "site-lang-language"
+      }, "English")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-button-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "login-button",
+        id: "login-button"
+      }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "register-outer-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "register-inner-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "register-inner-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "register-header"
+      }, "I want to learn..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "choose-language-list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "choose-language-item-div",
+        onClick: this.register
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-icon-span spanish-span"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-title"
+      }, "Spanish"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-stats"
+      }, "22.3M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "choose-language-item-div",
+        onClick: this.register
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-icon-span french-span"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-title"
+      }, "French"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-stats"
+      }, "12.0M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "choose-language-item-div",
+        onClick: this.register
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-icon-span german-span"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-title"
+      }, "German"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-stats"
+      }, "7.35M learners"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "choose-language-item-div",
+        onClick: this.register
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-icon-span japanese-span"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-title"
+      }, "Japanese"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-icon-language-stats"
+      }, "7.73M learners"))))))))));
+    }
+  }]);
+
+  return Courses;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Courses));
+
+/***/ }),
+
+/***/ "./frontend/components/courses/courses_container.js":
+/*!**********************************************************!*\
+  !*** ./frontend/components/courses/courses_container.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _courses__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./courses */ "./frontend/components/courses/courses.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_language_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/language_actions */ "./frontend/actions/language_actions.js");
+/* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
+/* harmony import */ var _actions_skill_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/skill_actions */ "./frontend/actions/skill_actions.js");
+
+
+
+
+
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    users: Object.values(state.entities.users),
+    session: Object.values(state.session),
+    currentUser: state.entities.users[state.session.id],
+    language_data: Object.values(getState().entities.language_data)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    signup: function signup(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["signup"])(user));
+    },
+    updateUser: function updateUser(user) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_5__["updateUser"])(user));
+    },
+    createLanguage: function createLanguage(language) {
+      return dispatch(Object(_actions_language_actions__WEBPACK_IMPORTED_MODULE_6__["createLanguage"])(language));
+    },
+    createLanguageData: function createLanguageData(language_data) {
+      return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_7__["createLanguageData"])(language_data));
+    },
+    createSkill: function createSkill(skill) {
+      return dispatch(Object(_actions_skill_actions__WEBPACK_IMPORTED_MODULE_8__["createSkill"])(skill));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_courses__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -555,6 +959,24 @@ function (_React$Component) {
     key: "renderAppropriateDashboard",
     value: function renderAppropriateDashboard() {}
   }, {
+    key: "restOfFlags",
+    value: function restOfFlags() {
+      var language = this.props.currentUser.language_data.learning_language_string; // for each languageData thats not 'language' (currentUser's LanguageData)
+
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "flag-language-box",
+        onClick: this.getLangData.bind(this)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "dashboard-flag-span-child dashboard-country-" + this.props.currentUser.learning_language_string
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "flag-language-box-t-span"
+      }, this.props.currentUser.learning_language_string));
+    }
+  }, {
+    key: "getLangData",
+    value: function getLangData() {// some type of fetch
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -643,13 +1065,15 @@ function (_React$Component) {
         className: "dashboard-flag-span-child dashboard-country-" + this.props.currentUser.learning_language_string
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-language-box-t-span"
-      }, this.props.currentUser.learning_language_string))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.currentUser.learning_language_string)), this.restOfFlags()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: '/courses'
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-language-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/add-course.svg"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-language-box-t-span add-n-c"
-      }, "Add a new course"))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Add a new course")))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-progress-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-progress-span-parent"
@@ -3627,6 +4051,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   var user = Object.values(state.entities.users)[0];
+  debugger;
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
@@ -4177,7 +4602,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   return {
     currentUser: Object.values(state.entities.users)[0],
     session: Object.values(state.session) // currentUser: state.entities.users[state.session.id]
@@ -4445,6 +4869,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
   switch (action.type) {
     case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LANGUAGE_DATA"]:
+      debugger;
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.language_data.id, action.language_data));
 
     default:
@@ -4661,12 +5086,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return Object.assign({}, _defineProperty({}, action.language_data.user_id, newUserObj));
 
     case _actions_skill_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_SKILL"]:
-      debugger;
       var languageData = Object.values(state)[0].language_data;
       var miniLang = action.skill.language_mini;
       var userID = Object.values(state)[0].id;
       languageData[miniLang].skills.push(action.skill);
-      debugger;
       var newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], _defineProperty({}, "language_data", languageData));
       return Object.assign({}, _defineProperty({}, userID, newUserObj2));
 

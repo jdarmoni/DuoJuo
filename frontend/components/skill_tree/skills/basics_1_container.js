@@ -4,7 +4,7 @@ import Basics1 from './basics_1';
 const mapStateToProps = (state) => {
     
     let user = Object.values(state.entities.users)[0]
-    
+    debugger
     let skills = user.language_data[user.learning_language].skills
     let currentSkill;
 

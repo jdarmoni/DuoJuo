@@ -15,6 +15,18 @@ class Dashboard extends React.Component {
     renderAppropriateDashboard(){
         
     }
+    restOfFlags(){
+        let language = this.props.currentUser.language_data.learning_language_string;
+        // for each languageData thats not 'language' (currentUser's LanguageData)
+
+    <div className="flag-language-box" onClick={this.getLangData.bind(this)}>
+            <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string}  ></span>
+            <span className="flag-language-box-t-span">{this.props.currentUser.learning_language_string}</span>
+        </div>
+    }
+    getLangData(){
+        // some type of fetch
+    }
 
     render() {
         return (
@@ -79,12 +91,13 @@ class Dashboard extends React.Component {
                                                             <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string}  ></span>
                                                             <span className="flag-language-box-t-span">{this.props.currentUser.learning_language_string}</span>
                                                     </div>
+                                                    {this.restOfFlags()}
                                                 </div>
-                                                <div className="flag-language-box">
+                                                    <Link to={'/courses'}> <div className="flag-language-box" >
                                                     {/* this div will link to courses component! */}
                                                     <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/add-course.svg" />
                                                     <span className="flag-language-box-t-span add-n-c">Add a new course</span>    
-                                                </div>
+                                                </div></Link> 
                                             </div>
                                         </div>
                                     </div>
