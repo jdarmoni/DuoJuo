@@ -979,7 +979,7 @@ function (_React$Component) {
       debugger;
 
       if (this.props.languageData.length > 0) {
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dashboard-body"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_body_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
       }

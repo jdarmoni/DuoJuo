@@ -15,9 +15,12 @@ class Dashboard extends React.Component {
     renderBody(){
         debugger
         if(this.props.languageData.length > 0) {
-            <div className="dashboard-body">
-                <DashboardBodyContainer />
-            </div>
+            return (
+
+                <div className="dashboard-body">
+                    <DashboardBodyContainer />
+                </div>
+                )
         }
     }
     renderAppropriateDashboard(){
