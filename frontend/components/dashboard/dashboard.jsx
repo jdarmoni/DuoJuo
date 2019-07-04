@@ -38,7 +38,7 @@ class Dashboard extends React.Component {
     }
 
     render() {
-        this.props.fetchLanguageDatas(this.props.currentUser)
+        // this.props.fetchLanguageDatas(this.props.currentUser)
 
         return (
             <>

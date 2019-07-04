@@ -1004,7 +1004,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      this.props.fetchLanguageDatas(this.props.currentUser);
+      // this.props.fetchLanguageDatas(this.props.currentUser)
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-toppermost-div"
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -4901,6 +4901,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   switch (action.type) {
     case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LANGUAGE_DATA"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.language_data.id, action.language_data));
+
+    case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_LANGUAGE_DATAS"]:
+      debugger;
+      return action.payload;
 
     default:
       return state;
