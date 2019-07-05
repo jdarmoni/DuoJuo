@@ -5,12 +5,15 @@ class LanguageListItem extends React.Component {
         super(props)
     }
 
+    selectLang(){
+
+    }
     render(){
         return (
 
-            <div className="flag-language-box">
-                <span className={`dashboard-flag-span-child dashboard-country-` + this.props.language_string}  ></span>
-                <span className="flag-language-box-t-span">{this.props.language_string}</span>
+            <div className="flag-language-box" onClick={this.selectLang}>
+                <span className={`dashboard-flag-span-child dashboard-country-` + this.props.lang_data.language_string}  ></span>
+                <span className="flag-language-box-t-span">{this.props.lang_data.language_string}</span>
             </div>
             )
 

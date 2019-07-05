@@ -996,7 +996,7 @@ function (_React$Component) {
 
         if (lang_data.language_string !== language) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_language_list_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            language_string: lang_data.language_string
+            lang_data: lang_data
           });
         }
       }, this);
@@ -1357,15 +1357,19 @@ function (_React$Component) {
   }
 
   _createClass(LanguageListItem, [{
+    key: "selectLang",
+    value: function selectLang() {}
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "flag-language-box"
+        className: "flag-language-box",
+        onClick: this.selectLang
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "dashboard-flag-span-child dashboard-country-" + this.props.language_string
+        className: "dashboard-flag-span-child dashboard-country-" + this.props.lang_data.language_string
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-language-box-t-span"
-      }, this.props.language_string));
+      }, this.props.lang_data.language_string));
     }
   }]);
 
