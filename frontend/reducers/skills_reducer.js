@@ -8,7 +8,7 @@ export default (state = {}, action) => {
     switch (action.type) {
 
         case RECEIVE_SKILL:
-            
+            debugger
             return merge({}, state, { [action.skill.id]: action.skill });
 
         default:

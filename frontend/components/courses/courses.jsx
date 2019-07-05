@@ -39,9 +39,9 @@ class Courses extends React.Component {
         
         let language = event.currentTarget.children[0].children[1].innerText;
         let currentLanguageDatas = this.props.language_data // array of objects
-        debugger
+        
         for (let i = 0; i < currentLanguageDatas.length; i++) {
-            debugger
+            
             // if you already have the selected lang in your langData objs, abort!
             if (currentLanguageDatas[i].language_string === language) {
                 return
@@ -117,13 +117,13 @@ class Courses extends React.Component {
         this.props.updateUser(user)
         
     }
-    componentDidUpdate(prevProps) {
-        debugger
-        // Typical usage (don't forget to compare props):
-        if (this.props.language_data.length !== prevProps.language_data.length) {
-            this.props.history.replace('/');
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     // Typical usage (don't forget to compare props):
+    //     if (this.props.language_data.length !== prevProps.language_data.length) {
+    //         this.props.history.replace('/');
+    //     }
+    // }
     render() {
 
         return (

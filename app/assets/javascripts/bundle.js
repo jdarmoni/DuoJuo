@@ -476,11 +476,8 @@ function (_React$Component) {
       var language = event.currentTarget.children[0].children[1].innerText;
       var currentLanguageDatas = this.props.language_data; // array of objects
 
-      debugger;
-
       for (var i = 0; i < currentLanguageDatas.length; i++) {
-        debugger; // if you already have the selected lang in your langData objs, abort!
-
+        // if you already have the selected lang in your langData objs, abort!
         if (currentLanguageDatas[i].language_string === language) {
           return;
         }
@@ -633,16 +630,14 @@ function (_React$Component) {
       });
       debugger;
       this.props.updateUser(user);
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      debugger; // Typical usage (don't forget to compare props):
+    } // componentDidUpdate(prevProps) {
+    //     debugger
+    //     // Typical usage (don't forget to compare props):
+    //     if (this.props.language_data.length !== prevProps.language_data.length) {
+    //         this.props.history.replace('/');
+    //     }
+    // }
 
-      if (this.props.language_data.length !== prevProps.language_data.length) {
-        this.props.history.replace('/');
-      }
-    }
   }, {
     key: "render",
     value: function render() {
@@ -5069,6 +5064,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
   switch (action.type) {
     case _actions_skill_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SKILL"]:
+      debugger;
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.skill.id, action.skill));
 
     default:
