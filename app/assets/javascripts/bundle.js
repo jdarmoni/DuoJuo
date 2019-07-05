@@ -1006,7 +1006,9 @@ function (_React$Component) {
         if (lang_data.language_string !== language) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_language_list_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
             lang_data: lang_data,
-            fetch: _this2.props.fetchLanguageData
+            fetch: _this2.props.fetchLanguageData,
+            user: _this2.props.currentUser,
+            updateUser: _this2.props.updateUser
           });
         }
       }, this);
@@ -1294,6 +1296,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard */ "./frontend/components/dashboard/dashboard.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+
 
 
 
@@ -1318,6 +1322,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchLanguageData: function fetchLanguageData(lang_data) {
       return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchLanguageData"])(lang_data));
+    },
+    updateUser: function updateUser(user) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["updateUser"])(user));
     }
   };
 };
@@ -1369,15 +1376,22 @@ function (_React$Component) {
   }
 
   _createClass(LanguageListItem, [{
+    key: "selectLang",
+    value: function selectLang() {
+      debugger;
+      var user = this.props.user;
+      user["learning_language_string"] = this.props.lang_data.language_string;
+      user["learning_language"] = this.props.lang_data.language;
+      debugger;
+      this.props.fetch(this.props.lang_data);
+      this.props.updateUser(user);
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-language-box",
-        onClick: function onClick() {
-          return _this.props.fetch(_this.props.lang_data);
-        }
+        onClick: this.selectLang.bind(this)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-flag-span-child dashboard-country-" + this.props.lang_data.language_string
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -4156,8 +4170,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   // let user = Object.values(state.entities.users)[0]
-  var user = state.entities.users[state.session.id]; // debugger
-
+  var user = state.entities.users[state.session.id];
+  debugger;
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
