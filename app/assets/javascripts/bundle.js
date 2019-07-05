@@ -636,7 +636,12 @@ function (_React$Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate() {// this.props.history.replace('/')
+    value: function componentDidUpdate(prevProps) {
+      debugger; // Typical usage (don't forget to compare props):
+
+      if (this.props.language_data.length !== prevProps.language_data.length) {
+        this.props.history.replace('/');
+      }
     }
   }, {
     key: "render",
