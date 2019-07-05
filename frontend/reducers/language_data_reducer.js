@@ -13,7 +13,7 @@ export default (state = {}, action) => {
             return merge({}, state, { [action.language_data.id]: action.language_data });
 
         case RECEIVE_ALL_LANGUAGE_DATAS:
-            debugger
+            
             return action.payload;
         default:
             return state;

@@ -967,8 +967,6 @@ function (_React$Component) {
   }, {
     key: "renderBody",
     value: function renderBody() {
-      debugger;
-
       if (this.props.languageData.length > 0) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dashboard-body"
@@ -980,13 +978,7 @@ function (_React$Component) {
     value: function renderAppropriateDashboard() {}
   }, {
     key: "restOfFlags",
-    value: function restOfFlags() {//     let language = this.props.currentUser.language_data.learning_language_string;
-      //     // for each languageData thats not 'language' (currentUser's LanguageData)
-      // <div className="flag-language-box" onClick={this.getLangData.bind(this)}>
-      //         <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string}  ></span>
-      //         <span className="flag-language-box-t-span">{this.props.currentUser.learning_language_string}</span>
-      //     </div>
-    }
+    value: function restOfFlags() {}
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -996,6 +988,18 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       // this.props.fetchLanguageDatas(this.props.currentUser)
+      var language = this.props.currentUser.language_data.learning_language_string;
+      var langData = this.props.currentUser.language_data.length;
+      var langs = Object.values(this.props.currentUser.language_data).map(function (lang_data) {
+        debugger;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "flag-language-box"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "dashboard-flag-span-child dashboard-country-" + lang_data.language_string
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          className: "flag-language-box-t-span"
+        }, lang_data.language_string));
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-toppermost-div"
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1082,7 +1086,7 @@ function (_React$Component) {
         className: "dashboard-flag-span-child dashboard-country-" + this.props.currentUser.learning_language_string
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "flag-language-box-t-span"
-      }, this.props.currentUser.learning_language_string)), this.restOfFlags()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, this.props.currentUser.learning_language_string)), langs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/courses'
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-language-box"
@@ -4894,7 +4898,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.language_data.id, action.language_data));
 
     case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_LANGUAGE_DATAS"]:
-      debugger;
       return action.payload;
 
     default:

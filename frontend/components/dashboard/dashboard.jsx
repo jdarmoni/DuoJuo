@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
         this.props.logout()
     }
     renderBody(){
-        debugger
+        
         if(this.props.languageData.length > 0) {
             return (
 
@@ -27,14 +27,9 @@ class Dashboard extends React.Component {
         
     }
     restOfFlags(){
-    //     let language = this.props.currentUser.language_data.learning_language_string;
-    //     // for each languageData thats not 'language' (currentUser's LanguageData)
-
-    // <div className="flag-language-box" onClick={this.getLangData.bind(this)}>
-    //         <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string}  ></span>
-    //         <span className="flag-language-box-t-span">{this.props.currentUser.learning_language_string}</span>
-    //     </div>
+        
     }
+       
     
     componentDidMount(){
         this.props.fetchLanguageDatas(this.props.currentUser)
@@ -42,6 +37,20 @@ class Dashboard extends React.Component {
 
     render() {
         // this.props.fetchLanguageDatas(this.props.currentUser)
+
+        let language = this.props.currentUser.language_data.learning_language_string;
+        let langData = this.props.currentUser.language_data.length;
+
+
+        let langs = Object.values(this.props.currentUser.language_data).map((lang_data) => {
+            debugger
+            return (
+                <div className="flag-language-box">
+                    <span className={`dashboard-flag-span-child dashboard-country-` + lang_data.language_string}  ></span>
+                    <span className="flag-language-box-t-span">{lang_data.language_string}</span>
+                </div>
+            )
+        })
 
         return (
             <>
@@ -105,7 +114,7 @@ class Dashboard extends React.Component {
                                                             <span className={`dashboard-flag-span-child dashboard-country-` + this.props.currentUser.learning_language_string}  ></span>
                                                             <span className="flag-language-box-t-span">{this.props.currentUser.learning_language_string}</span>
                                                     </div>
-                                                    {this.restOfFlags()}
+                                                    {langs}
                                                 </div>
                                                     <Link to={'/courses'}> <div className="flag-language-box" >
                                                     {/* this div will link to courses component! */}
