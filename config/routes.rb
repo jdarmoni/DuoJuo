@@ -3,7 +3,7 @@ Rails.application.routes.draw do
         resources :user, only: [:show, :create, :update]
         resource :session, only: [:create, :destroy] 
         resources :languages, only: [:index, :show, :create, :update]
-        resources :language_data, only: [:index, :create, :update]
+        resources :language_data, only: [:index, :show, :create, :update]
         resources :skills, only: [:index, :show, :create, :update]
     end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

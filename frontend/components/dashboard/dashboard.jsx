@@ -42,11 +42,11 @@ class Dashboard extends React.Component {
             let language = Object.values(this.props.currentUser.language_data)[0].language_string
             
             if (lang_data.language_string !== language) {
-                return <LanguageListItem lang_data={lang_data}/>            
+                return <LanguageListItem lang_data={lang_data} fetch={this.props.fetchLanguageData}/>            
 
             }
         }, this)
-        debugger
+        
         return (
             <>
             <div>

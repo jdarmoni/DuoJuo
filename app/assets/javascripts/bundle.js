@@ -154,7 +154,7 @@ var updateLanguage = function updateLanguage(languageId) {
 /*!***************************************************!*\
   !*** ./frontend/actions/language_data_actions.js ***!
   \***************************************************/
-/*! exports provided: RECEIVE_ALL_LANGUAGE_DATAS, RECEIVE_LANGUAGE_DATA, getLanguageDatas, receiveLanguageData, fetchLanguageDatas, createLanguageData, updateLanguageData */
+/*! exports provided: RECEIVE_ALL_LANGUAGE_DATAS, RECEIVE_LANGUAGE_DATA, getLanguageDatas, receiveLanguageData, fetchLanguageDatas, fetchLanguageData, createLanguageData, updateLanguageData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -164,6 +164,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getLanguageDatas", function() { return getLanguageDatas; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveLanguageData", function() { return receiveLanguageData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLanguageDatas", function() { return fetchLanguageDatas; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLanguageData", function() { return fetchLanguageData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguageData", function() { return updateLanguageData; });
 /* harmony import */ var _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/language_data_api_util */ "./frontend/util/language_data_api_util.js");
@@ -186,6 +187,13 @@ var fetchLanguageDatas = function fetchLanguageDatas(user) {
   return function (dispatch) {
     return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchLanguageDatas"](user).then(function (language_datas) {
       return dispatch(getLanguageDatas(language_datas));
+    });
+  };
+};
+var fetchLanguageData = function fetchLanguageData(language_data) {
+  return function (dispatch) {
+    return _util_language_data_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchLanguageData"](language_data).then(function (language_data) {
+      return dispatch(receiveLanguageData(language_data));
     });
   };
 };
@@ -996,11 +1004,11 @@ function (_React$Component) {
 
         if (lang_data.language_string !== language) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_language_list_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            lang_data: lang_data
+            lang_data: lang_data,
+            fetch: _this2.props.fetchLanguageData
           });
         }
       }, this);
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-toppermost-div"
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1306,6 +1314,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchLanguageDatas: function fetchLanguageDatas(user) {
       return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchLanguageDatas"])(user));
+    },
+    fetchLanguageData: function fetchLanguageData(lang_data) {
+      return dispatch(Object(_actions_language_data_actions__WEBPACK_IMPORTED_MODULE_3__["fetchLanguageData"])(lang_data));
     }
   };
 };
@@ -1358,13 +1369,20 @@ function (_React$Component) {
 
   _createClass(LanguageListItem, [{
     key: "selectLang",
-    value: function selectLang() {}
+    value: function selectLang() {
+      debugger;
+      dispatch(fetchLanguageDatas(this.props.lang_data));
+    }
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "flag-language-box",
-        onClick: this.selectLang
+        onClick: function onClick() {
+          return _this.props.fetch(_this.props.lang_data);
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-flag-span-child dashboard-country-" + this.props.lang_data.language_string
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -5287,12 +5305,13 @@ var updateLanguage = function updateLanguage(languageId) {
 /*!*************************************************!*\
   !*** ./frontend/util/language_data_api_util.js ***!
   \*************************************************/
-/*! exports provided: fetchLanguageDatas, createLanguageData, updateLanguageData */
+/*! exports provided: fetchLanguageDatas, fetchLanguageData, createLanguageData, updateLanguageData */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLanguageDatas", function() { return fetchLanguageDatas; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchLanguageData", function() { return fetchLanguageData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLanguageData", function() { return createLanguageData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateLanguageData", function() { return updateLanguageData; });
 var fetchLanguageDatas = function fetchLanguageDatas(user) {
@@ -5301,6 +5320,15 @@ var fetchLanguageDatas = function fetchLanguageDatas(user) {
     url: '/api/language_data',
     data: {
       userId: user.id
+    }
+  });
+};
+var fetchLanguageData = function fetchLanguageData(language_data) {
+  return $.ajax({
+    method: 'get',
+    url: "/api/language_data/".concat(language_data.id),
+    data: {
+      language_data: language_data
     }
   });
 };

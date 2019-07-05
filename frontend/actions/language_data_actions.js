@@ -30,6 +30,16 @@ export const fetchLanguageDatas = (user)=> (dispatch) => {
     )
 }
 
+export const fetchLanguageData = (language_data) => (dispatch) => {
+
+    return (
+        APIUtil.fetchLanguageData(language_data).then((language_data) => {
+
+            return (dispatch(receiveLanguageData(language_data)))
+        })
+    )
+}
+
 export const createLanguageData = (language_data) => (dispatch) => {
     
     return (
