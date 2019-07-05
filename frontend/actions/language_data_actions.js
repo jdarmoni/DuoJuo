@@ -12,7 +12,7 @@ export const getLanguageDatas = (language_datas)=> {
 }
 
 export const receiveLanguageData = (language_data) => {
-    
+    debugger
     return ({
         type: RECEIVE_LANGUAGE_DATA,
         language_data: language_data
@@ -31,10 +31,10 @@ export const fetchLanguageDatas = (user)=> (dispatch) => {
 }
 
 export const fetchLanguageData = (language_data) => (dispatch) => {
-
+    
     return (
         APIUtil.fetchLanguageData(language_data).then((language_data) => {
-
+            
             return (dispatch(receiveLanguageData(language_data)))
         })
     )

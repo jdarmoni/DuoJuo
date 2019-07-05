@@ -5,10 +5,6 @@ class LanguageListItem extends React.Component {
         super(props)
     }
 
-    selectLang(){
-        debugger
-        dispatch(fetchLanguageDatas(this.props.lang_data))
-    }
     render(){
         return (
 

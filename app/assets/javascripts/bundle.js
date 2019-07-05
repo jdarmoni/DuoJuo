@@ -178,6 +178,7 @@ var getLanguageDatas = function getLanguageDatas(language_datas) {
   };
 };
 var receiveLanguageData = function receiveLanguageData(language_data) {
+  debugger;
   return {
     type: RECEIVE_LANGUAGE_DATA,
     language_data: language_data
@@ -1368,12 +1369,6 @@ function (_React$Component) {
   }
 
   _createClass(LanguageListItem, [{
-    key: "selectLang",
-    value: function selectLang() {
-      debugger;
-      dispatch(fetchLanguageDatas(this.props.lang_data));
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this = this;
@@ -4161,8 +4156,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   // let user = Object.values(state.entities.users)[0]
-  var user = state.entities.users[state.session.id];
-  debugger;
+  var user = state.entities.users[state.session.id]; // debugger
+
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
@@ -5195,7 +5190,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return {};
 
     case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LANGUAGE_DATA"]:
-      var newUserObj = Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data))); // the following is to assign it a key: [ed: make legible with explicit var names later]
+      var newUserObj = Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data)));
+      debugger; // the following is to assign it a key: [ed: make legible with explicit var names later]
 
       return Object.assign({}, _defineProperty({}, action.language_data.user_id, newUserObj));
 
@@ -5205,6 +5201,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var userID = Object.values(state)[0].id;
       languageData[miniLang].skills.push(action.skill);
       var newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], _defineProperty({}, "language_data", languageData));
+      debugger;
       return Object.assign({}, _defineProperty({}, userID, newUserObj2));
 
     default:
@@ -5326,10 +5323,7 @@ var fetchLanguageDatas = function fetchLanguageDatas(user) {
 var fetchLanguageData = function fetchLanguageData(language_data) {
   return $.ajax({
     method: 'get',
-    url: "/api/language_data/".concat(language_data.id),
-    data: {
-      language_data: language_data
-    }
+    url: "/api/language_data/".concat(language_data.id)
   });
 };
 var createLanguageData = function createLanguageData(language_data) {

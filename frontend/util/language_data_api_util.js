@@ -6,10 +6,10 @@ export const fetchLanguageDatas = (user) => {
     })
 }
 export const fetchLanguageData = (language_data)=>{
+    
     return $.ajax({
         method: 'get',
         url: `/api/language_data/${language_data.id}`,
-        data: { language_data }
 
     })
 }
