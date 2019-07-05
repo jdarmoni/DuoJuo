@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import DashboardBodyContainer from './dashboard_body_container';
+import LanguageListItem from './language_list_item';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -36,22 +37,16 @@ class Dashboard extends React.Component {
     }
 
     render() {
-        // this.props.fetchLanguageDatas(this.props.currentUser)
+        
+        let langs = Object.values(this.props.languageData).map((lang_data) => {
+            let language = Object.values(this.props.currentUser.language_data)[0].language_string
+            
+            if (lang_data.language_string !== language) {
+                return <LanguageListItem language_string={lang_data.language_string}/>            
 
-        let language = this.props.currentUser.language_data.learning_language_string;
-        let langData = this.props.currentUser.language_data.length;
-
-
-        let langs = Object.values(this.props.currentUser.language_data).map((lang_data) => {
-            debugger
-            return (
-                <div className="flag-language-box">
-                    <span className={`dashboard-flag-span-child dashboard-country-` + lang_data.language_string}  ></span>
-                    <span className="flag-language-box-t-span">{lang_data.language_string}</span>
-                </div>
-            )
-        })
-
+            }
+        }, this)
+        debugger
         return (
             <>
             <div>
