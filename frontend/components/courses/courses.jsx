@@ -35,19 +35,6 @@ class Courses extends React.Component {
             </header>
         )
     }
-    selectedNew() {
-
-        if (this.props.currentUser) {
-            if (this.props.currentUser.active === true) {
-                // if you're an active user, redirect
-
-                this.props.history.replace('/')
-            } else if (this.props.currentUser.learning_language_string) {
-                // if you're an inactive user who has chosen a language, redirect
-                this.props.history.replace('/welcome')
-            }
-        }
-    }
     register(event) {
         
         let language = event.currentTarget.children[0].children[1].innerText;
@@ -128,7 +115,10 @@ class Courses extends React.Component {
 
         debugger
         this.props.updateUser(user)
-        // this.selectedNew()
+        
+    }
+    componentDidUpdate() {
+        // this.props.history.replace('/')
     }
 
     render() {

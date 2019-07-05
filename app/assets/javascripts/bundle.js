@@ -469,19 +469,6 @@ function (_React$Component) {
       }, "English")))));
     }
   }, {
-    key: "selectedNew",
-    value: function selectedNew() {
-      if (this.props.currentUser) {
-        if (this.props.currentUser.active === true) {
-          // if you're an active user, redirect
-          this.props.history.replace('/');
-        } else if (this.props.currentUser.learning_language_string) {
-          // if you're an inactive user who has chosen a language, redirect
-          this.props.history.replace('/welcome');
-        }
-      }
-    }
-  }, {
     key: "register",
     value: function register(event) {
       var _this2 = this;
@@ -645,7 +632,11 @@ function (_React$Component) {
         _this2.props.createSkill(Basics2);
       });
       debugger;
-      this.props.updateUser(user); // this.selectedNew()
+      this.props.updateUser(user);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {// this.props.history.replace('/')
     }
   }, {
     key: "render",
