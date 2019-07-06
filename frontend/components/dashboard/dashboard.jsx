@@ -149,7 +149,7 @@ class Dashboard extends React.Component {
 
                             <div className="dashboard-progress-section db-profile-section">
                                 <span className="dashboard-progress-span-parent">
-                                    <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/medium" className="dashboard-progres-icon dashboard-user-icon" onClick={this.logout} />
+                                    <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/medium" className="dashboard-progres-icon dashboard-user-icon"  />
                                     <span className="dashboard-number-span"></span>
 
                                         <div className="dashboard-profile-drop-down"> {/*  no styling*/}
@@ -159,7 +159,8 @@ class Dashboard extends React.Component {
                                                     <div className="profile-box-sizer">
                                                         {/* each of these after the first one should have an onClick to return a new newState with a new language_data object */}
                                                         <div className="profile-option-box">
-                                                            <span className="db-option-span">logout</span>                                                        
+                                                            <div className="db-profile-header-div">Account</div>
+                                                            <span className="db-option-span" onClick={this.logout}>Logout</span>                                                        
                                                         </div>
                                                     </div>
                                                 </div>

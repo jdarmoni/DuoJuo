@@ -269,8 +269,8 @@
     display: none;
     z-index: 220;
     left: 50%;
-    top: calc(100% + 10px - 2px);
-    transform: translateX(-50%);
+    top: calc(100% + 10px - 20px);
+    transform: translateX(calc(-100% - -30px) );
     border: 2px solid #e5e5e5;
     border-radius: 15px; 
     min-height: 50px;
@@ -292,9 +292,9 @@
 
 .profile-option-box{
     /* background-color: #ddf4ff; */
-    align-items: center; 
+    /* align-items: center;  */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border-bottom: 2px solid #e5e5e5;
     color: #4b4b4b;
     cursor: pointer;
@@ -302,5 +302,25 @@
     padding: 8px 12px;
 }
 .db-option-span { 
-    color: #1cb0f6
+    border-top: solid 2px #e5e5e5;
+    color: #1cb0f6;
+    min-height: 30px;
+    min-width: 100px;
+    white-space: nowrap;
+    cursor: pointer;    
+    font-weight: 700px;
+    align-items: center; 
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+
+}
+.db-profile-header-div {
+    padding: 12px 12px 12px 0px;
+    font-size: 20px;
+    font-weight: 700px;
+    color: #4b4b4b;
+    align-items: center; 
+    display: flex;
+    flex-direction: row;
 }

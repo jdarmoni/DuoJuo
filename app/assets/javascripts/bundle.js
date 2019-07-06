@@ -1141,8 +1141,7 @@ function (_React$Component) {
         className: "dashboard-progress-span-parent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "//s3.amazonaws.com/duolingo-images/avatar/default_2/medium",
-        className: "dashboard-progres-icon dashboard-user-icon",
-        onClick: this.logout
+        className: "dashboard-progres-icon dashboard-user-icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-number-span"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1153,9 +1152,12 @@ function (_React$Component) {
         className: "profile-box-sizer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-option-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "db-option-span"
-      }, "logout")))))))))))), this.renderBody());
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "db-profile-header-div"
+      }, "Account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "db-option-span",
+        onClick: this.logout
+      }, "Logout")))))))))))), this.renderBody());
     }
   }]);
 
