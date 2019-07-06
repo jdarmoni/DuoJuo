@@ -643,7 +643,7 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      debugger; // Typical usage (don't forget to compare props):
+      debugger; // this ERRORS OUT 
 
       if (this.props.language_data.length !== prevProps.language_data.length) {
         this.props.history.replace('/');
@@ -2109,6 +2109,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mark_meaning/mark_meaning_container */ "./frontend/components/lessons/mark_meaning/mark_meaning_container.js");
 
 
+ // // idea here is to use the words array; for practice, can just .sample a bunch of words you've completed.
+// const wordObj = {
+//     "chien": "Le chien est epouvantable",
+//     "oeufs": "Bonjour, je cache des oeufs"
+// }
 
 var grandLessonsObj = {
   "fr": {

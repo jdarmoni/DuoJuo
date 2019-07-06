@@ -119,7 +119,7 @@ class Courses extends React.Component {
     }
     componentDidUpdate(prevProps) {
         debugger
-        // Typical usage (don't forget to compare props):
+        // this ERRORS OUT 
         if (this.props.language_data.length !== prevProps.language_data.length) {
             this.props.history.replace('/');
         }
