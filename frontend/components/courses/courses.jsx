@@ -119,9 +119,9 @@ class Courses extends React.Component {
     }
     componentDidUpdate(prevProps) {
         debugger
-        // this ERRORS OUT 
         if (this.props.language_data.length !== prevProps.language_data.length) {
-            this.props.history.replace('/');
+            // this ERRORS OUT 
+            // this.props.history.replace('/');
         }
     }
     render() {

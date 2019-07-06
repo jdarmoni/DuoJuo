@@ -643,10 +643,10 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      debugger; // this ERRORS OUT 
+      debugger;
 
-      if (this.props.language_data.length !== prevProps.language_data.length) {
-        this.props.history.replace('/');
+      if (this.props.language_data.length !== prevProps.language_data.length) {// this ERRORS OUT 
+        // this.props.history.replace('/');
       }
     }
   }, {
