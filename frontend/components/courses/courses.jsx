@@ -117,13 +117,13 @@ class Courses extends React.Component {
         this.props.updateUser(user)
         
     }
-    // componentDidUpdate(prevProps) {
-    //     debugger
-    //     // Typical usage (don't forget to compare props):
-    //     if (this.props.language_data.length !== prevProps.language_data.length) {
-    //         this.props.history.replace('/');
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        debugger
+        // Typical usage (don't forget to compare props):
+        if (this.props.language_data.length !== prevProps.language_data.length) {
+            this.props.history.replace('/');
+        }
+    }
     render() {
 
         return (
