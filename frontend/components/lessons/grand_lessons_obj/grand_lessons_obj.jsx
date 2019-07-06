@@ -24,3 +24,5 @@ import MarkMeaningContainer from '../mark_meaning/mark_meaning_container'
             "Basics-1": [<TranslateSentenceContainer sentence={"el cerdo esta durmiendo"} correct={["the pig is sleeping"]} />, <TranslateSentenceContainer sentence={"Soy el chico que bebe leche"} correct={["I am the boy who drinks milk"]} />, <TranslateSentenceContainer sentence={"eres un pájaro?"} correct={["are you a bird?"]} />, <TranslateSentenceContainer sentence={"dime porque sueño"} correct={["tell me why i dream"]} />]
         }
     }
+
+    

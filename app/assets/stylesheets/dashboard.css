@@ -264,3 +264,43 @@
     color: #afafaf;
     font-size: 17px;
 }
+
+.profile-container-list {
+    display: none;
+    z-index: 220;
+    left: 50%;
+    top: calc(100% + 10px - 2px);
+    transform: translateX(-50%);
+    border: 2px solid #e5e5e5;
+    border-radius: 15px; 
+    min-height: 50px;
+    min-width: 50px; 
+    overflow: hidden;
+    padding: 0;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: absolute;
+}
+.db-profile-section:hover .profile-container-list {
+    display: block;
+}
+.profile-box-sizer {
+    max-height: 304px;
+    overflow-y: auto;
+    width: 240px;
+}
+
+.profile-option-box{
+    /* background-color: #ddf4ff; */
+    align-items: center; 
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #e5e5e5;
+    color: #4b4b4b;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 8px 12px;
+}
+.db-option-span { 
+    color: #1cb0f6
+}
