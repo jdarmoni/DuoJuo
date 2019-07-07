@@ -1231,6 +1231,8 @@ function (_React$Component) {
   }, {
     key: "createProfile",
     value: function createProfile() {
+      debugger;
+
       if (this.props.currentUser.active === false) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dashboard-body-create-profile"
@@ -5138,6 +5140,7 @@ __webpack_require__.r(__webpack_exports__);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
+      debugger;
       return {
         id: action.currentUser.id
       };
@@ -5204,7 +5207,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_skill_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/skill_actions */ "./frontend/actions/skill_actions.js");
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -5219,12 +5224,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
 
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["RECEIVE_USER"]:
+      debugger;
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.user.id, action.user));
+
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return {};
 
     case _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_LANGUAGE_DATA"]:
-      var newUserObj = Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data)));
-      debugger; // the following is to assign it a key: [ed: make legible with explicit var names later]
+      var newUserObj = Object.assign({}, state[action.language_data.user_id], _defineProperty({}, "language_data", _defineProperty({}, action.language_data.language, action.language_data))); // the following is to assign it a key: [ed: make legible with explicit var names later]
 
       return Object.assign({}, _defineProperty({}, action.language_data.user_id, newUserObj));
 
@@ -5234,7 +5242,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var userID = Object.values(state)[0].id;
       languageData[miniLang].skills.push(action.skill);
       var newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], _defineProperty({}, "language_data", languageData));
-      debugger;
       return Object.assign({}, _defineProperty({}, userID, newUserObj2));
 
     default:
@@ -5462,6 +5469,7 @@ var updateSkill = function updateSkill(skill) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 var updateUser = function updateUser(user) {
+  debugger;
   return $.ajax({
     method: 'patch',
     url: "/api/user/".concat(user.id),

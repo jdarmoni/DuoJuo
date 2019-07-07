@@ -3,21 +3,26 @@ import {
 } from '../actions/session_actions';
 import {RECEIVE_LANGUAGE_DATA} from '../actions/language_data_actions';
 import {RECEIVE_SKILL} from '../actions/skill_actions';
-
 import merge from 'lodash/merge'
+import { RECEIVE_USER} from '../actions/user_actions'
 
 export default (state = {}, action) => {
     Object.freeze(state)
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             return merge({}, state, { [action.currentUser.id]: action.currentUser })
+        
+        case RECEIVE_USER:
+            debugger
+            return merge({}, state, { [action.user.id]: action.user })
+
         case LOGOUT_CURRENT_USER:
             return {}
 
         case RECEIVE_LANGUAGE_DATA:
 
             let newUserObj = Object.assign({}, state[action.language_data.user_id], { ["language_data"]: {[action.language_data.language]:  action.language_data }});
-            debugger
+            
 
             // the following is to assign it a key: [ed: make legible with explicit var names later]
             return Object.assign({}, {[action.language_data.user_id]: newUserObj})
@@ -30,7 +35,7 @@ export default (state = {}, action) => {
             languageData[miniLang].skills.push(action.skill)
             
             let newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], { ["language_data"]: languageData })
-            debugger
+            
             return Object.assign({}, { [userID]: newUserObj2 })
   
         default:
