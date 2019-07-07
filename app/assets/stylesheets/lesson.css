@@ -215,6 +215,7 @@
 }
 
 .skill-correct-container{
+    box-sizing: border-box;
     background-color: #b8f28b;
     color: #58a700;
     bottom: 0;
@@ -318,6 +319,7 @@
     -webkit-touch-callout: none;
 }
 .skill-skip-button {
+        
         position: absolute;
         top: 50%;
         -ms-transform: translateY(-50%);
