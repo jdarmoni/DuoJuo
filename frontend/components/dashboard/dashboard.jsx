@@ -111,7 +111,7 @@ class Dashboard extends React.Component {
                                                     </div>
                                                     {langs}
                                                 </div>
-                                                    <Link to={'/courses'}> <div className="flag-language-box" >
+                                                    <Link to={'/courses'}> <div className="add-language-box" >
                                                     {/* this div will link to courses component! */}
                                                     <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/add-course.svg" />
                                                     <span className="flag-language-box-t-span add-n-c">Add a new course</span>    

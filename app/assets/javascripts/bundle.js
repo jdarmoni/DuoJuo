@@ -1103,7 +1103,7 @@ function (_React$Component) {
       }, this.props.currentUser.learning_language_string)), langs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/courses'
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "flag-language-box"
+        className: "add-language-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/add-course.svg"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {

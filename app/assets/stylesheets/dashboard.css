@@ -248,13 +248,24 @@
     padding: 8px 12px;
 }
 
+.add-language-box {
+    /* background-color: #ddf4ff; */
+    align-items: center; 
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #e5e5e5;
+    color: #4b4b4b;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 8px 12px;
+}
+
 .flag-language-box:first-child {
     background-color: #ddf4ff;
 }
 
-.flag-language-box:hover {
-    background-color: #f7f7f7
-}
+.flag-language-box:hover { background-color: #f7f7f7 }
+.add-language-box:hover { background-color: #f7f7f7 }
 
 .flag-language-box-t-span {
     padding-left: 12px;
