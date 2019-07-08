@@ -2497,7 +2497,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "third-skill-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "skill-header-container"
+        className: "skill-header-container",
+        id: "skill-h-c"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-header-content-frame"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -2570,6 +2571,12 @@ function (_React$Component) {
   _createClass(Completed, [{
     key: "render",
     value: function render() {
+      if (document.getElementsByClassName('skill-header-container')) {
+        var header = document.getElementById('skill-h-c');
+        debugger;
+        header.style.display = 'none'; // header.style.display ="none"
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "completed-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

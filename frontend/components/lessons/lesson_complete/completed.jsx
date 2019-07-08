@@ -5,6 +5,12 @@ class Completed extends React.Component {
         super(props)
     }
     render(){
+        if (document.getElementsByClassName('skill-header-container')) {
+            let header = document.getElementById('skill-h-c')
+            debugger
+            header.style.display = 'none';
+            // header.style.display ="none"
+        }
         return (
             <div className="completed-container">
                 <div className="completed-container-sub-div">

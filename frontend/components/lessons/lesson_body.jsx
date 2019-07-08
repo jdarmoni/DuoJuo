@@ -245,7 +245,7 @@ class LessonBody extends React.Component {
             <div className="first-skill-div">
                 <div className="second-skill-div">
                     <div className="third-skill-div">
-                        <div className="skill-header-container">
+                        <div className="skill-header-container" id="skill-h-c">
                             <div className="skill-header-content-frame">
                                 <a className="skill-x-button" href="/"></a>
                                 <div className="skill-progress-button">

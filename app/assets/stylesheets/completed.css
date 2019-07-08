@@ -146,11 +146,11 @@
     .calendar-streak-container {
         height: 230px;
     margin-top: 10px;
-        padding-right: 200px;
+        padding-right: 100px;
     text-align: right;
         display: inline-block;
     height: 250px;
     vertical-align: top;
-    width: 400px;
+    width: 300px;
     }
 }
