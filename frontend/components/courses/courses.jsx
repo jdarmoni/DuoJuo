@@ -75,7 +75,7 @@ class Courses extends React.Component {
         newLang['sentences_translated'] = 0;
         newLang['to_next_level'] = 10;
         newLang['user_id'] = this.props.currentUser.id
-        debugger
+        
         this.props.createLanguage(newLang);
         let newLangData = {}
         newLangData = newLang
@@ -113,15 +113,18 @@ class Courses extends React.Component {
 
         })
 
-        debugger
+        
         this.props.updateUser(user)
         
     }
     componentDidUpdate(prevProps) {
-        debugger
-        if (this.props.language_data.length !== prevProps.language_data.length) {
-            // this ERRORS OUT 
-            // this.props.history.replace('/');
+        let acronym = this.props.currentUser.learning_language
+
+        if ((this.props.currentUser.language_data[acronym] !== undefined ) ) {
+            if (this.props.currentUser.language_data[acronym].skills.length > 2 ) {
+
+                this.props.history.replace('/');
+            }
         }
     }
     render() {

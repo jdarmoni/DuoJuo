@@ -178,7 +178,6 @@ var getLanguageDatas = function getLanguageDatas(language_datas) {
   };
 };
 var receiveLanguageData = function receiveLanguageData(language_data) {
-  debugger;
   return {
     type: RECEIVE_LANGUAGE_DATA,
     language_data: language_data
@@ -520,7 +519,6 @@ function (_React$Component) {
       newLang['sentences_translated'] = 0;
       newLang['to_next_level'] = 10;
       newLang['user_id'] = this.props.currentUser.id;
-      debugger;
       this.props.createLanguage(newLang);
       var newLangData = {};
       newLangData = newLang; // delete newLangData['streak'];
@@ -637,16 +635,17 @@ function (_React$Component) {
 
         _this2.props.createSkill(Basics2);
       });
-      debugger;
       this.props.updateUser(user);
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      debugger;
+      var acronym = this.props.currentUser.learning_language;
 
-      if (this.props.language_data.length !== prevProps.language_data.length) {// this ERRORS OUT 
-        // this.props.history.replace('/');
+      if (this.props.currentUser.language_data[acronym] !== undefined) {
+        if (this.props.currentUser.language_data[acronym].skills.length > 2) {
+          this.props.history.replace('/');
+        }
       }
     }
   }, {
@@ -1231,8 +1230,6 @@ function (_React$Component) {
   }, {
     key: "createProfile",
     value: function createProfile() {
-      debugger;
-
       if (this.props.currentUser.active === false) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dashboard-body-create-profile"
@@ -5183,7 +5180,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
   switch (action.type) {
     case _actions_skill_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SKILL"]:
-      debugger;
       return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.skill.id, action.skill));
 
     default:
@@ -5225,7 +5221,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["RECEIVE_USER"]:
-      debugger;
       return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.user.id, action.user));
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
@@ -5469,7 +5464,6 @@ var updateSkill = function updateSkill(skill) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 var updateUser = function updateUser(user) {
-  debugger;
   return $.ajax({
     method: 'patch',
     url: "/api/user/".concat(user.id),

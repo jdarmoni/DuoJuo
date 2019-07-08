@@ -12,7 +12,7 @@ export const getLanguageDatas = (language_datas)=> {
 }
 
 export const receiveLanguageData = (language_data) => {
-    debugger
+    
     return ({
         type: RECEIVE_LANGUAGE_DATA,
         language_data: language_data

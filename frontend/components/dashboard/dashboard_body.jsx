@@ -15,7 +15,7 @@ class DashboardBody extends React.Component {
         this.props.logout()
     }
     createProfile(){
-        debugger
+        
         if (this.props.currentUser.active === false) {
 
             return (

@@ -13,7 +13,7 @@ export default (state = {}, action) => {
             return merge({}, state, { [action.currentUser.id]: action.currentUser })
         
         case RECEIVE_USER:
-            debugger
+            
             return merge({}, state, { [action.user.id]: action.user })
 
         case LOGOUT_CURRENT_USER:
