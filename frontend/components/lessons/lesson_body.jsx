@@ -259,7 +259,7 @@ class LessonBody extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="skill-lesson-body">
+                        <div className="skill-lesson-body" id="s-l-body">
                             {/* where the lesson component goes */}
 
                             {this.state.currentLesson[this.props.skill.skill_level]}

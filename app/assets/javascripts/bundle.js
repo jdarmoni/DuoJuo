@@ -2514,7 +2514,8 @@ function (_React$Component) {
         className: "skill-progress-green",
         id: "skill-p-g"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "skill-lesson-body"
+        className: "skill-lesson-body",
+        id: "s-l-body"
       }, this.state.currentLesson[this.props.skill.skill_level]), this.renderFooter())));
     }
   }]);
@@ -2573,8 +2574,10 @@ function (_React$Component) {
     value: function render() {
       if (document.getElementsByClassName('skill-header-container')) {
         var header = document.getElementById('skill-h-c');
+        var body = document.getElementById('s-l-body');
         debugger;
-        header.style.display = 'none'; // header.style.display ="none"
+        header.style.display = 'none';
+        body.style.height = '79vh';
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2613,7 +2616,142 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M6.123233995736766e-15,-100A100,100,0,1,1,-6.123233995736766e-15,100A100,100,0,1,1,6.123233995736766e-15,-100M79.88874736879293,-25.95742752749548A84,84,0,1,0,-79.88874736879293,25.95742752749548A84,84,0,1,0,79.88874736879293,-25.95742752749548Z",
         fill: "#ff9600"
-      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", "eggs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Lesson Complete! 10 XP")))))));
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c-sub"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mini-d-c-span"
+      }, "M"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-d-c-rotate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "m-d-c-svg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        className: "m-d-c-g"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
+        fill: "#e5e5e5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        "class": "_1IdLW",
+        d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
+        fill: "#ff9600"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c-sub"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mini-d-c-span"
+      }, "T"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-d-c-rotate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "m-d-c-svg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        className: "m-d-c-g"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
+        fill: "#e5e5e5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        "class": "_1IdLW",
+        d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
+        fill: "#ff9600"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c-sub"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mini-d-c-span"
+      }, "W"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-d-c-rotate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "m-d-c-svg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        className: "m-d-c-g"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
+        fill: "#e5e5e5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        "class": "_1IdLW",
+        d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
+        fill: "#ff9600"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c-sub"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mini-d-c-span"
+      }, "TH"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-d-c-rotate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "m-d-c-svg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        className: "m-d-c-g"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
+        fill: "#e5e5e5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        "class": "_1IdLW",
+        d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
+        fill: "#ff9600"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c-sub"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mini-d-c-span"
+      }, "F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-d-c-rotate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "m-d-c-svg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        className: "m-d-c-g"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
+        fill: "#e5e5e5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        "class": "_1IdLW",
+        d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
+        fill: "#ff9600"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c-sub"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mini-d-c-span"
+      }, "S"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-d-c-rotate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "m-d-c-svg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        className: "m-d-c-g"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
+        fill: "#e5e5e5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        "class": "_1IdLW",
+        d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
+        fill: "#ff9600"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-day-c-sub"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "mini-d-c-span"
+      }, "S"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mini-d-c-rotate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "m-d-c-svg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        className: "m-d-c-g"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
+        fill: "#e5e5e5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        "class": "_1IdLW",
+        d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
+        fill: "#ff9600"
+      })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Lesson Complete! 10 XP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-c-XP"
+      }, "You've earned XP today")))))));
     }
   }]);
 

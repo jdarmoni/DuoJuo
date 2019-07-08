@@ -7,9 +7,11 @@ class Completed extends React.Component {
     render(){
         if (document.getElementsByClassName('skill-header-container')) {
             let header = document.getElementById('skill-h-c')
+            let body = document.getElementById('s-l-body');
             debugger
             header.style.display = 'none';
-            // header.style.display ="none"
+            body.style.height = '79vh'
+
         }
         return (
             <div className="completed-container">
@@ -41,10 +43,117 @@ class Completed extends React.Component {
                                         </div> 
                                        
                                         <div> {/* mini circle lists */}
-                                            eggs
+                                            <div className="mini-day-c">
+                                                <div className="mini-day-c-sub">
+                                                    <span className="mini-d-c-span">
+                                                        M
+                                                    </span>
+                                                    <div className="mini-d-c-rotate"> 
+                                                        <svg className="m-d-c-svg">
+                                                            <g className="m-d-c-g">
+                                                                <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
+                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="mini-day-c">
+                                                <div className="mini-day-c-sub">
+                                                    <span className="mini-d-c-span">
+                                                        T
+                                                    </span>
+                                                    <div className="mini-d-c-rotate">
+                                                        <svg className="m-d-c-svg">
+                                                            <g className="m-d-c-g">
+                                                                <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
+                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="mini-day-c">
+                                                <div className="mini-day-c-sub">
+                                                    <span className="mini-d-c-span">
+                                                        W
+                                                    </span>
+                                                    <div className="mini-d-c-rotate">
+                                                        <svg className="m-d-c-svg">
+                                                            <g className="m-d-c-g">
+                                                                <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
+                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="mini-day-c">
+                                                <div className="mini-day-c-sub">
+                                                    <span className="mini-d-c-span">
+                                                        TH
+                                                    </span>
+                                                    <div className="mini-d-c-rotate">
+                                                        <svg className="m-d-c-svg">
+                                                            <g className="m-d-c-g">
+                                                                <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
+                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="mini-day-c">
+                                                <div className="mini-day-c-sub">
+                                                    <span className="mini-d-c-span">
+                                                        F
+                                                    </span>
+                                                    <div className="mini-d-c-rotate">
+                                                        <svg className="m-d-c-svg">
+                                                            <g className="m-d-c-g">
+                                                                <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
+                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="mini-day-c">
+                                                <div className="mini-day-c-sub">
+                                                    <span className="mini-d-c-span">
+                                                        S
+                                                    </span>
+                                                    <div className="mini-d-c-rotate">
+                                                        <svg className="m-d-c-svg">
+                                                            <g className="m-d-c-g">
+                                                                <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
+                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="mini-day-c">
+                                                <div className="mini-day-c-sub">
+                                                    <span className="mini-d-c-span">
+                                                        S
+                                                    </span>
+                                                    <div className="mini-d-c-rotate">
+                                                        <svg className="m-d-c-svg">
+                                                            <g className="m-d-c-g">
+                                                                <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
+                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+
                                         </div> 
                                     </div>
                                     <h2>Lesson Complete! 10 XP</h2>
+                                    <div className="c-c-XP">You've earned XP today</div>
                                 </div>
                             </div>
                         </div>
