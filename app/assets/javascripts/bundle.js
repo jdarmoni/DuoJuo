@@ -2118,6 +2118,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../translate_sentence/translate_sentence_container */ "./frontend/components/lessons/translate_sentence/translate_sentence_container.js");
 /* harmony import */ var _mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mark_meaning/mark_meaning_container */ "./frontend/components/lessons/mark_meaning/mark_meaning_container.js");
+/* harmony import */ var _lessons_lesson_complete_completed__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lessons/lesson_complete/completed */ "./frontend/components/lessons/lesson_complete/completed.jsx");
+
 
 
  // // idea here is to use the words array; for practice, can just .sample a bunch of words you've completed.
@@ -2151,7 +2153,7 @@ var grandLessonsObj = {
       sentence: "Tu va me dire ou est le lait maitenant",
       correct: ["You will tell me where the milk is now"]
     })],
-    "Basics-2": []
+    "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lessons_lesson_complete_completed__WEBPACK_IMPORTED_MODULE_3__["default"], null)]
   },
   "jp": {
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2520,6 +2522,98 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (LessonBody);
+
+/***/ }),
+
+/***/ "./frontend/components/lessons/lesson_complete/completed.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/lessons/lesson_complete/completed.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Completed =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Completed, _React$Component);
+
+  function Completed(props) {
+    _classCallCheck(this, Completed);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Completed).call(this, props));
+  }
+
+  _createClass(Completed, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "completed-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "completed-container-sub-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-c-height-c"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-c-c-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-c-c-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-c-c-4"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "calendar-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "calendar-streak-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-c-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-c-flame"
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-c-parent"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "class": "c-s-c-day"
+      }, " 1 DAY"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-c-SVG-container"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+        className: "c-s-c-svg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+        className: "c-s-c-g"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M6.123233995736766e-15,-100A100,100,0,1,1,-6.123233995736766e-15,100A100,100,0,1,1,6.123233995736766e-15,-100M-1.543054966925665e-14,-84A84,84,0,1,0,1.543054966925665e-14,84A84,84,0,1,0,-1.543054966925665e-14,-84Z",
+        fill: "#e5e5e5"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+        d: "M6.123233995736766e-15,-100A100,100,0,1,1,-6.123233995736766e-15,100A100,100,0,1,1,6.123233995736766e-15,-100M79.88874736879293,-25.95742752749548A84,84,0,1,0,-79.88874736879293,25.95742752749548A84,84,0,1,0,79.88874736879293,-25.95742752749548Z",
+        fill: "#ff9600"
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Lesson Complete! 10 XP")))))));
+    }
+  }]);
+
+  return Completed;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Completed);
 
 /***/ }),
 

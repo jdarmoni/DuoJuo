@@ -99,7 +99,20 @@
     font-size: 80px;
     display: block;
 }
-
+.c-s-c-SVG-container {
+        height: 100%;
+    margin: 0 auto;
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg);
+    width: 100%;
+}
+.c-s-c-svg {
+    height: 200px;
+    width: 200px;
+}
+.c-s-c-g {
+    transform: translate(100px, 100px);
+}
 @media (min-width: 700px) {
     .completed-container-sub-div {
         height: calc(100vh - 140px);
