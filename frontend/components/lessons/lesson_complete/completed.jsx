@@ -19,7 +19,7 @@ class Completed extends React.Component {
                                                     <div className ="c-s-c-flame"></div> { /* little flame */}
                                                     
                                                     <div className="c-s-c-parent"> { /* parent box sizing */}
-                                                        <span class="c-s-c-day"> 1 DAY</span>
+                                                        <span class="c-s-c-day"> 1</span> DAY
                                                     </div> 
 
                                                 </div>
@@ -35,7 +35,7 @@ class Completed extends React.Component {
                                         </div> 
                                        
                                         <div> {/* mini circle lists */}
-                                        
+                                            eggs
                                         </div> 
                                     </div>
                                     <h2>Lesson Complete! 10 XP</h2>

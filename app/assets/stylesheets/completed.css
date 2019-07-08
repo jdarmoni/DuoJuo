@@ -122,7 +122,7 @@
     .c-c-c-2 {
         width: 1700%;
         min-width: 640px;
-        width: 50%;
+        width: 95%;
         display: -ms-inline-flexbox;
         display: inline-flex;
         -ms-flex-direction: column;
@@ -146,7 +146,7 @@
     .calendar-streak-container {
         height: 230px;
     margin-top: 10px;
-        padding-right: 100px;
+        padding-right: 200px;
     text-align: right;
         display: inline-block;
     height: 250px;

@@ -2594,7 +2594,7 @@ function (_React$Component) {
         className: "c-s-c-parent"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         "class": "c-s-c-day"
-      }, " 1 DAY"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " 1"), " DAY")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "c-s-c-SVG-container"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "c-s-c-svg"
@@ -2606,7 +2606,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M6.123233995736766e-15,-100A100,100,0,1,1,-6.123233995736766e-15,100A100,100,0,1,1,6.123233995736766e-15,-100M79.88874736879293,-25.95742752749548A84,84,0,1,0,-79.88874736879293,25.95742752749548A84,84,0,1,0,79.88874736879293,-25.95742752749548Z",
         fill: "#ff9600"
-      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Lesson Complete! 10 XP")))))));
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " ", "eggs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Lesson Complete! 10 XP")))))));
     }
   }]);
 
