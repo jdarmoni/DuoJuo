@@ -16,6 +16,7 @@ class Basics1 extends React.Component {
         // When the user clicks anywhere outside of the modal, close it
         modal.onclick = function (event) {
             if (event.target == modal) {
+                debugger
                 modal.style.display = "none";
                 return
                 debugger
@@ -24,6 +25,7 @@ class Basics1 extends React.Component {
         }
         
         btn.onclick = function () {
+            debugger
             modal.style.display = "block";
             return
         }

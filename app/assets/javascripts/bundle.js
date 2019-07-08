@@ -2118,7 +2118,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../translate_sentence/translate_sentence_container */ "./frontend/components/lessons/translate_sentence/translate_sentence_container.js");
 /* harmony import */ var _mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mark_meaning/mark_meaning_container */ "./frontend/components/lessons/mark_meaning/mark_meaning_container.js");
-/* harmony import */ var _lessons_lesson_complete_completed__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lessons/lesson_complete/completed */ "./frontend/components/lessons/lesson_complete/completed.jsx");
+/* harmony import */ var _lessons_lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lessons/lesson_complete/completed_container */ "./frontend/components/lessons/lesson_complete/completed_container.js");
 
 
 
@@ -2153,7 +2153,7 @@ var grandLessonsObj = {
       sentence: "Tu va me dire ou est le lait maitenant",
       correct: ["You will tell me where the milk is now"]
     })],
-    "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lessons_lesson_complete_completed__WEBPACK_IMPORTED_MODULE_3__["default"], null)]
+    "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lessons_lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)]
   },
   "jp": {
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2333,6 +2333,7 @@ function (_React$Component) {
           skill['skill_level'] = skill.skill_level + 1;
 
           if (this.state.lessonLength === skill.skill_level) {
+            // THIS IS WHERE COMPLETED LOGIC COMES IN: if you've finished the last lesson
             skill['skill_level'] = 0;
             var user = this.props.user;
             user['rupees'] = user.rupees + 1;
@@ -2751,7 +2752,7 @@ function (_React$Component) {
         fill: "#ff9600"
       })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Lesson Complete! 10 XP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "c-c-XP"
-      }, "You've earned XP today")))))));
+      }, "You've earned ", "placeholder ", "XP today")))))));
     }
   }]);
 
@@ -2759,6 +2760,32 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Completed);
+
+/***/ }),
+
+/***/ "./frontend/components/lessons/lesson_complete/completed_container.js":
+/*!****************************************************************************!*\
+  !*** ./frontend/components/lessons/lesson_complete/completed_container.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _completed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completed */ "./frontend/components/lessons/lesson_complete/completed.jsx");
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_completed__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -4252,6 +4279,7 @@ function (_React$Component) {
 
       modal.onclick = function (event) {
         if (event.target == modal) {
+          debugger;
           modal.style.display = "none";
           return;
           debugger; // why does this get hit
@@ -4259,6 +4287,7 @@ function (_React$Component) {
       };
 
       btn.onclick = function () {
+        debugger;
         modal.style.display = "block";
         return;
       };
@@ -4428,7 +4457,6 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state) {
   // let user = Object.values(state.entities.users)[0]
   var user = state.entities.users[state.session.id];
-  debugger;
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {

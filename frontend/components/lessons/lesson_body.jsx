@@ -99,6 +99,7 @@ class LessonBody extends React.Component {
                 skill['skill_level'] = skill.skill_level + 1;
 
                 if (this.state.lessonLength === skill.skill_level) { 
+                    // THIS IS WHERE COMPLETED LOGIC COMES IN: if you've finished the last lesson
                     skill['skill_level'] = 0;
                     let user = this.props.user;
                     user['rupees'] = user.rupees + 1;

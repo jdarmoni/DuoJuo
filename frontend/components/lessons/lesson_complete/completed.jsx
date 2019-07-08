@@ -153,7 +153,7 @@ class Completed extends React.Component {
                                         </div> 
                                     </div>
                                     <h2>Lesson Complete! 10 XP</h2>
-                                    <div className="c-c-XP">You've earned XP today</div>
+                                    <div className="c-c-XP">You've earned {`${"placeholder "}`}XP today</div>
                                 </div>
                             </div>
                         </div>
