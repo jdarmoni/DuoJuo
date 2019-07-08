@@ -1,0 +1,143 @@
+.completed-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 100%;
+}
+.completed-container-sub-div {
+    height: calc(100vh - 125px);
+    overflow: hidden;
+    text-align: center;
+}
+.c-c-height-c {
+    height: 100%;
+}
+.c-c-c-2 {
+    height: 100%;
+    overflow: visible;
+    padding-top: 0;
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+}
+.c-c-c-3 {
+        transition-duration: .2s!important;
+    transition-timing-function: ease-in-out;
+        -ms-transform: translateX(0);
+    transform: translateX(0);
+        height: 100%;
+    transition: transform 1s;
+    width: 1700%;
+}
+.c-c-c-4 {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    float: left;
+    height: 100%;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: visible;
+    width: 5.88235%;
+}
+.calendar-container {
+    margin-bottom: 24px;
+}
+.c-s-c-box {
+    height: 200px;
+    width: 200px;
+        color: #999;
+    display: inline-block;
+    font-size: 15px;
+    position: relative;
+    text-align: center;
+}
+.c-s-c-flame {
+        height: 75px;
+    width: 75px;
+        background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/icons/streak.svg);
+        background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    display: inline-block;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    vertical-align: middle;
+    z-index: 2;
+}
+.c-s-c-parent {
+    font-size: 15px;
+        color: #ff9600;
+            -ms-flex-align: center;
+    align-items: center;
+    color: #dadada;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-weight: 700;
+    height: 100%;
+    -ms-flex-pack: center;
+    justify-content: center;
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 1;
+}
+.c-s-c-day {
+    font-size: 80px;
+    display: block;
+}
+
+@media (min-width: 700px) {
+    .completed-container-sub-div {
+        height: calc(100vh - 140px);
+        padding: 0;
+        padding: initial;    
+    }
+    .c-c-c-2 {
+        width: 1700%;
+        min-width: 640px;
+        width: 50%;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        float: left;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+    .c-c-c-3 {
+        margin-left: 0;
+    }
+    .c-c-c-4 {
+        padding: 0 30px;
+        height: 100%;
+    }
+    .calendar-container {
+        display: table;
+        width: 100%;
+    }
+    .calendar-streak-container {
+        height: 230px;
+    margin-top: 10px;
+        padding-right: 100px;
+    text-align: right;
+        display: inline-block;
+    height: 250px;
+    vertical-align: top;
+    width: 400px;
+    }
+}
