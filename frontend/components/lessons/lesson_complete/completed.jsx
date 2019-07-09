@@ -12,9 +12,7 @@ class Completed extends React.Component {
 
             let height = document.getElementsByClassName('second-skill-div')[0].offsetHeight
 
-            debugger
             if (body) { body.style.height = `${height - 141}px`}
-
         }
     }
     render(){

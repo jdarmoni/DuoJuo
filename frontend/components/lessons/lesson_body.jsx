@@ -2,6 +2,7 @@ import React from 'react'
 import TranslateSentenceContainer from '../lessons/translate_sentence/translate_sentence_container'
 import {grandLessonsObj} from './grand_lessons_obj/grand_lessons_obj';
 import CompletedContainer from './lesson_complete/completed_container';
+import { throws } from 'assert';
 
 class LessonBody extends React.Component {
     constructor(props) {
@@ -27,6 +28,12 @@ class LessonBody extends React.Component {
                 lessonLength: grandLessonsObj[this.props.mini_lang][url].length
             })
         } 
+        // if you're on the completed page, but you refresh - overwrite the default False to True
+        if (document.getElementsByClassName('completed-container') && this.state.completed === false) {
+            this.setState({
+                completed: true
+            })
+        }
     }
     componentDidUpdate(){
         if (document.getElementById('skill-check-button')) {
@@ -57,12 +64,16 @@ class LessonBody extends React.Component {
         let textArea = document.getElementById('challenge-textarea')
         let markMeaning = document.getElementById('m-m-c')
         let guess;
-        debugger
+        
         if (this.state.completed){
-            let skill = this.props.skill
+            debugger
+            let skill = this.props.skill;
+            skill['skill_level'] = 0;
+
             this.props.updateSkill(skill).then(
                 this.props.history.replace('/')
                 )
+            return
         }
         if (this.state.default) {
             if (textArea) {
