@@ -12,6 +12,7 @@
     top: 0;
 }
 .third-skill-div {
+    height: 100%;
     min-height: 590px;
     padding: 0;
 }
@@ -83,10 +84,14 @@
     -ms-flex-direction: column;
     flex-direction: column;
     /*************** using vh!!!! **************/
-    height: 66vh;
+    /* height: 66vh; */
     /*************** using vh!!!! **************/
     width: 100%;
     opacity: 1;
+}
+.s-l-b-box {
+    display: flex;
+    height: calc(100vh - 232px);
 }
 
 .challenge {

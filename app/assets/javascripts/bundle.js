@@ -2200,6 +2200,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lessons_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lessons/translate_sentence/translate_sentence_container */ "./frontend/components/lessons/translate_sentence/translate_sentence_container.js");
 /* harmony import */ var _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./grand_lessons_obj/grand_lessons_obj */ "./frontend/components/lessons/grand_lessons_obj/grand_lessons_obj.jsx");
+/* harmony import */ var _lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lesson_complete/completed_container */ "./frontend/components/lessons/lesson_complete/completed_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2217,6 +2218,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -2274,14 +2276,20 @@ function (_React$Component) {
         // langData['level'] = 0;
         // this.props.updateLangData(langData);
       }
-    }
+    } // renderLesson(){
+    //     if (this.state.lessonLength === this.props.skill.skill_level){
+    //         return <CompletedContainer />
+    //     } else {
+    //         return this.state.currentLesson[this.props.skill.skill_level]
+    //     }
+    // }
+
   }, {
     key: "handleSubmit",
     value: function handleSubmit() {
       var textArea = document.getElementById('challenge-textarea');
       var markMeaning = document.getElementById('m-m-c');
       var guess;
-      debugger;
 
       if (this.state["default"]) {
         if (textArea) {
@@ -2329,7 +2337,6 @@ function (_React$Component) {
         } else {
           // correct answer updates the user's level
           var skill = this.props.skill;
-          debugger;
           skill['skill_level'] = skill.skill_level + 1;
 
           if (this.state.lessonLength === skill.skill_level) {
@@ -2517,7 +2524,9 @@ function (_React$Component) {
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-lesson-body",
         id: "s-l-body"
-      }, this.state.currentLesson[this.props.skill.skill_level]), this.renderFooter())));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "s-l-b-box"
+      }, this.state.currentLesson[this.props.skill.skill_level])), this.renderFooter())));
     }
   }]);
 

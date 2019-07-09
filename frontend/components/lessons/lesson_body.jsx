@@ -1,6 +1,7 @@
 import React from 'react'
 import TranslateSentenceContainer from '../lessons/translate_sentence/translate_sentence_container'
 import {grandLessonsObj} from './grand_lessons_obj/grand_lessons_obj';
+import CompletedContainer from './lesson_complete/completed_container';
 
 class LessonBody extends React.Component {
     constructor(props) {
@@ -43,11 +44,19 @@ class LessonBody extends React.Component {
             // this.props.updateLangData(langData);
         }
     }
+    // renderLesson(){
+    //     if (this.state.lessonLength === this.props.skill.skill_level){
+    //         return <CompletedContainer />
+    //     } else {
+    //         return this.state.currentLesson[this.props.skill.skill_level]
+    //     }
+
+    // }
     handleSubmit(){
         let textArea = document.getElementById('challenge-textarea')
         let markMeaning = document.getElementById('m-m-c')
         let guess;
-        debugger
+        
         if (this.state.default) {
             if (textArea) {
                 guess = document.getElementById('challenge-textarea').value
@@ -95,7 +104,7 @@ class LessonBody extends React.Component {
             } else {
                 // correct answer updates the user's level
                 let skill = this.props.skill
-                debugger
+                
                 skill['skill_level'] = skill.skill_level + 1;
 
                 if (this.state.lessonLength === skill.skill_level) { 
@@ -104,6 +113,7 @@ class LessonBody extends React.Component {
                     let user = this.props.user;
                     user['rupees'] = user.rupees + 1;
                     debugger
+                    
                     this.props.updateUser(user);
                 }
                 
@@ -237,7 +247,7 @@ class LessonBody extends React.Component {
             let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
             this.setState({currentLesson: grandLessonsObj[this.props.mini_lang][url]})
         }
-      
+        
         let progressBar = document.getElementById('skill-p-g')
         if (progressBar){
             progressBar.style=`opacity: 1;width: ${this.props.skill.skill_level / this.state.currentLesson.length * 100}%;`;
@@ -261,10 +271,14 @@ class LessonBody extends React.Component {
                             </div>
                         </div>
                         <div className="skill-lesson-body" id="s-l-body">
+                            <div className="s-l-b-box">
+
                             {/* where the lesson component goes */}
 
-                            {this.state.currentLesson[this.props.skill.skill_level]}
-
+                            {/* {this.state.lessonLength === this.props.skill.skill_level ? this.state.currentLesson[this.props.skill.skill_level] : <CompletedContainer/> } */}
+                            {      this.state.currentLesson[this.props.skill.skill_level]}
+                            {/* {this.renderLesson()} */}
+                            </div>
                         </div>
                         {this.renderFooter()}
 
