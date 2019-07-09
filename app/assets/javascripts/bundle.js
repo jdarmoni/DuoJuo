@@ -2299,6 +2299,7 @@ function (_React$Component) {
   }, {
     key: "renderLesson",
     value: function renderLesson() {
+      // it's hitting completed first, because on first render the state's lesson length is 0 - use skill.num_levels; may require refactor :/
       if (this.state.lessonLength === this.props.skill.skill_level) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
       } else {
@@ -2615,6 +2616,7 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       if (document.getElementsByClassName('skill-header-container')) {
+        debugger;
         var header = document.getElementById('skill-h-c');
 
         if (header) {

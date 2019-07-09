@@ -53,6 +53,7 @@ class LessonBody extends React.Component {
         }
     }
     renderLesson(){
+        // it's hitting completed first, because on first render the state's lesson length is 0 - use skill.num_levels; may require refactor :/
         if (this.state.lessonLength === this.props.skill.skill_level){
             return <CompletedContainer />
         } else {

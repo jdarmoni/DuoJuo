@@ -6,6 +6,7 @@ class Completed extends React.Component {
     }
     componentDidMount(){
         if (document.getElementsByClassName('skill-header-container')) {
+            debugger
             let header = document.getElementById('skill-h-c')
             if (header) { header.style.display = 'none'; }
             let body = document.getElementById('s-l-b-box');
