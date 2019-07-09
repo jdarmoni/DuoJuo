@@ -118,7 +118,9 @@
     width: 100%;
     align-items: center;
     min-height: 90vh;
+    /* height: calc(100vh - 70px); */
     position: relative;
+
     z-index: 1;
 }
 

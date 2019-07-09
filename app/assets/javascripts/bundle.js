@@ -477,6 +477,18 @@ function (_React$Component) {
       }, "English")))));
     }
   }, {
+    key: "Login",
+    value: function Login() {
+      if (!this.props.currentUser.active) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "login-button-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "login-button",
+          id: "login-button"
+        }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }
+    }
+  }, {
     key: "register",
     value: function register(event) {
       var _this2 = this;
@@ -651,6 +663,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-out-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
@@ -666,12 +679,7 @@ function (_React$Component) {
         className: "site-lang"
       }, "Site language:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "site-lang-language"
-      }, "English")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-button-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "login-button",
-        id: "login-button"
-      }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_login_modal_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "English")), this.Login()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "register-outer-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "register-inner-container"

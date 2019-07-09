@@ -35,6 +35,17 @@ class Courses extends React.Component {
             </header>
         )
     }
+    Login(){
+        if (!this.props.currentUser.active) {
+            return (
+                <>
+                    <div className="login-button-div">
+                        <button className="login-button" id="login-button">Login</button>
+                    </div>
+                    <LoginModalContainer />
+                </>
+            )}
+    }
     register(event) {
         
         let language = event.currentTarget.children[0].children[1].innerText;
@@ -128,7 +139,7 @@ class Courses extends React.Component {
         }
     }
     render() {
-
+        debugger
         return (
             <>
                 <div className="logged-out-container">
@@ -141,11 +152,9 @@ class Courses extends React.Component {
                                     Site language:
                                 <span className="site-lang-language">English</span>
                                 </div>
-                                <div className="login-button-div">
-                                    <button className="login-button" id="login-button">Login</button>
-                                </div>
-
-                                <LoginModalContainer />
+                                
+                                {this.Login()}
+                             
 
                             </div>
                         </div>
