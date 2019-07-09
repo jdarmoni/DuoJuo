@@ -4,15 +4,21 @@ class Completed extends React.Component {
     constructor(props){
         super(props)
     }
-    render(){
+    componentDidMount(){
         if (document.getElementsByClassName('skill-header-container')) {
             let header = document.getElementById('skill-h-c')
-            let body = document.getElementById('s-l-body');
+            if (header) { header.style.display = 'none'; }
+            let body = document.getElementById('s-l-b-box');
+
+            let height = document.getElementsByClassName('second-skill-div')[0].offsetHeight
+
             debugger
-            header.style.display = 'none';
-            body.style.height = '79vh'
+            if (body) { body.style.height = `${height - 141}px`}
 
         }
+    }
+    render(){
+        
         return (
             <div className="completed-container">
                 <div className="completed-container-sub-div">

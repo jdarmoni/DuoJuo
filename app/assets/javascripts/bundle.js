@@ -2284,14 +2284,16 @@ function (_React$Component) {
         // langData['level'] = 0;
         // this.props.updateLangData(langData);
       }
-    } // renderLesson(){
-    //     if (this.state.lessonLength === this.props.skill.skill_level){
-    //         return <CompletedContainer />
-    //     } else {
-    //         return this.state.currentLesson[this.props.skill.skill_level]
-    //     }
-    // }
-
+    }
+  }, {
+    key: "renderLesson",
+    value: function renderLesson() {
+      if (this.state.lessonLength === this.props.skill.skill_level) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      } else {
+        return this.state.currentLesson[this.props.skill.skill_level];
+      }
+    }
   }, {
     key: "handleSubmit",
     value: function handleSubmit() {
@@ -2349,7 +2351,7 @@ function (_React$Component) {
 
           if (this.state.lessonLength === skill.skill_level) {
             // THIS IS WHERE COMPLETED LOGIC COMES IN: if you've finished the last lesson
-            skill['skill_level'] = 0;
+            // skill['skill_level'] = 0;
             var user = this.props.user;
             user['rupees'] = user.rupees + 1;
             debugger;
@@ -2533,8 +2535,9 @@ function (_React$Component) {
         className: "skill-lesson-body",
         id: "s-l-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "s-l-b-box"
-      }, this.state.currentLesson[this.props.skill.skill_level])), this.renderFooter())));
+        className: "s-l-b-box",
+        id: "s-l-b-box"
+      }, this.renderLesson())), this.renderFooter())));
     }
   }]);
 
@@ -2588,16 +2591,27 @@ function (_React$Component) {
   }
 
   _createClass(Completed, [{
-    key: "render",
-    value: function render() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       if (document.getElementsByClassName('skill-header-container')) {
         var header = document.getElementById('skill-h-c');
-        var body = document.getElementById('s-l-body');
-        debugger;
-        header.style.display = 'none';
-        body.style.height = '79vh';
-      }
 
+        if (header) {
+          header.style.display = 'none';
+        }
+
+        var body = document.getElementById('s-l-b-box');
+        var height = document.getElementsByClassName('second-skill-div')[0].offsetHeight;
+        debugger;
+
+        if (body) {
+          body.style.height = "".concat(height - 141, "px");
+        }
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "completed-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

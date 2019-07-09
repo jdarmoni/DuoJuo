@@ -44,14 +44,14 @@ class LessonBody extends React.Component {
             // this.props.updateLangData(langData);
         }
     }
-    // renderLesson(){
-    //     if (this.state.lessonLength === this.props.skill.skill_level){
-    //         return <CompletedContainer />
-    //     } else {
-    //         return this.state.currentLesson[this.props.skill.skill_level]
-    //     }
+    renderLesson(){
+        if (this.state.lessonLength === this.props.skill.skill_level){
+            return <CompletedContainer />
+        } else {
+            return this.state.currentLesson[this.props.skill.skill_level]
+        }
 
-    // }
+    }
     handleSubmit(){
         let textArea = document.getElementById('challenge-textarea')
         let markMeaning = document.getElementById('m-m-c')
@@ -109,7 +109,7 @@ class LessonBody extends React.Component {
 
                 if (this.state.lessonLength === skill.skill_level) { 
                     // THIS IS WHERE COMPLETED LOGIC COMES IN: if you've finished the last lesson
-                    skill['skill_level'] = 0;
+                    // skill['skill_level'] = 0;
                     let user = this.props.user;
                     user['rupees'] = user.rupees + 1;
                     debugger
@@ -271,13 +271,13 @@ class LessonBody extends React.Component {
                             </div>
                         </div>
                         <div className="skill-lesson-body" id="s-l-body">
-                            <div className="s-l-b-box">
+                            <div className="s-l-b-box" id="s-l-b-box">
 
-                            {/* where the lesson component goes */}
+                                {/* where the lesson component goes */}
 
-                            {/* {this.state.lessonLength === this.props.skill.skill_level ? this.state.currentLesson[this.props.skill.skill_level] : <CompletedContainer/> } */}
-                            {      this.state.currentLesson[this.props.skill.skill_level]}
-                            {/* {this.renderLesson()} */}
+                                
+                                {/* {      this.state.currentLesson[this.props.skill.skill_level]} */}
+                                {this.renderLesson()}
                             </div>
                         </div>
                         {this.renderFooter()}
