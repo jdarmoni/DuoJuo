@@ -2249,7 +2249,8 @@ function (_React$Component) {
       correct: false,
       wrong: false,
       lessonLength: 0,
-      currentLesson: ""
+      currentLesson: "",
+      completed: false
     };
     return _this;
   }
@@ -2300,6 +2301,12 @@ function (_React$Component) {
       var textArea = document.getElementById('challenge-textarea');
       var markMeaning = document.getElementById('m-m-c');
       var guess;
+      debugger;
+
+      if (this.state.completed) {
+        var skill = this.props.skill;
+        this.props.updateSkill(skill).then(this.props.history.replace('/'));
+      }
 
       if (this.state["default"]) {
         if (textArea) {
@@ -2346,19 +2353,21 @@ function (_React$Component) {
           });
         } else {
           // correct answer updates the user's level
-          var skill = this.props.skill;
-          skill['skill_level'] = skill.skill_level + 1;
+          var _skill = this.props.skill;
+          _skill['skill_level'] = _skill.skill_level + 1;
 
-          if (this.state.lessonLength === skill.skill_level) {
+          if (this.state.lessonLength === _skill.skill_level) {
             // THIS IS WHERE COMPLETED LOGIC COMES IN: if you've finished the last lesson
             // skill['skill_level'] = 0;
             var user = this.props.user;
             user['rupees'] = user.rupees + 1;
             debugger;
-            this.props.updateUser(user);
+            this.props.updateUser(user).then(this.setState({
+              completed: true
+            }));
           }
 
-          this.props.updateSkill(skill).then(this.setState({
+          this.props.updateSkill(_skill).then(this.setState({
             "default": true,
             wrong: false,
             correct: false
@@ -2635,7 +2644,7 @@ function (_React$Component) {
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "c-s-c-parent"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "c-s-c-day"
+        className: "c-s-c-day"
       }, " 1"), " DAY")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "c-s-c-SVG-container"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -2664,7 +2673,7 @@ function (_React$Component) {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
         fill: "#e5e5e5"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        "class": "_1IdLW",
+        className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
         fill: "#ff9600"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2683,7 +2692,7 @@ function (_React$Component) {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
         fill: "#e5e5e5"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        "class": "_1IdLW",
+        className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
         fill: "#ff9600"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2702,7 +2711,7 @@ function (_React$Component) {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
         fill: "#e5e5e5"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        "class": "_1IdLW",
+        className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
         fill: "#ff9600"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2721,7 +2730,7 @@ function (_React$Component) {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
         fill: "#e5e5e5"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        "class": "_1IdLW",
+        className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
         fill: "#ff9600"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2740,7 +2749,7 @@ function (_React$Component) {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
         fill: "#e5e5e5"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        "class": "_1IdLW",
+        className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
         fill: "#ff9600"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2759,7 +2768,7 @@ function (_React$Component) {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
         fill: "#e5e5e5"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        "class": "_1IdLW",
+        className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
         fill: "#ff9600"
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2778,7 +2787,7 @@ function (_React$Component) {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
         fill: "#e5e5e5"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        "class": "_1IdLW",
+        className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
         fill: "#ff9600"
       })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Lesson Complete! 10 XP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

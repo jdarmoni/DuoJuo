@@ -33,7 +33,7 @@ class Completed extends React.Component {
                                                     <div className ="c-s-c-flame"></div> { /* little flame */}
                                                     
                                                     <div className="c-s-c-parent"> { /* parent box sizing */}
-                                                        <span class="c-s-c-day"> 1</span> DAY
+                                                        <span className="c-s-c-day"> 1</span> DAY
                                                     </div> 
 
                                                 </div>
@@ -58,7 +58,7 @@ class Completed extends React.Component {
                                                         <svg className="m-d-c-svg">
                                                             <g className="m-d-c-g">
                                                                 <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
-                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                                <path className="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
                                                             </g>
                                                         </svg>
                                                     </div>
@@ -73,7 +73,7 @@ class Completed extends React.Component {
                                                         <svg className="m-d-c-svg">
                                                             <g className="m-d-c-g">
                                                                 <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
-                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                                <path className="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
                                                             </g>
                                                         </svg>
                                                     </div>
@@ -88,7 +88,7 @@ class Completed extends React.Component {
                                                         <svg className="m-d-c-svg">
                                                             <g className="m-d-c-g">
                                                                 <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
-                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                                <path className="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
                                                             </g>
                                                         </svg>
                                                     </div>
@@ -103,7 +103,7 @@ class Completed extends React.Component {
                                                         <svg className="m-d-c-svg">
                                                             <g className="m-d-c-g">
                                                                 <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
-                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                                <path className="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
                                                             </g>
                                                         </svg>
                                                     </div>
@@ -118,7 +118,7 @@ class Completed extends React.Component {
                                                         <svg className="m-d-c-svg">
                                                             <g className="m-d-c-g">
                                                                 <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
-                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                                <path className="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
                                                             </g>
                                                         </svg>
                                                     </div>
@@ -133,7 +133,7 @@ class Completed extends React.Component {
                                                         <svg className="m-d-c-svg">
                                                             <g className="m-d-c-g">
                                                                 <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
-                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                                <path className="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
                                                             </g>
                                                         </svg>
                                                     </div>
@@ -148,7 +148,7 @@ class Completed extends React.Component {
                                                         <svg className="m-d-c-svg">
                                                             <g className="m-d-c-g">
                                                                 <path d="M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z" fill="#e5e5e5"></path>
-                                                                <path class="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
+                                                                <path className="_1IdLW" d="M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z" fill="#ff9600"></path>
                                                             </g>
                                                         </svg>
                                                     </div>

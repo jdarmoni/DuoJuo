@@ -12,7 +12,8 @@ class LessonBody extends React.Component {
             correct: false,
             wrong: false,
             lessonLength: 0,
-            currentLesson: ""
+            currentLesson: "",
+            completed: false
         }
     }
     componentDidMount(){
@@ -56,7 +57,13 @@ class LessonBody extends React.Component {
         let textArea = document.getElementById('challenge-textarea')
         let markMeaning = document.getElementById('m-m-c')
         let guess;
-        
+        debugger
+        if (this.state.completed){
+            let skill = this.props.skill
+            this.props.updateSkill(skill).then(
+                this.props.history.replace('/')
+                )
+        }
         if (this.state.default) {
             if (textArea) {
                 guess = document.getElementById('challenge-textarea').value
@@ -114,7 +121,9 @@ class LessonBody extends React.Component {
                     user['rupees'] = user.rupees + 1;
                     debugger
                     
-                    this.props.updateUser(user);
+                    this.props.updateUser(user).then(
+                        this.setState({completed: true})
+                    );
                 }
                 
                 this.props.updateSkill(skill).then(
@@ -275,7 +284,6 @@ class LessonBody extends React.Component {
 
                                 {/* where the lesson component goes */}
 
-                                
                                 {/* {      this.state.currentLesson[this.props.skill.skill_level]} */}
                                 {this.renderLesson()}
                             </div>
