@@ -3,12 +3,11 @@ import Basics1 from './basics_1';
 
 const mapStateToProps = (state) => {
     
-    // let user = Object.values(state.entities.users)[0]
     let user = state.entities.users[state.session.id]
     
     let skills = user.language_data[user.learning_language].skills
     let currentSkill;
-    debugger
+    
     skills.forEach(skill => {
         if(skill.url_title === "Basics-1") {
             currentSkill = skill

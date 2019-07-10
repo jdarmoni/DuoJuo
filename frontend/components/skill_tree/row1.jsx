@@ -11,7 +11,7 @@ class Row1 extends React.Component{
     render () {
         let name;
         let language = this.props.currentUser.learning_language_string
-        debugger
+        
         if (language === "French"){
             name = "Basics 1"
         } else if(language==="Spanish") {

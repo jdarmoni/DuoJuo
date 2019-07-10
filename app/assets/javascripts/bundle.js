@@ -916,7 +916,9 @@ function (_React$Component) {
           src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], {
           currentUser: this.props.currentUser
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_2__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_3__WEBPACK_IMPORTED_MODULE_3__["default"], null)))))
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_2__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          currentUser: this.props.currentUser
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_3__WEBPACK_IMPORTED_MODULE_3__["default"], null)))))
       );
     }
   }]);
@@ -3771,7 +3773,6 @@ function (_React$Component) {
     value: function render() {
       var name;
       var language = this.props.currentUser.learning_language_string;
-      debugger;
 
       if (language === "French") {
         name = "Basics 1";
@@ -3850,9 +3851,31 @@ function (_React$Component) {
   _createClass(Row2, [{
     key: "render",
     value: function render() {
+      var name1;
+      var name2;
+      var language = this.props.currentUser.learning_language_string;
+
+      if (language === "French") {
+        name1 = "Greetings";
+        name2 = "Basics 2";
+      } else if (language === "Spanish") {
+        name1 = "Phrases";
+        name2 = "Travel";
+      } else if (language === "Japanese") {
+        name1 = "Hiragana 2";
+        name2 = "Hiragana 3";
+      } else if (language === "German") {
+        name1 = "Basics 2";
+        name2 = "Phrases";
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lessons-row-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_greetings_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_basics_2_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_greetings_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        name1: name1
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_basics_2_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name2: name2
+      }));
     }
   }]);
 
@@ -4531,11 +4554,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  // let user = Object.values(state.entities.users)[0]
   var user = state.entities.users[state.session.id];
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
-  debugger;
   skills.forEach(function (skill) {
     if (skill.url_title === "Basics-1") {
       currentSkill = skill;
@@ -4755,7 +4776,7 @@ function (_React$Component) {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "_378Tf _3qO9M _33VdW"
-      }, "Basics 2"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, this.props.name2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         idt: "skm-bscs2",
         url: "Basics-2",
         skill: this.props.skill
@@ -5007,7 +5028,7 @@ function (_React$Component) {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "_378Tf _3qO9M _33VdW"
-      }, "Greetings"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, this.props.name1))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         idt: "skm-grtngs1",
         url: "Greetings",
         skill: this.props.skill
