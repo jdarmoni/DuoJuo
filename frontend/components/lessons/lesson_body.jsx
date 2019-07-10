@@ -29,11 +29,11 @@ class LessonBody extends React.Component {
             })
         } 
         // if you're on the completed page, but you refresh - overwrite the default False to True
-        if (document.getElementsByClassName('completed-container') && this.state.completed === false) {
-            this.setState({
-                completed: true
-            })
-        }
+        // if (document.getElementsByClassName('completed-container') && this.state.completed === false) {
+        //     this.setState({
+        //         completed: true
+        //     })
+        // }
     }
     componentDidUpdate(){
         if (document.getElementById('skill-check-button')) {
@@ -55,7 +55,7 @@ class LessonBody extends React.Component {
     renderLesson(){
         // it's hitting completed first, because on first render the state's lesson length is 0 - use skill.num_levels; may require refactor :/
         if (this.state.lessonLength === this.props.skill.skill_level){
-            return <CompletedContainer />
+            return <CompletedContainer completed={this.state.completed} />
         } else {
             return this.state.currentLesson[this.props.skill.skill_level]
         }

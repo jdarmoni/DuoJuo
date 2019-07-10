@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
     
     let skills = user.language_data[user.learning_language].skills
     let currentSkill;
-
+    debugger
     skills.forEach(skill => {
         if(skill.url_title === "Basics-1") {
             currentSkill = skill

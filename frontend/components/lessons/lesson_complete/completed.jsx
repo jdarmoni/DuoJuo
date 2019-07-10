@@ -8,12 +8,12 @@ class Completed extends React.Component {
         if (document.getElementsByClassName('skill-header-container')) {
             debugger
             let header = document.getElementById('skill-h-c')
-            if (header) { header.style.display = 'none'; }
+            if (header && this.props.completed) { header.style.display = 'none'; }
             let body = document.getElementById('s-l-b-box');
 
             let height = document.getElementsByClassName('second-skill-div')[0].offsetHeight
 
-            if (body) { body.style.height = `${height - 141}px`}
+            if (body && this.props.completed) { body.style.height = `${height - 141}px`}
         }
     }
     render(){

@@ -31,7 +31,7 @@ class CourseIconContent extends React.Component {
                             </a>
 
                             {/* eventually this.languages() */}
-                            <Row1 />
+                            <Row1 currentUser={this.props.currentUser}/>
                             <Row2 />
                             <Row3 />
                             

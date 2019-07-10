@@ -59,7 +59,7 @@ class Basics1 extends React.Component {
                             </div>
                         </span>
                         <div>
-                            <span className="_378Tf _3qO9M _33VdW">Basics 1</span>
+                            <span className="_378Tf _3qO9M _33VdW">{this.props.name}</span>
                         </div>
                     </div>
                     {/* to reuse modal, pass down / create a name for the ID of the new modal Div (not the a tag id of the lesson icon!) */}

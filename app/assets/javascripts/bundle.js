@@ -914,7 +914,9 @@ function (_React$Component) {
           href: "/"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_2__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_3__WEBPACK_IMPORTED_MODULE_3__["default"], null)))))
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          currentUser: this.props.currentUser
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_2__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_3__WEBPACK_IMPORTED_MODULE_3__["default"], null)))))
       );
     }
   }]);
@@ -2161,7 +2163,7 @@ var grandLessonsObj = {
       sentence: "Tu va me dire ou est le lait maitenant",
       correct: ["You will tell me where the milk is now"]
     })],
-    "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lessons_lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)]
+    "Basics-2": []
   },
   "jp": {
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2174,7 +2176,9 @@ var grandLessonsObj = {
     "Intro": []
   },
   "ge": {
-    "Basics-1": []
+    "Basics-1": [],
+    "Greetings": [],
+    "Basics-2": []
   },
   "es": {
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2189,7 +2193,9 @@ var grandLessonsObj = {
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "dime porque sueño",
       correct: ["tell me why i dream"]
-    })]
+    })],
+    "Greetings": [],
+    "Basics-2": []
   }
 };
 
@@ -2270,13 +2276,12 @@ function (_React$Component) {
           lessonLength: _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url].length
         });
       } // if you're on the completed page, but you refresh - overwrite the default False to True
+      // if (document.getElementsByClassName('completed-container') && this.state.completed === false) {
+      //     this.setState({
+      //         completed: true
+      //     })
+      // }
 
-
-      if (document.getElementsByClassName('completed-container') && this.state.completed === false) {
-        this.setState({
-          completed: true
-        });
-      }
     }
   }, {
     key: "componentDidUpdate",
@@ -2301,7 +2306,9 @@ function (_React$Component) {
     value: function renderLesson() {
       // it's hitting completed first, because on first render the state's lesson length is 0 - use skill.num_levels; may require refactor :/
       if (this.state.lessonLength === this.props.skill.skill_level) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          completed: this.state.completed
+        });
       } else {
         return this.state.currentLesson[this.props.skill.skill_level];
       }
@@ -2619,14 +2626,14 @@ function (_React$Component) {
         debugger;
         var header = document.getElementById('skill-h-c');
 
-        if (header) {
+        if (header && this.props.completed) {
           header.style.display = 'none';
         }
 
         var body = document.getElementById('s-l-b-box');
         var height = document.getElementsByClassName('second-skill-div')[0].offsetHeight;
 
-        if (body) {
+        if (body && this.props.completed) {
           body.style.height = "".concat(height - 141, "px");
         }
       }
@@ -3748,30 +3755,46 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Basics1 =
+var Row1 =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Basics1, _React$Component);
+  _inherits(Row1, _React$Component);
 
-  function Basics1(props) {
-    _classCallCheck(this, Basics1);
+  function Row1(props) {
+    _classCallCheck(this, Row1);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Basics1).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Row1).call(this, props));
   }
 
-  _createClass(Basics1, [{
+  _createClass(Row1, [{
     key: "render",
     value: function render() {
+      var name;
+      var language = this.props.currentUser.learning_language_string;
+      debugger;
+
+      if (language === "French") {
+        name = "Basics 1";
+      } else if (language === "Spanish") {
+        name = "Intro";
+      } else if (language === "Japanese") {
+        name = "Hiragana";
+      } else if (language === "German") {
+        name = "Basics 1";
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lessons-row-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_basics_1_container__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_basics_1_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        name: name
+      }));
     }
   }]);
 
-  return Basics1;
+  return Row1;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Basics1));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Row1));
 
 /***/ }),
 
@@ -4478,7 +4501,7 @@ function (_React$Component) {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "_378Tf _3qO9M _33VdW"
-      }, "Basics 1"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, this.props.name))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         idt: "skm-bscs1",
         url: "Basics-1",
         skill: this.props.skill
@@ -4512,6 +4535,7 @@ var mapStateToProps = function mapStateToProps(state) {
   var user = state.entities.users[state.session.id];
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
+  debugger;
   skills.forEach(function (skill) {
     if (skill.url_title === "Basics-1") {
       currentSkill = skill;
