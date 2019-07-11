@@ -591,7 +591,7 @@ function (_React$Component) {
           Greetings = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Intro",
+            url_title: "Greetings",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -2230,7 +2230,7 @@ var grandLessonsObj = {
       sentence: "たべる",
       correct: ["To eat"]
     })],
-    "Intro": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Greetings": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "私の名前はマリアです",
       correct: ["My name is maria"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3620,7 +3620,7 @@ function (_React$Component) {
           Greetings = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Intro",
+            url_title: "Greetings",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -4425,6 +4425,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-modal-container skm-pointer",
         id: this.props.idt

@@ -15,7 +15,7 @@ import CompletedContainer from '../../lessons/lesson_complete/completed_containe
         },
         "jp": {
             "Basics-1": [<TranslateSentenceContainer sentence={"こんにちは、さようなら"} correct={["hello, goodbye"]} />, <TranslateSentenceContainer sentence={"私の名前は"} correct={["My name is"]} />, <TranslateSentenceContainer sentence={"水"} correct={["water"]} />, <TranslateSentenceContainer sentence={"たべる"} correct={["To eat"]} />],
-            "Intro": [<TranslateSentenceContainer sentence={"私の名前はマリアです"} correct={["My name is maria"]} />, <TranslateSentenceContainer sentence={"あなたは私の中央ビジネス地区への道を示すことができました"} correct={["Could you show me the way to the central business district"]} />, <TranslateSentenceContainer sentence={"アメリカ"} correct={["America"]} />, <TranslateSentenceContainer sentence={"私はインサイダー取引で非難されています"} correct={["I have been accused of insider trading"]} />  ],
+            "Greetings": [<TranslateSentenceContainer sentence={"私の名前はマリアです"} correct={["My name is maria"]} />, <TranslateSentenceContainer sentence={"あなたは私の中央ビジネス地区への道を示すことができました"} correct={["Could you show me the way to the central business district"]} />, <TranslateSentenceContainer sentence={"アメリカ"} correct={["America"]} />, <TranslateSentenceContainer sentence={"私はインサイダー取引で非難されています"} correct={["I have been accused of insider trading"]} />  ],
             "Basics-2": [<TranslateSentenceContainer sentence={"ポケットモンスター"} correct={["Pokemon"]} />, <TranslateSentenceContainer sentence={"男の子"} correct={["boy"]} />, <TranslateSentenceContainer sentence={"お父さん"} correct={["father"]} />, <TranslateSentenceContainer sentence={"母"} correct={["mother"]} />],
         },
         "ge": {
