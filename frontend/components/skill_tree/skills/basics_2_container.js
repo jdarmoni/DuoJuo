@@ -19,6 +19,7 @@ const mapStateToProps = (state) => {
                 currentSkill = skill
             }
         } else if (language === "Japanese") {
+            debugger
             if (skill.url_title === "Hiragana-2") {
                 currentSkill = skill
             }

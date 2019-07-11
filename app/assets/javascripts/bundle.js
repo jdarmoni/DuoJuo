@@ -606,7 +606,7 @@ function (_React$Component) {
           Skill3 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Hiaragana-3",
+            url_title: "Hiragana-3",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -3643,7 +3643,7 @@ function (_React$Component) {
           Skill3 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Hiaragana-3",
+            url_title: "Hiragana-3",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -4761,6 +4761,8 @@ var mapStateToProps = function mapStateToProps(state) {
         currentSkill = skill;
       }
     } else if (language === "Japanese") {
+      debugger;
+
       if (skill.url_title === "Hiragana-1") {
         currentSkill = skill;
       }
@@ -5029,6 +5031,8 @@ var mapStateToProps = function mapStateToProps(state) {
         currentSkill = skill;
       }
     } else if (language === "Japanese") {
+      debugger;
+
       if (skill.url_title === "Hiragana-2") {
         currentSkill = skill;
       }
@@ -5298,6 +5302,8 @@ var mapStateToProps = function mapStateToProps(state) {
         currentSkill = skill;
       }
     } else if (language === "Japanese") {
+      debugger;
+
       if (skill.url_title === "Hiragana-3") {
         currentSkill = skill;
       }
