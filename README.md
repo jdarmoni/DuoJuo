@@ -1,7 +1,7 @@
 # JuoDuo
 livelink: https://duojuo.herokuapp.com/#/
 
-JuoDuo is a fully functional clone of Duolingo, that uses the actual DuoLingo User JSON (and in particular, the LanguageData Object) as an architectural reference. It was built from the ground up using a Ruby on Rails backend, PostGreSQL database, and a React - Redux frontend. 
+JuoDuo is a fully functional clone of Duolingo, that uses the actual DuoLingo User JSON (and in particular, the LanguageData Object) as an architectural reference [(check out sample state!)](https://github.com/jdarmoni/DuoJuo/wiki/Sample-State). It was built from the ground up using a Ruby on Rails backend, PostGreSQL database, and a React - Redux frontend. 
 
 # Key Features 
 
