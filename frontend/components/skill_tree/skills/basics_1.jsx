@@ -63,7 +63,7 @@ class Basics1 extends React.Component {
                         </div>
                     </div>
                     {/* to reuse modal, pass down / create a name for the ID of the new modal Div (not the a tag id of the lesson icon!) */}
-                    <SkillModalContainer idt={"skm-bscs1"} url={"Basics-1"} skill={this.props.skill}/>
+                    <SkillModalContainer idt={"skm-bscs1"} url={this.props.skill.url_title} skill={this.props.skill}/>
                 </div>
             </a>
         )

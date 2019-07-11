@@ -6,7 +6,7 @@ class SkillModal extends React.Component {
         super(props)
     }
     lessonURL(){
-
+        
         this.props.history.replace(`/skill/${this.props.url}`)
     }
     render(){

@@ -2229,7 +2229,7 @@ var grandLessonsObj = {
     })]
   },
   "jp": {
-    "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Hiragana-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "こんにちは、さようなら",
       correct: ["hello, goodbye"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2311,7 +2311,7 @@ var grandLessonsObj = {
     })]
   },
   "es": {
-    "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Intro": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "el cerdo esta durmiendo",
       correct: ["the pig is sleeping"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3621,7 +3621,7 @@ function (_React$Component) {
           Skill1 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Basics-1",
+            url_title: "Hiragana-1",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -3655,7 +3655,7 @@ function (_React$Component) {
           Skill1 = {
             "language_string": "Spanish",
             language_data_id: payload.language_data.id,
-            url_title: "Basics-1",
+            url_title: "Intro",
             language_mini: "es",
             skill_level: 0,
             num_levels: 4,
@@ -4718,7 +4718,7 @@ function (_React$Component) {
         className: "_378Tf _3qO9M _33VdW"
       }, this.props.name))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         idt: "skm-bscs1",
-        url: "Basics-1",
+        url: this.props.skill.url_title,
         skill: this.props.skill
       })));
     }
@@ -4747,36 +4747,44 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   var user = state.entities.users[state.session.id];
-  var language = user.learning_language_string;
   var skills = user.language_data[user.learning_language].skills;
-  var currentSkill;
+  var currentSkill; // if (language ==="French") {
 
-  if (language === "French") {
-    debugger;
-    skills.forEach(function (skill) {
+  skills.forEach(function (skill) {
+    var language = skill.language_string;
+
+    if (language === "French") {
       if (skill.url_title === "Basics-1") {
         currentSkill = skill;
       }
-    });
-  } else if (language === "Spanish") {
-    skills.forEach(function (skill) {
-      if (skill.url_title === "Basics-1") {
+    } else if (language === "Spanish") {
+      if (skill.url_title === "Intro") {
         currentSkill = skill;
       }
-    });
-  } else if (language === "German") {
-    skills.forEach(function (skill) {
-      if (skill.url_title === "Basics-1") {
+    } else if (language === "Japanese") {
+      if (skill.url_title === "Hiragana-1") {
         currentSkill = skill;
       }
-    });
-  } else if (language === "Japanese") {
-    skills.forEach(function (skill) {
-      if (skill.url_title === "Basics-1") {
-        currentSkill = skill;
-      }
-    });
-  }
+    } else if (language === "German") {}
+  }); // }else if (language==="Spanish") {
+  //     skills.forEach(skill => {
+  //         if (skill.url_title === "Basics-1") {
+  //             currentSkill = skill
+  //         }
+  //     });
+  // } else if (language === "German") {
+  //     skills.forEach(skill => {
+  //         if (skill.url_title === "Basics-1") {
+  //             currentSkill = skill
+  //         }
+  //     });
+  // } else if (language==="Japanese") {
+  //     skills.forEach(skill => {
+  //         if (skill.url_title === "Basics-1") {
+  //             currentSkill = skill
+  //         }
+  //     });
+  // }
 
   debugger; // skills.forEach(skill => {
   //     if(skill.url_title === "Basics-1") {

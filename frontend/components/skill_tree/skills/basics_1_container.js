@@ -4,36 +4,48 @@ import Basics1 from './basics_1';
 const mapStateToProps = (state) => {
     
     let user = state.entities.users[state.session.id]
-    let language = user.learning_language_string
     let skills = user.language_data[user.learning_language].skills
     let currentSkill;
     
-    if (language ==="French") {
-        debugger
+    // if (language ==="French") {
+        
         skills.forEach(skill => {
-            if (skill.url_title === "Basics-1") {
-                currentSkill = skill
+            let language = skill.language_string;
+            if (language === "French") {
+                if (skill.url_title === "Basics-1") {
+                    currentSkill = skill
+                }
+            } else if (language ==="Spanish") {
+                if (skill.url_title === "Intro") {
+                    currentSkill = skill
+                }
+            } else if (language ==="Japanese") {
+                if (skill.url_title === "Hiragana-1") {
+                    currentSkill = skill
+                }
+            } else if (language==="German") {
+
             }
         });
-    }else if (language==="Spanish") {
-        skills.forEach(skill => {
-            if (skill.url_title === "Basics-1") {
-                currentSkill = skill
-            }
-        });
-    } else if (language === "German") {
-        skills.forEach(skill => {
-            if (skill.url_title === "Basics-1") {
-                currentSkill = skill
-            }
-        });
-    } else if (language==="Japanese") {
-        skills.forEach(skill => {
-            if (skill.url_title === "Basics-1") {
-                currentSkill = skill
-            }
-        });
-    }
+    // }else if (language==="Spanish") {
+    //     skills.forEach(skill => {
+    //         if (skill.url_title === "Basics-1") {
+    //             currentSkill = skill
+    //         }
+    //     });
+    // } else if (language === "German") {
+    //     skills.forEach(skill => {
+    //         if (skill.url_title === "Basics-1") {
+    //             currentSkill = skill
+    //         }
+    //     });
+    // } else if (language==="Japanese") {
+    //     skills.forEach(skill => {
+    //         if (skill.url_title === "Basics-1") {
+    //             currentSkill = skill
+    //         }
+    //     });
+    // }
     debugger
     // skills.forEach(skill => {
     //     if(skill.url_title === "Basics-1") {
