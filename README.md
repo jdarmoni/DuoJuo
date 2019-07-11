@@ -35,7 +35,7 @@ Complete lessons to gain rupees and increase the yellow progress bar (up top)! T
 ## Lesson
 
 Features a state shape that mirrors Duolingo's own production JSON!
-![Lesson Image](readmeResources/duoShape.png)
+![Lesson Image](readmeResources/duoState.png)
 
 ## Upcoming & Bonus
 
