@@ -1,7 +1,7 @@
 import React from 'react'
 import SkillModalContainer from './skill_modal/skill_modal_container'
 import { withRouter } from 'react-router-dom';
-import Basics1Container from './skills/basics_1_container';
+import Skill1Container from './skills/skill_1_container';
 
 class Row1 extends React.Component{
     constructor(props) {
@@ -24,7 +24,7 @@ class Row1 extends React.Component{
         return (
         
         <div className="lessons-row-container">
-            <Basics1Container name={name}/>
+            <Skill1Container name={name}/>
         </div>
         )
         }

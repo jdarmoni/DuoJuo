@@ -1,7 +1,7 @@
 import React from 'react'
 import SkillModalContainer from './skill_modal/skill_modal_container';
-import Basics2Container from './skills/basics_2_container';
-import GreetingsContainer from './skills/greetings_container';
+import Skill2Container from './skills/skill_2_container';
+import Skill3Container from './skills/skill_3_container';
 
 class Row2 extends React.Component {
     constructor(props) {
@@ -32,8 +32,8 @@ class Row2 extends React.Component {
             <div className="lessons-row-container">
 
                 
-                <GreetingsContainer name1 = {name1} />
-                <Basics2Container name2 = {name2} />
+                <Skill3Container name1 = {name1} />
+                <Skill2Container name2 = {name2} />
 
                 
             </div>

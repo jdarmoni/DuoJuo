@@ -1,21 +1,19 @@
 import React from 'react';
 import SkillModalContainer from '../skill_modal/skill_modal_container'
-
-class Greetings extends React.Component {
-    constructor(props) {
+class Skill2 extends React.Component {
+    constructor(props){
         super(props)
 
     }
     componentDidMount() {
-        const modal = document.getElementById("skm-grtngs1");
+        const modal = document.getElementById("skm-bscs2");
 
         // Get the button that opens the modal
-        const btn = document.getElementById("grtngs-a");
+        const btn = document.getElementById("bscs2-a");
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
-            if (event.target !== modal) {
-                
+            if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
@@ -26,10 +24,9 @@ class Greetings extends React.Component {
         }
     }
 
-    render() {
-        debugger
+    render(){
         return (
-            <a className="lesson-anchor-box" id="grtngs-a" href="javascript:;">
+            <a className="lesson-anchor-box" id="bscs2-a" href="javascript:;">
                 <div className="_2albn">
                     <div>
                         <div className="lesson-progress-rings">
@@ -55,10 +52,11 @@ class Greetings extends React.Component {
                             </div>
                         </span>
                         <div>
-                            <span className="_378Tf _3qO9M _33VdW">{this.props.name1}</span>
+                            <span className="_378Tf _3qO9M _33VdW">{this.props.name2}</span>
                         </div>
                     </div>
-                    <SkillModalContainer idt={"skm-grtngs1"} url={this.props.skill.url_title} skill={this.props.skill}/>
+                    <SkillModalContainer idt={"skm-bscs2"} url={this.props.skill.url_title} skill={this.props.skill}/>
+
                 </div>
             </a>
 
@@ -66,4 +64,4 @@ class Greetings extends React.Component {
     }
 }
 
-export default Greetings
+export default Skill2

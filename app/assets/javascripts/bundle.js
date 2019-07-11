@@ -3924,7 +3924,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_modal/skill_modal_container */ "./frontend/components/skill_tree/skill_modal/skill_modal_container.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _skills_basics_1_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./skills/basics_1_container */ "./frontend/components/skill_tree/skills/basics_1_container.js");
+/* harmony import */ var _skills_skill_1_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./skills/skill_1_container */ "./frontend/components/skill_tree/skills/skill_1_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3977,7 +3977,7 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lessons-row-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_basics_1_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_skill_1_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         name: name
       }));
     }
@@ -4002,8 +4002,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_modal/skill_modal_container */ "./frontend/components/skill_tree/skill_modal/skill_modal_container.js");
-/* harmony import */ var _skills_basics_2_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./skills/basics_2_container */ "./frontend/components/skill_tree/skills/basics_2_container.js");
-/* harmony import */ var _skills_greetings_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./skills/greetings_container */ "./frontend/components/skill_tree/skills/greetings_container.js");
+/* harmony import */ var _skills_skill_2_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./skills/skill_2_container */ "./frontend/components/skill_tree/skills/skill_2_container.js");
+/* harmony import */ var _skills_skill_3_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./skills/skill_3_container */ "./frontend/components/skill_tree/skills/skill_3_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4062,9 +4062,9 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lessons-row-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_greetings_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_skill_3_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         name1: name1
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_basics_2_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_skill_2_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         name2: name2
       }));
     }
@@ -4513,10 +4513,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/skill_tree/skills/basics_1.jsx":
-/*!************************************************************!*\
-  !*** ./frontend/components/skill_tree/skills/basics_1.jsx ***!
-  \************************************************************/
+/***/ "./frontend/components/skill_tree/skills/skill_1.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/skill_tree/skills/skill_1.jsx ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4550,18 +4550,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Basics1 =
+var Skill1 =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Basics1, _React$Component);
+  _inherits(Skill1, _React$Component);
 
-  function Basics1(props) {
-    _classCallCheck(this, Basics1);
+  function Skill1(props) {
+    _classCallCheck(this, Skill1);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Basics1).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Skill1).call(this, props));
   }
 
-  _createClass(Basics1, [{
+  _createClass(Skill1, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
@@ -4724,24 +4724,24 @@ function (_React$Component) {
     }
   }]);
 
-  return Basics1;
+  return Skill1;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Basics1);
+/* harmony default export */ __webpack_exports__["default"] = (Skill1);
 
 /***/ }),
 
-/***/ "./frontend/components/skill_tree/skills/basics_1_container.js":
-/*!*********************************************************************!*\
-  !*** ./frontend/components/skill_tree/skills/basics_1_container.js ***!
-  \*********************************************************************/
+/***/ "./frontend/components/skill_tree/skills/skill_1_container.js":
+/*!********************************************************************!*\
+  !*** ./frontend/components/skill_tree/skills/skill_1_container.js ***!
+  \********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _basics_1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basics_1 */ "./frontend/components/skill_tree/skills/basics_1.jsx");
+/* harmony import */ var _skill_1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_1 */ "./frontend/components/skill_tree/skills/skill_1.jsx");
 
 
 
@@ -4785,14 +4785,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {};
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_basics_1__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_skill_1__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
-/***/ "./frontend/components/skill_tree/skills/basics_2.jsx":
-/*!************************************************************!*\
-  !*** ./frontend/components/skill_tree/skills/basics_2.jsx ***!
-  \************************************************************/
+/***/ "./frontend/components/skill_tree/skills/skill_2.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/skill_tree/skills/skill_2.jsx ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4824,18 +4824,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Basics22 =
+var Skill2 =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Basics22, _React$Component);
+  _inherits(Skill2, _React$Component);
 
-  function Basics22(props) {
-    _classCallCheck(this, Basics22);
+  function Skill2(props) {
+    _classCallCheck(this, Skill2);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Basics22).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Skill2).call(this, props));
   }
 
-  _createClass(Basics22, [{
+  _createClass(Skill2, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var modal = document.getElementById("skm-bscs2"); // Get the button that opens the modal
@@ -4994,24 +4994,24 @@ function (_React$Component) {
     }
   }]);
 
-  return Basics22;
+  return Skill2;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Basics22);
+/* harmony default export */ __webpack_exports__["default"] = (Skill2);
 
 /***/ }),
 
-/***/ "./frontend/components/skill_tree/skills/basics_2_container.js":
-/*!*********************************************************************!*\
-  !*** ./frontend/components/skill_tree/skills/basics_2_container.js ***!
-  \*********************************************************************/
+/***/ "./frontend/components/skill_tree/skills/skill_2_container.js":
+/*!********************************************************************!*\
+  !*** ./frontend/components/skill_tree/skills/skill_2_container.js ***!
+  \********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _basics_2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basics_2 */ "./frontend/components/skill_tree/skills/basics_2.jsx");
+/* harmony import */ var _skill_2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_2 */ "./frontend/components/skill_tree/skills/skill_2.jsx");
 
 
 
@@ -5055,14 +5055,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {};
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_basics_2__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_skill_2__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
-/***/ "./frontend/components/skill_tree/skills/greetings.jsx":
-/*!*************************************************************!*\
-  !*** ./frontend/components/skill_tree/skills/greetings.jsx ***!
-  \*************************************************************/
+/***/ "./frontend/components/skill_tree/skills/skill_3.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/skill_tree/skills/skill_3.jsx ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5094,18 +5094,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Greetings =
+var Skill3 =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Greetings, _React$Component);
+  _inherits(Skill3, _React$Component);
 
-  function Greetings(props) {
-    _classCallCheck(this, Greetings);
+  function Skill3(props) {
+    _classCallCheck(this, Skill3);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Greetings).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Skill3).call(this, props));
   }
 
-  _createClass(Greetings, [{
+  _createClass(Skill3, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var modal = document.getElementById("skm-grtngs1"); // Get the button that opens the modal
@@ -5265,24 +5265,24 @@ function (_React$Component) {
     }
   }]);
 
-  return Greetings;
+  return Skill3;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Greetings);
+/* harmony default export */ __webpack_exports__["default"] = (Skill3);
 
 /***/ }),
 
-/***/ "./frontend/components/skill_tree/skills/greetings_container.js":
-/*!**********************************************************************!*\
-  !*** ./frontend/components/skill_tree/skills/greetings_container.js ***!
-  \**********************************************************************/
+/***/ "./frontend/components/skill_tree/skills/skill_3_container.js":
+/*!********************************************************************!*\
+  !*** ./frontend/components/skill_tree/skills/skill_3_container.js ***!
+  \********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _greetings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./greetings */ "./frontend/components/skill_tree/skills/greetings.jsx");
+/* harmony import */ var _skill_3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./skill_3 */ "./frontend/components/skill_tree/skills/skill_3.jsx");
 
 
 
@@ -5326,7 +5326,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {};
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_greetings__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_skill_3__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 

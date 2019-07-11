@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Greetings from './greetings';
+import Skill3 from './skill_3';
 
 const mapStateToProps = (state) => {
     
@@ -44,4 +44,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Greetings);
+)(Skill3);
