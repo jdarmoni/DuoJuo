@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
         let language = skill.language_string;
 
         if (language === "French") {
-            if (skill.url_title === "Basics-2") {
+            if (skill.url_title === "Greetings") {
                 currentSkill = skill
             }
         } else if (language === "Spanish") {

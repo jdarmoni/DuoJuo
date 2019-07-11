@@ -4445,7 +4445,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "skill-modal-container skm-pointer",
         id: this.props.idt
@@ -4566,21 +4565,30 @@ function (_React$Component) {
     value: function componentDidMount() {
       var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
 
-      var btn = document.getElementById("bscs1-a"); // When the user clicks anywhere outside of the modal, close it
-
-      modal.onclick = function (event) {
-        if (event.target == modal) {
-          debugger;
-          modal.style.display = "none";
-          return;
-          debugger; // why does this get hit
-        }
-      };
+      var btn = document.getElementById("bscs1-a");
+      var clicked = false; // When the user clicks anywhere outside of the modal, close it
+      // modal.onclick = function (event) {
+      //     debugger
+      //     if (event.target == modal && clicked === true) {
+      //         debugger
+      //         modal.style.display = "none";
+      //         clicked = false;
+      //         return
+      //         // why does this get hit
+      //     }
+      // }
 
       btn.onclick = function () {
         debugger;
-        modal.style.display = "block";
-        return;
+
+        if (clicked === false) {
+          debugger;
+          modal.style.display = "block";
+          clicked = true;
+        } else if (clicked === true) {
+          modal.style.display = "none";
+          clicked = false;
+        }
       };
     }
   }, {
@@ -4840,17 +4848,20 @@ function (_React$Component) {
     value: function componentDidMount() {
       var modal = document.getElementById("skm-bscs2"); // Get the button that opens the modal
 
-      var btn = document.getElementById("bscs2-a"); // When the user clicks anywhere outside of the modal, close it
-
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
+      var btn = document.getElementById("bscs2-a");
+      var clicked = false;
 
       btn.onclick = function () {
-        modal.style.display = "block";
-        return;
+        debugger;
+
+        if (clicked === false) {
+          debugger;
+          modal.style.display = "block";
+          clicked = true;
+        } else if (clicked === true) {
+          modal.style.display = "none";
+          clicked = false;
+        }
       };
     }
   }, {
@@ -5023,7 +5034,7 @@ var mapStateToProps = function mapStateToProps(state) {
     var language = skill.language_string;
 
     if (language === "French") {
-      if (skill.url_title === "Greetings") {
+      if (skill.url_title === "Basics-2") {
         currentSkill = skill;
       }
     } else if (language === "Spanish") {
@@ -5110,17 +5121,20 @@ function (_React$Component) {
     value: function componentDidMount() {
       var modal = document.getElementById("skm-grtngs1"); // Get the button that opens the modal
 
-      var btn = document.getElementById("grtngs-a"); // When the user clicks anywhere outside of the modal, close it
-
-      window.onclick = function (event) {
-        if (event.target !== modal) {
-          modal.style.display = "none";
-        }
-      };
+      var btn = document.getElementById("grtngs-a");
+      var clicked = false; // When the user clicks anywhere outside of the modal, close it
 
       btn.onclick = function () {
-        modal.style.display = "block";
-        return;
+        debugger;
+
+        if (clicked === false) {
+          debugger;
+          modal.style.display = "block";
+          clicked = true;
+        } else if (clicked === true) {
+          modal.style.display = "none";
+          clicked = false;
+        }
       };
     }
   }, {
@@ -5128,7 +5142,6 @@ function (_React$Component) {
     value: function render() {
       var _React$createElement;
 
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "lesson-anchor-box",
         id: "grtngs-a",
@@ -5294,7 +5307,7 @@ var mapStateToProps = function mapStateToProps(state) {
     var language = skill.language_string;
 
     if (language === "French") {
-      if (skill.url_title === "Basics-2") {
+      if (skill.url_title === "Greetings") {
         currentSkill = skill;
       }
     } else if (language === "Spanish") {

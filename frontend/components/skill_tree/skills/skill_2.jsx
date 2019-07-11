@@ -10,17 +10,18 @@ class Skill2 extends React.Component {
 
         // Get the button that opens the modal
         const btn = document.getElementById("bscs2-a");
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
+        let clicked = false;
+        
         btn.onclick = function () {
-            modal.style.display = "block";
-            return
+            debugger
+            if (clicked === false) {
+                debugger
+                modal.style.display = "block";
+                clicked = true;
+            } else if (clicked === true) {
+                modal.style.display = "none";
+                clicked = false;
+            }
         }
     }
 

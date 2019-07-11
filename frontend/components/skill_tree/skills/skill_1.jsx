@@ -12,22 +12,31 @@ class Skill1 extends React.Component {
 
         // Get the button that opens the modal
         const btn = document.getElementById("bscs1-a");
+        let clicked = false;
 
         // When the user clicks anywhere outside of the modal, close it
-        modal.onclick = function (event) {
-            if (event.target == modal) {
-                debugger
-                modal.style.display = "none";
-                return
-                debugger
-                // why does this get hit
-            }
-        }
+        // modal.onclick = function (event) {
+        //     debugger
+        //     if (event.target == modal && clicked === true) {
+        //         debugger
+        //         modal.style.display = "none";
+        //         clicked = false;
+        //         return
+        //         // why does this get hit
+        //     }
+        // }
         
         btn.onclick = function () {
             debugger
-            modal.style.display = "block";
-            return
+            if (clicked === false) {
+                debugger
+                modal.style.display = "block";
+                clicked = true;
+                
+            } else if (clicked === true) {
+                modal.style.display = "none";
+                clicked = false;
+            }
         }
     }
 
