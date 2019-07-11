@@ -14,15 +14,16 @@ Clicking 'Get Started' takes you to the Register component, where you can select
 
 ## Register 
 
-![Register Image](readmeResources/register.png)
-
 Choose up to four (for now) languages. 
+
+![Register Image](readmeResources/register.png)
 
 ## Dashboard 
 
+Each language comes with five lesson modules. Users are able to switch languages or add courses to their profile from the flag dropdown in the nav bar section. 
+
 ![Dashboard Image](readmeResources/addLang.png)
 
-Each language comes with five lesson modules. Users are able to switch languages or add courses to their profile from the flag dropdown in the nav bar section. 
 
 ## Lesson
 ![Lesson Image](readmeResources/lesson1.png)
@@ -34,7 +35,7 @@ Complete lessons to gain rupees and increase the yellow progress bar (up top)! T
 ## Lesson
 
 Features a state shape that mirrors Duolingo's own production JSON!
-![Lesson Image](readmeResources/lesson2.png)
+![Lesson Image](readmeResources/duoShape.png)
 
 ## Upcoming & Bonus
 
