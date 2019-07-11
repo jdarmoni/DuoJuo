@@ -542,12 +542,12 @@ function (_React$Component) {
       newLangData['first_time'] = false;
       this.props.createLanguageData(newLangData).then(function (payload) {
         // IF LANGUAGE === FRENCH
-        var Basics1;
-        var Greetings;
-        var Basics2;
+        var Skill1;
+        var Skill2;
+        var Skill3;
 
         if (language === "French") {
-          Basics1 = {
+          Skill1 = {
             "language_string": "French",
             language_data_id: payload.language_data.id,
             url_title: "Basics-1",
@@ -558,7 +558,7 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Greetings = {
+          Skill2 = {
             "language_string": "French",
             language_data_id: payload.language_data.id,
             url_title: "Greetings",
@@ -569,7 +569,7 @@ function (_React$Component) {
             locked: false,
             "short": "grtngs"
           };
-          Basics2 = {
+          Skill3 = {
             "language_string": "French",
             language_data_id: payload.language_data.id,
             url_title: "Basics-2",
@@ -581,10 +581,10 @@ function (_React$Component) {
             "short": "bscs2"
           };
         } else if (language === "Japanese") {
-          Basics1 = {
+          Skill1 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Basics-1",
+            url_title: "Hiragana-1",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -592,10 +592,10 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Greetings = {
+          Skill2 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Greetings",
+            url_title: "Hiragana-2",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -603,10 +603,10 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Basics2 = {
+          Skill3 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Basics-2",
+            url_title: "Hiaragana-3",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -615,10 +615,10 @@ function (_React$Component) {
             "short": "bscs1"
           };
         } else if (language === "Spanish") {
-          Basics1 = {
+          Skill1 = {
             "language_string": "Spanish",
             language_data_id: payload.language_data.id,
-            url_title: "Basics-1",
+            url_title: "Intro",
             language_mini: "es",
             skill_level: 0,
             num_levels: 4,
@@ -626,10 +626,10 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Greetings = {
+          Skill2 = {
             "language_string": "Spanish",
             language_data_id: payload.language_data.id,
-            url_title: "Greetings",
+            url_title: "Phrases",
             language_mini: "es",
             skill_level: 0,
             num_levels: 4,
@@ -637,19 +637,19 @@ function (_React$Component) {
             locked: false,
             "short": "phrases"
           };
-          Basics2 = {
+          Skill3 = {
             "language_string": "Spanish",
             language_data_id: payload.language_data.id,
-            url_title: "Basics-2",
+            url_title: "Travel",
             language_mini: "es",
             skill_level: 0,
             num_levels: 4,
             disabled: false,
             locked: false,
-            "short": "bscs2"
+            "short": "trvl"
           };
         } else if (language === "German") {
-          Basics1 = {
+          Skill1 = {
             "language_string": "German",
             language_data_id: payload.language_data.id,
             url_title: "Basics-1",
@@ -660,10 +660,10 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Greetings = {
+          Skill2 = {
             "language_string": "German",
             language_data_id: payload.language_data.id,
-            url_title: "Greetings",
+            url_title: "Phrases",
             language_mini: "ge",
             skill_level: 0,
             num_levels: 4,
@@ -671,7 +671,7 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Basics2 = {
+          Skill3 = {
             "language_string": "German",
             language_data_id: payload.language_data.id,
             url_title: "Basics-2",
@@ -684,11 +684,11 @@ function (_React$Component) {
           };
         }
 
-        _this2.props.createSkill(Basics1);
+        _this2.props.createSkill(Skill1);
 
-        _this2.props.createSkill(Greetings);
+        _this2.props.createSkill(Skill2);
 
-        _this2.props.createSkill(Basics2);
+        _this2.props.createSkill(Skill3);
       });
       this.props.updateUser(user);
     }
@@ -2242,7 +2242,7 @@ var grandLessonsObj = {
       sentence: "たべる",
       correct: ["To eat"]
     })],
-    "Greetings": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Hiragana-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "私の名前はマリアです",
       correct: ["My name is maria"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2283,7 +2283,7 @@ var grandLessonsObj = {
       sentence: "Es tut mir leid",
       correct: ["I am sorry"]
     })],
-    "Greetings": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Hallo, ich bin der junge",
       correct: ["Hello, I am the boy"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2324,7 +2324,7 @@ var grandLessonsObj = {
       sentence: "dime porque sueño",
       correct: ["tell me why i dream"]
     })],
-    "Greetings": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Mi nombre es rafael nadal",
       correct: ["My name is Rafael Nadal"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2337,7 +2337,7 @@ var grandLessonsObj = {
       sentence: "I have won Roland Garros 12 times, no?",
       correct: ["He ganado Roland Garros 12 veces, ¿no?"]
     })],
-    "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Travel": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Yo soy de Mallorca",
       correct: ["I am from Mallorca"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3632,7 +3632,7 @@ function (_React$Component) {
           Skill2 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Greetings",
+            url_title: "Hiragana-2",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -3643,7 +3643,7 @@ function (_React$Component) {
           Skill3 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Basics-2",
+            url_title: "Hiaragana-3",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -3666,7 +3666,7 @@ function (_React$Component) {
           Skill2 = {
             "language_string": "Spanish",
             language_data_id: payload.language_data.id,
-            url_title: "Greetings",
+            url_title: "Phrases",
             language_mini: "es",
             skill_level: 0,
             num_levels: 4,
@@ -3677,13 +3677,13 @@ function (_React$Component) {
           Skill3 = {
             "language_string": "Spanish",
             language_data_id: payload.language_data.id,
-            url_title: "Basics-2",
+            url_title: "Travel",
             language_mini: "es",
             skill_level: 0,
             num_levels: 4,
             disabled: false,
             locked: false,
-            "short": "bscs2"
+            "short": "trvl"
           };
         } else if (language === "German") {
           Skill1 = {
@@ -3700,7 +3700,7 @@ function (_React$Component) {
           Skill2 = {
             "language_string": "German",
             language_data_id: payload.language_data.id,
-            url_title: "Greetings",
+            url_title: "Phrases",
             language_mini: "ge",
             skill_level: 0,
             num_levels: 4,
@@ -4748,8 +4748,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state) {
   var user = state.entities.users[state.session.id];
   var skills = user.language_data[user.learning_language].skills;
-  var currentSkill; // if (language ==="French") {
-
+  var currentSkill;
   skills.forEach(function (skill) {
     var language = skill.language_string;
 
@@ -4765,33 +4764,12 @@ var mapStateToProps = function mapStateToProps(state) {
       if (skill.url_title === "Hiragana-1") {
         currentSkill = skill;
       }
-    } else if (language === "German") {}
-  }); // }else if (language==="Spanish") {
-  //     skills.forEach(skill => {
-  //         if (skill.url_title === "Basics-1") {
-  //             currentSkill = skill
-  //         }
-  //     });
-  // } else if (language === "German") {
-  //     skills.forEach(skill => {
-  //         if (skill.url_title === "Basics-1") {
-  //             currentSkill = skill
-  //         }
-  //     });
-  // } else if (language==="Japanese") {
-  //     skills.forEach(skill => {
-  //         if (skill.url_title === "Basics-1") {
-  //             currentSkill = skill
-  //         }
-  //     });
-  // }
-
-  debugger; // skills.forEach(skill => {
-  //     if(skill.url_title === "Basics-1") {
-  //         currentSkill = skill
-  //     }
-  // });
-
+    } else if (language === "German") {
+      if (skill.url_title === "Basics-1") {
+        currentSkill = skill;
+      }
+    }
+  });
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
@@ -5008,7 +4986,7 @@ function (_React$Component) {
         className: "_378Tf _3qO9M _33VdW"
       }, this.props.name2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         idt: "skm-bscs2",
-        url: "Basics-2",
+        url: this.props.skill.url_title,
         skill: this.props.skill
       })));
     }
@@ -5040,8 +5018,24 @@ var mapStateToProps = function mapStateToProps(state) {
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
-    if (skill.url_title === "Basics-2") {
-      currentSkill = skill;
+    var language = skill.language_string;
+
+    if (language === "French") {
+      if (skill.url_title === "Greetings") {
+        currentSkill = skill;
+      }
+    } else if (language === "Spanish") {
+      if (skill.url_title === "Travel") {
+        currentSkill = skill;
+      }
+    } else if (language === "Japanese") {
+      if (skill.url_title === "Hiragana-2") {
+        currentSkill = skill;
+      }
+    } else if (language === "German") {
+      if (skill.url_title === "Phrases") {
+        currentSkill = skill;
+      }
     }
   });
   return {
@@ -5261,7 +5255,7 @@ function (_React$Component) {
         className: "_378Tf _3qO9M _33VdW"
       }, this.props.name1))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_modal_skill_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         idt: "skm-grtngs1",
-        url: "Greetings",
+        url: this.props.skill.url_title,
         skill: this.props.skill
       })));
     }
@@ -5293,8 +5287,24 @@ var mapStateToProps = function mapStateToProps(state) {
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
   skills.forEach(function (skill) {
-    if (skill.url_title === "Greetings") {
-      currentSkill = skill;
+    var language = skill.language_string;
+
+    if (language === "French") {
+      if (skill.url_title === "Basics-2") {
+        currentSkill = skill;
+      }
+    } else if (language === "Spanish") {
+      if (skill.url_title === "Phrases") {
+        currentSkill = skill;
+      }
+    } else if (language === "Japanese") {
+      if (skill.url_title === "Hiragana-3") {
+        currentSkill = skill;
+      }
+    } else if (language === "German") {
+      if (skill.url_title === "Basics-2") {
+        currentSkill = skill;
+      }
     }
   });
   return {

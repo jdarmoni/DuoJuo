@@ -6,52 +6,28 @@ const mapStateToProps = (state) => {
     let user = state.entities.users[state.session.id]
     let skills = user.language_data[user.learning_language].skills
     let currentSkill;
-    
-    // if (language ==="French") {
+            
+    skills.forEach(skill => {
+        let language = skill.language_string;
         
-        skills.forEach(skill => {
-            let language = skill.language_string;
-            if (language === "French") {
-                if (skill.url_title === "Basics-1") {
-                    currentSkill = skill
-                }
-            } else if (language ==="Spanish") {
-                if (skill.url_title === "Intro") {
-                    currentSkill = skill
-                }
-            } else if (language ==="Japanese") {
-                if (skill.url_title === "Hiragana-1") {
-                    currentSkill = skill
-                }
-            } else if (language==="German") {
-
+        if (language === "French") {
+            if (skill.url_title === "Basics-1") {
+                currentSkill = skill
             }
-        });
-    // }else if (language==="Spanish") {
-    //     skills.forEach(skill => {
-    //         if (skill.url_title === "Basics-1") {
-    //             currentSkill = skill
-    //         }
-    //     });
-    // } else if (language === "German") {
-    //     skills.forEach(skill => {
-    //         if (skill.url_title === "Basics-1") {
-    //             currentSkill = skill
-    //         }
-    //     });
-    // } else if (language==="Japanese") {
-    //     skills.forEach(skill => {
-    //         if (skill.url_title === "Basics-1") {
-    //             currentSkill = skill
-    //         }
-    //     });
-    // }
-    debugger
-    // skills.forEach(skill => {
-    //     if(skill.url_title === "Basics-1") {
-    //         currentSkill = skill
-    //     }
-    // });
+        } else if (language ==="Spanish") {
+            if (skill.url_title === "Intro") {
+                currentSkill = skill
+            }
+        } else if (language ==="Japanese") {
+            if (skill.url_title === "Hiragana-1") {
+                currentSkill = skill
+            }
+        } else if (language==="German") {
+            if (skill.url_title === "Basics-1") {
+                currentSkill = skill
+            }
+        }
+    });
     
     return {
         users: Object.values(state.entities.users),

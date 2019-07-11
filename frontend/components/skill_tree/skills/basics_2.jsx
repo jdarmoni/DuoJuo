@@ -55,7 +55,7 @@ class Basics22 extends React.Component {
                             <span className="_378Tf _3qO9M _33VdW">{this.props.name2}</span>
                         </div>
                     </div>
-                    <SkillModalContainer idt={"skm-bscs2"} url={"Basics-2"} skill={this.props.skill}/>
+                    <SkillModalContainer idt={"skm-bscs2"} url={this.props.skill.url_title} skill={this.props.skill}/>
 
                 </div>
             </a>

@@ -58,7 +58,7 @@ class Greetings extends React.Component {
                             <span className="_378Tf _3qO9M _33VdW">{this.props.name1}</span>
                         </div>
                     </div>
-                    <SkillModalContainer idt={"skm-grtngs1"} url={"Greetings"} skill={this.props.skill}/>
+                    <SkillModalContainer idt={"skm-grtngs1"} url={this.props.skill.url_title} skill={this.props.skill}/>
                 </div>
             </a>
 
