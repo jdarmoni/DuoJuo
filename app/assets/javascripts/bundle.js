@@ -3532,7 +3532,6 @@ function (_React$Component) {
     value: function register(event) {
       var _this2 = this;
 
-      // what if i created a blank languageData objct first
       var language = event.currentTarget.children[0].children[1].innerText;
       var language_ac;
       var user = this.props.currentUser;
@@ -3549,8 +3548,7 @@ function (_React$Component) {
       }
 
       user["learning_language_string"] = language;
-      user["learning_language"] = language_ac; // create a new language object, pass language  down through register container
-
+      user["learning_language"] = language_ac;
       newLang['streak'] = 0;
       newLang['language_string'] = language;
       newLang['points'] = 0;
@@ -3562,15 +3560,13 @@ function (_React$Component) {
       newLang['user_id'] = this.props.currentUser.id;
       this.props.createLanguage(newLang);
       var newLangData = {};
-      newLangData = newLang; // delete newLangData['streak'];
-
+      newLangData = newLang;
       newLangData['level_percent'] = 0;
       newLangData['max_level'] = false;
       newLangData['language_strength'] = 0;
       newLangData['fluency_score'] = 0;
       newLangData['first_time'] = false;
       this.props.createLanguageData(newLangData).then(function (payload) {
-        // IF LANGUAGE === FRENCH
         var Basics1;
         var Greetings;
         var Basics2;

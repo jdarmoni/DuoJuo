@@ -46,7 +46,7 @@ class Register extends React.Component {
         }
     }
     register(event){
-        // what if i created a blank languageData objct first
+
         let language = event.currentTarget.children[0].children[1].innerText;
         let language_ac; 
         let user = this.props.currentUser
@@ -64,7 +64,7 @@ class Register extends React.Component {
 
         user["learning_language_string"] = language
         user["learning_language"] = language_ac;
-        // create a new language object, pass language  down through register container
+
         newLang['streak'] = 0;
         newLang['language_string'] = language;
         newLang['points'] = 0;
@@ -78,7 +78,6 @@ class Register extends React.Component {
         let newLangData = {}
         newLangData = newLang
         
-        // delete newLangData['streak'];
         newLangData['level_percent'] = 0;
         newLangData['max_level'] = false;
         newLangData['language_strength'] = 0;
@@ -86,12 +85,10 @@ class Register extends React.Component {
         newLangData['first_time'] = false;
         
         this.props.createLanguageData(newLangData).then((payload)=>{
-            // IF LANGUAGE === FRENCH
             let Basics1;
             let Greetings;
             let Basics2;
             if (language==="French") {
-
                 Basics1 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
                 Greetings = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
                 Basics2 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false }
@@ -103,8 +100,7 @@ class Register extends React.Component {
                 Basics1 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
                 Greetings = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
                 Basics2 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
-            }
-            else if (language === "German") {
+            } else if (language === "German") {
                 Basics1 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false }
                 Greetings = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false }
                 Basics2 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false }
@@ -112,11 +108,7 @@ class Register extends React.Component {
             this.props.createSkill(Basics1)
             this.props.createSkill(Greetings)
             this.props.createSkill(Basics2)
-            
         })
-        
-        
-            
         
         this.props.updateUser(user)
         this.loggedIn()
