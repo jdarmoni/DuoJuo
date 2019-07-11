@@ -85,38 +85,38 @@ class Register extends React.Component {
         newLangData['first_time'] = false;
         
         this.props.createLanguageData(newLangData).then((payload)=>{
-            let Basics1;
-            let Greetings;
-            let Basics2;
+            let Skill1;
+            let Skill2;
+            let Skill3;
             if (language==="French") {
-                Basics1 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
+                Skill1 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
 
-                Greetings = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "grtngs" }
+                Skill2 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "fr", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "grtngs" }
 
-                Basics2 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "fr",skill_level: 0, num_levels: 4, disabled: false, locked: false,
+                Skill3 = { "language_string": "French", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "fr",skill_level: 0, num_levels: 4, disabled: false, locked: false,
                 short: "bscs2" }
             } else if (language==="Japanese") {
-                Basics1 = { "language_string": "Japanese", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "jp", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
+                Skill1 = { "language_string": "Japanese", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "jp", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
                 
-                Greetings = { "language_string": "Japanese", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "jp", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
+                Skill2 = { "language_string": "Japanese", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "jp", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
                 
-                Basics2 = { "language_string": "Japanese", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "jp", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
+                Skill3 = { "language_string": "Japanese", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "jp", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
             } else if (language==="Spanish"){
-                Basics1 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
+                Skill1 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
 
-                Greetings = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "phrases" }
+                Skill2 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "phrases" }
                 
-                Basics2 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs2" }
+                Skill3 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs2" }
             } else if (language === "German") {
-                Basics1 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
+                Skill1 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
                 
-                Greetings = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
+                Skill2 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
                 
-                Basics2 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs2" }
+                Skill3 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs2" }
             }   
-            this.props.createSkill(Basics1)
-            this.props.createSkill(Greetings)
-            this.props.createSkill(Basics2)
+            this.props.createSkill(Skill1)
+            this.props.createSkill(Skill2)
+            this.props.createSkill(Skill3)
         })
         
         this.props.updateUser(user)

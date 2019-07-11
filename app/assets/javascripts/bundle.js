@@ -3579,12 +3579,12 @@ function (_React$Component) {
       newLangData['fluency_score'] = 0;
       newLangData['first_time'] = false;
       this.props.createLanguageData(newLangData).then(function (payload) {
-        var Basics1;
-        var Greetings;
-        var Basics2;
+        var Skill1;
+        var Skill2;
+        var Skill3;
 
         if (language === "French") {
-          Basics1 = {
+          Skill1 = {
             "language_string": "French",
             language_data_id: payload.language_data.id,
             url_title: "Basics-1",
@@ -3595,7 +3595,7 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Greetings = {
+          Skill2 = {
             "language_string": "French",
             language_data_id: payload.language_data.id,
             url_title: "Greetings",
@@ -3606,7 +3606,7 @@ function (_React$Component) {
             locked: false,
             "short": "grtngs"
           };
-          Basics2 = {
+          Skill3 = {
             "language_string": "French",
             language_data_id: payload.language_data.id,
             url_title: "Basics-2",
@@ -3618,7 +3618,7 @@ function (_React$Component) {
             "short": "bscs2"
           };
         } else if (language === "Japanese") {
-          Basics1 = {
+          Skill1 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
             url_title: "Basics-1",
@@ -3629,7 +3629,7 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Greetings = {
+          Skill2 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
             url_title: "Greetings",
@@ -3640,7 +3640,7 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Basics2 = {
+          Skill3 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
             url_title: "Basics-2",
@@ -3652,7 +3652,7 @@ function (_React$Component) {
             "short": "bscs1"
           };
         } else if (language === "Spanish") {
-          Basics1 = {
+          Skill1 = {
             "language_string": "Spanish",
             language_data_id: payload.language_data.id,
             url_title: "Basics-1",
@@ -3663,7 +3663,7 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Greetings = {
+          Skill2 = {
             "language_string": "Spanish",
             language_data_id: payload.language_data.id,
             url_title: "Greetings",
@@ -3674,7 +3674,7 @@ function (_React$Component) {
             locked: false,
             "short": "phrases"
           };
-          Basics2 = {
+          Skill3 = {
             "language_string": "Spanish",
             language_data_id: payload.language_data.id,
             url_title: "Basics-2",
@@ -3686,7 +3686,7 @@ function (_React$Component) {
             "short": "bscs2"
           };
         } else if (language === "German") {
-          Basics1 = {
+          Skill1 = {
             "language_string": "German",
             language_data_id: payload.language_data.id,
             url_title: "Basics-1",
@@ -3697,7 +3697,7 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Greetings = {
+          Skill2 = {
             "language_string": "German",
             language_data_id: payload.language_data.id,
             url_title: "Greetings",
@@ -3708,7 +3708,7 @@ function (_React$Component) {
             locked: false,
             "short": "bscs1"
           };
-          Basics2 = {
+          Skill3 = {
             "language_string": "German",
             language_data_id: payload.language_data.id,
             url_title: "Basics-2",
@@ -3721,11 +3721,11 @@ function (_React$Component) {
           };
         }
 
-        _this2.props.createSkill(Basics1);
+        _this2.props.createSkill(Skill1);
 
-        _this2.props.createSkill(Greetings);
+        _this2.props.createSkill(Skill2);
 
-        _this2.props.createSkill(Basics2);
+        _this2.props.createSkill(Skill3);
       });
       this.props.updateUser(user);
       this.loggedIn();
@@ -4747,13 +4747,43 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   var user = state.entities.users[state.session.id];
+  var language = user.learning_language_string;
   var skills = user.language_data[user.learning_language].skills;
   var currentSkill;
-  skills.forEach(function (skill) {
-    if (skill.url_title === "Basics-1") {
-      currentSkill = skill;
-    }
-  });
+
+  if (language === "French") {
+    debugger;
+    skills.forEach(function (skill) {
+      if (skill.url_title === "Basics-1") {
+        currentSkill = skill;
+      }
+    });
+  } else if (language === "Spanish") {
+    skills.forEach(function (skill) {
+      if (skill.url_title === "Basics-1") {
+        currentSkill = skill;
+      }
+    });
+  } else if (language === "German") {
+    skills.forEach(function (skill) {
+      if (skill.url_title === "Basics-1") {
+        currentSkill = skill;
+      }
+    });
+  } else if (language === "Japanese") {
+    skills.forEach(function (skill) {
+      if (skill.url_title === "Basics-1") {
+        currentSkill = skill;
+      }
+    });
+  }
+
+  debugger; // skills.forEach(skill => {
+  //     if(skill.url_title === "Basics-1") {
+  //         currentSkill = skill
+  //     }
+  // });
+
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
