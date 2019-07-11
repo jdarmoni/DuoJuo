@@ -2255,7 +2255,7 @@ var grandLessonsObj = {
       sentence: "私はインサイダー取引で非難されています",
       correct: ["I have been accused of insider trading"]
     })],
-    "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Hiragana-3": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "ポケットモンスター",
       correct: ["Pokemon"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
