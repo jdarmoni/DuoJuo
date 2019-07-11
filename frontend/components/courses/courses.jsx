@@ -116,7 +116,15 @@ class Courses extends React.Component {
                 Basics1 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
                 Greetings = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
                 Basics2 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
-            }
+            } else if (language==="Spanish"){
+                Basics1 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Greetings = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Basics2 = { "language_string": "Spanish", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "es", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+            } else if (language === "German") {
+                Basics1 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Greetings = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Greetings", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+                Basics2 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false }
+            }  
 
             this.props.createSkill(Basics1)
             this.props.createSkill(Greetings)
