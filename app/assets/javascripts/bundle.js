@@ -555,7 +555,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Greetings = {
             "language_string": "French",
@@ -565,7 +566,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "grtngs"
           };
           Basics2 = {
             "language_string": "French",
@@ -575,7 +577,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs2"
           };
         } else if (language === "Japanese") {
           Basics1 = {
@@ -586,7 +589,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Greetings = {
             "language_string": "Japanese",
@@ -596,7 +600,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Basics2 = {
             "language_string": "Japanese",
@@ -606,7 +611,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
         } else if (language === "Spanish") {
           Basics1 = {
@@ -617,7 +623,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Greetings = {
             "language_string": "Spanish",
@@ -627,7 +634,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "phrases"
           };
           Basics2 = {
             "language_string": "Spanish",
@@ -637,7 +645,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs2"
           };
         } else if (language === "German") {
           Basics1 = {
@@ -648,7 +657,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Greetings = {
             "language_string": "German",
@@ -658,7 +668,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Basics2 = {
             "language_string": "German",
@@ -668,7 +679,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs2"
           };
         }
 
@@ -3580,7 +3592,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Greetings = {
             "language_string": "French",
@@ -3590,7 +3603,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "grtngs"
           };
           Basics2 = {
             "language_string": "French",
@@ -3600,7 +3614,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs2"
           };
         } else if (language === "Japanese") {
           Basics1 = {
@@ -3611,7 +3626,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Greetings = {
             "language_string": "Japanese",
@@ -3621,7 +3637,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Basics2 = {
             "language_string": "Japanese",
@@ -3631,7 +3648,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
         } else if (language === "Spanish") {
           Basics1 = {
@@ -3642,7 +3660,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Greetings = {
             "language_string": "Spanish",
@@ -3652,7 +3671,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "phrases"
           };
           Basics2 = {
             "language_string": "Spanish",
@@ -3662,7 +3682,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs2"
           };
         } else if (language === "German") {
           Basics1 = {
@@ -3673,7 +3694,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Greetings = {
             "language_string": "German",
@@ -3683,7 +3705,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs1"
           };
           Basics2 = {
             "language_string": "German",
@@ -3693,7 +3716,8 @@ function (_React$Component) {
             skill_level: 0,
             num_levels: 4,
             disabled: false,
-            locked: false
+            locked: false,
+            "short": "bscs2"
           };
         }
 
@@ -4683,7 +4707,7 @@ function (_React$Component) {
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "course-image-span-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "course-image-span bscs1"
+        className: "course-image-span ".concat(this.props.skill["short"])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "course-crown-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -4935,7 +4959,7 @@ function (_React$Component) {
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "course-image-span-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "course-image-span bscs2"
+        className: "course-image-span ".concat(this.props.skill["short"])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "course-crown-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -5068,6 +5092,7 @@ function (_React$Component) {
     value: function render() {
       var _React$createElement;
 
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "lesson-anchor-box",
         id: "grtngs-a",
@@ -5187,7 +5212,7 @@ function (_React$Component) {
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "course-image-span-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "course-image-span grtngs"
+        className: "course-image-span ".concat(this.props.skill["short"])
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "course-crown-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {

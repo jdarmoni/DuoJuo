@@ -46,7 +46,7 @@ class Basics22 extends React.Component {
                             </div>
                         </div>
                         <span className="course-image-span-container">
-                            <span className="course-image-span bscs2"></span>
+                            <span className={`course-image-span ${this.props.skill.short}`}></span>
                             <div className="course-crown-div">
                                 <img alt="crown" className="course-crown-image" src="//d35aaqx5ub95lt.cloudfront.net/images/juicy-crown-empty.svg" />
                             </div>
