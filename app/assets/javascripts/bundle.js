@@ -591,7 +591,7 @@ function (_React$Component) {
           Greetings = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Greetings",
+            url_title: "Intro",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -603,37 +603,6 @@ function (_React$Component) {
             language_data_id: payload.language_data.id,
             url_title: "Basics-2",
             language_mini: "jp",
-            skill_level: 0,
-            num_levels: 4,
-            disabled: false,
-            locked: false
-          };
-        } else if (language === "Spanish") {
-          Basics1 = {
-            "language_string": "Spanish",
-            language_data_id: payload.language_data.id,
-            url_title: "Basics-1",
-            language_mini: "es",
-            skill_level: 0,
-            num_levels: 4,
-            disabled: false,
-            locked: false
-          };
-          Greetings = {
-            "language_string": "Spanish",
-            language_data_id: payload.language_data.id,
-            url_title: "Greetings",
-            language_mini: "es",
-            skill_level: 0,
-            num_levels: 4,
-            disabled: false,
-            locked: false
-          };
-          Basics2 = {
-            "language_string": "Spanish",
-            language_data_id: payload.language_data.id,
-            url_title: "Basics-2",
-            language_mini: "es",
             skill_level: 0,
             num_levels: 4,
             disabled: false,
@@ -2248,7 +2217,6 @@ var grandLessonsObj = {
     })]
   },
   "jp": {
-    // 
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "こんにちは、さようなら",
       correct: ["hello, goodbye"]
@@ -3652,7 +3620,7 @@ function (_React$Component) {
           Greetings = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Greetings",
+            url_title: "Intro",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
