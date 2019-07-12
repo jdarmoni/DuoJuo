@@ -961,7 +961,7 @@ function (_React$Component) {
           currentUser: this.props.currentUser
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_2__WEBPACK_IMPORTED_MODULE_2__["default"], {
           currentUser: this.props.currentUser
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row_3__WEBPACK_IMPORTED_MODULE_3__["default"], null)))))
+        })))))
       );
     }
   }]);
