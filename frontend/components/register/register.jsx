@@ -110,7 +110,7 @@ class Register extends React.Component {
             } else if (language === "German") {
                 Skill1 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-1", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
                 
-                Skill2 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Phrases", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs1" }
+                Skill2 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Phrases", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "phrases" }
                 
                 Skill3 = { "language_string": "German", language_data_id: payload.language_data.id, url_title: "Basics-2", language_mini: "ge", skill_level: 0, num_levels: 4, disabled: false, locked: false, short: "bscs2" }
             }   

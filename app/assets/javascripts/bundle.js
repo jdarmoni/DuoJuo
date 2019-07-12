@@ -669,7 +669,7 @@ function (_React$Component) {
             num_levels: 4,
             disabled: false,
             locked: false,
-            "short": "bscs1"
+            "short": "phrases"
           };
           Skill3 = {
             "language_string": "German",
@@ -3706,7 +3706,7 @@ function (_React$Component) {
             num_levels: 4,
             disabled: false,
             locked: false,
-            "short": "bscs1"
+            "short": "phrases"
           };
           Skill3 = {
             "language_string": "German",
