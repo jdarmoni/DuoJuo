@@ -6,11 +6,22 @@ class ConstructSentence extends React.Component {
     }
     
     render(){
+
+        // for each this.props.words
+        // document.getElementsByClassName('c-s-t-h-word-box')[0].append(
+        // <div className="c-s-word-box">
+        //      <button className="c-s-word-button" id={`word-button-${this.props.number}`} onClick={this.toggle.bind(this)}>
+        //          {this.props.word}
+        //      </button>
+        //     </div >
+        // )
+
         let words = this.props.words.map((word) => {
             
             return <Word word={word} number={1} toggled={false}/>
+            // 
         });
-        
+
         return (
             <>
                 <div className="challenge challenge-translate">

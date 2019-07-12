@@ -2206,12 +2206,20 @@ function (_React$Component) {
   _createClass(ConstructSentence, [{
     key: "render",
     value: function render() {
+      // for each this.props.words
+      // document.getElementsByClassName('c-s-t-h-word-box')[0].append(
+      // <div className="c-s-word-box">
+      //      <button className="c-s-word-button" id={`word-button-${this.props.number}`} onClick={this.toggle.bind(this)}>
+      //          {this.props.word}
+      //      </button>
+      //     </div >
+      // )
       var words = this.props.words.map(function (word) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_word__WEBPACK_IMPORTED_MODULE_1__["default"], {
           word: word,
           number: 1,
           toggled: false
-        });
+        }); // 
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "challenge challenge-translate"
@@ -2403,9 +2411,7 @@ function (_React$Component) {
     key: "toggle",
     value: function toggle() {
       if (this.props.toggled) {
-        debugger;
         this.props.oldButton.disabled = false;
-        debugger;
         react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.unmountComponentAtNode(react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.findDOMNode(this).parentNode); // document.activeElement.parentElement.remove()
       } else {
         var wordBox = document.getElementsByClassName('c-s-t-h-word-box')[0];
@@ -2416,9 +2422,12 @@ function (_React$Component) {
           toggled: true,
           oldButton: oldButton
         });
-        debugger;
         document.activeElement.disabled = true;
-        return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(newWord, wordBox); // put it on the Dom somehow
+        var newDiv = document.createElement("div"); // newDiv.id = Math.random
+
+        wordBox.appendChild(newDiv); // to not get overwritten append a div into wordbox with an ID, then reactDOM.render(newWord, newDiv)
+
+        return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(newWord, newDiv); // put it on the Dom somehow
       }
     }
   }, {

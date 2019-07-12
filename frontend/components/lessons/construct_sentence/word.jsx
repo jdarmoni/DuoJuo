@@ -8,9 +8,9 @@ class Word extends React.Component {
     toggle(){
         
         if (this.props.toggled){
-            debugger
+            
             this.props.oldButton.disabled = false
-            debugger
+            
             ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
 
             // document.activeElement.parentElement.remove()
@@ -19,13 +19,18 @@ class Word extends React.Component {
             let wordBox = document.getElementsByClassName('c-s-t-h-word-box')[0]
              let oldButton = document.activeElement
              let newWord = <Word word={this.props.word} id={`word-button-${this.props.number}`} toggled={true} oldButton ={oldButton}/>
-             debugger
+             
             document.activeElement.disabled = true
+            
+            let newDiv = document.createElement("div")
+            // newDiv.id = Math.random
+            wordBox.appendChild(newDiv)
+            // to not get overwritten append a div into wordbox with an ID, then reactDOM.render(newWord, newDiv)
             return (
 
                 ReactDOM.render(
                     newWord,
-                    wordBox
+                    newDiv
                 )
             )
             // put it on the Dom somehow
