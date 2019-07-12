@@ -11,9 +11,11 @@ class Word extends React.Component {
             
             this.props.oldButton.disabled = false
             
+            // keep track of the div you want to destroy, so that after we unmount, we can still clean up the mess
+            let destroyDiv= document.activeElement.parentElement.parentElement
+                
             ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
-
-            // document.activeElement.parentElement.remove()
+            destroyDiv.remove()
         }
          else {
             let wordBox = document.getElementsByClassName('c-s-t-h-word-box')[0]
@@ -22,10 +24,9 @@ class Word extends React.Component {
              
             document.activeElement.disabled = true
             
+            // Brute Force: to not get overwritten by ReactDOM append a div into wordbox with an ID, then reactDOM.render(newWord, newDiv)
             let newDiv = document.createElement("div")
-            // newDiv.id = Math.random
             wordBox.appendChild(newDiv)
-            // to not get overwritten append a div into wordbox with an ID, then reactDOM.render(newWord, newDiv)
             return (
 
                 ReactDOM.render(

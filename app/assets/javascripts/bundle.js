@@ -2411,8 +2411,11 @@ function (_React$Component) {
     key: "toggle",
     value: function toggle() {
       if (this.props.toggled) {
-        this.props.oldButton.disabled = false;
-        react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.unmountComponentAtNode(react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.findDOMNode(this).parentNode); // document.activeElement.parentElement.remove()
+        this.props.oldButton.disabled = false; // keep track of the div you want to destroy, so that after we unmount, we can still clean up the mess
+
+        var destroyDiv = document.activeElement.parentElement.parentElement;
+        react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.unmountComponentAtNode(react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.findDOMNode(this).parentNode);
+        destroyDiv.remove();
       } else {
         var wordBox = document.getElementsByClassName('c-s-t-h-word-box')[0];
         var oldButton = document.activeElement;
@@ -2422,11 +2425,10 @@ function (_React$Component) {
           toggled: true,
           oldButton: oldButton
         });
-        document.activeElement.disabled = true;
-        var newDiv = document.createElement("div"); // newDiv.id = Math.random
+        document.activeElement.disabled = true; // Brute Force: to not get overwritten by ReactDOM append a div into wordbox with an ID, then reactDOM.render(newWord, newDiv)
 
-        wordBox.appendChild(newDiv); // to not get overwritten append a div into wordbox with an ID, then reactDOM.render(newWord, newDiv)
-
+        var newDiv = document.createElement("div");
+        wordBox.appendChild(newDiv);
         return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(newWord, newDiv); // put it on the Dom somehow
       }
     }
