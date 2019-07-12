@@ -2325,7 +2325,7 @@ var grandLessonsObj = {
       correct: ["tell me why i dream"]
     })],
     "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "Mi nombre es rafael nadal",
+      sentence: "Mi nombre es Rafael Nadal",
       correct: ["My name is Rafael Nadal"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Soy apasionado",
