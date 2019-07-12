@@ -1,0 +1,92 @@
+.construct-sentence-parent-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    height: 87px;
+    margin-bottom: 24px;
+    text-align: left;
+    width: 100%;
+}
+.construct-sentence-child-container {
+    display: block;
+}
+
+.construct-sentence-content-container {
+    grid-row-gap: 32px;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-rows: 1fr;
+}
+.construct-sentence-top-half {
+    position: relative;
+}
+.c-s-t-h-section {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+[dir=ltr] {
+    text-align: left;
+    text-align: initial;
+}
+.c-s-t-h-sub-section {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+.c-s-t-h-mini-divs {
+    height: 60px;
+    border-bottom: 2px solid #e5e5e5;
+    width: 100%;
+}
+.c-s-t-h-word-box {
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.construct-sentence-bottom-half {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.c-s-word-box {
+        line-height: 60px;
+    margin-left: 5px;
+    margin-right: 5px;
+        display: inline-block;
+}
+
+.c-s-word-button /* .iNLw3:after??  */{
+        font-size: 19px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 2px 2px 4px;
+        background: none;
+    border-color: transparent;
+    color: #4b4b4b;
+    cursor: pointer;
+    font-weight: 500;
+    transform: translateZ(0);
+    transition: filter .2s;
+}
+
+@media (min-width: 700px) {
+    .construct-sentence-parent-container {
+        height: 170px;
+    }
+}

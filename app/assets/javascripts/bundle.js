@@ -2159,6 +2159,107 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./frontend/components/lessons/construct_sentence/construct_sentence.jsx":
+/*!*******************************************************************************!*\
+  !*** ./frontend/components/lessons/construct_sentence/construct_sentence.jsx ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var ConstructSentence =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ConstructSentence, _React$Component);
+
+  function ConstructSentence(props) {
+    _classCallCheck(this, ConstructSentence);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ConstructSentence).call(this, props));
+  }
+
+  _createClass(ConstructSentence, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {// probably loop through each prop-passed word, creating a ul of (function component?) HTML words, store those in state - render those state ULs in c-s-word-box
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "challenge challenge-translate"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "challenge-header"
+      }, "Write this in English"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "challenge-subbox"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "challenge-translate-prompt"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "challenge-sentence"
+      }, this.props.sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "construct-sentence-parent-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "construct-sentence-child-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "construct-sentence-content-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "construct-sentence-top-half",
+        dir: "ltr"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-t-h-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-t-h-sub-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-t-h-mini-divs"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-t-h-mini-divs"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-t-h-mini-divs"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-t-h-mini-divs"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-t-h-mini-divs"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-t-h-word-box"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "construct-sentence-bottom-half"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-word-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "c-s-word-button"
+      }, "word")))))))));
+    }
+  }]);
+
+  return ConstructSentence;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ConstructSentence);
+
+/***/ }),
+
 /***/ "./frontend/components/lessons/grand_lessons_obj/grand_lessons_obj.jsx":
 /*!*****************************************************************************!*\
   !*** ./frontend/components/lessons/grand_lessons_obj/grand_lessons_obj.jsx ***!
@@ -2173,7 +2274,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../translate_sentence/translate_sentence_container */ "./frontend/components/lessons/translate_sentence/translate_sentence_container.js");
 /* harmony import */ var _mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mark_meaning/mark_meaning_container */ "./frontend/components/lessons/mark_meaning/mark_meaning_container.js");
-/* harmony import */ var _lessons_lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lessons/lesson_complete/completed_container */ "./frontend/components/lessons/lesson_complete/completed_container.js");
+/* harmony import */ var _construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../construct_sentence/construct_sentence */ "./frontend/components/lessons/construct_sentence/construct_sentence.jsx");
+/* harmony import */ var _lessons_lesson_complete_completed_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lessons/lesson_complete/completed_container */ "./frontend/components/lessons/lesson_complete/completed_container.js");
+
 
 
 
@@ -2184,10 +2287,10 @@ __webpack_require__.r(__webpack_exports__);
 // }
 
 var grandLessonsObj = {
+  //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct = { ["the dog is scary"]} />
   "fr": {
-    "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "Le chien est effrayant",
-      correct: ["the dog is scary"]
+    "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      sentence: "the egg is full of gold"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Je suis un fil, pas un fille",
       correct: ["I am a boy, not a girl"]

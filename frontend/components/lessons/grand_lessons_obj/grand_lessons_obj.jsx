@@ -1,6 +1,7 @@
 import React from 'react';
 import TranslateSentenceContainer from '../translate_sentence/translate_sentence_container'
 import MarkMeaningContainer from '../mark_meaning/mark_meaning_container'
+import ConstructSentence from '../construct_sentence/construct_sentence'
 import CompletedContainer from '../../lessons/lesson_complete/completed_container'
     // // idea here is to use the words array; for practice, can just .sample a bunch of words you've completed.
     // const wordObj = {
@@ -8,8 +9,9 @@ import CompletedContainer from '../../lessons/lesson_complete/completed_containe
     //     "oeufs": "Bonjour, je cache des oeufs"
     // }
  export const grandLessonsObj = {
+    //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct = { ["the dog is scary"]} />
         "fr": {
-            "Basics-1": [<TranslateSentenceContainer sentence={"Le chien est effrayant"} correct={["the dog is scary"]}/>, <TranslateSentenceContainer sentence={"Je suis un fil, pas un fille"} correct={["I am a boy, not a girl"]} />, <TranslateSentenceContainer sentence={"La fille, la femme"} correct={["the girl, the woman"]}/>, <MarkMeaningContainer sentence={["A French woman"]} correct={"Un femme Francaise"} phrase1={"Un femme Francaise"} phrase2={"Il est un pamplemousse"} phrase3={"Je suis le jeunne fille"}/>],
+         "Basics-1": [<ConstructSentence sentence={"the egg is full of gold"}/> , <TranslateSentenceContainer sentence={"Je suis un fil, pas un fille"} correct={["I am a boy, not a girl"]} />, <TranslateSentenceContainer sentence={"La fille, la femme"} correct={["the girl, the woman"]}/>, <MarkMeaningContainer sentence={["A French woman"]} correct={"Un femme Francaise"} phrase1={"Un femme Francaise"} phrase2={"Il est un pamplemousse"} phrase3={"Je suis le jeunne fille"}/>],
             "Greetings": [<TranslateSentenceContainer sentence={"Bonjour, je cache des oeufs"} correct={["Hello, I am hiding eggs"]} />, <TranslateSentenceContainer sentence={"Capitaine Haddock boit à nouveau"} correct={["Captain Haddock is drinking again"]} />, <TranslateSentenceContainer sentence={"Tu va me dire ou est le lait maitenant"} correct={["You will tell me where the milk is now"]} />, <TranslateSentenceContainer sentence={"Juliette Binoche"} correct={["Juliette Binoche"]} />],
             "Basics-2": [<TranslateSentenceContainer sentence={"Petite cerises"} correct={["little cherries"]} />, <TranslateSentenceContainer sentence={"Je suis seule a Dunkin Donuts"} correct={["I am alone at Dunkin Donuts"]} />, <TranslateSentenceContainer sentence={"D'ou etes-vous?"} correct={["Where are you from?"]} />, <TranslateSentenceContainer sentence={"Je suis un célébrité"} correct={["I am a celebrity"]} />]
         },
