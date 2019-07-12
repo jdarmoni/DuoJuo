@@ -2405,9 +2405,8 @@ function (_React$Component) {
       if (this.props.toggled) {
         debugger;
         this.props.oldButton.disabled = false;
-        debugger; // ReactDOM.unmountComponentAtNode(document.activeElement)
-
-        document.activeElement.parentElement.remove();
+        debugger;
+        react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.unmountComponentAtNode(react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.findDOMNode(this).parentNode); // document.activeElement.parentElement.remove()
       } else {
         var wordBox = document.getElementsByClassName('c-s-t-h-word-box')[0];
         var oldButton = document.activeElement;

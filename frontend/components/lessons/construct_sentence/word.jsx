@@ -11,9 +11,9 @@ class Word extends React.Component {
             debugger
             this.props.oldButton.disabled = false
             debugger
-            // ReactDOM.unmountComponentAtNode(document.activeElement)
+            ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
 
-            document.activeElement.parentElement.remove()
+            // document.activeElement.parentElement.remove()
         }
          else {
             let wordBox = document.getElementsByClassName('c-s-t-h-word-box')[0]
@@ -22,6 +22,7 @@ class Word extends React.Component {
              debugger
             document.activeElement.disabled = true
             return (
+
                 ReactDOM.render(
                     newWord,
                     wordBox
