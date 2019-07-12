@@ -2170,6 +2170,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _word__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./word */ "./frontend/components/lessons/construct_sentence/word.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2190,6 +2191,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var ConstructSentence =
 /*#__PURE__*/
 function (_React$Component) {
@@ -2202,12 +2204,15 @@ function (_React$Component) {
   }
 
   _createClass(ConstructSentence, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {// probably loop through each prop-passed word, creating a ul of (function component?) HTML words, store those in state - render those state ULs in c-s-word-box
-    }
-  }, {
     key: "render",
     value: function render() {
+      var words = this.props.words.map(function (word) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_word__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          word: word,
+          number: 1,
+          toggled: false
+        });
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "challenge challenge-translate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -2338,11 +2343,7 @@ function (_React$Component) {
         className: "c-s-t-h-word-box"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "construct-sentence-bottom-half"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "c-s-word-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "c-s-word-button"
-      }, "word")))))))));
+      }, words)))))));
     }
   }]);
 
@@ -2350,6 +2351,94 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ConstructSentence);
+
+/***/ }),
+
+/***/ "./frontend/components/lessons/construct_sentence/word.jsx":
+/*!*****************************************************************!*\
+  !*** ./frontend/components/lessons/construct_sentence/word.jsx ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Word =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Word, _React$Component);
+
+  function Word(props) {
+    _classCallCheck(this, Word);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Word).call(this, props));
+  }
+
+  _createClass(Word, [{
+    key: "toggle",
+    value: function toggle() {
+      if (this.props.toggled) {
+        debugger;
+        this.props.oldButton.disabled = false;
+        debugger; // ReactDOM.unmountComponentAtNode(document.activeElement)
+
+        document.activeElement.parentElement.remove();
+      } else {
+        var wordBox = document.getElementsByClassName('c-s-t-h-word-box')[0];
+        var oldButton = document.activeElement;
+        var newWord = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Word, {
+          word: this.props.word,
+          id: "word-button-".concat(this.props.number),
+          toggled: true,
+          oldButton: oldButton
+        });
+        debugger;
+        document.activeElement.disabled = true;
+        return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(newWord, wordBox); // put it on the Dom somehow
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "c-s-word-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "c-s-word-button",
+        id: "word-button-".concat(this.props.number),
+        onClick: this.toggle.bind(this)
+      }, this.props.word));
+    }
+  }]);
+
+  return Word;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Word);
 
 /***/ }),
 
@@ -2383,7 +2472,8 @@ var grandLessonsObj = {
   //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct = { ["the dog is scary"]} />
   "fr": {
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      sentence: "the egg is full of gold"
+      sentence: "the egg is full of gold",
+      words: ["eggs", "milk", "I", "like", "Rekha"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Je suis un fil, pas un fille",
       correct: ["I am a boy, not a girl"]

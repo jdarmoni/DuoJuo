@@ -85,7 +85,14 @@
     transform: translateZ(0);
     transition: filter .2s;
 }
-
+.c-s-word-button:disabled {
+        background-clip: border-box;
+    background-color: #e5e5e5!important;
+    border-bottom-width: 2px;
+    border-color: transparent!important;
+    bottom: -2px;
+    color: transparent;
+}
 @media (min-width: 700px) {
     .construct-sentence-parent-container {
         height: 170px;

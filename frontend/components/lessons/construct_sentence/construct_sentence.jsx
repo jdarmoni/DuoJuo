@@ -1,13 +1,16 @@
 import React from 'react';
-
+import Word from './word'
 class ConstructSentence extends React.Component {
     constructor(props) {
         super(props)
     }
-    componentDidMount(){
-        // probably loop through each prop-passed word, creating a ul of (function component?) HTML words, store those in state - render those state ULs in c-s-word-box
-    }
+    
     render(){
+        let words = this.props.words.map((word) => {
+            
+            return <Word word={word} number={1} toggled={false}/>
+        });
+        
         return (
             <>
                 <div className="challenge challenge-translate">
@@ -44,11 +47,12 @@ class ConstructSentence extends React.Component {
                                     </div>
 
                                     <div className="construct-sentence-bottom-half">
-                                        <div className="c-s-word-box">
+                                        {/* <div className="c-s-word-box">
                                             <button className="c-s-word-button">
                                                 word
                                             </button>
-                                        </div>
+                                        </div> */}
+                                        {words}
                                     </div>
                                 </div>
                             </div>
