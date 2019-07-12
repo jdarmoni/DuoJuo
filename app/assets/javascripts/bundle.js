@@ -3101,7 +3101,8 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MarkMeaning).call(this, props));
     _this.state = {
-      answer: ""
+      answer: "",
+      target: null
     };
     return _this;
   }
@@ -3120,7 +3121,8 @@ function (_React$Component) {
     key: "selected",
     value: function selected(e) {
       this.setState({
-        answer: e.target.valueOf().id
+        answer: e.target.valueOf().id,
+        target: e.target
       });
     }
   }, {
@@ -3130,6 +3132,24 @@ function (_React$Component) {
         var correct = this.props.correct;
         var challengeTextArea = document.getElementById('challenge-textarea');
         document.getElementById('skill-check-button').setAttribute('data-guess', correct);
+      }
+
+      if (this.state.target !== null) {
+        var number = this.state.target.id[this.state.target.id.length - 1];
+        var label = document.getElementById("r-l-".concat(number));
+        var numID = document.getElementById("m-m-".concat(number)); // add class to label
+
+        label.classList.add('checked');
+        numID.classList.add('checked'); // remove class from other two labels
+
+        for (var i = 1; i < 4; i++) {
+          if (i !== parseInt(number)) {
+            label = document.getElementById("r-l-".concat(i));
+            numID = document.getElementById("m-m-".concat(i));
+            label.classList.remove('checked');
+            numID.classList.remove('checked');
+          }
+        }
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3151,9 +3171,11 @@ function (_React$Component) {
         className: "m-m-li"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "m-m-label",
-        htmlFor: "radio1"
+        htmlFor: "radio1",
+        id: "r-l-1"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "m-m-number"
+        className: "m-m-number",
+        id: "m-m-1"
       }, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "radios",
@@ -3168,9 +3190,11 @@ function (_React$Component) {
         className: "m-m-li"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "m-m-label",
-        htmlFor: "radio2"
+        htmlFor: "radio2",
+        id: "r-l-2"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "m-m-number"
+        className: "m-m-number",
+        id: "m-m-2"
       }, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "radios",
@@ -3185,9 +3209,11 @@ function (_React$Component) {
         className: "m-m-li"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "m-m-label",
-        htmlFor: "radio3"
+        htmlFor: "radio3",
+        id: "r-l-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "m-m-number"
+        className: "m-m-number",
+        id: "m-m-3"
       }, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "radios",

@@ -4,7 +4,8 @@ class MarkMeaning extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            answer: ""
+            answer: "",
+            target: null
         }
 
     }
@@ -20,7 +21,8 @@ class MarkMeaning extends React.Component {
     selected(e){
         
         this.setState({
-            answer: e.target.valueOf().id
+            answer: e.target.valueOf().id,
+            target: e.target
         })
     }
 
@@ -30,6 +32,28 @@ class MarkMeaning extends React.Component {
             let correct = this.props.correct
             let challengeTextArea = document.getElementById('challenge-textarea')
             document.getElementById('skill-check-button').setAttribute('data-guess', correct)
+        }
+        
+        if (this.state.target !== null) {
+            
+            let number = this.state.target.id[this.state.target.id.length - 1]
+            let label = document.getElementById(`r-l-${number}`);
+            let numID = document.getElementById(`m-m-${number}`)
+            
+            // add class to label
+            label.classList.add('checked');
+            numID.classList.add('checked');
+            // remove class from other two labels
+            for (let i = 1; i < 4; i++) {
+                
+                if (i !== parseInt(number)) {
+                    label = document.getElementById(`r-l-${i}`)
+                    numID = document.getElementById(`m-m-${i}`)
+                    
+                    label.classList.remove('checked')
+                    numID.classList.remove('checked')
+                }
+            }
         }
 
         return (
@@ -46,8 +70,8 @@ class MarkMeaning extends React.Component {
                         <div className="mark-meaning-content" id="m-m-c">
                             <ul className="m-m-ul">
                                 <li className="m-m-li">
-                                    <label className="m-m-label" htmlFor="radio1">
-                                        <div className="m-m-number">1</div>
+                                    <label className="m-m-label" htmlFor="radio1" id="r-l-1">
+                                        <div className="m-m-number" id="m-m-1">1</div>
                                         <input 
                                         type="radio" 
                                         name="radios" 
@@ -61,8 +85,8 @@ class MarkMeaning extends React.Component {
                                 </li>
 
                                 <li className="m-m-li">
-                                    <label className="m-m-label" htmlFor="radio2">
-                                        <div className="m-m-number">2</div>
+                                    <label className="m-m-label" htmlFor="radio2" id="r-l-2">
+                                        <div className="m-m-number" id="m-m-2">2</div>
                                         <input 
                                         type="radio" 
                                         name="radios" 
@@ -76,8 +100,8 @@ class MarkMeaning extends React.Component {
                                 </li>
 
                                 <li className="m-m-li">
-                                    <label className="m-m-label" htmlFor="radio3">
-                                        <div className="m-m-number">3</div>
+                                    <label className="m-m-label" htmlFor="radio3" id="r-l-3">
+                                        <div className="m-m-number" id="m-m-3">3</div>
                                         <input 
                                         type="radio" 
                                         name="radios" 
