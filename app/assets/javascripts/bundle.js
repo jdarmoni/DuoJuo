@@ -2534,18 +2534,24 @@ var grandLessonsObj = {
     })]
   },
   "jp": {
-    "Hiragana-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "こんにちは、さようなら",
-      correct: ["hello, goodbye"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Hiragana-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "私の名前は",
-      correct: ["My name is"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "水",
-      correct: ["water"]
+      correct: ["My name is"],
+      phrase1: "My name is",
+      phrase2: "A girl's name is",
+      phrase3: "Your name is"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "たべる",
       correct: ["To eat"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      sentence: "水",
+      correct: ["water"],
+      phrase1: "Milk",
+      phrase2: "Gatorade",
+      phrase3: "Water"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "こんにちは、さようなら",
+      correct: ["hello, goodbye"]
     })],
     "Hiragana-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "私の名前はマリアです",
@@ -2619,28 +2625,39 @@ var grandLessonsObj = {
     "Intro": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "el cerdo esta durmiendo",
       correct: ["the pig is sleeping"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "Soy el chico que bebe leche",
-      correct: ["I am the boy who drinks milk"]
+      correct: ["I am the boy who drinks milk"],
+      words: ["I", "am", "the", "boy", "who", "drinks", "milk"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "eres un pájaro?",
       correct: ["are you a bird?"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "dime porque sueño",
-      correct: ["tell me why i dream"]
+      correct: ["tell me why I dream"],
+      phrase1: "the pork costs a dime",
+      phrase2: "why do you dream of pork",
+      phrase3: "tell me why I dream"
     })],
-    "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Mi nombre es Rafael Nadal",
-      correct: ["My name is Rafael Nadal"]
+      correct: ["My name is Rafael Nadal"],
+      phrase1: "My name is Novak Djokovic",
+      phrase2: "My name is Roger Federer",
+      phrase3: "My name is Rafael Nadal"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Soy apasionado",
       correct: ["I am passionate"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "Mi mejor amigo se llama Roger",
-      correct: ["My best friend is named Roger"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "I have won Roland Garros 12 times, no?",
-      correct: ["He ganado Roland Garros 12 veces, ¿no?"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      sentence: "My best friend is named Roger",
+      correct: ["Mi mejor amigo se llama Roger"],
+      words: ["llama", "Roger", "mejor", "amigo", "Mi", "se"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      sentence: "He ganado Roland Garros 12 veces, ¿no?",
+      correct: ["I have won Roland Garros 12 times, no?"],
+      phrase1: "I have won Wimbledon 12 times, no?",
+      phrase2: "I have won Roland Garros 12 times, no?",
+      phrase3: "I have lost the Australian Open 4 times, no?"
     })],
     "Travel": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Yo soy de Mallorca",
