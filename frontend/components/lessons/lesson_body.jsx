@@ -64,6 +64,7 @@ class LessonBody extends React.Component {
     handleSubmit(){
         let textArea = document.getElementById('challenge-textarea')
         let markMeaning = document.getElementById('m-m-c')
+        let construct = document.getElementById('construct-component')
         let guess;
         
         if (this.state.completed){
@@ -77,6 +78,9 @@ class LessonBody extends React.Component {
             return
         }
         if (this.state.default) {
+
+            //******* SET GUESS BASED ON TYPE OF LESSON **********
+            
             if (textArea) {
                 guess = document.getElementById('challenge-textarea').value
             } else if (markMeaning) {
@@ -87,7 +91,17 @@ class LessonBody extends React.Component {
                     guess = 'radio2'
                 } else {
                     guess = 'radio3'
-                }
+                } 
+            } else if (construct) {
+                guess = "";
+                
+                let length = document.getElementsByClassName('c-s-t-h-word-box')[0].childElementCount;
+                for (let i = 0; i < length; i++){
+                    guess += document.getElementsByClassName('c-s-t-h-word-box')[0].children[i].children[0].children[0].innerText + " "
+                    
+                } 
+                guess = guess.slice(0, guess.length -1)
+                debugger
             }
             
             if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {

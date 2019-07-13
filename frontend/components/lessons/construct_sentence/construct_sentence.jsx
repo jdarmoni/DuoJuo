@@ -4,22 +4,19 @@ class ConstructSentence extends React.Component {
     constructor(props) {
         super(props)
     }
-    
+    componentDidMount(){
+        let correct = this.props.correct
+        let construct = document.getElementById('construct-component')
+        debugger
+        if (construct) {
+            document.getElementById('skill-check-button').setAttribute('data-guess', correct)
+        }
+    }
+
     render(){
 
-        // for each this.props.words
-        // document.getElementsByClassName('c-s-t-h-word-box')[0].append(
-        // <div className="c-s-word-box">
-        //      <button className="c-s-word-button" id={`word-button-${this.props.number}`} onClick={this.toggle.bind(this)}>
-        //          {this.props.word}
-        //      </button>
-        //     </div >
-        // )
-
-        let words = this.props.words.map((word) => {
-            
+        let words = this.props.words.map((word) => {    
             return <Word word={word} number={1} toggled={false}/>
-            // 
         });
 
         return (
@@ -36,7 +33,7 @@ class ConstructSentence extends React.Component {
                         </div>
 
                         {/* CONSTRUCT SENTENCE START */}
-                        <div className="construct-sentence-parent-container">
+                        <div className="construct-sentence-parent-container" id="construct-component">
                             <div className="construct-sentence-child-container">
                                 <div className="construct-sentence-content-container">
                                     <div className="construct-sentence-top-half" dir="ltr">

@@ -2204,22 +2204,25 @@ function (_React$Component) {
   }
 
   _createClass(ConstructSentence, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var correct = this.props.correct;
+      var construct = document.getElementById('construct-component');
+      debugger;
+
+      if (construct) {
+        document.getElementById('skill-check-button').setAttribute('data-guess', correct);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      // for each this.props.words
-      // document.getElementsByClassName('c-s-t-h-word-box')[0].append(
-      // <div className="c-s-word-box">
-      //      <button className="c-s-word-button" id={`word-button-${this.props.number}`} onClick={this.toggle.bind(this)}>
-      //          {this.props.word}
-      //      </button>
-      //     </div >
-      // )
       var words = this.props.words.map(function (word) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_word__WEBPACK_IMPORTED_MODULE_1__["default"], {
           word: word,
           number: 1,
           toggled: false
-        }); // 
+        });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "challenge challenge-translate"
@@ -2325,7 +2328,8 @@ function (_React$Component) {
       }))))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "challenge-sentence"
       }, this.props.sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "construct-sentence-parent-container"
+        className: "construct-sentence-parent-container",
+        id: "construct-component"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "construct-sentence-child-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2481,15 +2485,16 @@ __webpack_require__.r(__webpack_exports__);
 var grandLessonsObj = {
   //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct = { ["the dog is scary"]} />
   "fr": {
-    "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      sentence: "the egg is full of gold",
-      words: ["eggs", "milk", "I", "like", "Rekha"]
+    "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "La fille, la femme",
+      correct: ["the girl, the woman"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      sentence: "Rekha est bon",
+      words: ["eggs", "milk", "good", "is", "Rekha"],
+      correct: ["Rekha is good"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Je suis un fil, pas un fille",
       correct: ["I am a boy, not a girl"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "La fille, la femme",
-      correct: ["the girl, the woman"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: ["A French woman"],
       correct: "Un femme Francaise",
@@ -2768,6 +2773,7 @@ function (_React$Component) {
     value: function handleSubmit() {
       var textArea = document.getElementById('challenge-textarea');
       var markMeaning = document.getElementById('m-m-c');
+      var construct = document.getElementById('construct-component');
       var guess;
 
       if (this.state.completed) {
@@ -2779,6 +2785,7 @@ function (_React$Component) {
       }
 
       if (this.state["default"]) {
+        //******* SET GUESS BASED ON TYPE OF LESSON **********
         if (textArea) {
           guess = document.getElementById('challenge-textarea').value;
         } else if (markMeaning) {
@@ -2789,6 +2796,16 @@ function (_React$Component) {
           } else {
             guess = 'radio3';
           }
+        } else if (construct) {
+          guess = "";
+          var length = document.getElementsByClassName('c-s-t-h-word-box')[0].childElementCount;
+
+          for (var i = 0; i < length; i++) {
+            guess += document.getElementsByClassName('c-s-t-h-word-box')[0].children[i].children[0].children[0].innerText + " ";
+          }
+
+          guess = guess.slice(0, guess.length - 1);
+          debugger;
         }
 
         if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
@@ -3073,7 +3090,6 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       if (document.getElementsByClassName('skill-header-container')) {
-        debugger;
         var header = document.getElementById('skill-h-c');
 
         if (header && this.props.completed) {
