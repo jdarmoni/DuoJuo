@@ -88,9 +88,9 @@ class LessonBody extends React.Component {
                 if (document.getElementById('radio1').checked === true) {
                     guess = document.getElementById('radio1').value
                 } else if (document.getElementById('radio2').checked === true) {
-                    guess = 'radio2'
+                    guess = document.getElementById('radio2').value
                 } else {
-                    guess = 'radio3'
+                    guess = document.getElementById('radio3').value
                 } 
             } else if (construct) {
                 guess = "";
@@ -101,9 +101,9 @@ class LessonBody extends React.Component {
                     
                 } 
                 guess = guess.slice(0, guess.length -1)
-                debugger
+
             }
-            
+            debugger
             if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
                 this.setState({
                     correct: true,

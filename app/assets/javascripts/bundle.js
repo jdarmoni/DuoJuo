@@ -2502,12 +2502,16 @@ var grandLessonsObj = {
       phrase2: "Il est un pamplemousse",
       phrase3: "Je suis le jeunne fille"
     })],
-    "Greetings": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "Bonjour, je cache des oeufs",
-      correct: ["Hello, I am hiding eggs"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Greetings": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      sentence: "Hello, I am hiding eggs",
+      correct: ["Bonjour je cache des oeufs"],
+      words: ["Bonjour", "je", "cache", "des", "oeufs"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Capitaine Haddock boit à nouveau",
-      correct: ["Captain Haddock is drinking again"]
+      correct: ["Captain Haddock is drinking again"],
+      phrase1: "The haddock is smelly from nature",
+      phrase2: "Captain Haddock is drinking again",
+      phrase3: "The haddock is newly rich"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Tu va me dire ou est le lait maitenant",
       correct: ["You will tell me where the milk is now"]
@@ -2792,9 +2796,9 @@ function (_React$Component) {
           if (document.getElementById('radio1').checked === true) {
             guess = document.getElementById('radio1').value;
           } else if (document.getElementById('radio2').checked === true) {
-            guess = 'radio2';
+            guess = document.getElementById('radio2').value;
           } else {
-            guess = 'radio3';
+            guess = document.getElementById('radio3').value;
           }
         } else if (construct) {
           guess = "";
@@ -2805,8 +2809,9 @@ function (_React$Component) {
           }
 
           guess = guess.slice(0, guess.length - 1);
-          debugger;
         }
+
+        debugger;
 
         if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
           this.setState({
