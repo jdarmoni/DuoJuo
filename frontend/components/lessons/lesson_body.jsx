@@ -38,6 +38,7 @@ class LessonBody extends React.Component {
     componentDidUpdate(){
         if (document.getElementById('skill-check-button')) {
             let correct = document.getElementById('skill-check-button').getAttribute('data-guess');
+            
             if (correct !== this.state.correctAnswer) {
                 this.setState({
                     correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess')
@@ -103,7 +104,7 @@ class LessonBody extends React.Component {
                 guess = guess.slice(0, guess.length -1)
 
             }
-            debugger
+            
             if ( (guess.toLowerCase() === this.state.correctAnswer.toLowerCase() ) || (guess.toLowerCase().slice(0, guess.length - 1) === this.state.correctAnswer.toLowerCase() ) ) {
                 this.setState({
                     correct: true,
