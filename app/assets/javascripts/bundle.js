@@ -2628,7 +2628,7 @@ var grandLessonsObj = {
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "Soy el chico que bebe leche",
       correct: ["I am the boy who drinks milk"],
-      words: ["I", "am", "the", "boy", "who", "drinks", "milk"]
+      words: ["drinks", "am", "I", "the", "boy", "milk", "who"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "eres un pájaro?",
       correct: ["are you a bird?"]
