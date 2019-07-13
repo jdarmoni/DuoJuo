@@ -2433,7 +2433,7 @@ function (_React$Component) {
 
         var newDiv = document.createElement("div");
         wordBox.appendChild(newDiv);
-        return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(newWord, newDiv); // put it on the Dom somehow
+        return react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(newWord, newDiv);
       }
     }
   }, {

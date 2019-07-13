@@ -34,7 +34,6 @@ class Word extends React.Component {
                     newDiv
                 )
             )
-            // put it on the Dom somehow
         }
     }
 
