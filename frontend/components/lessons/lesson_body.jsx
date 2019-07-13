@@ -104,7 +104,7 @@ class LessonBody extends React.Component {
 
             }
             debugger
-            if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
+            if ( (guess.toLowerCase() === this.state.correctAnswer.toLowerCase() ) || (guess.toLowerCase().slice(0, guess.length - 1) === this.state.correctAnswer.toLowerCase() ) ) {
                 this.setState({
                     correct: true,
                     wrong: false,

@@ -2541,8 +2541,8 @@ var grandLessonsObj = {
       phrase2: "A girl's name is",
       phrase3: "Your name is"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "たべる",
-      correct: ["To eat"]
+      sentence: "に",
+      correct: ["two"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "水",
       correct: ["water"],
@@ -2830,7 +2830,7 @@ function (_React$Component) {
 
         debugger;
 
-        if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase()) {
+        if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase() || guess.toLowerCase().slice(0, guess.length - 1) === this.state.correctAnswer.toLowerCase()) {
           this.setState({
             correct: true,
             wrong: false,
