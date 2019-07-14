@@ -82,7 +82,7 @@ class Dashboard extends React.Component {
                             <a href="https://jdarmoni.github.io/DuoProject/" className="dashboard-header-blocks">
                                 <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/shop-inactive2.svg" className="dashboard-header-icon" />
                                 <span className="dashboard-header-span">
-                                    <span className="dashboard-header-text">Juoduo</span>
+                                    <span className="dashboard-header-text">Juolingo</span>
                                 </span>
                             </a>
                             <div className="dashboard-spacer"></div>

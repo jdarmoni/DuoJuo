@@ -1120,7 +1120,7 @@ function (_React$Component) {
         className: "dashboard-header-span"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-text"
-      }, "Juoduo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Juolingo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "",
@@ -2483,7 +2483,10 @@ __webpack_require__.r(__webpack_exports__);
 // }
 
 var grandLessonsObj = {
+  //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct = { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />
   //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct = { ["the dog is scary"]} />
+  //  < MarkMeaningContainer sentence = { "私の名前は"} correct = { ["My name is"]} phrase1 = { "My name is"} phrase2 = { "A girl's name is"} phrase3 = { "Your name is"} />,
+  //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct = { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />
   "fr": {
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "La fille, la femme",
