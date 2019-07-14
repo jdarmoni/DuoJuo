@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_213619) do
+ActiveRecord::Schema.define(version: 2019_07_14_215647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calendars", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "datetime"
+    t.integer "improvement"
+  end
 
   create_table "language_data", force: :cascade do |t|
     t.integer "streak", null: false
@@ -92,8 +98,10 @@ ActiveRecord::Schema.define(version: 2019_06_28_213619) do
     t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "language_data"
     t.integer "language_strength"
     t.integer "site_streak"
+    t.integer "languages"
     t.string "learning_language"
     t.string "learning_language_string"
     t.integer "rupees"
