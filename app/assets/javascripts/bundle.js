@@ -2845,9 +2845,30 @@ function (_React$Component) {
         debugger;
         var skill = this.props.skill;
         skill['skill_level'] = 0;
-        this.props.updateSkill(skill).then(this.props.history.replace('/'));
+        this.props.updateSkill(skill).then(this.props.history.replace('/')); // CREATE CALENDAR
 
-        if (this.props.calendar) {}
+        if (this.props.calendar) {
+          // if there IS a calendar object for today
+          var calendars = this.props.calendar;
+
+          for (var i = 0; i < calendars; i++) {
+            var today = new Date().getDate();
+
+            if (calendars[i].datetime === today) {
+              calendars[i]["improvement"] += 10;
+              this.props.updateCalendars(calendars[i]);
+              break;
+            }
+          }
+        } else {
+          var calendar = {}; // new Date().toLocaleString() if you ever wanna use this nice v
+
+          calendar["improvement"] = 10;
+          calendar["user_id"] = this.props.user.id;
+          calendar["datetime"] = new Date().getDate();
+          debugger;
+          this.props.createCalendars(calendar);
+        }
 
         return;
       }
@@ -2868,8 +2889,8 @@ function (_React$Component) {
           guess = "";
           var length = document.getElementsByClassName('c-s-t-h-word-box')[0].childElementCount;
 
-          for (var i = 0; i < length; i++) {
-            guess += document.getElementsByClassName('c-s-t-h-word-box')[0].children[i].children[0].children[0].innerText + " ";
+          for (var _i = 0; _i < length; _i++) {
+            guess += document.getElementsByClassName('c-s-t-h-word-box')[0].children[_i].children[0].children[0].innerText + " ";
           }
 
           guess = guess.slice(0, guess.length - 1);

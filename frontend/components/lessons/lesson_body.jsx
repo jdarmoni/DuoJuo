@@ -76,9 +76,29 @@ class LessonBody extends React.Component {
             this.props.updateSkill(skill).then(
                 this.props.history.replace('/')
                 )
-            if (this.props.calendar) {
+                // CREATE CALENDAR
                 
-            }
+                if (this.props.calendar) {
+                    // if there IS a calendar object for today
+                    let calendars = this.props.calendar
+                    for (let i = 0; i < calendars; i++) {
+                        let today = new Date().getDate();
+                        if (calendars[i].datetime === today){
+                            calendars[i]["improvement"] += 10;
+                            this.props.updateCalendars(calendars[i])
+                            break
+                        }
+                    }
+                } else {
+                        let calendar = {};
+                        // new Date().toLocaleString() if you ever wanna use this nice v
+                        calendar["improvement"] = 10;
+                        calendar["user_id"] = this.props.user.id
+                        calendar["datetime"] = new Date().getDate()
+                        debugger
+                        this.props.createCalendars(calendar)    
+                    }
+            
             return
         }
         if (this.state.default) {
