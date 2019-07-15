@@ -76,6 +76,9 @@ class LessonBody extends React.Component {
             this.props.updateSkill(skill).then(
                 this.props.history.replace('/')
                 )
+            if (this.props.calendar) {
+                
+            }
             return
         }
         if (this.state.default) {
@@ -277,6 +280,7 @@ class LessonBody extends React.Component {
          }
     }
     render(){
+        debugger
         // set currentLesson to an array so that you can use skip button
         // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
         if (this.state.currentLesson === "") {

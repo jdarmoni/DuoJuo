@@ -13,8 +13,17 @@ export const receiveCalendars = (calendars) => {
 export const createCalendars = (calendars) => (dispatch) => {
 
     return (
-        APIUtil.createCalendars(calendars).then((calendars) => {
+        APIUtil.createCalendar(calendars).then((calendars) => {
+            debugger
+            return dispatch(receiveCalendars(calendars))
+        })
+    )
+}
 
+export const updateCalendars = (calendars) => (dispatch)=> {
+    return (
+        APIUtil.updateCalendar(calendars).then((calendars) => {
+            debugger
             return dispatch(receiveCalendars(calendars))
         })
     )

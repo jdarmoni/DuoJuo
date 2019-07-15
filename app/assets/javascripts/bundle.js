@@ -86,6 +86,47 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/calendar_actions.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/calendar_actions.js ***!
+  \**********************************************/
+/*! exports provided: RECEIVE_CALENDARS, receiveCalendars, createCalendars, updateCalendars */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CALENDARS", function() { return RECEIVE_CALENDARS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCalendars", function() { return receiveCalendars; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCalendars", function() { return createCalendars; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCalendars", function() { return updateCalendars; });
+/* harmony import */ var _util_calendar_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/calendar_api_util */ "./frontend/util/calendar_api_util.js");
+
+var RECEIVE_CALENDARS = "RECEIVE_CALENDARS";
+var receiveCalendars = function receiveCalendars(calendars) {
+  return {
+    type: RECEIVE_CALENDARS,
+    calendars: calendars
+  };
+};
+var createCalendars = function createCalendars(calendars) {
+  return function (dispatch) {
+    return _util_calendar_api_util__WEBPACK_IMPORTED_MODULE_0__["createCalendar"](calendars).then(function (calendars) {
+      debugger;
+      return dispatch(receiveCalendars(calendars));
+    });
+  };
+};
+var updateCalendars = function updateCalendars(calendars) {
+  return function (dispatch) {
+    return _util_calendar_api_util__WEBPACK_IMPORTED_MODULE_0__["updateCalendar"](calendars).then(function (calendars) {
+      debugger;
+      return dispatch(receiveCalendars(calendars));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/language_actions.js":
 /*!**********************************************!*\
   !*** ./frontend/actions/language_actions.js ***!
@@ -2805,6 +2846,9 @@ function (_React$Component) {
         var skill = this.props.skill;
         skill['skill_level'] = 0;
         this.props.updateSkill(skill).then(this.props.history.replace('/'));
+
+        if (this.props.calendar) {}
+
         return;
       }
 
@@ -3012,8 +3056,9 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // set currentLesson to an array so that you can use skip button
+      debugger; // set currentLesson to an array so that you can use skip button
       // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
+
       if (this.state.currentLesson === "") {
         var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
         this.setState({
@@ -3352,6 +3397,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
 /* harmony import */ var _actions_skill_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/skill_actions */ "./frontend/actions/skill_actions.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_calendar_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/calendar_actions */ "./frontend/actions/calendar_actions.js");
+
 
 
 
@@ -3363,15 +3410,17 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var skillName = ownProps.location.pathname.split('/')[ownProps.location.pathname.split('/').length - 1];
   var allSkills = Object.values(state.entities.users)[0].language_data[mini_lang].skills;
   var currentSkill;
+  var user = Object.values(state.entities.users)[0];
   allSkills.forEach(function (skill) {
     if (skill.url_title === skillName) {
       currentSkill = skill;
     }
   });
   return {
-    user: Object.values(state.entities.users)[0],
+    user: user,
     mini_lang: mini_lang,
-    skill: currentSkill
+    skill: currentSkill,
+    calendar: user.calendar
   };
 };
 
@@ -3385,6 +3434,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     updateUser: function updateUser(user) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["updateUser"])(user));
+    },
+    createCalendars: function createCalendars(calendar) {
+      return dispatch(Object(_actions_calendar_actions__WEBPACK_IMPORTED_MODULE_5__["createCalendars"])(calendar));
     }
   };
 };
@@ -6272,6 +6324,38 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/calendar_api_util.js":
+/*!********************************************!*\
+  !*** ./frontend/util/calendar_api_util.js ***!
+  \********************************************/
+/*! exports provided: createCalendar, updateCalendar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCalendar", function() { return createCalendar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCalendar", function() { return updateCalendar; });
+var createCalendar = function createCalendar(calendars) {
+  return $.ajax({
+    method: 'post',
+    url: '/api/calendars',
+    data: {
+      calendars: calendars
+    }
+  });
+};
+var updateCalendar = function updateCalendar(calendars) {
+  return $.ajax({
+    method: 'patch',
+    url: "/api/calendars/".concat(calendars.id),
+    data: {
+      calendars: calendars
+    }
+  });
+};
 
 /***/ }),
 
@@ -36433,7 +36517,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

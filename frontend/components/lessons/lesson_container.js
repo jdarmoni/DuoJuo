@@ -3,6 +3,7 @@ import {connect } from 'react-redux';
 import { updateLanguageData} from '../../actions/language_data_actions';
 import {updateSkill} from '../../actions/skill_actions';
 import {updateUser} from '../../actions/user_actions';
+import { createCalendars} from '../../actions/calendar_actions';
 
 const mapStateToProps=(state, ownProps)=> {
     
@@ -10,7 +11,7 @@ const mapStateToProps=(state, ownProps)=> {
     const skillName = ownProps.location.pathname.split('/')[ownProps.location.pathname.split('/').length -1]
     let allSkills = Object.values(state.entities.users)[0].language_data[mini_lang].skills
     let currentSkill;
-
+    let user = Object.values(state.entities.users)[0]
     allSkills.forEach(skill => {
         
         if (skill.url_title === skillName) {
@@ -20,16 +21,18 @@ const mapStateToProps=(state, ownProps)=> {
     });
     
     return {
-        user: Object.values(state.entities.users)[0],
+        user: user,
         mini_lang: mini_lang, 
-        skill: currentSkill
+        skill: currentSkill,
+        calendar: user.calendar
     }
 }
 const mapDispatchToProps=(dispatch)=>{
     return {
         updateLangData: (language_data)=> dispatch(updateLanguageData(language_data)),
         updateSkill: (skill_data)=> dispatch(updateSkill(skill_data)),
-        updateUser: (user)=>dispatch(updateUser(user))
+        updateUser: (user)=>dispatch(updateUser(user)),
+        createCalendars: (calendar)=>dispatch(createCalendars(calendar))
     }
 }
 
