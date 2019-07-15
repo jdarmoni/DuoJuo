@@ -16,3 +16,5 @@ json.languages user.languages
 json.language_data do
     json.partial! "api/language_data/lang_data.json", language_data: lang_data
 end
+
+json.calendar user.calendars
