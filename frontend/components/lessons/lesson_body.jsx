@@ -69,35 +69,34 @@ class LessonBody extends React.Component {
         let guess;
         
         if (this.state.completed){
-            debugger
+            // UPDATE SKILL TO 0
             let skill = this.props.skill;
             skill['skill_level'] = 0;
-
             this.props.updateSkill(skill).then(
                 this.props.history.replace('/')
                 )
-                // CREATE CALENDAR
-                
-                if (this.props.calendar) {
-                    // if there IS a calendar object for today
-                    let calendars = this.props.calendar
-                    for (let i = 0; i < calendars; i++) {
-                        let today = new Date().getDate();
-                        if (calendars[i].datetime === today){
-                            calendars[i]["improvement"] += 10;
-                            this.props.updateCalendars(calendars[i])
-                            break
-                        }
+            // CHECK CALENDARS
+            if (this.props.calendar) {
+                debugger
+                // if there IS a calendar object for today
+                let calendars = this.props.calendar
+                for (let i = 0; i < calendars; i++) {
+                    let today = new Date().getDate();
+                    if (calendars[i].datetime === today) {
+                        calendars[i]["improvement"] += 10;
+                        this.props.updateCalendars(calendars[i])
+                        break
                     }
-                } else {
-                        let calendar = {};
-                        // new Date().toLocaleString() if you ever wanna use this nice v
-                        calendar["improvement"] = 10;
-                        calendar["user_id"] = this.props.user.id
-                        calendar["datetime"] = new Date().getDate()
-                        debugger
-                        this.props.createCalendars(calendar)    
-                    }
+                }
+            } else {
+                // MAKE NEW CALENDER IF ISNT ONE
+                let calendar = {};
+                calendar["improvement"] = 10;
+                calendar["user_id"] = this.props.user.id
+                calendar["datetime"] = new Date().getDate()
+                debugger
+                this.props.createCalendars(calendar)
+            }
             
             return
         }
@@ -160,23 +159,23 @@ class LessonBody extends React.Component {
 
             } else {
                 // correct answer updates the user's level
-                let skill = this.props.skill
+                let currentSkill = this.props.skill
+                debugger
+                currentSkill['skill_level'] = currentSkill.skill_level + 1;
                 
-                skill['skill_level'] = skill.skill_level + 1;
-
-                if (this.state.lessonLength === skill.skill_level) { 
-                    // THIS IS WHERE COMPLETED LOGIC COMES IN: if you've finished the last lesson
+                debugger
+                if (this.state.lessonLength === currentSkill.skill_level) { 
+                    // if you've finished the last lesson
                     // skill['skill_level'] = 0;
                     let user = this.props.user;
                     user['rupees'] = user.rupees + 1;
-                    debugger
                     
                     this.props.updateUser(user).then(
                         this.setState({completed: true})
                     );
                 }
-                
-                this.props.updateSkill(skill).then(
+                debugger
+                this.props.updateSkill(currentSkill).then(
                     this.setState({
                         default: true,
                         wrong: false,
@@ -300,7 +299,7 @@ class LessonBody extends React.Component {
          }
     }
     render(){
-        debugger
+        
         // set currentLesson to an array so that you can use skip button
         // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
         if (this.state.currentLesson === "") {

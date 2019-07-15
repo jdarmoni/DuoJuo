@@ -2842,13 +2842,14 @@ function (_React$Component) {
       var guess;
 
       if (this.state.completed) {
-        debugger;
+        // UPDATE SKILL TO 0
         var skill = this.props.skill;
         skill['skill_level'] = 0;
-        this.props.updateSkill(skill).then(this.props.history.replace('/')); // CREATE CALENDAR
+        this.props.updateSkill(skill).then(this.props.history.replace('/')); // CHECK CALENDARS
 
         if (this.props.calendar) {
-          // if there IS a calendar object for today
+          debugger; // if there IS a calendar object for today
+
           var calendars = this.props.calendar;
 
           for (var i = 0; i < calendars; i++) {
@@ -2861,8 +2862,8 @@ function (_React$Component) {
             }
           }
         } else {
-          var calendar = {}; // new Date().toLocaleString() if you ever wanna use this nice v
-
+          // MAKE NEW CALENDER IF ISNT ONE
+          var calendar = {};
           calendar["improvement"] = 10;
           calendar["user_id"] = this.props.user.id;
           calendar["datetime"] = new Date().getDate();
@@ -2928,21 +2929,23 @@ function (_React$Component) {
           });
         } else {
           // correct answer updates the user's level
-          var _skill = this.props.skill;
-          _skill['skill_level'] = _skill.skill_level + 1;
+          var currentSkill = this.props.skill;
+          debugger;
+          currentSkill['skill_level'] = currentSkill.skill_level + 1;
+          debugger;
 
-          if (this.state.lessonLength === _skill.skill_level) {
-            // THIS IS WHERE COMPLETED LOGIC COMES IN: if you've finished the last lesson
+          if (this.state.lessonLength === currentSkill.skill_level) {
+            // if you've finished the last lesson
             // skill['skill_level'] = 0;
             var user = this.props.user;
             user['rupees'] = user.rupees + 1;
-            debugger;
             this.props.updateUser(user).then(this.setState({
               completed: true
             }));
           }
 
-          this.props.updateSkill(_skill).then(this.setState({
+          debugger;
+          this.props.updateSkill(currentSkill).then(this.setState({
             "default": true,
             wrong: false,
             correct: false
@@ -3077,9 +3080,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger; // set currentLesson to an array so that you can use skip button
+      // set currentLesson to an array so that you can use skip button
       // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
-
       if (this.state.currentLesson === "") {
         var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
         this.setState({
