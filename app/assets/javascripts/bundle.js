@@ -2844,12 +2844,10 @@ function (_React$Component) {
       if (this.state.completed) {
         // UPDATE SKILL TO 0
         var skill = this.props.skill;
-        skill['skill_level'] = 0; // THIS SKILL IS UNDEFINED PROBABLY BC OF REDECLARATION
-
-        debugger;
+        skill['skill_level'] = 0;
         this.props.updateSkill(skill).then(this.props.history.replace('/')); // CHECK CALENDARS
 
-        if (this.props.calendar) {
+        if (this.props.calendar.length > 0) {
           debugger; // if there IS a calendar object for today
 
           var calendars = this.props.calendar;
@@ -2932,12 +2930,6 @@ function (_React$Component) {
         } else {
           // correct answer updates the user's level
           var currentSkill = this.props.skill;
-
-          if (currentSkill === undefined) {
-            // THIS WHOLE IF IS A TEST
-            debugger;
-          }
-
           currentSkill['skill_level'] = currentSkill.skill_level + 1;
 
           if (this.state.lessonLength === currentSkill.skill_level) {
@@ -2950,7 +2942,6 @@ function (_React$Component) {
             }));
           }
 
-          debugger;
           this.props.updateSkill(currentSkill).then(this.setState({
             "default": true,
             wrong: false,

@@ -72,13 +72,12 @@ class LessonBody extends React.Component {
             // UPDATE SKILL TO 0
             let skill = this.props.skill;
             skill['skill_level'] = 0;
-            // THIS SKILL IS UNDEFINED PROBABLY BC OF REDECLARATION
-            debugger
+            
             this.props.updateSkill(skill).then(
                 this.props.history.replace('/')
                 )
             // CHECK CALENDARS
-            if (this.props.calendar) {
+            if (this.props.calendar.length > 0) {
                 debugger
                 // if there IS a calendar object for today
                 let calendars = this.props.calendar
@@ -161,10 +160,6 @@ class LessonBody extends React.Component {
             } else {
                 // correct answer updates the user's level
                 let currentSkill = this.props.skill
-                if (currentSkill === undefined) {
-                    // THIS WHOLE IF IS A TEST
-                    debugger
-                }
                 currentSkill['skill_level'] = currentSkill.skill_level + 1;
                 
                 
@@ -178,7 +173,7 @@ class LessonBody extends React.Component {
                         this.setState({completed: true})
                     );
                 }
-                debugger
+                
                 this.props.updateSkill(currentSkill).then(
                     this.setState({
                         default: true,
