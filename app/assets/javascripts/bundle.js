@@ -110,6 +110,7 @@ var receiveCalendars = function receiveCalendars(calendars) {
 };
 var createCalendars = function createCalendars(calendars) {
   return function (dispatch) {
+    debugger;
     return _util_calendar_api_util__WEBPACK_IMPORTED_MODULE_0__["createCalendar"](calendars).then(function (calendars) {
       debugger;
       return dispatch(receiveCalendars(calendars));
@@ -6356,6 +6357,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCalendar", function() { return createCalendar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCalendar", function() { return updateCalendar; });
 var createCalendar = function createCalendar(calendars) {
+  debugger;
   return $.ajax({
     method: 'post',
     url: '/api/calendars',

@@ -1,4 +1,6 @@
 export const createCalendar = (calendars) =>{
+    debugger
+
     return $.ajax({
         method: 'post',
         url: '/api/calendars',
