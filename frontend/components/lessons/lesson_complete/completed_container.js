@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import Completed from './completed'
 
 const mapStateToProps = (state) => {
-    let todayProgress = state.entities.users[4].calendar[0].improvement
+    debugger
+    let todayProgress = Object.values(state.entities.users)[0].calendar[0].improvement
     return {
         progress: todayProgress
     }
