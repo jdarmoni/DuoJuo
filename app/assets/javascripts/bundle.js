@@ -2844,7 +2844,9 @@ function (_React$Component) {
       if (this.state.completed) {
         // UPDATE SKILL TO 0
         var skill = this.props.skill;
-        skill['skill_level'] = 0;
+        skill['skill_level'] = 0; // THIS SKILL IS UNDEFINED PROBABLY BC OF REDECLARATION
+
+        debugger;
         this.props.updateSkill(skill).then(this.props.history.replace('/')); // CHECK CALENDARS
 
         if (this.props.calendar) {
@@ -2930,9 +2932,13 @@ function (_React$Component) {
         } else {
           // correct answer updates the user's level
           var currentSkill = this.props.skill;
-          debugger;
+
+          if (currentSkill === undefined) {
+            // THIS WHOLE IF IS A TEST
+            debugger;
+          }
+
           currentSkill['skill_level'] = currentSkill.skill_level + 1;
-          debugger;
 
           if (this.state.lessonLength === currentSkill.skill_level) {
             // if you've finished the last lesson
@@ -5015,10 +5021,7 @@ function (_React$Component) {
       // }
 
       btn.onclick = function () {
-        debugger;
-
         if (clicked === false) {
-          debugger;
           modal.style.display = "block";
           clicked = true;
         } else if (clicked === true) {

@@ -27,9 +27,9 @@ class Skill1 extends React.Component {
         // }
         
         btn.onclick = function () {
-            debugger
+            
             if (clicked === false) {
-                debugger
+                
                 modal.style.display = "block";
                 clicked = true;
                 

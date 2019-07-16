@@ -72,6 +72,8 @@ class LessonBody extends React.Component {
             // UPDATE SKILL TO 0
             let skill = this.props.skill;
             skill['skill_level'] = 0;
+            // THIS SKILL IS UNDEFINED PROBABLY BC OF REDECLARATION
+            debugger
             this.props.updateSkill(skill).then(
                 this.props.history.replace('/')
                 )
@@ -101,7 +103,6 @@ class LessonBody extends React.Component {
             return
         }
         if (this.state.default) {
-
             //******* SET GUESS BASED ON TYPE OF LESSON **********
             
             if (textArea) {
@@ -160,10 +161,13 @@ class LessonBody extends React.Component {
             } else {
                 // correct answer updates the user's level
                 let currentSkill = this.props.skill
-                debugger
+                if (currentSkill === undefined) {
+                    // THIS WHOLE IF IS A TEST
+                    debugger
+                }
                 currentSkill['skill_level'] = currentSkill.skill_level + 1;
                 
-                debugger
+                
                 if (this.state.lessonLength === currentSkill.skill_level) { 
                     // if you've finished the last lesson
                     // skill['skill_level'] = 0;
