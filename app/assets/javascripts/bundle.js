@@ -110,9 +110,7 @@ var receiveCalendars = function receiveCalendars(calendars) {
 };
 var createCalendars = function createCalendars(calendars) {
   return function (dispatch) {
-    debugger;
     return _util_calendar_api_util__WEBPACK_IMPORTED_MODULE_0__["createCalendar"](calendars).then(function (calendars) {
-      debugger;
       return dispatch(receiveCalendars(calendars));
     });
   };
@@ -120,7 +118,6 @@ var createCalendars = function createCalendars(calendars) {
 var updateCalendars = function updateCalendars(calendars) {
   return function (dispatch) {
     return _util_calendar_api_util__WEBPACK_IMPORTED_MODULE_0__["updateCalendar"](calendars).then(function (calendars) {
-      debugger;
       return dispatch(receiveCalendars(calendars));
     });
   };
@@ -3198,6 +3195,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "completed-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3369,7 +3367,7 @@ function (_React$Component) {
         fill: "#ff9600"
       })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Lesson Complete! 10 XP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "c-c-XP"
-      }, "You've earned ", "placeholder ", "XP today")))))));
+      }, "You've earned ", this.props.progress, " XP today")))))));
     }
   }]);
 
@@ -3395,7 +3393,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  return {};
+  var todayProgress = state.entities.users[4].calendar[0].improvement;
+  return {
+    progress: todayProgress
+  };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -6362,7 +6363,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createCalendar", function() { return createCalendar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCalendar", function() { return updateCalendar; });
 var createCalendar = function createCalendar(calendars) {
-  debugger;
   return $.ajax({
     method: 'post',
     url: '/api/calendars',
