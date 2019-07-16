@@ -78,14 +78,16 @@ class LessonBody extends React.Component {
                 )
             // CHECK CALENDARS
             if (this.props.calendar.length > 0) {
-                debugger
                 // if there IS a calendar object for today
                 let calendars = this.props.calendar
-                for (let i = 0; i < calendars; i++) {
+                debugger
+                for (let i = 0; i < calendars.length; i++) {
                     let today = new Date().getDate();
+                    debugger
                     if (calendars[i].datetime === today) {
                         calendars[i]["improvement"] += 10;
                         this.props.updateCalendars(calendars[i])
+                        debugger
                         break
                     }
                 }

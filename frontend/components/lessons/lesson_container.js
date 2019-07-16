@@ -3,7 +3,7 @@ import {connect } from 'react-redux';
 import { updateLanguageData} from '../../actions/language_data_actions';
 import {updateSkill} from '../../actions/skill_actions';
 import {updateUser} from '../../actions/user_actions';
-import { createCalendars} from '../../actions/calendar_actions';
+import { createCalendars, updateCalendars} from '../../actions/calendar_actions';
 
 const mapStateToProps=(state, ownProps)=> {
     
@@ -32,7 +32,8 @@ const mapDispatchToProps=(dispatch)=>{
         updateLangData: (language_data)=> dispatch(updateLanguageData(language_data)),
         updateSkill: (skill_data)=> dispatch(updateSkill(skill_data)),
         updateUser: (user)=>dispatch(updateUser(user)),
-        createCalendars: (calendar)=>dispatch(createCalendars(calendar))
+        createCalendars: (calendar)=>dispatch(createCalendars(calendar)),
+        updateCalendars: (calendar)=>dispatch(updateCalendars(calendar))
     }
 }
 

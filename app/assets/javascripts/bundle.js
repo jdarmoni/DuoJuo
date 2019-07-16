@@ -2849,16 +2849,18 @@ function (_React$Component) {
         this.props.updateSkill(skill).then(this.props.history.replace('/')); // CHECK CALENDARS
 
         if (this.props.calendar.length > 0) {
-          debugger; // if there IS a calendar object for today
-
+          // if there IS a calendar object for today
           var calendars = this.props.calendar;
+          debugger;
 
-          for (var i = 0; i < calendars; i++) {
+          for (var i = 0; i < calendars.length; i++) {
             var today = new Date().getDate();
+            debugger;
 
             if (calendars[i].datetime === today) {
               calendars[i]["improvement"] += 10;
               this.props.updateCalendars(calendars[i]);
+              debugger;
               break;
             }
           }
@@ -3458,6 +3460,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     createCalendars: function createCalendars(calendar) {
       return dispatch(Object(_actions_calendar_actions__WEBPACK_IMPORTED_MODULE_5__["createCalendars"])(calendar));
+    },
+    updateCalendars: function updateCalendars(calendar) {
+      return dispatch(Object(_actions_calendar_actions__WEBPACK_IMPORTED_MODULE_5__["updateCalendars"])(calendar));
     }
   };
 };
