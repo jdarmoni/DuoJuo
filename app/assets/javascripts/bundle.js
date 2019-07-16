@@ -2843,34 +2843,7 @@ function (_React$Component) {
         // UPDATE SKILL TO 0
         var skill = this.props.skill;
         skill['skill_level'] = 0;
-        this.props.updateSkill(skill).then(this.props.history.replace('/')); // CHECK CALENDARS
-
-        if (this.props.calendar.length > 0) {
-          // if there IS a calendar object for today
-          var calendars = this.props.calendar;
-          debugger;
-
-          for (var i = 0; i < calendars.length; i++) {
-            var today = new Date().getDate();
-            debugger;
-
-            if (calendars[i].datetime === today) {
-              calendars[i]["improvement"] += 10;
-              this.props.updateCalendars(calendars[i]);
-              debugger;
-              break;
-            }
-          }
-        } else {
-          // MAKE NEW CALENDER IF ISNT ONE
-          var calendar = {};
-          calendar["improvement"] = 10;
-          calendar["user_id"] = this.props.user.id;
-          calendar["datetime"] = new Date().getDate();
-          debugger;
-          this.props.createCalendars(calendar);
-        }
-
+        this.props.updateSkill(skill).then(this.props.history.replace('/'));
         return;
       }
 
@@ -2890,8 +2863,8 @@ function (_React$Component) {
           guess = "";
           var length = document.getElementsByClassName('c-s-t-h-word-box')[0].childElementCount;
 
-          for (var _i = 0; _i < length; _i++) {
-            guess += document.getElementsByClassName('c-s-t-h-word-box')[0].children[_i].children[0].children[0].innerText + " ";
+          for (var i = 0; i < length; i++) {
+            guess += document.getElementsByClassName('c-s-t-h-word-box')[0].children[i].children[0].children[0].innerText + " ";
           }
 
           guess = guess.slice(0, guess.length - 1);
@@ -2934,12 +2907,37 @@ function (_React$Component) {
 
           if (this.state.lessonLength === currentSkill.skill_level) {
             // if you've finished the last lesson
-            // skill['skill_level'] = 0;
             var user = this.props.user;
             user['rupees'] = user.rupees + 1;
             this.props.updateUser(user).then(this.setState({
               completed: true
-            }));
+            })); // CHECK CALENDARS
+
+            if (this.props.calendar.length > 0) {
+              // IF THERE IS A CALENDAR OBJECT FOR TODAY
+              var calendars = this.props.calendar;
+              debugger;
+
+              for (var _i = 0; _i < calendars.length; _i++) {
+                var today = new Date().getDate();
+                debugger;
+
+                if (calendars[_i].datetime === today) {
+                  calendars[_i]["improvement"] += 10;
+                  this.props.updateCalendars(calendars[_i]);
+                  debugger;
+                  break;
+                }
+              }
+            } else {
+              // MAKE NEW CALENDER IF ISNT ONE
+              var calendar = {};
+              calendar["improvement"] = 10;
+              calendar["user_id"] = this.props.user.id;
+              calendar["datetime"] = new Date().getDate();
+              debugger;
+              this.props.createCalendars(calendar);
+            }
           }
 
           this.props.updateSkill(currentSkill).then(this.setState({
@@ -3394,7 +3392,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   debugger;
-  var todayProgress = Object.values(state.entities.users)[0].calendar[0].improvement;
+  var todayProgress = Object.values(state.entities.users)[0].calendar;
+
+  if (todayProgress.length > 0) {
+    debugger;
+    todayProgress = todayProgress[0].improvement;
+  } else {
+    debugger;
+    todayProgress = 10;
+  }
+
   return {
     progress: todayProgress
   };

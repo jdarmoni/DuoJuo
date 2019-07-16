@@ -76,31 +76,6 @@ class LessonBody extends React.Component {
             this.props.updateSkill(skill).then(
                 this.props.history.replace('/')
                 )
-            // CHECK CALENDARS
-            if (this.props.calendar.length > 0) {
-                // if there IS a calendar object for today
-                let calendars = this.props.calendar
-                debugger
-                for (let i = 0; i < calendars.length; i++) {
-                    let today = new Date().getDate();
-                    debugger
-                    if (calendars[i].datetime === today) {
-                        calendars[i]["improvement"] += 10;
-                        this.props.updateCalendars(calendars[i])
-                        debugger
-                        break
-                    }
-                }
-            } else {
-                // MAKE NEW CALENDER IF ISNT ONE
-                let calendar = {};
-                calendar["improvement"] = 10;
-                calendar["user_id"] = this.props.user.id
-                calendar["datetime"] = new Date().getDate()
-                debugger
-                this.props.createCalendars(calendar)
-            }
-            
             return
         }
         if (this.state.default) {
@@ -167,13 +142,36 @@ class LessonBody extends React.Component {
                 
                 if (this.state.lessonLength === currentSkill.skill_level) { 
                     // if you've finished the last lesson
-                    // skill['skill_level'] = 0;
                     let user = this.props.user;
                     user['rupees'] = user.rupees + 1;
                     
                     this.props.updateUser(user).then(
                         this.setState({completed: true})
                     );
+                    // CHECK CALENDARS
+                    if (this.props.calendar.length > 0) {
+                        // IF THERE IS A CALENDAR OBJECT FOR TODAY
+                        let calendars = this.props.calendar
+                        debugger
+                        for (let i = 0; i < calendars.length; i++) {
+                            let today = new Date().getDate();
+                            debugger
+                            if (calendars[i].datetime === today) {
+                                calendars[i]["improvement"] += 10;
+                                this.props.updateCalendars(calendars[i])
+                                debugger
+                                break
+                            }
+                        }
+                    } else {
+                        // MAKE NEW CALENDER IF ISNT ONE
+                        let calendar = {};
+                        calendar["improvement"] = 10;
+                        calendar["user_id"] = this.props.user.id
+                        calendar["datetime"] = new Date().getDate()
+                        debugger
+                        this.props.createCalendars(calendar)
+                    }
                 }
                 
                 this.props.updateSkill(currentSkill).then(
