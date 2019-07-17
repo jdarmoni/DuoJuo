@@ -144,6 +144,7 @@ class LessonBody extends React.Component {
                     // if you've finished the last lesson
                     let user = this.props.user;
                     user['rupees'] = user.rupees + 1;
+                    user['site_streak'] = 1;
                     
                     this.props.updateUser(user).then(
                         this.setState({completed: true})
@@ -152,14 +153,14 @@ class LessonBody extends React.Component {
                     if (this.props.calendar.length > 0) {
                         // IF THERE IS A CALENDAR OBJECT FOR TODAY
                         let calendars = this.props.calendar
-                        debugger
+                        
                         for (let i = 0; i < calendars.length; i++) {
                             let today = new Date().getDate();
-                            debugger
+                            
                             if (calendars[i].datetime === today) {
                                 calendars[i]["improvement"] += 10;
                                 this.props.updateCalendars(calendars[i])
-                                debugger
+                                
                                 break
                             }
                         }
@@ -169,7 +170,7 @@ class LessonBody extends React.Component {
                         calendar["improvement"] = 10;
                         calendar["user_id"] = this.props.user.id
                         calendar["datetime"] = new Date().getDate()
-                        debugger
+                        
                         this.props.createCalendars(calendar)
                     }
                 }

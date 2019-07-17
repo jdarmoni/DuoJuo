@@ -1215,11 +1215,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-progress-span-parent"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-empty.svg",
+        src: this.props.site_streak,
         className: "dashboard-progres-icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-number-span"
-      }, "0"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.currentUser.site_streak))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-progress-section"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-progress-span-parent"
@@ -1411,11 +1411,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
+  var site_streak = "//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-empty.svg";
+
+  if (state.entities.users[state.session.id].site_streak > 0) {
+    site_streak = "//d35aaqx5ub95lt.cloudfront.net/images/icons/streak.svg";
+  }
+
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
     currentUser: state.entities.users[state.session.id],
-    languageData: Object.values(state.entities.language_data)
+    languageData: Object.values(state.entities.language_data),
+    site_streak: site_streak
   };
 };
 
@@ -1679,6 +1687,7 @@ function (_React$Component) {
       user["email"] = result + "@gmail.com";
       user["password"] = "starwars";
       user["active"] = false;
+      user["site_streak"] = 0;
       this.props.signup(user);
     } //LOGGED IN!
 
@@ -2909,6 +2918,7 @@ function (_React$Component) {
             // if you've finished the last lesson
             var user = this.props.user;
             user['rupees'] = user.rupees + 1;
+            user['site_streak'] = 1;
             this.props.updateUser(user).then(this.setState({
               completed: true
             })); // CHECK CALENDARS
@@ -2916,16 +2926,13 @@ function (_React$Component) {
             if (this.props.calendar.length > 0) {
               // IF THERE IS A CALENDAR OBJECT FOR TODAY
               var calendars = this.props.calendar;
-              debugger;
 
               for (var _i = 0; _i < calendars.length; _i++) {
                 var today = new Date().getDate();
-                debugger;
 
                 if (calendars[_i].datetime === today) {
                   calendars[_i]["improvement"] += 10;
                   this.props.updateCalendars(calendars[_i]);
-                  debugger;
                   break;
                 }
               }
@@ -2935,7 +2942,6 @@ function (_React$Component) {
               calendar["improvement"] = 10;
               calendar["user_id"] = this.props.user.id;
               calendar["datetime"] = new Date().getDate();
-              debugger;
               this.props.createCalendars(calendar);
             }
           }

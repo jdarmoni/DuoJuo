@@ -5,12 +5,17 @@ import { fetchLanguageDatas, fetchLanguageData} from '../../actions/language_dat
 import { updateUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state) => {
-    
+    debugger
+    let site_streak = "//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-empty.svg";
+    if (state.entities.users[state.session.id].site_streak > 0) {
+        site_streak = "//d35aaqx5ub95lt.cloudfront.net/images/icons/streak.svg"
+    }
     return {
         users: Object.values(state.entities.users),
         session: Object.values(state.session),
         currentUser: state.entities.users[state.session.id],
-        languageData: Object.values(state.entities.language_data)
+        languageData: Object.values(state.entities.language_data),
+        site_streak: site_streak
     };
 };
 const mapDispatchToProps = dispatch => ({

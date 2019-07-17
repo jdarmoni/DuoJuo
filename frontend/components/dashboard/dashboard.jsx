@@ -133,9 +133,9 @@ class Dashboard extends React.Component {
 
                             <div className="dashboard-progress-section">
                                 <span className="dashboard-progress-span-parent">
-                                    <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-empty.svg" className="dashboard-progres-icon" />
+                                    <img src={this.props.site_streak} className="dashboard-progres-icon" />
                                     {/* need logic for determining and interpolating country */}
-                                    <span className="dashboard-number-span">0</span>
+                                    <span className="dashboard-number-span">{this.props.currentUser.site_streak}</span>
                                 </span>
                             </div>
 
