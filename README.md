@@ -20,7 +20,7 @@ Choose up to four (for now) languages.
 
 ## Dashboard 
 
-Each language comes with five lesson modules. Users are able to switch languages or add courses to their profile from the flag dropdown in the nav bar section. 
+Each language comes with three lesson modules. Users are able to switch languages or add courses to their profile from the flag dropdown in the nav bar section. 
 
 ![Dashboard Image](readmeResources/addLang.png)
 
