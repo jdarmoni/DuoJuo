@@ -1089,6 +1089,23 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchLanguageDatas(this.props.currentUser);
+      var calendars = this.props.currentUser.calendar;
+      debugger;
+
+      if (calendars.length > 0) {
+        // if there isn't a datetime from two days (or 25 hours) ago, set streak to 0
+        var latest = calendars[0];
+        var today = Date.now();
+        var yesterday = today - 86400000;
+
+        for (var i = 0; i < calendars.length; i++) {
+          if (calendars[i].datetime > latest.datetime) latest = calendars[i];
+        }
+
+        if (latest.datetime < yesterday) this.props.updateUser({
+          "site_streak": 0
+        });
+      }
     }
   }, {
     key: "render",
@@ -1404,6 +1421,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_language_data_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/language_data_actions */ "./frontend/actions/language_data_actions.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_calendar_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/calendar_actions */ "./frontend/actions/calendar_actions.js");
+
 
 
 
@@ -1440,6 +1459,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     updateUser: function updateUser(user) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["updateUser"])(user));
+    },
+    createCalendars: function createCalendars(calendar) {
+      return dispatch(Object(_actions_calendar_actions__WEBPACK_IMPORTED_MODULE_5__["createCalendars"])(calendar));
     }
   };
 };
@@ -2924,13 +2946,17 @@ function (_React$Component) {
             })); // CHECK CALENDARS
 
             if (this.props.calendar.length > 0) {
-              // IF THERE IS A CALENDAR OBJECT FOR TODAY
-              var calendars = this.props.calendar;
+              var calendars = this.props.calendar; // CHECK IF THERE IS A CALENDAR OBJECT FOR TODAY
+
+              debugger;
 
               for (var _i = 0; _i < calendars.length; _i++) {
-                var today = new Date().getDate();
+                var today = Date.now();
+                var yesterday = today - 86400000;
+                debugger;
 
-                if (calendars[_i].datetime === today) {
+                if (calendars[_i].datetime > yesterday) {
+                  debugger;
                   calendars[_i]["improvement"] += 10;
                   this.props.updateCalendars(calendars[_i]);
                   break;
@@ -2938,10 +2964,11 @@ function (_React$Component) {
               }
             } else {
               // MAKE NEW CALENDER IF ISNT ONE
+              debugger;
               var calendar = {};
               calendar["improvement"] = 10;
               calendar["user_id"] = this.props.user.id;
-              calendar["datetime"] = new Date().getDate();
+              calendar["datetime"] = Date.now();
               this.props.createCalendars(calendar);
             }
           }

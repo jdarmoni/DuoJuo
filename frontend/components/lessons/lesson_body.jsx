@@ -62,7 +62,7 @@ class LessonBody extends React.Component {
         }
 
     }
-    handleSubmit(){
+    handleSubmit(){  
         let textArea = document.getElementById('challenge-textarea')
         let markMeaning = document.getElementById('m-m-c')
         let construct = document.getElementById('construct-component')
@@ -151,25 +151,27 @@ class LessonBody extends React.Component {
                     );
                     // CHECK CALENDARS
                     if (this.props.calendar.length > 0) {
-                        // IF THERE IS A CALENDAR OBJECT FOR TODAY
                         let calendars = this.props.calendar
-                        
+                        // CHECK IF THERE IS A CALENDAR OBJECT FOR TODAY
+                        debugger
                         for (let i = 0; i < calendars.length; i++) {
-                            let today = new Date().getDate();
-                            
-                            if (calendars[i].datetime === today) {
+                            let today = Date.now()
+                            let yesterday = today - 86400000
+                            debugger
+                            if (calendars[i].datetime > yesterday) {
+                                debugger
                                 calendars[i]["improvement"] += 10;
                                 this.props.updateCalendars(calendars[i])
-                                
                                 break
                             }
                         }
                     } else {
                         // MAKE NEW CALENDER IF ISNT ONE
+                        debugger
                         let calendar = {};
                         calendar["improvement"] = 10;
                         calendar["user_id"] = this.props.user.id
-                        calendar["datetime"] = new Date().getDate()
+                        calendar["datetime"] = Date.now()
                         
                         this.props.createCalendars(calendar)
                     }

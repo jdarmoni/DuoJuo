@@ -3,7 +3,7 @@ import Dashboard from './dashboard';
 import {logout} from '../../actions/session_actions'
 import { fetchLanguageDatas, fetchLanguageData} from '../../actions/language_data_actions'
 import { updateUser } from '../../actions/user_actions';
-
+import {createCalendars} from '../../actions/calendar_actions'
 const mapStateToProps = (state) => {
     debugger
     let site_streak = "//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-empty.svg";
@@ -23,6 +23,7 @@ const mapDispatchToProps = dispatch => ({
     fetchLanguageDatas: (user) => dispatch(fetchLanguageDatas(user)),
     fetchLanguageData: (lang_data) => dispatch(fetchLanguageData(lang_data)),
     updateUser: (user) => dispatch(updateUser(user)),
+    createCalendars: (calendar)=> dispatch(createCalendars(calendar))
 
 });
 

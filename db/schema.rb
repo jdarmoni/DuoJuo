@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_14_215647) do
+ActiveRecord::Schema.define(version: 2019_07_17_182901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "calendars", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "datetime"
+    t.bigint "datetime"
     t.integer "improvement"
   end
 
