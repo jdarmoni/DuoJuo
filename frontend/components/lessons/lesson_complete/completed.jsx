@@ -17,7 +17,7 @@ class Completed extends React.Component {
         }
     }
     render(){
-        debugger
+        
         return (
             <div className="completed-container">
                 <div className="completed-container-sub-div">

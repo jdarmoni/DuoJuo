@@ -167,7 +167,7 @@ class LessonBody extends React.Component {
                         }
                     } else {
                         // MAKE NEW CALENDER IF ISNT ONE
-                        debugger
+                        
                         let calendar = {};
                         calendar["improvement"] = 10;
                         calendar["user_id"] = this.props.user.id

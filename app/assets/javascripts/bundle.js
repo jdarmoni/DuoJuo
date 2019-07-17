@@ -1090,7 +1090,6 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchLanguageDatas(this.props.currentUser);
       var calendars = this.props.currentUser.calendar;
-      debugger;
 
       if (calendars.length > 0) {
         // if there isn't a datetime from two days (or 25 hours) ago, set streak to 0
@@ -1430,7 +1429,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   var site_streak = "//d35aaqx5ub95lt.cloudfront.net/images/icons/streak-empty.svg";
 
   if (state.entities.users[state.session.id].site_streak > 0) {
@@ -2595,16 +2593,8 @@ var grandLessonsObj = {
     "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Petite cerises",
       correct: ["little cherries"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "Je suis seule a Dunkin Donuts",
-      correct: ["I am alone at Dunkin Donuts"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "D'ou etes-vous?",
-      correct: ["Where are you from?"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "Je suis un célébrité",
-      correct: ["I am a celebrity"]
-    })]
+    })] //  < TranslateSentenceContainer sentence={ "Je suis seule a Dunkin Donuts"} correct={ ["I am alone at Dunkin Donuts"]} />, < TranslateSentenceContainer sentence={ "D'ou etes-vous?"} correct={ ["Where are you from?"]} />, < TranslateSentenceContainer sentence = { "Je suis un célébrité"} correct = { ["I am a celebrity"]} />
+
   },
   "jp": {
     "Hiragana-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2964,7 +2954,6 @@ function (_React$Component) {
               }
             } else {
               // MAKE NEW CALENDER IF ISNT ONE
-              debugger;
               var calendar = {};
               calendar["improvement"] = 10;
               calendar["user_id"] = this.props.user.id;
@@ -3226,7 +3215,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "completed-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3424,14 +3412,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  debugger;
   var todayProgress = Object.values(state.entities.users)[0].calendar;
 
   if (todayProgress.length > 0) {
-    debugger;
     todayProgress = todayProgress[0].improvement;
   } else {
-    debugger;
     todayProgress = 10;
   }
 
@@ -5603,10 +5588,7 @@ function (_React$Component) {
       var clicked = false; // When the user clicks anywhere outside of the modal, close it
 
       btn.onclick = function () {
-        debugger;
-
         if (clicked === false) {
-          debugger;
           modal.style.display = "block";
           clicked = true;
         } else if (clicked === true) {
@@ -6307,7 +6289,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_calendar_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../actions/calendar_actions */ "./frontend/actions/calendar_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -6341,6 +6325,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       languageData[miniLang].skills.push(action.skill);
       var newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], _defineProperty({}, "language_data", languageData));
       return Object.assign({}, _defineProperty({}, userID, newUserObj2));
+
+    case _actions_calendar_actions__WEBPACK_IMPORTED_MODULE_5__["RECEIVE_CALENDARS"]:
+      var calendars = state[action.calendars.user_id]['calendar'];
+      var found = false;
+      debugger;
+
+      if (calendars.length > 0) {
+        for (var i = 0; i < calendars.length; i++) {
+          if (calendars[i].id === action.calendars.id) {
+            debugger;
+            calendars[i] = action.calendars;
+            var _found = true;
+            break;
+          }
+        }
+      }
+
+      if (found === false) {
+        calendars.push(action.calendars);
+      }
+
+      var newUserObj3 = Object.assign({}, state[action.calendars.user_id], _defineProperty({}, "calendar", calendars));
+      debugger;
+      return Object.assign({}, _defineProperty({}, action.calendars.user_id, newUserObj3));
 
     default:
       return state;

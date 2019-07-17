@@ -15,9 +15,9 @@ class Skill3 extends React.Component {
         // When the user clicks anywhere outside of the modal, close it
      
         btn.onclick = function () {
-            debugger
+            
             if (clicked === false) {
-                debugger
+                
                 modal.style.display = "block";
                 clicked = true;
             } else if (clicked === true) {

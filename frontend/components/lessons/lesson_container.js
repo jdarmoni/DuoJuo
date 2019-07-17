@@ -9,7 +9,9 @@ const mapStateToProps=(state, ownProps)=> {
     
     const mini_lang = Object.values(state.entities.users)[0].learning_language
     const skillName = ownProps.location.pathname.split('/')[ownProps.location.pathname.split('/').length -1]
+    
     let allSkills = Object.values(state.entities.users)[0].language_data[mini_lang].skills
+    
     let currentSkill;
     let user = Object.values(state.entities.users)[0]
     allSkills.forEach(skill => {

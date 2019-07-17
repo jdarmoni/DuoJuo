@@ -35,7 +35,7 @@ class Dashboard extends React.Component {
     componentDidMount(){
         this.props.fetchLanguageDatas(this.props.currentUser)
         let calendars = this.props.currentUser.calendar
-        debugger
+        
         if (calendars.length > 0) {
 
             // if there isn't a datetime from two days (or 25 hours) ago, set streak to 0

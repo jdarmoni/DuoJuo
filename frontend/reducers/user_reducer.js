@@ -5,6 +5,7 @@ import {RECEIVE_LANGUAGE_DATA} from '../actions/language_data_actions';
 import {RECEIVE_SKILL} from '../actions/skill_actions';
 import merge from 'lodash/merge'
 import { RECEIVE_USER} from '../actions/user_actions'
+import { RECEIVE_CALENDARS } from '../actions/calendar_actions';
 
 export default (state = {}, action) => {
     Object.freeze(state)
@@ -21,7 +22,6 @@ export default (state = {}, action) => {
         case RECEIVE_LANGUAGE_DATA:
 
             let newUserObj = Object.assign({}, state[action.language_data.user_id], { ["language_data"]: {[action.language_data.language]:  action.language_data }});
-            
 
             // the following is to assign it a key: [ed: make legible with explicit var names later]
             return Object.assign({}, {[action.language_data.user_id]: newUserObj})
@@ -36,7 +36,27 @@ export default (state = {}, action) => {
             let newUserObj2 = Object.assign({}, state[languageData[miniLang].user_id], { ["language_data"]: languageData })
             
             return Object.assign({}, { [userID]: newUserObj2 })
-  
+
+        case RECEIVE_CALENDARS:
+            let calendars = state[action.calendars.user_id]['calendar'];
+            let found = false
+            debugger
+            if (calendars.length > 0 ){
+                for (let i =0; i < calendars.length; i++) { 
+                    
+                    if (calendars[i].id === action.calendars.id) {
+                        debugger
+                        calendars[i] = action.calendars
+                        let found = true;
+                        break
+                    }
+                }
+            } 
+            if (found === false) {calendars.push(action.calendars)}            
+            let newUserObj3 = Object.assign({}, state[action.calendars.user_id], { ["calendar"]: calendars })
+            debugger
+            return Object.assign({}, { [action.calendars.user_id]: newUserObj3 })
+
         default:
             return state;
     }
