@@ -44,10 +44,10 @@ export default (state = {}, action) => {
             if (calendars.length > 0 ){
                 for (let i =0; i < calendars.length; i++) { 
                     
-                    if (calendars[i].id === action.calendars.id) {
+                    if (calendars[i].datetime === action.calendars.datetime) {
                         debugger
                         calendars[i] = action.calendars
-                        let found = true;
+                        found = true;
                         break
                     }
                 }

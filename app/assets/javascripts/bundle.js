@@ -6333,10 +6333,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (calendars.length > 0) {
         for (var i = 0; i < calendars.length; i++) {
-          if (calendars[i].id === action.calendars.id) {
+          if (calendars[i].datetime === action.calendars.datetime) {
             debugger;
             calendars[i] = action.calendars;
-            var _found = true;
+            found = true;
             break;
           }
         }

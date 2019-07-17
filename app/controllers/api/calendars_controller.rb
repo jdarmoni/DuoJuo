@@ -16,6 +16,6 @@ class Api::CalendarsController < ApplicationController
     end
     
     def calendars_params
-        params.require(:calendars).permit(:user_id, :datetime, :improvement)
+        params.require(:calendars).permit(:user_id, :id, :datetime, :improvement)
     end
 end
