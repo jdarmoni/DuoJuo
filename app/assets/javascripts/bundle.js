@@ -2929,7 +2929,8 @@ function (_React$Component) {
           if (this.state.lessonLength === currentSkill.skill_level) {
             // if you've finished the last lesson
             var user = this.props.user;
-            user['rupees'] = user.rupees + 1;
+            user['rupees'] = user.rupees + 1; // site_streak should be iterated in calendar logic
+
             user['site_streak'] = 1;
             this.props.updateUser(user).then(this.setState({
               completed: true
