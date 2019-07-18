@@ -2937,21 +2937,21 @@ function (_React$Component) {
             })); // CHECK CALENDARS
 
             if (this.props.calendar.length > 0) {
-              var calendars = this.props.calendar; // CHECK IF THERE IS A CALENDAR OBJECT FOR TODAY
+              var calendars = this.props.calendar;
+              var foundCalendar = false; // CHECK IF THERE IS A CALENDAR OBJECT FOR TODAY
 
               debugger;
 
               for (var _i = 0; _i < calendars.length; _i++) {
                 var today = Date.now();
                 var yesterday = today - 86400000;
-                var _foundCalendar = false;
                 debugger;
 
                 if (calendars[_i].datetime > yesterday) {
                   debugger;
                   calendars[_i]["improvement"] += 10;
                   this.props.updateCalendars(calendars[_i]);
-                  _foundCalendar = true;
+                  foundCalendar = true;
                   break;
                 }
               } // IF YOU HAVE CALENDARS, BUT NONE FOR CURRENT DAY

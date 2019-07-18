@@ -154,12 +154,12 @@ class LessonBody extends React.Component {
                     // CHECK CALENDARS
                     if (this.props.calendar.length > 0) {
                         let calendars = this.props.calendar
+                        let foundCalendar = false
                         // CHECK IF THERE IS A CALENDAR OBJECT FOR TODAY
                         debugger
                         for (let i = 0; i < calendars.length; i++) {
                             let today = Date.now()
                             let yesterday = today - 86400000
-                            let foundCalendar = false
                             debugger
                             if (calendars[i].datetime > yesterday) {
                                 debugger
