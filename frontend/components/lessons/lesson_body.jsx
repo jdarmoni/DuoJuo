@@ -157,13 +157,24 @@ class LessonBody extends React.Component {
                         for (let i = 0; i < calendars.length; i++) {
                             let today = Date.now()
                             let yesterday = today - 86400000
+                            let foundCalendar = false
                             debugger
                             if (calendars[i].datetime > yesterday) {
                                 debugger
                                 calendars[i]["improvement"] += 10;
                                 this.props.updateCalendars(calendars[i])
+                                foundCalendar = true
                                 break
                             }
+                        }
+                        // IF YOU HAVE CALENDARS, BUT NONE FOR CURRENT DAY
+                        if (!foundCalendar) {
+                            let calendar = {};
+                            calendar["improvement"] = 10;
+                            calendar["user_id"] = this.props.user.id
+                            calendar["datetime"] = Date.now()
+
+                            this.props.createCalendars(calendar)
                         }
                     } else {
                         // MAKE NEW CALENDER IF ISNT ONE

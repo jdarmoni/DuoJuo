@@ -42,6 +42,7 @@ class Dashboard extends React.Component {
             let latest = calendars[0];
             let today = Date.now();
             let yesterday = today - 86400000
+            
             for (let i = 0; i < calendars.length; i++) {
                 if (calendars[i].datetime > latest.datetime) latest = calendars[i]
             }

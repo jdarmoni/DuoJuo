@@ -2943,22 +2943,33 @@ function (_React$Component) {
               for (var _i = 0; _i < calendars.length; _i++) {
                 var today = Date.now();
                 var yesterday = today - 86400000;
+                var _foundCalendar = false;
                 debugger;
 
                 if (calendars[_i].datetime > yesterday) {
                   debugger;
                   calendars[_i]["improvement"] += 10;
                   this.props.updateCalendars(calendars[_i]);
+                  _foundCalendar = true;
                   break;
                 }
+              } // IF YOU HAVE CALENDARS, BUT NONE FOR CURRENT DAY
+
+
+              if (!foundCalendar) {
+                var calendar = {};
+                calendar["improvement"] = 10;
+                calendar["user_id"] = this.props.user.id;
+                calendar["datetime"] = Date.now();
+                this.props.createCalendars(calendar);
               }
             } else {
               // MAKE NEW CALENDER IF ISNT ONE
-              var calendar = {};
-              calendar["improvement"] = 10;
-              calendar["user_id"] = this.props.user.id;
-              calendar["datetime"] = Date.now();
-              this.props.createCalendars(calendar);
+              var _calendar = {};
+              _calendar["improvement"] = 10;
+              _calendar["user_id"] = this.props.user.id;
+              _calendar["datetime"] = Date.now();
+              this.props.createCalendars(_calendar);
             }
           }
 
