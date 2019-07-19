@@ -143,9 +143,6 @@ class LessonBody extends React.Component {
                     // IF FINISHED LAST LESSON
                     let user = this.props.user;
                     user['rupees'] = user.rupees + 1;
-
-                    // site_streak should be iterated in calendar logic
-                    user['site_streak'] = 1;
                     
                     this.props.updateUser(user).then(
                         this.setState({completed: true})

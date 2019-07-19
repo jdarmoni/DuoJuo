@@ -49,13 +49,10 @@ class Dashboard extends React.Component {
         let thurs = new Date(Date.now() - 86400000 )
 
         if (calendars.length > 0) {
-            
             // if dif between today & latest cal is more than 24 hours, set streak to 0
-            // if (today - latest > twentyFourHrs) streak = 0;
 
             for (let i = 0; i < calendars.length; i++) {
                 if (i === 0) { 
-                    debugger
                     streak = 1; 
                     continue;
                 }
@@ -63,7 +60,7 @@ class Dashboard extends React.Component {
                 let dayBefore = calendars[i - 1].datetime;
                 let CD = new Date(currentDay);
                 let DB = new Date(dayBefore);
-                debugger
+                
                 if (currentDay - dayBefore < twentyFourHrs) { 
                     streak += 1
                 } else { 
@@ -73,7 +70,6 @@ class Dashboard extends React.Component {
         }
 
         if (streak === 0) {
-            debugger
             if (today - latest < twentyFourHrs){
                 streak = 1
             }

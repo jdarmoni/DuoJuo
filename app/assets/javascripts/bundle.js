@@ -1112,10 +1112,8 @@ function (_React$Component) {
 
       if (calendars.length > 0) {
         // if dif between today & latest cal is more than 24 hours, set streak to 0
-        // if (today - latest > twentyFourHrs) streak = 0;
         for (var i = 0; i < calendars.length; i++) {
           if (i === 0) {
-            debugger;
             streak = 1;
             continue;
           }
@@ -1124,7 +1122,6 @@ function (_React$Component) {
           var dayBefore = calendars[i - 1].datetime;
           var CD = new Date(currentDay);
           var DB = new Date(dayBefore);
-          debugger;
 
           if (currentDay - dayBefore < twentyFourHrs) {
             streak += 1;
@@ -1135,8 +1132,6 @@ function (_React$Component) {
       }
 
       if (streak === 0) {
-        debugger;
-
         if (today - latest < twentyFourHrs) {
           streak = 1;
         }
@@ -2970,9 +2965,7 @@ function (_React$Component) {
           if (this.state.lessonLength === currentSkill.skill_level) {
             // IF FINISHED LAST LESSON
             var user = this.props.user;
-            user['rupees'] = user.rupees + 1; // site_streak should be iterated in calendar logic
-
-            user['site_streak'] = 1;
+            user['rupees'] = user.rupees + 1;
             this.props.updateUser(user).then(this.setState({
               completed: true
             })); // CHECK IF U HAVE CALENDARS
