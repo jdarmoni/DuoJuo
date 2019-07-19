@@ -1104,15 +1104,27 @@ function (_React$Component) {
       var latest = Math.max.apply(Math, _toConsumableArray(calendars.map(function (o) {
         return o.datetime;
       })).concat([0]));
-      var twentyFourHrs = 86400000;
+      var twentyFourHrs = 86450000; // tests:
+
+      var tuesday = new Date(Date.now() - 86400000 * 3);
+      var wednesday = new Date(Date.now() - 86400000 * 2);
+      var thurs = new Date(Date.now() - 86400000);
 
       if (calendars.length > 0) {
         // if dif between today & latest cal is more than 24 hours, set streak to 0
-        if (today - latest > 86400000) streak = 0;
+        // if (today - latest > twentyFourHrs) streak = 0;
+        for (var i = 0; i < calendars.length; i++) {
+          if (i === 0) {
+            debugger;
+            streak = 1;
+            continue;
+          }
 
-        for (var i = 1; i < calendars.length; i++) {
           var currentDay = calendars[i].datetime;
           var dayBefore = calendars[i - 1].datetime;
+          var CD = new Date(currentDay);
+          var DB = new Date(dayBefore);
+          debugger;
 
           if (currentDay - dayBefore < twentyFourHrs) {
             streak += 1;
