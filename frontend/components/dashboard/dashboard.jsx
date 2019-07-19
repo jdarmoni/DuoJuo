@@ -35,18 +35,35 @@ class Dashboard extends React.Component {
     componentDidMount(){
         this.props.fetchLanguageDatas(this.props.currentUser)
         let calendars = this.props.currentUser.calendar
-        
+        let streak = 0;
         if (calendars.length > 0) {
-
+            const latest = Math.max(...calendars.map(o => o.datetime), 0);
             // if there isn't a datetime from two days (or 25 hours) ago, set streak to 0
-            let latest = calendars[0];
+            if (new Date().getTime() - latest > 86400000) streak = 0;
+            
+            debugger
             let today = Date.now();
             let yesterday = today - 86400000
-            
+            let currentStreak = 0;
             for (let i = 0; i < calendars.length; i++) {
+                
+                // calendars[i].datetime - calendars[i + 1].datetime < 8640000, streak += 1
                 if (calendars[i].datetime > latest.datetime) latest = calendars[i]
+                
+                for (let j = i + 1; j < calendars.length -1; j++ ) {
+                    debugger
+                    if (calendars[j + 1].datetime - calendars[j].datetime < 86400000) {
+                        currentStreak +=1;
+                        if (currentStreak > streak) streak = currentStreak
+                    } else currentStreak = 0;
+                }
+                // new Date().getTime() -86400000
+                // new Date(new Date().getTime() - 86400000 * 4)
+                // Mon Jul 15 2019 17: 10: 41 GMT - 0400(Eastern Daylight Time) { }
+
             }
-            if (latest.datetime < yesterday) this.props.updateUser({"site_streak": 0})
+            // MAYBE DON'T NEED
+            if (streak === 0) this.props.updateUser({"site_streak": 0})
         }
 
     }

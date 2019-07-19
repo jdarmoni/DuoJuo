@@ -1028,6 +1028,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_list_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./language_list_item */ "./frontend/components/dashboard/language_list_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1090,18 +1100,38 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchLanguageDatas(this.props.currentUser);
       var calendars = this.props.currentUser.calendar;
+      var streak = 0;
 
       if (calendars.length > 0) {
-        // if there isn't a datetime from two days (or 25 hours) ago, set streak to 0
-        var latest = calendars[0];
+        var latest = Math.max.apply(Math, _toConsumableArray(calendars.map(function (o) {
+          return o.datetime;
+        })).concat([0])); // if there isn't a datetime from two days (or 25 hours) ago, set streak to 0
+
+        if (new Date().getTime() - latest > 86400000) streak = 0;
+        debugger;
         var today = Date.now();
         var yesterday = today - 86400000;
+        var currentStreak = 0;
 
         for (var i = 0; i < calendars.length; i++) {
-          if (calendars[i].datetime > latest.datetime) latest = calendars[i];
-        }
+          // calendars[i].datetime - calendars[i + 1].datetime < 8640000, streak += 1
+          if (calendars[i].datetime > latest.datetime) latest = (_readOnlyError("latest"), calendars[i]);
 
-        if (latest.datetime < yesterday) this.props.updateUser({
+          for (var j = i + 1; j < calendars.length - 1; j++) {
+            debugger;
+
+            if (calendars[j + 1].datetime - calendars[j].datetime < 86400000) {
+              currentStreak += 1;
+              if (currentStreak > streak) streak = currentStreak;
+            } else currentStreak = 0;
+          } // new Date().getTime() -86400000
+          // new Date(new Date().getTime() - 86400000 * 4)
+          // Mon Jul 15 2019 17: 10: 41 GMT - 0400(Eastern Daylight Time) { }
+
+        } // MAYBE DON'T NEED
+
+
+        if (streak === 0) this.props.updateUser({
           "site_streak": 0
         });
       }
@@ -2922,30 +2952,27 @@ function (_React$Component) {
             correct: false
           });
         } else {
-          // correct answer updates the user's level
+          // CORRECT ANSWER UPDATES THE USER LEVEL
           var currentSkill = this.props.skill;
           currentSkill['skill_level'] = currentSkill.skill_level + 1;
 
           if (this.state.lessonLength === currentSkill.skill_level) {
-            // if you've finished the last lesson
+            // IF FINISHED LAST LESSON
             var user = this.props.user;
             user['rupees'] = user.rupees + 1; // site_streak should be iterated in calendar logic
 
             user['site_streak'] = 1;
             this.props.updateUser(user).then(this.setState({
               completed: true
-            })); // CHECK CALENDARS
+            })); // CHECK IF U HAVE CALENDARS
 
             if (this.props.calendar.length > 0) {
               var calendars = this.props.calendar;
               var foundCalendar = false; // CHECK IF THERE IS A CALENDAR OBJECT FOR TODAY
 
-              debugger;
-
               for (var _i = 0; _i < calendars.length; _i++) {
                 var today = Date.now();
                 var yesterday = today - 86400000;
-                debugger;
 
                 if (calendars[_i].datetime > yesterday) {
                   debugger;

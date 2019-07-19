@@ -135,13 +135,12 @@ class LessonBody extends React.Component {
                 })
 
             } else {
-                // correct answer updates the user's level
+                // CORRECT ANSWER UPDATES THE USER LEVEL
                 let currentSkill = this.props.skill
                 currentSkill['skill_level'] = currentSkill.skill_level + 1;
                 
-                
                 if (this.state.lessonLength === currentSkill.skill_level) { 
-                    // if you've finished the last lesson
+                    // IF FINISHED LAST LESSON
                     let user = this.props.user;
                     user['rupees'] = user.rupees + 1;
 
@@ -151,16 +150,17 @@ class LessonBody extends React.Component {
                     this.props.updateUser(user).then(
                         this.setState({completed: true})
                     );
-                    // CHECK CALENDARS
+                    // CHECK IF U HAVE CALENDARS
+                    
                     if (this.props.calendar.length > 0) {
                         let calendars = this.props.calendar
                         let foundCalendar = false
                         // CHECK IF THERE IS A CALENDAR OBJECT FOR TODAY
-                        debugger
+                        
                         for (let i = 0; i < calendars.length; i++) {
                             let today = Date.now()
                             let yesterday = today - 86400000
-                            debugger
+                            
                             if (calendars[i].datetime > yesterday) {
                                 debugger
                                 calendars[i]["improvement"] += 10;
