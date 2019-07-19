@@ -1100,23 +1100,21 @@ function (_React$Component) {
 
       var calendars = this.props.currentUser.calendar;
       var streak = 0;
+      var today = Date.now();
+      var latest = Math.max.apply(Math, _toConsumableArray(calendars.map(function (o) {
+        return o.datetime;
+      })).concat([0]));
+      var twentyFourHrs = 86400000;
 
       if (calendars.length > 0) {
-        var _latest = Math.max.apply(Math, _toConsumableArray(calendars.map(function (o) {
-          return o.datetime;
-        })).concat([0]));
-
-        var _today = Date.now(); // if dif between today & latest cal is more than 24 hours, set streak to 0
-
-
-        if (_today - _latest > 86400000) streak = 0;
+        // if dif between today & latest cal is more than 24 hours, set streak to 0
+        if (today - latest > 86400000) streak = 0;
 
         for (var i = 1; i < calendars.length; i++) {
           var currentDay = calendars[i].datetime;
           var dayBefore = calendars[i - 1].datetime;
-          var _twentyFourHrs = 86400000;
 
-          if (currentDay - dayBefore < _twentyFourHrs) {
+          if (currentDay - dayBefore < twentyFourHrs) {
             streak += 1;
           } else {
             streak = 0;
@@ -1125,6 +1123,8 @@ function (_React$Component) {
       }
 
       if (streak === 0) {
+        debugger;
+
         if (today - latest < twentyFourHrs) {
           streak = 1;
         }
@@ -6645,7 +6645,6 @@ var updateSkill = function updateSkill(skill) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 var updateUser = function updateUser(user) {
-  debugger;
   return $.ajax({
     method: 'patch',
     url: "/api/user/".concat(user.id),
