@@ -2629,6 +2629,15 @@ var grandLessonsObj = {
     "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Petite cerises",
       correct: ["little cherries"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "Je suis seule a Dunkin Donuts",
+      correct: ["I am alone at Dunkin Donuts"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "D'ou etes-vous?",
+      correct: ["Where are you from?"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "Je suis un célébrité",
+      correct: ["I am a celebrity"]
     })] //  < TranslateSentenceContainer sentence={ "Je suis seule a Dunkin Donuts"} correct={ ["I am alone at Dunkin Donuts"]} />, < TranslateSentenceContainer sentence={ "D'ou etes-vous?"} correct={ ["Where are you from?"]} />, < TranslateSentenceContainer sentence = { "Je suis un célébrité"} correct = { ["I am a celebrity"]} />
 
   },
