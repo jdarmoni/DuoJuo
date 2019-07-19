@@ -1,7 +1,7 @@
 .logged-out-nav {
     /* background: linear-gradient(180deg,#0b3e71,rgba(11,65,118,.5));
     background-color: rgba(11,65,118,.8); */
-        background-color: #235390;
+    background-color: #235390;
     background-repeat: repeat-x;
     position: fixed;
     top: 0;
@@ -193,8 +193,8 @@
     height: 32.19512px;
     width: 40px;
     background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/juicy-flag-sprite-4.svg);
-    
 }
+
 .spanish-flag-footer{    background-position: 0 -32.19512px;}
 .french-flag-footer{    background-position: 0 -64.39024px;}
 .german-flag-footer {    background-position: 0 -96.58537px;}
@@ -202,3 +202,34 @@
 .portuguese-flag-footer {     background-position: 0 -289.7561px; }
 .dutch-flag-footer {    background-position: 0 -354.14634px; }
 .czech-flag-footer {     background-position: 0 -901.46341px;}
+
+/* @media (max-width: 1065px)
+._1nFPH {
+    min-height: calc(100vh - 50px);
+    padding: 48px 0;
+} */
+
+@media (max-width: 1065px) {
+    .body-container {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 24px 12px;
+        width: 100%;
+    }
+    .globe {
+            background-size: 192px;
+    height: 192px;
+    min-width: 192px;
+    width: 192px;
+    }
+    .footer-nav {
+        display: none
+    }
+}
+/* @media (min-width: 700px)
+*, :after, :before {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+} */
