@@ -1102,41 +1102,37 @@ function (_React$Component) {
       var streak = 0;
 
       if (calendars.length > 0) {
-        var latest = Math.max.apply(Math, _toConsumableArray(calendars.map(function (o) {
+        var _latest = Math.max.apply(Math, _toConsumableArray(calendars.map(function (o) {
           return o.datetime;
-        })).concat([0])); // if there isn't a datetime from two days (or 25 hours) ago, set streak to 0
+        })).concat([0]));
 
-        if (new Date().getTime() - latest > 86400000) streak = 0;
-        var today = Date.now();
-        var yesterday = today - 86400000;
-        var currentStreak = 0;
+        var _today = Date.now(); // if dif between today & latest cal is more than 24 hours, set streak to 0
+
+
+        if (_today - _latest > 86400000) streak = 0;
 
         for (var i = 1; i < calendars.length; i++) {
-          debugger;
+          var currentDay = calendars[i].datetime;
+          var dayBefore = calendars[i - 1].datetime;
+          var _twentyFourHrs = 86400000;
 
-          if (calendars[i].datetime - calendars[i - 1] < 86400000) {
-            currentStreak += 1;
+          if (currentDay - dayBefore < _twentyFourHrs) {
+            streak += 1;
           } else {
-            currentStreak = 0;
+            streak = 0;
           }
-
-          debugger; // calendars[i].datetime - calendars[i + 1].datetime < 8640000, streak += 1
-          // for (let j = i + 1; j < calendars.length -1; j++ ) {
-          //     debugger
-          //     if (calendars[j + 1].datetime - calendars[j].datetime < 86400000) {
-          //         currentStreak +=1;
-          //         if (currentStreak > streak) streak = currentStreak
-          //     } else currentStreak = 0;
-          // }
-          // new Date().getTime() -86400000
-          // new Date(new Date().getTime() - 86400000 * 4)
-          // Mon Jul 15 2019 17: 10: 41 GMT - 0400(Eastern Daylight Time) { }
         }
-      } // MAYBE DON'T NEED
+      }
 
+      if (streak === 0) {
+        if (today - latest < twentyFourHrs) {
+          streak = 1;
+        }
+      }
 
-      if (streak === 0) this.props.updateUser({
-        "site_streak": 0
+      this.props.updateUser({
+        "id": this.props.currentUser.id,
+        "site_streak": streak
       });
     }
   }, {
@@ -6649,6 +6645,7 @@ var updateSkill = function updateSkill(skill) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 var updateUser = function updateUser(user) {
+  debugger;
   return $.ajax({
     method: 'patch',
     url: "/api/user/".concat(user.id),
