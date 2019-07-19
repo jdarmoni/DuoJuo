@@ -225,6 +225,22 @@
     .footer-nav {
         display: none
     }
+    .site-lang {
+        display: none;
+    }
+    .login-button-div {
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-height: 500px) {
+
+    .globe {
+        display: none;
+    }
+    .slogan-text-box {
+        margin-top: 7%;
+    }
 }
 /* @media (min-width: 700px)
 *, :after, :before {
