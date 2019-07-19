@@ -240,6 +240,10 @@
     }
     .slogan-text-box {
         margin-top: 7%;
+        margin: auto;
+    }
+    .footer-nav {
+        display: none;
     }
 }
 /* @media (min-width: 700px)
