@@ -2629,16 +2629,8 @@ var grandLessonsObj = {
     "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Petite cerises",
       correct: ["little cherries"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "Je suis seule a Dunkin Donuts",
-      correct: ["I am alone at Dunkin Donuts"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "D'ou etes-vous?",
-      correct: ["Where are you from?"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "Je suis un célébrité",
-      correct: ["I am a celebrity"]
-    })] //  < TranslateSentenceContainer sentence={ "Je suis seule a Dunkin Donuts"} correct={ ["I am alone at Dunkin Donuts"]} />, < TranslateSentenceContainer sentence={ "D'ou etes-vous?"} correct={ ["Where are you from?"]} />, < TranslateSentenceContainer sentence = { "Je suis un célébrité"} correct = { ["I am a celebrity"]} />
+    })] // 
+    //  < TranslateSentenceContainer sentence={ "Je suis seule a Dunkin Donuts"} correct={ ["I am alone at Dunkin Donuts"]} />, < TranslateSentenceContainer sentence={ "D'ou etes-vous?"} correct={ ["Where are you from?"]} />, < TranslateSentenceContainer sentence = { "Je suis un célébrité"} correct = { ["I am a celebrity"]} />
 
   },
   "jp": {
@@ -2985,9 +2977,9 @@ function (_React$Component) {
 
               for (var _i = 0; _i < calendars.length; _i++) {
                 var today = Date.now();
-                var yesterday = today - 86400000;
+                var TD = new Date(today);
 
-                if (calendars[_i].datetime > yesterday) {
+                if (new Date(calendars[_i].datetime).getDay() === TD.getDay()) {
                   debugger;
                   calendars[_i]["improvement"] += 10;
                   this.props.updateCalendars(calendars[_i]);
@@ -3005,7 +2997,7 @@ function (_React$Component) {
                 this.props.createCalendars(calendar);
               }
             } else {
-              // MAKE NEW CALENDER IF ISNT ONE
+              // MAKE NEW CALENDER IF ARE NONE ONE
               var _calendar = {};
               _calendar["improvement"] = 10;
               _calendar["user_id"] = this.props.user.id;

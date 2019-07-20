@@ -152,13 +152,14 @@ class LessonBody extends React.Component {
                     if (this.props.calendar.length > 0) {
                         let calendars = this.props.calendar
                         let foundCalendar = false
+
                         // CHECK IF THERE IS A CALENDAR OBJECT FOR TODAY
                         
                         for (let i = 0; i < calendars.length; i++) {
                             let today = Date.now()
-                            let yesterday = today - 86400000
+                            let TD = new Date(today);
                             
-                            if (calendars[i].datetime > yesterday) {
+                            if (new Date(calendars[i].datetime).getDay() === TD.getDay()) {
                                 debugger
                                 calendars[i]["improvement"] += 10;
                                 this.props.updateCalendars(calendars[i])
@@ -176,7 +177,7 @@ class LessonBody extends React.Component {
                             this.props.createCalendars(calendar)
                         }
                     } else {
-                        // MAKE NEW CALENDER IF ISNT ONE
+                        // MAKE NEW CALENDER IF ARE NONE ONE
                         
                         let calendar = {};
                         calendar["improvement"] = 10;

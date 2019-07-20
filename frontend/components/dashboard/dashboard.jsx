@@ -62,6 +62,7 @@ class Dashboard extends React.Component {
                 let DB = new Date(dayBefore);
                 
                 if (currentDay - dayBefore < twentyFourHrs) { 
+                    
                     streak += 1
                 } else { 
                     streak = 0
