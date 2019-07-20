@@ -25,7 +25,7 @@ const mapStateToProps = (state) => {
         if (daySpan){
             daySpan.style.color = orange;
         } 
-        // streak logic
+        // STREAK LOGIC
         if (i === 0) {
             site_streak = 1;
             continue;

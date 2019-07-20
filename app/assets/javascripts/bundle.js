@@ -2634,7 +2634,20 @@ var grandLessonsObj = {
     "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Petite cerises",
       correct: ["little cherries"]
-    })] //  < ConstructSentence sentence={ "I am alone at Dunkin Donuts"} correct={ ["Je suis seule a Dunkin Donuts"]} words={ ["seule", "Je", "Donuts", "a", "Dunkin", "suis"]} />, < TranslateSentenceContainer sentence={ "D'ou etes-vous?"} correct={ ["Where are you from?"]} />, < MarkMeaningContainer sentence = { "Je suis un célébrité"} correct = { ["I am a celebrity"]} phrase1 = { "I am a celebrated person"} phrase2 = { "A nice plump pig"} phrase3 = { "I am a celebrity"} />,
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      sentence: "I am alone at Dunkin Donuts",
+      correct: ["Je suis seule a Dunkin Donuts"],
+      words: ["seule", "Je", "Donuts", "a", "Dunkin", "suis"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "D'ou etes-vous?",
+      correct: ["Where are you from?"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      sentence: "Je suis un célébrité",
+      correct: ["I am a celebrity"],
+      phrase1: "I am a celebrated person",
+      phrase2: "Everyone knows me",
+      phrase3: "I am a celebrity"
+    })] //  
 
   },
   "jp": {
@@ -3489,7 +3502,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
     if (daySpan) {
       daySpan.style.color = orange;
-    } // streak logic
+    } // STREAK LOGIC
 
 
     if (i === 0) {
