@@ -3295,7 +3295,7 @@ function (_React$Component) {
         className: "c-s-c-parent"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "c-s-c-day"
-      }, " 1"), " DAY")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " ", this.props.site_streak), " DAY")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "c-s-c-SVG-container"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "c-s-c-svg"
@@ -3469,7 +3469,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   var todayProgress = Object.values(state.entities.users)[0].calendar;
-  debugger;
+  var user = state.entities.users[state.session.id];
+  var site_streak = user.site_streak;
 
   if (todayProgress.length > 0) {
     todayProgress = todayProgress[todayProgress.length - 1].improvement;
@@ -3478,7 +3479,8 @@ var mapStateToProps = function mapStateToProps(state) {
   }
 
   return {
-    progress: todayProgress
+    progress: todayProgress,
+    site_streak: site_streak
   };
 };
 

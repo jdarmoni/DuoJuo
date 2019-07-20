@@ -32,7 +32,7 @@ class Completed extends React.Component {
                                                     <div className ="c-s-c-flame"></div> { /* little flame */}
                                                     
                                                     <div className="c-s-c-parent"> { /* parent box sizing */}
-                                                        <span className="c-s-c-day"> 1</span> DAY
+                                                        <span className="c-s-c-day"> {this.props.site_streak}</span> DAY
                                                     </div> 
 
                                                 </div>
