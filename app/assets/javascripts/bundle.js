@@ -2629,20 +2629,7 @@ var grandLessonsObj = {
     "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Petite cerises",
       correct: ["little cherries"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      sentence: "I am alone at Dunkin Donuts",
-      correct: ["Je suis seule a Dunkin Donuts"],
-      words: ["seule", "Je", "Donuts", "a", "Dunkin", "suis"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "D'ou etes-vous?",
-      correct: ["Where are you from?"]
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      sentence: "Je suis un célébrité",
-      correct: ["I am a celebrity"],
-      phrase1: "I am a celebrated person",
-      phrase2: "A nice plump pig",
-      phrase3: "I am a celebrity"
-    })] //  < TranslateSentenceContainer sentence={ "Je suis seule a Dunkin Donuts"} correct={ ["I am alone at Dunkin Donuts"]} />, < TranslateSentenceContainer sentence={ "D'ou etes-vous?"} correct={ ["Where are you from?"]} />, < TranslateSentenceContainer sentence = { "Je suis un célébrité"} correct = { ["I am a celebrity"]} />
+    })] //  < ConstructSentence sentence={ "I am alone at Dunkin Donuts"} correct={ ["Je suis seule a Dunkin Donuts"]} words={ ["seule", "Je", "Donuts", "a", "Dunkin", "suis"]} />, < TranslateSentenceContainer sentence={ "D'ou etes-vous?"} correct={ ["Where are you from?"]} />, < MarkMeaningContainer sentence = { "Je suis un célébrité"} correct = { ["I am a celebrity"]} phrase1 = { "I am a celebrated person"} phrase2 = { "A nice plump pig"} phrase3 = { "I am a celebrity"} />,
 
   },
   "jp": {
@@ -2992,7 +2979,6 @@ function (_React$Component) {
                 var TD = new Date(today);
 
                 if (new Date(calendars[_i].datetime).getDay() === TD.getDay()) {
-                  debugger;
                   calendars[_i]["improvement"] += 10;
                   this.props.updateCalendars(calendars[_i]);
                   foundCalendar = true;
@@ -3312,7 +3298,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-day-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "mini-d-c-span"
+        className: "mini-d-c-span",
+        id: "comp-1"
       }, "M"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-d-c-rotate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -3321,7 +3308,7 @@ function (_React$Component) {
         className: "m-d-c-g"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
-        fill: "#e5e5e5"
+        fill: this.props.monday
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
@@ -3331,7 +3318,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-day-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "mini-d-c-span"
+        className: "mini-d-c-span",
+        id: "comp-2"
       }, "T"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-d-c-rotate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -3340,7 +3328,7 @@ function (_React$Component) {
         className: "m-d-c-g"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
-        fill: "#e5e5e5"
+        fill: this.props.tuesday
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
@@ -3350,7 +3338,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-day-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "mini-d-c-span"
+        className: "mini-d-c-span",
+        id: "comp-3"
       }, "W"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-d-c-rotate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -3359,7 +3348,7 @@ function (_React$Component) {
         className: "m-d-c-g"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
-        fill: "#e5e5e5"
+        fill: this.props.wednesday
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
@@ -3369,7 +3358,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-day-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "mini-d-c-span"
+        className: "mini-d-c-span",
+        id: "comp-4"
       }, "TH"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-d-c-rotate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -3378,7 +3368,7 @@ function (_React$Component) {
         className: "m-d-c-g"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
-        fill: "#e5e5e5"
+        fill: this.props.thursday
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
@@ -3388,7 +3378,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-day-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "mini-d-c-span"
+        className: "mini-d-c-span",
+        id: "comp-5"
       }, "F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-d-c-rotate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -3397,7 +3388,7 @@ function (_React$Component) {
         className: "m-d-c-g"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
-        fill: "#e5e5e5"
+        fill: this.props.friday
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
@@ -3407,7 +3398,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-day-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "mini-d-c-span"
+        className: "mini-d-c-span",
+        id: "comp-6"
       }, "S"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-d-c-rotate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -3416,7 +3408,7 @@ function (_React$Component) {
         className: "m-d-c-g"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
-        fill: "#e5e5e5"
+        fill: this.props.saturday
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
@@ -3426,7 +3418,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-day-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "mini-d-c-span"
+        className: "mini-d-c-span",
+        id: "comp-7"
       }, "S"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-d-c-rotate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -3435,7 +3428,7 @@ function (_React$Component) {
         className: "m-d-c-g"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M1.2246467991473533e-15,-20A20,20,0,1,1,-1.2246467991473533e-15,20A20,20,0,1,1,1.2246467991473533e-15,-20M-2.792194702055965e-15,-15.2A15.2,15.2,0,1,0,2.792194702055965e-15,15.2A15.2,15.2,0,1,0,-2.792194702055965e-15,-15.2Z",
-        fill: "#e5e5e5"
+        fill: this.props.sunday
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         className: "_1IdLW",
         d: "M1.2246467991473533e-15,-20L9.307315673519883e-16,-15.2Z",
@@ -3471,6 +3464,28 @@ var mapStateToProps = function mapStateToProps(state) {
   var todayProgress = Object.values(state.entities.users)[0].calendar;
   var user = state.entities.users[state.session.id];
   var site_streak = user.site_streak;
+  var grey = "#e5e5e5";
+  var orange = "#ff9600";
+  var monday = grey;
+  var tuesday = grey;
+  var wednesday = grey;
+  var thursday = grey;
+  var friday = grey;
+  var saturday = grey;
+  var sunday = grey;
+  var date = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
+  var calendars = user.calendar;
+
+  for (var i = 0; i < calendars.length; i++) {
+    debugger;
+    var dateNum = new Date(calendars[i].datetime).getDay();
+    date[dateNum - 1] = orange;
+    var daySpan = document.getElementById("comp-".concat(dateNum));
+
+    if (daySpan) {
+      daySpan.style.color = orange;
+    }
+  }
 
   if (todayProgress.length > 0) {
     todayProgress = todayProgress[todayProgress.length - 1].improvement;
@@ -3478,9 +3493,17 @@ var mapStateToProps = function mapStateToProps(state) {
     todayProgress = 10;
   }
 
+  debugger;
   return {
     progress: todayProgress,
-    site_streak: site_streak
+    site_streak: site_streak,
+    monday: date[0],
+    tuesday: date[1],
+    wednesday: date[2],
+    thursday: date[3],
+    friday: date[4],
+    saturday: date[5],
+    sunday: date[6]
   };
 };
 

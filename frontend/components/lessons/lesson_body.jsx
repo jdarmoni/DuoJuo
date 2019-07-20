@@ -160,7 +160,7 @@ class LessonBody extends React.Component {
                             let TD = new Date(today);
                             
                             if (new Date(calendars[i].datetime).getDay() === TD.getDay()) {
-                                debugger
+                                
                                 calendars[i]["improvement"] += 10;
                                 this.props.updateCalendars(calendars[i])
                                 foundCalendar = true
