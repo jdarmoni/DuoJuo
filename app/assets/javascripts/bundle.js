@@ -3469,9 +3469,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   var todayProgress = Object.values(state.entities.users)[0].calendar;
+  debugger;
 
   if (todayProgress.length > 0) {
-    todayProgress = todayProgress[0].improvement;
+    todayProgress = todayProgress[todayProgress.length - 1].improvement;
   } else {
     todayProgress = 10;
   }

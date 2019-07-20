@@ -54,3 +54,6 @@ textarea {
     overflow: auto;
     outline: none;
 }
+button {
+    outline: none;
+}
