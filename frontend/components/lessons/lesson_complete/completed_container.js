@@ -25,6 +25,25 @@ const mapStateToProps = (state) => {
         if (daySpan){
             daySpan.style.color = orange;
         } 
+        // streak logic
+        if (i === 0) {
+            site_streak = 1;
+            continue;
+        }
+        let currentDay = calendars[i].datetime;
+        let dayBefore = calendars[i - 1].datetime;
+        let CD = new Date(currentDay);
+        let DB = new Date(dayBefore);
+        debugger
+        if (CD.getDay() - DB.getDay() <= 1) {
+            if (site_streak === 0) {
+                site_streak += 2
+            } else {
+                site_streak += 1
+            }
+        } else {
+            site_streak = 0
+        }
     }
 
     if (todayProgress.length > 0) {

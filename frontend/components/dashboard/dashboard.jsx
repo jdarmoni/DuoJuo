@@ -60,10 +60,13 @@ class Dashboard extends React.Component {
                 let dayBefore = calendars[i - 1].datetime;
                 let CD = new Date(currentDay);
                 let DB = new Date(dayBefore);
-                
-                if (currentDay - dayBefore < twentyFourHrs) { 
-                    
-                    streak += 1
+                debugger
+                if (CD.getDay() - DB.getDay() <= 1) {
+                    if (streak === 0) {
+                        streak += 2
+                    } else {
+                        streak += 1
+                    }
                 } else { 
                     streak = 0
                 }

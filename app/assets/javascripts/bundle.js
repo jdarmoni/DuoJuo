@@ -1122,9 +1122,14 @@ function (_React$Component) {
           var dayBefore = calendars[i - 1].datetime;
           var CD = new Date(currentDay);
           var DB = new Date(dayBefore);
+          debugger;
 
-          if (currentDay - dayBefore < twentyFourHrs) {
-            streak += 1;
+          if (CD.getDay() - DB.getDay() <= 1) {
+            if (streak === 0) {
+              streak += 2;
+            } else {
+              streak += 1;
+            }
           } else {
             streak = 0;
           }
@@ -3484,6 +3489,28 @@ var mapStateToProps = function mapStateToProps(state) {
 
     if (daySpan) {
       daySpan.style.color = orange;
+    } // streak logic
+
+
+    if (i === 0) {
+      site_streak = 1;
+      continue;
+    }
+
+    var currentDay = calendars[i].datetime;
+    var dayBefore = calendars[i - 1].datetime;
+    var CD = new Date(currentDay);
+    var DB = new Date(dayBefore);
+    debugger;
+
+    if (CD.getDay() - DB.getDay() <= 1) {
+      if (site_streak === 0) {
+        site_streak += 2;
+      } else {
+        site_streak += 1;
+      }
+    } else {
+      site_streak = 0;
     }
   }
 
