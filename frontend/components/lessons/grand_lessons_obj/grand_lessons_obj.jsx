@@ -17,8 +17,10 @@ import CompletedContainer from '../../lessons/lesson_complete/completed_containe
         "fr": {
             "Basics-1": [<TranslateSentenceContainer sentence={"La fille, la femme"} correct={["the girl, the woman"]} />, <ConstructSentence sentence={"Rekha est bon"} words={["eggs", "milk", "good", "is", "Rekha"]} correct={["Rekha is good"]}/> , <TranslateSentenceContainer sentence={"Je suis un fil, pas un fille"} correct={["I am a boy, not a girl"]} />, <MarkMeaningContainer sentence={["A French woman"]} correct={"Un femme Francaise"} phrase1={"Un femme Francaise"} phrase2={"Il est un pamplemousse"} phrase3={"Je suis le jeunne fille"}/>],
             "Greetings": [<ConstructSentence sentence={"Hello, I am hiding eggs"} correct={["Bonjour je cache des oeufs"]} words={["Bonjour", "je", "cache", "des", "oeufs"]} />, <MarkMeaningContainer sentence={"Capitaine Haddock boit à nouveau"} correct={["Captain Haddock is drinking again"]} phrase1={"The haddock is smelly from nature"} phrase2={"Captain Haddock is drinking again"} phrase3={"The haddock is newly rich"} />, <TranslateSentenceContainer sentence={"Tu va me dire ou est le lait maitenant"} correct={["You will tell me where the milk is now"]} />, <TranslateSentenceContainer sentence={"Juliette Binoche"} correct={["Juliette Binoche"]} />],
-            "Basics-2": [<TranslateSentenceContainer sentence={"Petite cerises"} correct={["little cherries"]} />, ]
-            // 
+         "Basics-2": [<TranslateSentenceContainer sentence={"Petite cerises"} correct={["little cherries"]} />, < ConstructSentence sentence={"I am alone at Dunkin Donuts"} correct={["Je suis seule a Dunkin Donuts"]} words={["seule", "Je", "Donuts", "a", "Dunkin", "suis"]} />, < TranslateSentenceContainer sentence={"D'ou etes-vous?"} correct={["Where are you from?"]} />, < MarkMeaningContainer sentence={"Je suis un célébrité"} correct={["I am a celebrity"]} phrase1={"I am a celebrated person"} phrase2={"A nice plump pig"} phrase3={"I am a celebrity"} />,]
+                 
+             
+
             //  < TranslateSentenceContainer sentence={ "Je suis seule a Dunkin Donuts"} correct={ ["I am alone at Dunkin Donuts"]} />, < TranslateSentenceContainer sentence={ "D'ou etes-vous?"} correct={ ["Where are you from?"]} />, < TranslateSentenceContainer sentence = { "Je suis un célébrité"} correct = { ["I am a celebrity"]} />
         },
         "jp": {
