@@ -42,11 +42,11 @@ class Welcome extends React.Component {
                                 <h1 className="welcome-choose-path">Choose your path</h1>
                                 <div className="welcome-button-container">
                                     
-                                    <button className="welcome-new-button" onClick={this.welcomeButton}>
+                                    {/* <button className="welcome-new-button" onClick={this.welcomeButton}>
                                         <img className="welcome-new-image" src="//d35aaqx5ub95lt.cloudfront.net/images/fork-placement.svg   " />
                                         <h2 className="welcome-new-h2">Already know some {this.props.currentUser.learning_language_string}?</h2>
                                         <div>Take this placement test</div>
-                                    </button>
+                                    </button> */}
 
                                     <button className="welcome-new-button" onClick={this.welcomeButton}>
                                         <img className="welcome-new-image" src="//d35aaqx5ub95lt.cloudfront.net/images/fork-basics.svg"/>

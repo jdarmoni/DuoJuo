@@ -6061,14 +6061,6 @@ function (_React$Component) {
         onClick: this.welcomeButton
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "welcome-new-image",
-        src: "//d35aaqx5ub95lt.cloudfront.net/images/fork-placement.svg   "
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "welcome-new-h2"
-      }, "Already know some ", this.props.currentUser.learning_language_string, "?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Take this placement test")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "welcome-new-button",
-        onClick: this.welcomeButton
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "welcome-new-image",
         src: "//d35aaqx5ub95lt.cloudfront.net/images/fork-basics.svg"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "welcome-new-h2"
