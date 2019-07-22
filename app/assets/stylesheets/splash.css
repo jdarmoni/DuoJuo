@@ -24,7 +24,7 @@
 
 .logged-out-nav-container {
     margin: 0 auto;
-    max-width: 79%;
+    max-width: 60%; /* 79*/
     min-height: 70px;
     padding: 0 40px;
 }
@@ -90,7 +90,7 @@
     padding: 40px;
     text-align: center;
     /* margin-top: 70px; to counteract position fixed; 70px is height of nav bar */
-    width: 70%;
+    width: 60%;
 }
 .globe {
     background: url(//d35aaqx5ub95lt.cloudfront.net/images/earth-two-rings.svg);
@@ -218,10 +218,10 @@
         width: 100%;
     }
     .globe {
-            background-size: 192px;
-    height: 192px;
-    min-width: 192px;
-    width: 192px;
+        background-size: 192px;
+        height: 192px;
+        min-width: 192px;
+        width: 192px;
     }
     .footer-nav {
         display: none
@@ -254,3 +254,15 @@
     -ms-user-select: auto;
     user-select: auto;
 } */
+
+@media (max-width: 1150px) {
+    .body-container{
+        width: 79%
+    }
+    .logged-out-nav-container {
+        width: 75%;
+        max-width: 75%;
+            padding: 0px 20px;
+    }
+
+}
