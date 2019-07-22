@@ -89,7 +89,7 @@
     margin: 12px auto;
     padding: 40px;
     text-align: center;
-    margin-top: 70px; /* to counteract position fixed; 70px is height of nav bar*/
+    /* margin-top: 70px; to counteract position fixed; 70px is height of nav bar */
     width: 70%;
 }
 .globe {
@@ -113,11 +113,12 @@
 }
 
 .logged-out-container {
+    display: flex;
     background-color: #235390;
     background-image: url(//d35aaqx5ub95lt.cloudfront.net/images/star-pattern.svg);
     width: 100%;
     align-items: center;
-    min-height: 90vh;
+    min-height: 100vh;
     /* height: calc(100vh - 70px); */
     position: relative;
 
