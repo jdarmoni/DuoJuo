@@ -15,12 +15,12 @@ const mapStateToProps = (state) => {
     let friday = grey;
     let saturday = grey;
     let sunday = grey;
-    let date = [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
+    let date = [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
     let calendars = user.calendar
     for (let i = 0; i < calendars.length; i++) {
         
         let dateNum = new Date(calendars[i].datetime).getDay();
-        date[dateNum -1] = orange;
+        date[dateNum] = orange;
         let daySpan = document.getElementById(`comp-${dateNum}`);
         debugger
         if (daySpan){
@@ -58,13 +58,13 @@ const mapStateToProps = (state) => {
     return {
         progress: todayProgress,
         site_streak: site_streak,
-        monday: date[0],
-        tuesday: date[1],
-        wednesday: date[2],
-        thursday: date[3],
-        friday: date[4],
-        saturday: date[5],
-        sunday: date[6]
+        sunday: date[0],
+        monday: date[1],
+        tuesday: date[2],
+        wednesday: date[3],
+        thursday: date[4],
+        friday: date[5],
+        saturday: date[6],
     }
 }
 const mapDispatchToProps = (dispatch) => {

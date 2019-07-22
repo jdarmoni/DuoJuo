@@ -3491,12 +3491,12 @@ var mapStateToProps = function mapStateToProps(state) {
   var friday = grey;
   var saturday = grey;
   var sunday = grey;
-  var date = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
+  var date = [sunday, monday, tuesday, wednesday, thursday, friday, saturday];
   var calendars = user.calendar;
 
   for (var i = 0; i < calendars.length; i++) {
     var dateNum = new Date(calendars[i].datetime).getDay();
-    date[dateNum - 1] = orange;
+    date[dateNum] = orange;
     var daySpan = document.getElementById("comp-".concat(dateNum));
     debugger;
 
@@ -3536,13 +3536,13 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     progress: todayProgress,
     site_streak: site_streak,
-    monday: date[0],
-    tuesday: date[1],
-    wednesday: date[2],
-    thursday: date[3],
-    friday: date[4],
-    saturday: date[5],
-    sunday: date[6]
+    sunday: date[0],
+    monday: date[1],
+    tuesday: date[2],
+    wednesday: date[3],
+    thursday: date[4],
+    friday: date[5],
+    saturday: date[6]
   };
 };
 
