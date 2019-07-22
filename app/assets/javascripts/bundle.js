@@ -3437,7 +3437,7 @@ function (_React$Component) {
         className: "mini-day-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "mini-d-c-span",
-        id: "comp-7"
+        id: "comp-0"
       }, "S"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mini-d-c-rotate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -3495,10 +3495,10 @@ var mapStateToProps = function mapStateToProps(state) {
   var calendars = user.calendar;
 
   for (var i = 0; i < calendars.length; i++) {
-    debugger;
     var dateNum = new Date(calendars[i].datetime).getDay();
     date[dateNum - 1] = orange;
     var daySpan = document.getElementById("comp-".concat(dateNum));
+    debugger;
 
     if (daySpan) {
       daySpan.style.color = orange;
@@ -3514,7 +3514,6 @@ var mapStateToProps = function mapStateToProps(state) {
     var dayBefore = calendars[i - 1].datetime;
     var CD = new Date(currentDay);
     var DB = new Date(dayBefore);
-    debugger;
 
     if (CD.getDay() - DB.getDay() <= 1) {
       if (site_streak === 0) {

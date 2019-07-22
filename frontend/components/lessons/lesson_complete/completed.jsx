@@ -140,7 +140,7 @@ class Completed extends React.Component {
                                             </div>
                                             <div className="mini-day-c">
                                                 <div className="mini-day-c-sub">
-                                                    <span className="mini-d-c-span" id="comp-7">
+                                                    <span className="mini-d-c-span" id="comp-0">
                                                         S
                                                     </span>
                                                     <div className="mini-d-c-rotate">

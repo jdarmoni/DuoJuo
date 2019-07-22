@@ -18,10 +18,11 @@ const mapStateToProps = (state) => {
     let date = [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
     let calendars = user.calendar
     for (let i = 0; i < calendars.length; i++) {
-        debugger
+        
         let dateNum = new Date(calendars[i].datetime).getDay();
         date[dateNum -1] = orange;
         let daySpan = document.getElementById(`comp-${dateNum}`);
+        debugger
         if (daySpan){
             daySpan.style.color = orange;
         } 
@@ -34,7 +35,7 @@ const mapStateToProps = (state) => {
         let dayBefore = calendars[i - 1].datetime;
         let CD = new Date(currentDay);
         let DB = new Date(dayBefore);
-        debugger
+        
         if (CD.getDay() - DB.getDay() <= 1) {
             if (site_streak === 0) {
                 site_streak += 2
