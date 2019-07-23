@@ -26,6 +26,7 @@
     width: 50px;
     padding: 7px;
     text-align: center;
+    width: 100%;
 }
 .translate-word:hover .translate-div-container {
     display: block;

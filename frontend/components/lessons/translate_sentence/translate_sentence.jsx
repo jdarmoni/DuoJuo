@@ -68,7 +68,7 @@ class TranslateSentence extends React.Component {
                 }],
                 json: true,
             };
-            debugger
+            
             request(options, function (err, res, body) {
                 
                 wordSpan.innerText=(body[0].translations[0].text);
