@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // import {translate} from '../../../../translate-text';
+const request = require('request');
+const uuidv4 = require('uuid/v4');
+
 // const TranslateAPI = require('../../../../translate-text');
 
 
@@ -26,19 +29,44 @@ class TranslateSentence extends React.Component {
 
             for (let i = 0; i < text.length; i++) {
                 
-                text[i] = <span onClick={this.eggs.bind(this)}>{text[i]} </span>
+                text[i] = <span onClick={this.translate.bind(this)}>{text[i]} </span>
 
             }
-            debugger
+            
             ReactDOM.render(text, challengeText[0])
         }
 
     }
-    eggs(event){
-        debugger
+    translate(event){
+        
         let text = event.target.innerText
-        debugger
-        // event.target.innerText <--- plug into translate api
+
+        let options = {
+            method: 'POST',
+            baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+            url: 'translate',
+            qs: {
+                'api-version': '3.0',
+                'to': ['en']
+            },
+            headers: {
+                'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
+                'Content-type': 'application/json',
+                'X-ClientTraceId': uuidv4().toString()
+            },
+            body: [{
+                'text': text
+            }],
+            json: true,
+        };
+
+        
+        request(options, function (err, res, body) {
+            debugger
+            console.log(body[0].translations[0].text)
+            //  console.log(JSON.stringify(body, null, 4));
+        });
+      
     }
 
     render(){

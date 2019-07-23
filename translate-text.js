@@ -30,8 +30,3 @@ let options = {
 request(options, function (err, res, body) {
     console.log(JSON.stringify(body, null, 4));
 });
-
-// module.exports = TranslateAPI
-// export const translate = request(options, function (err, res, body) {
-//     console.log(JSON.stringify(body, null, 4));
-// });

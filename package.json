@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/jdarmoni/DuoJuo/issues"
   },
-  "homepage": "https://github.com/jdarmoni/DuoJuo#readme"
+  "homepage": "https://github.com/jdarmoni/DuoJuo#readme",
+  "devDependencies": {
+    "json-loader": "^0.5.7"
+  }
 }
