@@ -13,7 +13,21 @@ class Welcome extends React.Component {
         if (this.props.currentUser) {
             if(this.props.currentUser.active === true || this.props.currentUser.language_strength) {
                 debugger
-                this.props.history.replace('/')
+                let language = this.props.currentUser.learning_language_string
+                let skill;
+                if (language === "French") {
+                    skill = "Basics-1"
+
+                } else if (language==="Spanish"){
+                    skill = "Intro"
+
+                } else if (language==="German"){
+                    skill = "Basics-1"
+
+                } else if(language==="Japanese"){
+                    skill = "Hiragana-1"
+                }
+                this.props.history.replace(`/skill/${skill}`)
             }
         }
     }
