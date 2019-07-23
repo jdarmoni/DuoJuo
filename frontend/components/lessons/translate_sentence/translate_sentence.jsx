@@ -1,5 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+// import {translate} from '../../../../translate-text';
+// const TranslateAPI = require('../../../../translate-text');
+
+
 class TranslateSentence extends React.Component {
     constructor(props){
         super(props);

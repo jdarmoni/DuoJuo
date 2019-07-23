@@ -6,12 +6,6 @@ const uuidv4 = require('uuid/v4');
 // another reference:
 // https://docs.microsoft.com/en-us/azure/cognitive-services/translator/translator-text-how-to-signup
 
-// for tomorrow: in lesson body, on componentDidMount:
-// let text = document.getElementsByClassName('challenge-sentence').valueOf()[0].innerText.split(' ');
-// for (let i = 0; i < text.length; i++) {
-    // text[i] = <span onMouseOver={CallTranslatorApi}>text[i] <span>
-// }
-
 let options = {
     method: 'POST',
     baseUrl: 'https://api.cognitive.microsofttranslator.com/',
@@ -36,3 +30,8 @@ let options = {
 request(options, function (err, res, body) {
     console.log(JSON.stringify(body, null, 4));
 });
+
+// module.exports = TranslateAPI
+// export const translate = request(options, function (err, res, body) {
+//     console.log(JSON.stringify(body, null, 4));
+// });
