@@ -3895,7 +3895,11 @@ function (_React$Component) {
           text[i] = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
             onClick: this.translate.bind(this),
             className: "translate-word"
-          }, text[i]);
+          }, text[i], react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "translate-div-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "translate-div-content"
+          }, "eggs")));
         }
 
         react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(text, challengeText[0]);

@@ -29,7 +29,13 @@ class TranslateSentence extends React.Component {
 
             for (let i = 0; i < text.length; i++) {
                 
-                text[i] = <span onClick={this.translate.bind(this)} className="translate-word" >{text[i]}</span> 
+                text[i] = <span onClick={this.translate.bind(this)} className="translate-word" >{text[i]}
+                    <div className="translate-div-container">
+                        <div className="translate-div-content">
+                            eggs
+                        </div>
+                    </div>
+                </span> 
 
             }
             
