@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import TranslatedWord from '../translated_words/translated_word';
+
 
 class MarkMeaning extends React.Component {
     constructor(props) {
@@ -36,6 +38,13 @@ class MarkMeaning extends React.Component {
             document.getElementById('skill-check-button').setAttribute('data-guess', correct)
         }
         
+        let sentence;
+        if (!this.props.eng) {
+            sentence = this.props.sentence.split(' ').map((word) => {
+                return <TranslatedWord word={word} />
+            })
+        } else sentence = this.props.sentence
+        
         if (this.state.target !== null) {
             
             let number = this.state.target.id[this.state.target.id.length - 1]
@@ -65,7 +74,7 @@ class MarkMeaning extends React.Component {
                     <div className="challenge-subbox">
                         <div className="challenge-translate-prompt">
                             
-                            <span className="challenge-sentence">{this.props.sentence}</span>
+                            <span className="challenge-sentence">{sentence}</span>
                             {/* you'll interpolate above span from props later  */}
                         </div>
 

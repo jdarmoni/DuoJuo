@@ -24,9 +24,13 @@ class TranslateSentence extends React.Component {
             document.getElementById('skill-check-button').setAttribute('data-guess', correct)
         }
         //************ */ TRANSLATE API LOGIC
-        let sentence= this.props.sentence.split(' ').map((word)=>{
-                return <TranslatedWord word={word}/>
+        let sentence;
+        if (!this.props.eng) {
+            sentence = this.props.sentence.split(' ').map((word) => {
+                return <TranslatedWord word={word} />
             })
+        } else sentence = this.props.sentence
+
         //*********** */
         
         return (

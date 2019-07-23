@@ -9,7 +9,7 @@ class TranslatedWord extends React.Component {
     translate(event) {
 
         let text = event.target.innerText;
-        debugger
+        
         let wordSpan = document.getElementById(`translate-word-` + text);
 
         if (wordSpan !== null && wordSpan.innerText === "") {
@@ -41,7 +41,7 @@ class TranslatedWord extends React.Component {
         }
     }
     render(){
-        debugger
+
         return (
             <span onMouseOver={this.translate.bind(this)} className="translate-word" >{this.props.word}
                 <div className="translate-div-container">

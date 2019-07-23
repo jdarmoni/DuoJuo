@@ -2280,6 +2280,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _word__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./word */ "./frontend/components/lessons/construct_sentence/word.jsx");
+/* harmony import */ var _translated_words_translated_word__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../translated_words/translated_word */ "./frontend/components/lessons/translated_words/translated_word.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2297,6 +2298,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -2333,6 +2335,16 @@ function (_React$Component) {
           toggled: false
         });
       });
+      var sentence;
+
+      if (!this.props.eng) {
+        sentence = this.props.sentence.split(' ').map(function (word) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translated_words_translated_word__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            word: word
+          });
+        });
+      } else sentence = this.props.sentence;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "challenge challenge-translate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -2436,7 +2448,7 @@ function (_React$Component) {
         transform: "matrix(1,0,0,1,0,0)"
       }))))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "challenge-sentence"
-      }, this.props.sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "construct-sentence-parent-container",
         id: "construct-component"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2608,7 +2620,8 @@ var grandLessonsObj = {
       sentence: "Je suis un fil, pas un fille",
       correct: ["I am a boy, not a girl"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      sentence: ["A French woman"],
+      sentence: "A French woman",
+      eng: true,
       correct: "Un femme Francaise",
       phrase1: "Un femme Francaise",
       phrase2: "Il est un pamplemousse",
@@ -2616,10 +2629,12 @@ var grandLessonsObj = {
     })],
     "Greetings": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "Hello, I am hiding eggs",
+      eng: true,
       correct: ["Bonjour je cache des oeufs"],
       words: ["Bonjour", "je", "cache", "des", "oeufs"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Capitaine Haddock boit à nouveau",
+      eng: false,
       correct: ["Captain Haddock is drinking again"],
       phrase1: "The haddock is smelly from nature",
       phrase2: "Captain Haddock is drinking again",
@@ -2629,6 +2644,7 @@ var grandLessonsObj = {
       correct: ["You will tell me where the milk is now"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Juliette Binoche",
+      eng: true,
       correct: ["Juliette Binoche"]
     })],
     "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2643,6 +2659,7 @@ var grandLessonsObj = {
       correct: ["Where are you from?"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Je suis un célébrité",
+      eng: false,
       correct: ["I am a celebrity"],
       phrase1: "I am a celebrated person",
       phrase2: "Everyone knows me",
@@ -2653,6 +2670,7 @@ var grandLessonsObj = {
   "jp": {
     "Hiragana-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "私の名前は",
+      eng: false,
       correct: ["My name is"],
       phrase1: "My name is",
       phrase2: "A girl's name is",
@@ -2662,6 +2680,7 @@ var grandLessonsObj = {
       correct: ["two"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "水",
+      eng: false,
       correct: ["water"],
       phrase1: "Milk",
       phrase2: "Gatorade",
@@ -2751,6 +2770,7 @@ var grandLessonsObj = {
       correct: ["are you a bird?"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "dime porque sueño",
+      eng: false,
       correct: ["tell me why I dream"],
       phrase1: "the pork costs a dime",
       phrase2: "why do you dream of pork",
@@ -2758,6 +2778,7 @@ var grandLessonsObj = {
     })],
     "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Mi nombre es Rafael Nadal",
+      eng: false,
       correct: ["My name is Rafael Nadal"],
       phrase1: "My name is Novak Djokovic",
       phrase2: "My name is Roger Federer",
@@ -2770,6 +2791,7 @@ var grandLessonsObj = {
       correct: ["Mi mejor amigo se llama Roger"],
       words: ["llama", "Roger", "mejor", "amigo", "Mi", "se"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      eng: false,
       sentence: "He ganado Roland Garros 12 veces, ¿no?",
       correct: ["I have won Roland Garros 12 times, no?"],
       phrase1: "I have won Wimbledon 12 times, no?",
@@ -3631,6 +3653,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _translated_words_translated_word__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../translated_words/translated_word */ "./frontend/components/lessons/translated_words/translated_word.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3648,6 +3671,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -3696,6 +3720,16 @@ function (_React$Component) {
         document.getElementById('skill-check-button').setAttribute('data-guess', correct);
       }
 
+      var sentence;
+
+      if (!this.props.eng) {
+        sentence = this.props.sentence.split(' ').map(function (word) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translated_words_translated_word__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            word: word
+          });
+        });
+      } else sentence = this.props.sentence;
+
       if (this.state.target !== null) {
         var number = this.state.target.id[this.state.target.id.length - 1];
         var label = document.getElementById("r-l-".concat(number));
@@ -3724,7 +3758,7 @@ function (_React$Component) {
         className: "challenge-translate-prompt"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "challenge-sentence"
-      }, this.props.sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "mark-meaning-content",
         id: "m-m-c"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -3891,11 +3925,16 @@ function (_React$Component) {
       } //************ */ TRANSLATE API LOGIC
 
 
-      var sentence = this.props.sentence.split(' ').map(function (word) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translated_words_translated_word__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          word: word
+      var sentence;
+
+      if (!this.props.eng) {
+        sentence = this.props.sentence.split(' ').map(function (word) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translated_words_translated_word__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            word: word
+          });
         });
-      }); //*********** */
+      } else sentence = this.props.sentence; //*********** */
+
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "challenge challenge-translate"
@@ -4099,7 +4138,6 @@ function (_React$Component) {
     key: "translate",
     value: function translate(event) {
       var text = event.target.innerText;
-      debugger;
       var wordSpan = document.getElementById("translate-word-" + text);
 
       if (wordSpan !== null && wordSpan.innerText === "") {
@@ -4129,7 +4167,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         onMouseOver: this.translate.bind(this),
         className: "translate-word"

@@ -8,6 +8,7 @@
 }
 .translate-div-container {
     display: none;
+    visibility: hidden;
     left: 50%;
     position: absolute;
     top: calc(100% + 15px);
@@ -30,4 +31,5 @@
 }
 .translate-word:hover .translate-div-container {
     display: block;
+    visibility: visible;
 }
