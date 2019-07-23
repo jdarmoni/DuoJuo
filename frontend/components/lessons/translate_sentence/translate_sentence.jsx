@@ -29,10 +29,10 @@ class TranslateSentence extends React.Component {
 
             for (let i = 0; i < text.length; i++) {
                 
-                text[i] = <span onClick={this.translate.bind(this)} className="translate-word" >{text[i]}
+                text[i] = <span onMouseOver={this.translate.bind(this)} className="translate-word" >{text[i]}
                     <div className="translate-div-container">
                         <div className="translate-div-content">
-                            eggs
+                            <span id={`translate-word-` + `${text[i]}`}></span>
                         </div>
                     </div>
                 </span> 
@@ -45,33 +45,37 @@ class TranslateSentence extends React.Component {
     }
     translate(event){
         
-        let text = event.target.innerText
-
-        let options = {
-            method: 'POST',
-            baseUrl: 'https://api.cognitive.microsofttranslator.com/',
-            url: 'translate',
-            qs: {
-                'api-version': '3.0',
-                'to': ['en']
-            },
-            headers: {
-                'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
-                'Content-type': 'application/json',
-                'X-ClientTraceId': uuidv4().toString()
-            },
-            body: [{
-                'text': text
-            }],
-            json: true,
-        };
+        let text = event.target.innerText;
         
-        request(options, function (err, res, body) {
+        let wordSpan = document.getElementById(`translate-word-`+text);
+        
+        if (wordSpan!== null && wordSpan.innerText === "" ) {
+            let options = {
+                method: 'POST',
+                baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+                url: 'translate',
+                qs: {
+                    'api-version': '3.0',
+                    'to': ['en']
+                },
+                headers: {
+                    'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
+                    'Content-type': 'application/json',
+                    'X-ClientTraceId': uuidv4().toString()
+                },
+                body: [{
+                    'text': text
+                }],
+                json: true,
+            };
+            debugger
+            request(options, function (err, res, body) {
+                
+                wordSpan.innerText=(body[0].translations[0].text);
+                //  console.log(JSON.stringify(body, null, 4));
+            });
             
-            console.log(body[0].translations[0].text)
-            //  console.log(JSON.stringify(body, null, 4));
-        });
-      
+        }
     }
 
     render(){

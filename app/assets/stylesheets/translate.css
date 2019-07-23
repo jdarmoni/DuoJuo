@@ -24,8 +24,7 @@
     border: 2px solid #e5e5e5;
     border-radius: 16px;
     width: 50px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 7px;
     text-align: center;
 }
 .translate-word:hover .translate-div-container {

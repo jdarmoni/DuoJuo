@@ -3833,7 +3833,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
@@ -3893,13 +3893,15 @@ function (_React$Component) {
 
         for (var i = 0; i < text.length; i++) {
           text[i] = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-            onClick: this.translate.bind(this),
+            onMouseOver: this.translate.bind(this),
             className: "translate-word"
           }, text[i], react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "translate-div-container"
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "translate-div-content"
-          }, "eggs")));
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            id: "translate-word-" + "".concat(text[i])
+          }))));
         }
 
         react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(text, challengeText[0]);
@@ -3909,27 +3911,32 @@ function (_React$Component) {
     key: "translate",
     value: function translate(event) {
       var text = event.target.innerText;
-      var options = {
-        method: 'POST',
-        baseUrl: 'https://api.cognitive.microsofttranslator.com/',
-        url: 'translate',
-        qs: {
-          'api-version': '3.0',
-          'to': ['en']
-        },
-        headers: {
-          'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
-          'Content-type': 'application/json',
-          'X-ClientTraceId': uuidv4().toString()
-        },
-        body: [{
-          'text': text
-        }],
-        json: true
-      };
-      request(options, function (err, res, body) {
-        console.log(body[0].translations[0].text); //  console.log(JSON.stringify(body, null, 4));
-      });
+      var wordSpan = document.getElementById("translate-word-" + text);
+
+      if (wordSpan !== null && wordSpan.innerText === "") {
+        var options = {
+          method: 'POST',
+          baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+          url: 'translate',
+          qs: {
+            'api-version': '3.0',
+            'to': ['en']
+          },
+          headers: {
+            'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
+            'Content-type': 'application/json',
+            'X-ClientTraceId': uuidv4().toString()
+          },
+          body: [{
+            'text': text
+          }],
+          json: true
+        };
+        debugger;
+        request(options, function (err, res, body) {
+          wordSpan.innerText = body[0].translations[0].text; //  console.log(JSON.stringify(body, null, 4));
+        });
+      }
     }
   }, {
     key: "render",
@@ -4059,7 +4066,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (TranslateSentence);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
 
 /***/ }),
 
