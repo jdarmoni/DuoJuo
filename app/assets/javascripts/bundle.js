@@ -3860,11 +3860,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var request = __webpack_require__(/*! request */ "./node_modules/request/index.js");
-
-var uuidv4 = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js"); // const TranslateAPI = require('../../../../translate-text');
-
-
 var TranslateSentence =
 /*#__PURE__*/
 function (_React$Component) {
@@ -3884,74 +3879,6 @@ function (_React$Component) {
 
       if (challengeTextArea) {
         document.getElementById('skill-check-button').setAttribute('data-guess', correct);
-      } // let challengeText = document.getElementsByClassName('challenge-sentence')
-      // if (challengeText[0]) {
-      //     let text = challengeText[0].innerText.split(' ');
-      //     // clear the inner text
-      //     challengeText[0].innerText = "";
-      //     for (let i = 0; i < text.length; i++) {
-      //         text[i] = <span onMouseOver={this.translate.bind(this)} className="translate-word" >{text[i]}
-      //             <div className="translate-div-container">
-      //                 <div className="translate-div-content">
-      //                     <span id={`translate-word-` + `${text[i]}`}></span>
-      //                 </div>
-      //             </div>
-      //         </span> 
-      //     }
-      //     ReactDOM.render(text, challengeText[0])
-      // }
-
-    } // kill this soon
-
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {// debugger
-      // let challengeText = document.getElementsByClassName('challenge-sentence')
-      // if (challengeText[0]) {
-      //     let text = challengeText[0].innerText.split(' ');
-      //     // clear the inner text
-      //     challengeText[0].innerText = "";
-      //     debugger
-      //     for (let i = 0; i < text.length; i++) {
-      //         text[i] = <span onMouseOver={this.translate.bind(this)} className="translate-word" >{text[i]}
-      //             <div className="translate-div-container">
-      //                 <div className="translate-div-content">
-      //                     <span id={`translate-word-` + `${text[i]}`}></span>
-      //                 </div>
-      //             </div>
-      //         </span>
-      //     }
-      //     ReactDOM.render(text, challengeText[0])
-      // }
-    }
-  }, {
-    key: "translate",
-    value: function translate(event) {
-      var text = event.target.innerText;
-      var wordSpan = document.getElementById("translate-word-" + text);
-
-      if (wordSpan !== null && wordSpan.innerText === "") {
-        var options = {
-          method: 'POST',
-          baseUrl: 'https://api.cognitive.microsofttranslator.com/',
-          url: 'translate',
-          qs: {
-            'api-version': '3.0',
-            'to': ['en']
-          },
-          headers: {
-            'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
-            'Content-type': 'application/json',
-            'X-ClientTraceId': uuidv4().toString()
-          },
-          body: [{
-            'text': text
-          }],
-          json: true
-        };
-        request(options, function (err, res, body) {
-          wordSpan.innerText = body[0].translations[0].text; //  console.log(JSON.stringify(body, null, 4));
-        });
       }
     }
   }, {
@@ -3970,7 +3897,6 @@ function (_React$Component) {
         });
       }); //*********** */
 
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "challenge challenge-translate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {

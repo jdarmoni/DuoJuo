@@ -1,9 +1,5 @@
 import React from 'react'
 import TranslatedWord from '../translated_words/translated_word'
-const request = require('request');
-const uuidv4 = require('uuid/v4');
-
-// const TranslateAPI = require('../../../../translate-text');
 
 
 class TranslateSentence extends React.Component {
@@ -19,89 +15,6 @@ class TranslateSentence extends React.Component {
             document.getElementById('skill-check-button').setAttribute('data-guess', correct)        
         }
 
-        // let challengeText = document.getElementsByClassName('challenge-sentence')
-        // if (challengeText[0]) {
-            
-        //     let text = challengeText[0].innerText.split(' ');
-        //     // clear the inner text
-        //     challengeText[0].innerText = "";
-
-        //     for (let i = 0; i < text.length; i++) {
-                
-        //         text[i] = <span onMouseOver={this.translate.bind(this)} className="translate-word" >{text[i]}
-        //             <div className="translate-div-container">
-        //                 <div className="translate-div-content">
-        //                     <span id={`translate-word-` + `${text[i]}`}></span>
-        //                 </div>
-        //             </div>
-        //         </span> 
-
-        //     }
-            
-        //     ReactDOM.render(text, challengeText[0])
-        // }
-
-    }
-    // kill this soon
-    componentDidUpdate(){
-        // debugger
-        // let challengeText = document.getElementsByClassName('challenge-sentence')
-        // if (challengeText[0]) {
-        //     let text = challengeText[0].innerText.split(' ');
-        //     // clear the inner text
-        //     challengeText[0].innerText = "";
-        //     debugger
-
-        //     for (let i = 0; i < text.length; i++) {
-
-                
-        //         text[i] = <span onMouseOver={this.translate.bind(this)} className="translate-word" >{text[i]}
-        //             <div className="translate-div-container">
-        //                 <div className="translate-div-content">
-        //                     <span id={`translate-word-` + `${text[i]}`}></span>
-        //                 </div>
-        //             </div>
-        //         </span>
-
-        //     }
-
-        //     ReactDOM.render(text, challengeText[0])
-        // }
-    }
-
-    translate(event){
-        
-        let text = event.target.innerText;
-        
-        let wordSpan = document.getElementById(`translate-word-`+text);
-        
-        if (wordSpan!== null && wordSpan.innerText === "" ) {
-            let options = {
-                method: 'POST',
-                baseUrl: 'https://api.cognitive.microsofttranslator.com/',
-                url: 'translate',
-                qs: {
-                    'api-version': '3.0',
-                    'to': ['en']
-                },
-                headers: {
-                    'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
-                    'Content-type': 'application/json',
-                    'X-ClientTraceId': uuidv4().toString()
-                },
-                body: [{
-                    'text': text
-                }],
-                json: true,
-            };
-            
-            request(options, function (err, res, body) {
-                
-                wordSpan.innerText=(body[0].translations[0].text);
-                //  console.log(JSON.stringify(body, null, 4));
-            });
-            
-        }
     }
 
     render(){
@@ -115,7 +28,7 @@ class TranslateSentence extends React.Component {
                 return <TranslatedWord word={word}/>
             })
         //*********** */
-        debugger
+        
         return (
             <>
             <div className="challenge challenge-translate">
