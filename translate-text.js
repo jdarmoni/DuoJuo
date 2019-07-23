@@ -3,6 +3,14 @@ const uuidv4 = require('uuid/v4');
 
 // for quickstart guide:
 // https://docs.microsoft.com/en-us/azure/cognitive-services/translator/quickstart-nodejs-translate
+// another reference:
+// https://docs.microsoft.com/en-us/azure/cognitive-services/translator/translator-text-how-to-signup
+
+// for tomorrow: in lesson body, on componentDidMount:
+// let text = document.getElementsByClassName('challenge-sentence').valueOf()[0].innerText.split(' ');
+// for (let i = 0; i < text.length; i++) {
+    // text[i] = <span onMouseOver={CallTranslatorApi}>text[i] <span>
+// }
 
 let options = {
     method: 'POST',
@@ -10,7 +18,7 @@ let options = {
     url: 'translate',
     qs: {
         'api-version': '3.0',
-        'to': ['ja']
+        'to': ['en']
         // 'to': ['de', 'it']
 
     },
@@ -20,7 +28,7 @@ let options = {
         'X-ClientTraceId': uuidv4().toString()
     },
     body: [{
-        'text': 'the boy!'
+        'text': 'el nino!'
     }],
     json: true,
 };
