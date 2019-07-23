@@ -29,7 +29,7 @@ class TranslateSentence extends React.Component {
 
             for (let i = 0; i < text.length; i++) {
                 
-                text[i] = <span onClick={this.translate.bind(this)}>{text[i]} </span>
+                text[i] = <span onClick={this.translate.bind(this)} className="translate-word" >{text[i]}</span> 
 
             }
             
@@ -59,10 +59,9 @@ class TranslateSentence extends React.Component {
             }],
             json: true,
         };
-
         
         request(options, function (err, res, body) {
-            debugger
+            
             console.log(body[0].translations[0].text)
             //  console.log(JSON.stringify(body, null, 4));
         });

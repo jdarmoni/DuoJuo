@@ -3893,8 +3893,9 @@ function (_React$Component) {
 
         for (var i = 0; i < text.length; i++) {
           text[i] = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-            onClick: this.translate.bind(this)
-          }, text[i], " ");
+            onClick: this.translate.bind(this),
+            className: "translate-word"
+          }, text[i]);
         }
 
         react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(text, challengeText[0]);
@@ -3923,7 +3924,6 @@ function (_React$Component) {
         json: true
       };
       request(options, function (err, res, body) {
-        debugger;
         console.log(body[0].translations[0].text); //  console.log(JSON.stringify(body, null, 4));
       });
     }

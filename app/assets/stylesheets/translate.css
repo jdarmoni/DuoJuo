@@ -1,0 +1,11 @@
+.translate-word {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAI0lEQVQIW2NkwAIYYWJr1679HxwcDOaDCZAATBIkgVslurEAdDoMBsNekvMAAAAASUVORK5CYII=) repeat-x 0 100%;
+    padding: 0 0 4px;
+    position: relative;
+    cursor: default;
+    display: inline;
+    margin: 2px;
+}
+.translate-spacer {
+    width: 3px;
+}
