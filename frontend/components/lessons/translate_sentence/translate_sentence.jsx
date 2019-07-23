@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ReactDOM from 'react-dom'
 class TranslateSentence extends React.Component {
     constructor(props){
         super(props);
@@ -12,8 +12,28 @@ class TranslateSentence extends React.Component {
         if (challengeTextArea) {
             document.getElementById('skill-check-button').setAttribute('data-guess', correct)        
         }
+
+        let challengeText = document.getElementsByClassName('challenge-sentence')
+        if (challengeText[0]) {
+            debugger
+            let text = challengeText[0].innerText.split(' ');
+            // clear the inner text
+            challengeText[0].innerText = "";
+
+            for (let i = 0; i < text.length; i++) {
+                
+                text[i] = <span onClick={this.eggs.bind(this)}>{text[i]} </span>
+
+            }
+            debugger
+            ReactDOM.render(text, challengeText[0])
+        }
+
     }
-   
+    eggs(event){
+        debugger
+        // event.target.innerText <--- plug into translate api
+    }
 
     render(){
         if (document.getElementById('skill-check-button')) {

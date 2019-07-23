@@ -17,7 +17,9 @@ class MarkMeaning extends React.Component {
         if (challengeTextArea) {
             document.getElementById('skill-check-button').setAttribute('data-guess', correct)
         }
+        
     }
+
     selected(e){
         
         this.setState({

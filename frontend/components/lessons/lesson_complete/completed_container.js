@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
         let dateNum = new Date(calendars[i].datetime).getDay();
         date[dateNum] = orange;
         let daySpan = document.getElementById(`comp-${dateNum}`);
-        debugger
+        
         if (daySpan){
             daySpan.style.color = orange;
         } 
@@ -54,7 +54,7 @@ const mapStateToProps = (state) => {
         
         todayProgress = 10
     }
-    debugger
+    
     return {
         progress: todayProgress,
         site_streak: site_streak,

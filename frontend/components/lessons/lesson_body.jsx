@@ -28,6 +28,7 @@ class LessonBody extends React.Component {
                 lessonLength: grandLessonsObj[this.props.mini_lang][url].length
             })
         } 
+
         // if you're on the completed page, but you refresh - overwrite the default False to True
         // if (document.getElementsByClassName('completed-container') && this.state.completed === false) {
         //     this.setState({
