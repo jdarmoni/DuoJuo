@@ -15,7 +15,7 @@ class TranslateSentence extends React.Component {
 
         let challengeText = document.getElementsByClassName('challenge-sentence')
         if (challengeText[0]) {
-            debugger
+            
             let text = challengeText[0].innerText.split(' ');
             // clear the inner text
             challengeText[0].innerText = "";
@@ -31,6 +31,8 @@ class TranslateSentence extends React.Component {
 
     }
     eggs(event){
+        debugger
+        let text = event.target.innerText
         debugger
         // event.target.innerText <--- plug into translate api
     }

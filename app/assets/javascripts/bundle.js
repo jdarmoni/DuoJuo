@@ -3882,7 +3882,6 @@ function (_React$Component) {
       var challengeText = document.getElementsByClassName('challenge-sentence');
 
       if (challengeText[0]) {
-        debugger;
         var text = challengeText[0].innerText.split(' '); // clear the inner text
 
         challengeText[0].innerText = "";
@@ -3900,6 +3899,8 @@ function (_React$Component) {
   }, {
     key: "eggs",
     value: function eggs(event) {
+      debugger;
+      var text = event.target.innerText;
       debugger; // event.target.innerText <--- plug into translate api
     }
   }, {
