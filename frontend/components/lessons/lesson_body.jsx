@@ -3,6 +3,7 @@ import TranslateSentenceContainer from '../lessons/translate_sentence/translate_
 import {grandLessonsObj} from './grand_lessons_obj/grand_lessons_obj';
 import CompletedContainer from './lesson_complete/completed_container';
 import { throws } from 'assert';
+import ReactDOM from 'react-dom';
 
 class LessonBody extends React.Component {
     constructor(props) {
@@ -210,6 +211,7 @@ class LessonBody extends React.Component {
             currentLesson: array
         })
         // https://stackoverflow.com/questions/24909371/move-item-in-object-to-last-position
+
     }
     renderFooter(){
         if (this.state.default === true) {
