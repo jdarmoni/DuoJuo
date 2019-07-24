@@ -2669,7 +2669,7 @@ var grandLessonsObj = {
   },
   "jp": {
     "Hiragana-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      sentence: "私の名前は",
+      sentence: "私の名前",
       eng: false,
       correct: ["My name is"],
       phrase1: "My name is",
@@ -2759,7 +2759,7 @@ var grandLessonsObj = {
   },
   "es": {
     "Intro": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "el cerdo esta durmiendo",
+      sentence: "El cerdo esta durmiendo",
       correct: ["the pig is sleeping"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "Soy el chico que bebe leche",
