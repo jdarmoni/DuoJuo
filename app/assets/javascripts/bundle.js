@@ -3918,7 +3918,9 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      document.getElementsByClassName('translate-div-content')[0].children[0].innerText = "";
+      if (document.getElementsByClassName('translate-div-content')[0]) {
+        document.getElementsByClassName('translate-div-content')[0].children[0].innerText = "";
+      }
     }
   }, {
     key: "render",
