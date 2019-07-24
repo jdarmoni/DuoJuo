@@ -20,7 +20,7 @@ class TranslateSentence extends React.Component {
             let html = document.getElementsByClassName('translate-div-content');
             
             for (let i = 0; i < html.length; i++) {
-                debugger
+
                 html[i].children[0].innerText = "";
             }
         

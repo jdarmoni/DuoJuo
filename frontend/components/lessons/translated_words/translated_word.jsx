@@ -35,7 +35,6 @@ class TranslatedWord extends React.Component {
             request(options, function (err, res, body) {
 
                 wordSpan.innerText = (body[0].translations[0].text);
-                console.log(body)
                 //  console.log(JSON.stringify(body, null, 4));
             });
 
