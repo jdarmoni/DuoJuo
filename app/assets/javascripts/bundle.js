@@ -3916,6 +3916,11 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      document.getElementsByClassName('translate-div-content')[0].children[0].innerText = "";
+    }
+  }, {
     key: "render",
     value: function render() {
       if (document.getElementById('skill-check-button')) {

@@ -14,7 +14,9 @@ class TranslateSentence extends React.Component {
         if (challengeTextArea) {
             document.getElementById('skill-check-button').setAttribute('data-guess', correct)        
         }
-
+    }
+    componentDidUpdate(){
+        document.getElementsByClassName('translate-div-content')[0].children[0].innerText = ""
     }
 
     render(){
