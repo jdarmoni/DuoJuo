@@ -2766,15 +2766,15 @@ var grandLessonsObj = {
       correct: ["I am the boy who drinks milk"],
       words: ["drinks", "am", "I", "the", "boy", "milk", "who"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "eres un pájaro?",
+      sentence: "Eres un pájaro?",
       correct: ["are you a bird?"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      sentence: "dime porque sueño",
+      sentence: "Dime porque sueño",
       eng: false,
       correct: ["tell me why I dream"],
-      phrase1: "the pork costs a dime",
-      phrase2: "why do you dream of pork",
-      phrase3: "tell me why I dream"
+      phrase1: "The pork costs a dime",
+      phrase2: "Why do you dream of pork",
+      phrase3: "Tell me why I dream"
     })],
     "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Mi nombre es Rafael Nadal",
