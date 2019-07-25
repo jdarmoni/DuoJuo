@@ -1264,7 +1264,7 @@ function (_React$Component) {
       }, "learn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
+        href: "https://www.linkedin.com/in/julien-darmoni-941a09154/",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "////d35aaqx5ub95lt.cloudfront.net/images/icons/stories-inactive2.svg",
@@ -1273,10 +1273,10 @@ function (_React$Component) {
         className: "dashboard-header-span"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-text"
-      }, "stories"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "LinkedIn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
+        href: "https:www.github.com/jdarmoni/DuoJuo",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/discuss-inactive.svg",
@@ -1285,7 +1285,7 @@ function (_React$Component) {
         className: "dashboard-header-span"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-text"
-      }, "discuss"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Github"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://jdarmoni.github.io/DuoProject/",

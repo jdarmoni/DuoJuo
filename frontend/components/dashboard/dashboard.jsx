@@ -108,18 +108,18 @@ class Dashboard extends React.Component {
                             </a>
                             <div className="dashboard-spacer"></div>
                             {/* one little header block */}
-                            <a href="" className="dashboard-header-blocks">
+                                <a href="https://www.linkedin.com/in/julien-darmoni-941a09154/" className="dashboard-header-blocks">
                                 <img src="////d35aaqx5ub95lt.cloudfront.net/images/icons/stories-inactive2.svg" className="dashboard-header-icon" />
                                 <span className="dashboard-header-span">
-                                    <span className="dashboard-header-text">stories</span>
+                                    <span className="dashboard-header-text">LinkedIn</span>
                                 </span>
                             </a>
                             <div className="dashboard-spacer"></div>
 
-                            <a href="" className="dashboard-header-blocks">
+                            <a href="https:www.github.com/jdarmoni/DuoJuo" className="dashboard-header-blocks">
                                 <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/discuss-inactive.svg" className="dashboard-header-icon" />
                                 <span className="dashboard-header-span">
-                                    <span className="dashboard-header-text">discuss</span>
+                                    <span className="dashboard-header-text">Github</span>
                                 </span>
                             </a>
                             <div className="dashboard-spacer"></div>
