@@ -2694,7 +2694,7 @@ var grandLessonsObj = {
       correct: '["Rekha is good"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Je suis un fil, pas un fille",
-      correct: '["I am a boy, not a girl"]'
+      correct: '["I am a boy, not a girl", "I am a thread, not a girl", "i\'m a boy, not a girl"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "A French woman",
       eng: true,
@@ -2717,22 +2717,22 @@ var grandLessonsObj = {
       phrase3: "The haddock is newly rich"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Tu va me dire ou est le lait maitenant",
-      correct: '["You will tell me where the milk is now"]'
+      correct: '["You will tell me where the milk is now", "you will say where the milk is now"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Juliette Binoche",
       eng: true,
-      correct: '["Juliette Binoche"]'
+      correct: '["Juliette Binoche", "La Binoche"]'
     })],
     "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Petite cerises",
-      correct: '["little cherries"]'
+      correct: '["little cherries", "small cherries"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "I am alone at Dunkin Donuts",
       correct: '["Je suis seule a Dunkin Donuts"]',
       words: ["seule", "Je", "Donuts", "a", "Dunkin", "suis"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "D'ou etes-vous?",
-      correct: '["Where are you from?"]'
+      correct: '["Where are you from?", "where are you from"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Je suis un célébrité",
       eng: false,
@@ -2763,20 +2763,20 @@ var grandLessonsObj = {
       phrase3: "Water"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "こんにちは、さようなら",
-      correct: '["hello, goodbye", "hello, bye"]'
+      correct: '["hello, goodbye", "hello, bye", "hello, farewell"]'
     })],
     "Hiragana-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "私の名前はマリアです",
       correct: '["My name is maria"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "あなたは私の中央ビジネス地区への道を示すことができました",
-      correct: '["Could you show me the way to the central business district"]'
+      correct: '["Could you show me the way to the central business district", "you could show me the way to the central business district"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "アメリカ",
       correct: '["America", "American"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "私はインサイダー取引で非難されています",
-      correct: '["I have been accused of insider trading"]'
+      correct: '["I have been accused of insider trading", "i\'m accused of insider trading"]'
     })],
     "Hiragana-3": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "ポケットモンスター",
@@ -2801,14 +2801,14 @@ var grandLessonsObj = {
       correct: '["the girl"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Ich bin ein Berliner",
-      correct: '["I am a Berliner"]'
+      correct: '["I am a Berliner", "I\'m a berliner"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Es tut mir leid",
-      correct: '["I am sorry", "sorry"]'
+      correct: '["I am sorry", "sorry", "i\'m sorry"]'
     })],
     "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Hallo, ich bin der junge",
-      correct: '["Hello, I am the boy", "hello, I am the young", "hello, I am the youth"]'
+      correct: '["Hello, I am the boy", "hello, I am the young", "hello, I am the youth", "hello, i\'m the boy"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Der film",
       correct: '["the film", "the movie"]'
@@ -2861,7 +2861,7 @@ var grandLessonsObj = {
       phrase3: "My name is Rafael Nadal"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Soy apasionado",
-      correct: '["I am passionate"]'
+      correct: '["I am passionate", "i\'m passionate"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "My best friend is named Roger",
       correct: '["Mi mejor amigo se llama Roger"]',
@@ -2876,7 +2876,7 @@ var grandLessonsObj = {
     })],
     "Travel": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Yo soy de Mallorca",
-      correct: '["I am from Mallorca"]'
+      correct: '["I am from Mallorca", "i\'m from Mallorca"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Mis brazos son espectaculares",
       correct: '["My arms are spectacular", "My arms sound spectacular"]'
