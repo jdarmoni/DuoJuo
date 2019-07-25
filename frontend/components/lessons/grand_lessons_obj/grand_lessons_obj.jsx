@@ -4,6 +4,7 @@ import MarkMeaningContainer from '../mark_meaning/mark_meaning_container'
 import ConstructSentence from '../construct_sentence/construct_sentence'
 import CompletedContainer from '../../lessons/lesson_complete/completed_container'
 
+
 export const grandLessonsObj = {
     //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct = { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />
     //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct = { ["the dog is scary"]} />

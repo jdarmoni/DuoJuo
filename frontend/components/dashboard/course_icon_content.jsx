@@ -3,6 +3,7 @@ import Row1 from '../skill_tree/row1'
 import Row2 from '../skill_tree/row_2'
 import Row3 from '../skill_tree/row_3'
 
+
 class CourseIconContent extends React.Component {
     constructor(props){
         super(props)
@@ -26,7 +27,7 @@ class CourseIconContent extends React.Component {
                 <div>
                     <div className="course-module-container">
                         <div className="skill-tree">
-                            <a className="global-practice" href="/">
+                            <a className="global-practice" onClick={this.props.translate} >
                                 <img src="//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg" />
                             </a>
 

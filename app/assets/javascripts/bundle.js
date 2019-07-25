@@ -360,6 +360,31 @@ var updateSkill = function updateSkill(skill) {
 
 /***/ }),
 
+/***/ "./frontend/actions/translate_actions.js":
+/*!***********************************************!*\
+  !*** ./frontend/actions/translate_actions.js ***!
+  \***********************************************/
+/*! exports provided: translate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "translate", function() { return translate; });
+/* harmony import */ var _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/translate_api_util */ "./frontend/util/translate_api_util.js");
+/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! request */ "./node_modules/request/index.js");
+/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(request__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var translate = function translate(options) {
+  debugger;
+  return _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__["translate"](options);
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/user_actions.js":
 /*!******************************************!*\
   !*** ./frontend/actions/user_actions.js ***!
@@ -899,18 +924,18 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _course_icon_content__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./course_icon_content */ "./frontend/components/dashboard/course_icon_content.jsx");
+/* harmony import */ var _actions_translate_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/translate_actions */ "./frontend/actions/translate_actions.js");
+/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! request */ "./node_modules/request/index.js");
+/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(request__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
 
 
 
 var mapStateToProps = function mapStateToProps(state) {
-  // let currentLanguage;
-  // debugger
-  // Object.values(state.entities.users)[0].languages.forEach(lang => {
-  //     debugger
-  //     if(lang.learning === true) {
-  //         currentLanguage = lang
-  //     }
-  // });
   return {
     users: Object.values(state.entities.users),
     session: Object.values(state.session),
@@ -919,8 +944,30 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
+var options = {
+  method: 'POST',
+  baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+  url: 'translate',
+  qs: {
+    'api-version': '3.0',
+    'to': ['en'] // 'to': ['de', 'it']
+
+  },
+  headers: {
+    'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
+    'Content-type': 'application/json',
+    'X-ClientTraceId': uuid_v4__WEBPACK_IMPORTED_MODULE_4___default()().toString()
+  },
+  body: [{
+    'text': 'el nino!'
+  }],
+  json: true
+};
+
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    translate: Object(_actions_translate_actions__WEBPACK_IMPORTED_MODULE_2__["translate"])(options)
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_course_icon_content__WEBPACK_IMPORTED_MODULE_1__["default"]));
@@ -993,7 +1040,7 @@ function (_React$Component) {
           className: "skill-tree"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "global-practice",
-          href: "/"
+          onClick: this.props.translate
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1122,7 +1169,6 @@ function (_React$Component) {
           var dayBefore = calendars[i - 1].datetime;
           var CD = new Date(currentDay);
           var DB = new Date(dayBefore);
-          debugger;
 
           if (CD.getDay() - DB.getDay() <= 1) {
             if (streak === 0) {
@@ -6873,6 +6919,33 @@ var updateSkill = function updateSkill(skill) {
     }
   });
 };
+
+/***/ }),
+
+/***/ "./frontend/util/translate_api_util.js":
+/*!*********************************************!*\
+  !*** ./frontend/util/translate_api_util.js ***!
+  \*********************************************/
+/*! exports provided: translate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "translate", function() { return translate; });
+/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! request */ "./node_modules/request/index.js");
+/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(request__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var translate = function translate(options) {
+  debugger;
+  request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
+    debugger;
+    console.log(JSON.stringify(body, null, 4));
+  });
+};
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
 
 /***/ }),
 
