@@ -24,8 +24,9 @@ class LessonBody extends React.Component {
         let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
 
         if (document.getElementById('skill-check-button')) {
+            debugger
             this.setState({
-                correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess'),
+                correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase()),
                 lessonLength: grandLessonsObj[this.props.mini_lang][url].length
             })
         } 
@@ -39,11 +40,13 @@ class LessonBody extends React.Component {
     }
     componentDidUpdate(){
         if (document.getElementById('skill-check-button')) {
-            let correct = document.getElementById('skill-check-button').getAttribute('data-guess');
-            
-            if (correct !== this.state.correctAnswer) {
+            debugger
+            let correct = JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase());
+            // checking for equality before - now check for inclusion
+            if (!this.state.correctAnswer.includes(correct[0])) {
+                debugger
                 this.setState({
-                    correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess')
+                    correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase())
                 })
             }
         } 
@@ -105,8 +108,13 @@ class LessonBody extends React.Component {
                 guess = guess.slice(0, guess.length -1)
 
             }
-            
-            if ( (guess.toLowerCase() === this.state.correctAnswer.toLowerCase() ) || (guess.toLowerCase().slice(0, guess.length - 1) === this.state.correctAnswer.toLowerCase() ) ) {
+            debugger
+            // ["Rekha is good", "Good is Rekha"].includes("Rekha is good")
+            // true
+            // JSON.parse('["Rekha is good", "Good is Rekha"]')
+            //     (2)["Rekha is good", "Good is Rekha"]
+            guess.toLowerCase()
+            if ((this.state.correctAnswer.includes(guess)) || this.state.correctAnswer.includes(guess.slice(0, guess.length - 1) ) ) {
                 this.setState({
                     correct: true,
                     wrong: false,
@@ -224,7 +232,7 @@ class LessonBody extends React.Component {
                             </div>
 
                             <div className="skill-check-button">
-                                <button className="skill-f-bs" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> Check</button>
+                                <button className="skill-f-bs" id="skill-check-button" data-guess='["eggs "]' onClick={this.handleSubmit.bind(this)}> Check</button>
                             </div>
                         </div>
                     </div>
@@ -260,7 +268,7 @@ class LessonBody extends React.Component {
                             </div>
                          
                             <div className="skill-check-button">
-                                <button className="skill-f-bs s-c-b-correct" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> continue</button>
+                                <button className="skill-f-bs s-c-b-correct" id="skill-check-button" data-guess='["eggs "]' onClick={this.handleSubmit.bind(this)}> continue</button>
                             </div>
                         </div>
                     </div>
@@ -283,8 +291,8 @@ class LessonBody extends React.Component {
                                         <div>
                                             <h2 className="correct-h2-text wrong-color-text">Correct solution:
                                             <div className="incorrect-answer-div">
-                                                <span> {this.state.correctAnswer} 
-                                                    
+                                                <span> {this.state.correctAnswer[0]} 
+                                                {/* CORRECT LOGIC; replace with index 0th */}
 
                                                 </span>
                                             </div>
@@ -306,7 +314,7 @@ class LessonBody extends React.Component {
                             </div>
 
                             <div className="skill-check-button">
-                                <button className="skill-f-bs s-c-b-correct s-c-b-wrong" id="skill-check-button" data-guess="eggs " onClick={this.handleSubmit.bind(this)}> continue</button>
+                                <button className="skill-f-bs s-c-b-correct s-c-b-wrong" id="skill-check-button" data-guess='["eggs "]' onClick={this.handleSubmit.bind(this)}> continue</button>
                             </div>
                         </div>
                     </div>

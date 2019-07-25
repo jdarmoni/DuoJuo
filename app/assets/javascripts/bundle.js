@@ -2680,25 +2680,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var grandLessonsObj = {
-  //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct = { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />
-  //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct = { ["the dog is scary"]} />
-  //  < MarkMeaningContainer sentence = { "私の名前は"} correct = { ["My name is"]} phrase1 = { "My name is"} phrase2 = { "A girl's name is"} phrase3 = { "Your name is"} />,
-  //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct = { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />
+  //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct =' { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />
+  //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct =' { ["the dog is scary"]} />
+  //  < MarkMeaningContainer sentence = { "私の名前は"} correct =' { ["My name is"]} phrase1 = { "My name is"} phrase2 = { "A girl's name is"} phrase3 = { "Your name is"} />,
+  //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct =' { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />
   "fr": {
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "La fille, la femme",
-      correct: ["the girl, the woman"]
+      correct: '["the girl, the woman"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "Rekha est bon",
       words: ["eggs", "milk", "good", "is", "Rekha"],
-      correct: ["Rekha is good"]
+      correct: '["Rekha is good"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Je suis un fil, pas un fille",
-      correct: ["I am a boy, not a girl"]
+      correct: '["I am a boy, not a girl"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "A French woman",
       eng: true,
-      correct: "Un femme Francaise",
+      correct: '["Un femme Francaise"]',
       phrase1: "Un femme Francaise",
       phrase2: "Il est un pamplemousse",
       phrase3: "Je suis le jeunne fille"
@@ -2706,37 +2706,37 @@ var grandLessonsObj = {
     "Greetings": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "Hello, I am hiding eggs",
       eng: true,
-      correct: ["Bonjour je cache des oeufs"],
+      correct: '["Bonjour je cache des oeufs"]',
       words: ["Bonjour", "je", "cache", "des", "oeufs"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Capitaine Haddock boit à nouveau",
       eng: false,
-      correct: ["Captain Haddock is drinking again"],
+      correct: '["Captain Haddock is drinking again"]',
       phrase1: "The haddock is smelly from nature",
       phrase2: "Captain Haddock is drinking again",
       phrase3: "The haddock is newly rich"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Tu va me dire ou est le lait maitenant",
-      correct: ["You will tell me where the milk is now"]
+      correct: '["You will tell me where the milk is now"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Juliette Binoche",
       eng: true,
-      correct: ["Juliette Binoche"]
+      correct: '["Juliette Binoche"]'
     })],
     "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Petite cerises",
-      correct: ["little cherries"]
+      correct: '["little cherries"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "I am alone at Dunkin Donuts",
-      correct: ["Je suis seule a Dunkin Donuts"],
+      correct: '["Je suis seule a Dunkin Donuts"]',
       words: ["seule", "Je", "Donuts", "a", "Dunkin", "suis"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "D'ou etes-vous?",
-      correct: ["Where are you from?"]
+      correct: '["Where are you from?"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Je suis un célébrité",
       eng: false,
-      correct: ["I am a celebrity"],
+      correct: '["I am a celebrity"]',
       phrase1: "I am a celebrated person",
       phrase2: "Everyone knows me",
       phrase3: "I am a celebrity"
@@ -2747,107 +2747,107 @@ var grandLessonsObj = {
     "Hiragana-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "私の名前",
       eng: false,
-      correct: ["My name is"],
+      correct: '["My name is"]',
       phrase1: "My name is",
       phrase2: "A girl's name is",
       phrase3: "Your name is"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "に",
-      correct: ["two"]
+      correct: '["two", "To the"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "水",
       eng: false,
-      correct: ["water"],
+      correct: '["water"]',
       phrase1: "Milk",
       phrase2: "Gatorade",
       phrase3: "Water"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "こんにちは、さようなら",
-      correct: ["hello, goodbye"]
+      correct: '["hello, goodbye", "hello, bye"]'
     })],
     "Hiragana-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "私の名前はマリアです",
-      correct: ["My name is maria"]
+      correct: '["My name is maria"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "あなたは私の中央ビジネス地区への道を示すことができました",
-      correct: ["Could you show me the way to the central business district"]
+      correct: '["Could you show me the way to the central business district"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "アメリカ",
-      correct: ["America"]
+      correct: '["America", "American"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "私はインサイダー取引で非難されています",
-      correct: ["I have been accused of insider trading"]
+      correct: '["I have been accused of insider trading"]'
     })],
     "Hiragana-3": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "ポケットモンスター",
-      correct: ["Pokemon"]
+      correct: '["Pokemon", "Pocket Monsters"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "男の子",
-      correct: ["boy"]
+      correct: '["boy", "boys"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "お父さん",
-      correct: ["father"]
+      correct: '["father", "Dad"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "母",
-      correct: ["mother"]
+      correct: '["mother", "Mom"]'
     })]
   },
   "ge": {
     "Basics-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Der junge",
-      correct: ["The boy"]
+      correct: '["The boy", "the young", "the youth"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Das mädchen",
-      correct: ["the girl"]
+      correct: '["the girl"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Ich bin ein Berliner",
-      correct: ["I am a Berliner"]
+      correct: '["I am a Berliner"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Es tut mir leid",
-      correct: ["I am sorry"]
+      correct: '["I am sorry", "sorry"]'
     })],
     "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Hallo, ich bin der junge",
-      correct: ["Hello, I am the boy"]
+      correct: '["Hello, I am the boy", "hello, I am the young", "hello, I am the youth"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Der film",
-      correct: ["the film"]
+      correct: '["the film", "the movie"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Ich heiße Christoph Waltz",
-      correct: ["My name is Christoph Waltz"]
+      correct: '["My name is Christoph Waltz"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Ich mag Duolingo",
-      correct: ["I like Duolingo"]
+      correct: '["I like Duolingo"]'
     })],
     "Basics-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Bitte",
-      correct: ["Please"]
+      correct: '["Please"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Danke dir",
-      correct: ["thank you"]
+      correct: '["thank you", "thanks"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "the boy",
-      correct: ["der junge"]
+      correct: '["der junge"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "I like Christoph Waltz",
-      correct: ["Ich mag Christoph Waltz"]
+      correct: '["Ich mag Christoph Waltz"]'
     })]
   },
   "es": {
     "Intro": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "El cerdo esta durmiendo",
-      correct: ["the pig is sleeping"]
+      correct: '["the pig is sleeping"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "Soy el chico que bebe leche",
-      correct: ["I am the boy who drinks milk"],
+      correct: '["I am the boy who drinks milk"]',
       words: ["drinks", "am", "I", "the", "boy", "milk", "who"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Eres un pájaro?",
-      correct: ["are you a bird?"]
+      correct: '["are you a bird?"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Dime porque sueño",
       eng: false,
-      correct: ["tell me why I dream"],
+      correct: '["tell me why I dream"]',
       phrase1: "The pork costs a dime",
       phrase2: "Why do you dream of pork",
       phrase3: "Tell me why I dream"
@@ -2855,37 +2855,37 @@ var grandLessonsObj = {
     "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Mi nombre es Rafael Nadal",
       eng: false,
-      correct: ["My name is Rafael Nadal"],
+      correct: '["My name is Rafael Nadal"]',
       phrase1: "My name is Novak Djokovic",
       phrase2: "My name is Roger Federer",
       phrase3: "My name is Rafael Nadal"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Soy apasionado",
-      correct: ["I am passionate"]
+      correct: '["I am passionate"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "My best friend is named Roger",
-      correct: ["Mi mejor amigo se llama Roger"],
+      correct: '["Mi mejor amigo se llama Roger"]',
       words: ["llama", "Roger", "mejor", "amigo", "Mi", "se"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       eng: false,
       sentence: "He ganado Roland Garros 12 veces, ¿no?",
-      correct: ["I have won Roland Garros 12 times, no?"],
+      correct: '["I have won Roland Garros 12 times, no?"]',
       phrase1: "I have won Wimbledon 12 times, no?",
       phrase2: "I have won Roland Garros 12 times, no?",
       phrase3: "I have lost the Australian Open 4 times, no?"
     })],
     "Travel": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Yo soy de Mallorca",
-      correct: ["I am from Mallorca"]
+      correct: '["I am from Mallorca"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Mis brazos son espectaculares",
-      correct: ["My arms are spectacular"]
+      correct: '["My arms are spectacular", "My arms sound spectacular"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Siempre pelearé por ti",
-      correct: ["I will always fight for you"]
+      correct: '["I will always fight for you", "I will always fight by you"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "My name is Rafael Nadal",
-      correct: ["Mi nombre es rafael nadal"]
+      correct: '["Mi nombre es rafael nadal"]'
     })]
   }
 };
@@ -2965,8 +2965,9 @@ function (_React$Component) {
       var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
 
       if (document.getElementById('skill-check-button')) {
+        debugger;
         this.setState({
-          correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess'),
+          correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase()),
           lessonLength: _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url].length
         });
       } // if you're on the completed page, but you refresh - overwrite the default False to True
@@ -2981,11 +2982,13 @@ function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
       if (document.getElementById('skill-check-button')) {
-        var correct = document.getElementById('skill-check-button').getAttribute('data-guess');
+        debugger;
+        var correct = JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase()); // checking for equality before - now check for inclusion
 
-        if (correct !== this.state.correctAnswer) {
+        if (!this.state.correctAnswer.includes(correct[0])) {
+          debugger;
           this.setState({
-            correctAnswer: document.getElementById('skill-check-button').getAttribute('data-guess')
+            correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase())
           });
         }
       }
@@ -3046,7 +3049,14 @@ function (_React$Component) {
           guess = guess.slice(0, guess.length - 1);
         }
 
-        if (guess.toLowerCase() === this.state.correctAnswer.toLowerCase() || guess.toLowerCase().slice(0, guess.length - 1) === this.state.correctAnswer.toLowerCase()) {
+        debugger; // ["Rekha is good", "Good is Rekha"].includes("Rekha is good")
+        // true
+        // JSON.parse('["Rekha is good", "Good is Rekha"]')
+        //     (2)["Rekha is good", "Good is Rekha"]
+
+        guess.toLowerCase();
+
+        if (this.state.correctAnswer.includes(guess) || this.state.correctAnswer.includes(guess.slice(0, guess.length - 1))) {
           this.setState({
             correct: true,
             wrong: false,
@@ -3161,7 +3171,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "skill-f-bs",
           id: "skill-check-button",
-          "data-guess": "eggs ",
+          "data-guess": "[\"eggs \"]",
           onClick: this.handleSubmit.bind(this)
         }, " Check")))));
       } else if (this.state.correct === true) {
@@ -3204,7 +3214,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "skill-f-bs s-c-b-correct",
           id: "skill-check-button",
-          "data-guess": "eggs ",
+          "data-guess": "[\"eggs \"]",
           onClick: this.handleSubmit.bind(this)
         }, " continue")))));
       } else {
@@ -3229,7 +3239,7 @@ function (_React$Component) {
           className: "correct-h2-text wrong-color-text"
         }, "Correct solution:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "incorrect-answer-div"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " ", this.state.correctAnswer)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " ", this.state.correctAnswer[0])))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "correct-bottom-content-container wrong-color-text"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "crct-bottom-a",
@@ -3250,7 +3260,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "skill-f-bs s-c-b-correct s-c-b-wrong",
           id: "skill-check-button",
-          "data-guess": "eggs ",
+          "data-guess": "[\"eggs \"]",
           onClick: this.handleSubmit.bind(this)
         }, " continue")))));
       }
