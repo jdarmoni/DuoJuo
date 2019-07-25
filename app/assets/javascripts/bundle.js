@@ -2843,7 +2843,7 @@ var grandLessonsObj = {
       words: ["drinks", "am", "I", "the", "boy", "milk", "who"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "Eres un pájaro?",
-      correct: '["are you a bird?"]'
+      correct: '["are you a bird?", "are you a bird"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "Dime porque sueño",
       eng: false,
