@@ -3047,16 +3047,17 @@ function (_React$Component) {
           }
 
           guess = guess.slice(0, guess.length - 1);
-        }
+        } //**** */ CHECK IF ANY OF THE DOWNCASED-ANSWERS IN THE CORRECTANSWER ARRAY MATCH GUESS DOWNCASED, 
 
-        debugger; // ["Rekha is good", "Good is Rekha"].includes("Rekha is good")
-        // true
-        // JSON.parse('["Rekha is good", "Good is Rekha"]')
-        //     (2)["Rekha is good", "Good is Rekha"]
 
-        guess.toLowerCase();
+        debugger;
+        var answers = this.state.correctAnswer;
 
-        if (this.state.correctAnswer.includes(guess) || this.state.correctAnswer.includes(guess.slice(0, guess.length - 1))) {
+        if (answers.some(function (answer) {
+          return answer.toLowerCase() === guess.toLowerCase();
+        }) || answers.some(function (answer) {
+          return answer.toLowerCase() === guess.toLowerCase().slice(0, guess.length - 1);
+        })) {
           this.setState({
             correct: true,
             wrong: false,
