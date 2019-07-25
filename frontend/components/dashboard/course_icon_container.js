@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import CourseIconContent from './course_icon_content'
 import {translate} from '../../actions/translate_actions'
-import request from 'request';
+import {createSentence} from '../../actions/grammar_actions'
 import uuidv4 from 'uuid/v4';
+import GrammarGraph from 'grammar-graph';
 
 const mapStateToProps = (state) => {
 
@@ -19,7 +20,7 @@ let options = {
     url: 'translate',
     qs: {
         'api-version': '3.0',
-        'to': ['en']
+        'to': ['fr']
         // 'to': ['de', 'it']
 
     },
@@ -29,14 +30,38 @@ let options = {
         'X-ClientTraceId': uuidv4().toString()
     },
     body: [{
-        'text': 'el nino!'
+        'text': 'the cat that found the dog loved'
     }],
     json: true,
 };
+let grammar = {
+    Sentence: ['NounPhrase VerbPhrase'],
+    NounPhrase: ['the Noun',
+        'the Noun RelativeClause'],
+    VerbPhrase: ['Verb',
+        'Verb NounPhrase'],
+    RelativeClause: ['that VerbPhrase',
+        'who VerbPhrase',
+    ],
+    Noun: ['dog',
+        'cat',
+        'bird',
+        'squirrel',
+        'boy'],
+    Verb: ['befriended',
+        'loved',
+        'ate',
+        'attacked',
+        'watched',
+        'found']
+}
+
+const graph = new GrammarGraph(grammar)
+const guide = graph.createGuide('Sentence')
 
 const mapDispatchToProps = dispatch => ({
-
-    translate: translate(options)
+    translate: ()=>translate(options),
+    createSentence: ()=> createSentence(guide, 5)
 });
 
 export default connect(

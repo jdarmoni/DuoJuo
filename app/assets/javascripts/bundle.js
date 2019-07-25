@@ -125,6 +125,24 @@ var updateCalendars = function updateCalendars(calendars) {
 
 /***/ }),
 
+/***/ "./frontend/actions/grammar_actions.js":
+/*!*********************************************!*\
+  !*** ./frontend/actions/grammar_actions.js ***!
+  \*********************************************/
+/*! exports provided: createSentence */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSentence", function() { return createSentence; });
+/* harmony import */ var _util_grammar_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/grammar_api_util */ "./frontend/util/grammar_api_util.js");
+
+var createSentence = function createSentence(guide, num) {
+  return _util_grammar_api_util__WEBPACK_IMPORTED_MODULE_0__["createSentence"](guide, num);
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/language_actions.js":
 /*!**********************************************!*\
   !*** ./frontend/actions/language_actions.js ***!
@@ -925,10 +943,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _course_icon_content__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./course_icon_content */ "./frontend/components/dashboard/course_icon_content.jsx");
 /* harmony import */ var _actions_translate_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/translate_actions */ "./frontend/actions/translate_actions.js");
-/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! request */ "./node_modules/request/index.js");
-/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(request__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _actions_grammar_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/grammar_actions */ "./frontend/actions/grammar_actions.js");
 /* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
 /* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var grammar_graph__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! grammar-graph */ "./node_modules/grammar-graph/lib/grammar-graph.js");
+/* harmony import */ var grammar_graph__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(grammar_graph__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -950,7 +970,7 @@ var options = {
   url: 'translate',
   qs: {
     'api-version': '3.0',
-    'to': ['en'] // 'to': ['de', 'it']
+    'to': ['fr'] // 'to': ['de', 'it']
 
   },
   headers: {
@@ -959,14 +979,29 @@ var options = {
     'X-ClientTraceId': uuid_v4__WEBPACK_IMPORTED_MODULE_4___default()().toString()
   },
   body: [{
-    'text': 'el nino!'
+    'text': 'the cat that found the dog loved'
   }],
   json: true
 };
+var grammar = {
+  Sentence: ['NounPhrase VerbPhrase'],
+  NounPhrase: ['the Noun', 'the Noun RelativeClause'],
+  VerbPhrase: ['Verb', 'Verb NounPhrase'],
+  RelativeClause: ['that VerbPhrase', 'who VerbPhrase'],
+  Noun: ['dog', 'cat', 'bird', 'squirrel', 'boy'],
+  Verb: ['befriended', 'loved', 'ate', 'attacked', 'watched', 'found']
+};
+var graph = new grammar_graph__WEBPACK_IMPORTED_MODULE_5___default.a(grammar);
+var guide = graph.createGuide('Sentence');
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    translate: Object(_actions_translate_actions__WEBPACK_IMPORTED_MODULE_2__["translate"])(options)
+    translate: function translate() {
+      return Object(_actions_translate_actions__WEBPACK_IMPORTED_MODULE_2__["translate"])(options);
+    },
+    createSentence: function createSentence() {
+      return Object(_actions_grammar_actions__WEBPACK_IMPORTED_MODULE_3__["createSentence"])(guide, 5);
+    }
   };
 };
 
@@ -1040,7 +1075,7 @@ function (_React$Component) {
           className: "skill-tree"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "global-practice",
-          onClick: this.props.translate
+          onClick: this.props.createSentence
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -6755,6 +6790,33 @@ var updateCalendar = function updateCalendar(calendars) {
     }
   });
 };
+
+/***/ }),
+
+/***/ "./frontend/util/grammar_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/grammar_api_util.js ***!
+  \*******************************************/
+/*! exports provided: createSentence */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSentence", function() { return createSentence; });
+// use the sentence returned from createSentence in translate
+function random(guide) {
+  return Math.floor(Math.random() * (guide.choices().length - 1 - 0 + 1)) + 0;
+}
+
+var createSentence = function createSentence(guide, num) {
+  if (guide.construction().length >= num && guide.isComplete()) {
+    console.log(guide.construction().join(' '));
+  } else {
+    guide.choose(guide.choices()[random(guide)]);
+    return createSentence(guide, num);
+  }
+};
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
 
 /***/ }),
 
@@ -34420,6 +34482,728 @@ function createConnectionSSL (port, host, options) {
 
 /* eslint-env browser */
 module.exports = typeof self == 'object' ? self.FormData : window.FormData;
+
+
+/***/ }),
+
+/***/ "./node_modules/grammar-graph/lib/assert-no-self-loops.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/grammar-graph/lib/assert-no-self-loops.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * check a grammar for direct self-loops
+ * @param {object} grammar - the grammar to check
+ * @param {true} returns true if no errors
+ * @throws an error if one definition of a nonterminal is exactly the nonterminal itself
+ */
+function noSelfDefinitions (grammar) {
+  var rules = Object.keys(grammar)
+  rules.forEach(function (rule) {
+    grammar[rule].forEach(function (def) {
+      if (def === rule) {
+        throw new Error('Nonterminal ' + rule + ' has a definition defining it as itself: ' + grammar[rule])
+      }
+    })
+  })
+  return true
+}
+
+module.exports = noSelfDefinitions
+
+
+/***/ }),
+
+/***/ "./node_modules/grammar-graph/lib/decision-graph.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/grammar-graph/lib/decision-graph.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * creates a new DecisionGraph
+ * @constructor
+ */
+var DecisionGraph = function () {
+  var V = 0          // the number of vertices
+  var names = {}     // vertex string -> index number
+  var keys = []      // vertex index number -> string
+  var isAND = []     // boolean array: true = AND; false = OR
+  var adj = []       // edge arrays
+
+  /**
+   * add AND vertex to the graph. When moving through the decision graph, an AND vertex
+   * will require a visit down each of its outgoing edges, in the order the edges were
+   * added.
+   * @param {string} name - the name of this vertex
+   *
+   * @see {@link DecisionGraph#addVertexOR}
+   */
+  this.addVertexAND = function (name) {
+    if (names[name] !== undefined) return
+    names[name] = V
+    keys[V] = name
+    isAND[V] = true
+    adj[V] = []
+    V++
+  }
+
+  /**
+   * add OR vertex to the graph. When moving through the decision graph, an OR vertex
+   * chooses just one of its outgoing vertices.
+   * @param {string} name - the name of this vertex
+   *
+   * @see {@link DecisionGraph#addVertexAND}
+   */
+  this.addVertexOR = function (name) {
+    if (names[name] !== undefined) return
+    names[name] = V
+    keys[V] = name
+    isAND[V] = false
+    adj[V] = []
+    V++
+  }
+
+  /**
+   * add edge v->w to the graph
+   * @param {string} v - the name of a vertex this edge points from
+   * @param {(string|string[])} w - the name of a vertex this edge points to or an
+   * array of vertex names. If vertex v is type AND, the order of w will be the exact order
+   * required.
+   */
+  this.addEdge = function (v, w) {
+    if (Array.isArray(w)) {
+      w.forEach(function (child) {
+        if (!(child in names)) throw new Error('Not a vertex name:', child)
+      })
+      Array.prototype.push.apply(adj[names[v]], w.map(function (vName) {
+        return names[vName]
+      }))
+    } else {
+      if (!(w in names)) throw new Error('Not a vertex name:', w)
+      adj[names[v]].push(names[w])
+    }
+  }
+
+  /**
+   * get an array of all the vertices this vertex points to
+   * @param {string} v - the name of a vertex
+   * @returns {string[]} an ordered list of all the vertices that v points to
+   */
+  this.adj = function (v) {
+    return adj[names[v]].map(function (vIndex) {
+      return keys[vIndex]
+    })
+  }
+
+  /**
+   * get the number of vertices in this graph
+   * @returns {number} the number of vertices in this graph
+   */
+  this.V = function () {
+    return V
+  }
+
+  /**
+   * is this a terminal vertex (does it have no outgoing edges?)
+   * @param {string} v - the name of a vertex
+   * @returns {boolean} is this a terminal vertex
+   */
+  this.isTerminal = function (v) {
+    return adj[names[v]].length === 0
+  }
+
+  /**
+   * is this the name of a vertex in the graph?
+   * @param {string} v - the name of a vertex
+   * @returns {boolean} is this a vertex in the graph
+   */
+  this.isVertex = function (v) {
+    return v in names
+  }
+
+  /**
+   * is this a type AND vertex (and not a type OR)?
+   * @param {string} v - the name of a vertex
+   * @returns {boolean} is this a type AND vertex (and not a type OR)?
+   */
+  this.isTypeAND = function (v) {
+    return isAND[names[v]]
+  }
+
+  /**
+   * get an array of vertex names
+   * @returns {string[]} the vertex names in this graph
+   */
+  this.vertices = function () {
+    return Object.keys(names)
+  }
+}
+
+module.exports = DecisionGraph
+
+
+/***/ }),
+
+/***/ "./node_modules/grammar-graph/lib/grammar-graph.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/grammar-graph/lib/grammar-graph.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parseGrammar = __webpack_require__(/*! ./parse-grammar */ "./node_modules/grammar-graph/lib/parse-grammar.js")
+var GuidedDecisionGraph = __webpack_require__(/*! ./guided-decision-graph */ "./node_modules/grammar-graph/lib/guided-decision-graph.js")
+var Recognizer = __webpack_require__(/*! ./recognizer.js */ "./node_modules/grammar-graph/lib/recognizer.js")
+
+/**
+ * @typedef {string} SymbolChain - a string of one or more symbol names seperated by whitespace or
+ * another user defined seperator (see: seperator param for {@link GrammarGraph})
+ *
+ * @see a SymbolChain is used as definitions in {@link Grammar}
+ *
+ * @example
+ * 'dog'                        // just a single symbol, the word 'dog'
+ * 'the Noun RelativeClause'    // three symbols
+ */
+
+/**
+ * a user defined context-free grammar formatted as an object consisting of key-value pairs,
+ * with each [non-terminal symbol](https://github.com/jrleszcz/grammar-graph#non-terminal-symbols)
+ * pointing to an array of one or more [symbol chains](https://github.com/jrleszcz/grammar-graph#symbol-chains)
+ * choices for this non-terminal.
+ *
+ * @typedef {Object} Grammar
+ * @property {SymbolChain[]} symbol - each element of the array is a possible definition
+ *    for this symbol.
+ * @example
+ * var grammar = {
+ *       Sentence: ['NounPhrase VerbPhrase'],                 // only one definition of 'Sentence'
+ *     NounPhrase: ['the Noun', 'the Noun RelativeClause'],   // two possible definitions of 'NounPhrase'
+ *     VerbPhrase: ['Verb', 'Verb NounPhrase'],
+ * RelativeClause: ['that VerbPhrase'],
+ *           Noun: ['dog', 'cat', 'bird', 'squirrel'],        // four possible definitions of 'Noun'
+ *           Verb: ['befriended', 'loved', 'ate', 'attacked']
+ * }
+ * // non-terminals: Sentence, NounPhrase, VerbPhrase, RelativeClause, Noun, Verb
+ * //     terminals: the, that, dog, cat, bird, squirrel, befriended, loved, ate, attacked
+ */
+
+/**
+ * creates a new GrammarGraph which can generate guides.
+ * @constructor
+ *
+ * @param {Grammar} grammar - an object representing a grammar.
+ * @param {string|RegExp} [seperator=/\s+/] - how tokens will be divided in rules
+ * @param {string} [epsilonSymbol=''] - Special terminal symbol
+ * that indicates this is an end of a construction. Defaults to the
+ * empty string.
+ */
+var GrammarGraph = function (grammar, seperator, epsilon) {
+  var decisionGraph = parseGrammar(grammar, epsilon)
+
+  /**
+   * get an array of vertex names in the graph
+   * @returns {string[]} the vertex names in this graph
+   * @see {@link DecisionGraph#vertices}
+   */
+  this.vertices = function () {
+    return decisionGraph.vertices()
+  }
+
+  /**
+   * get an array of all the vertices this vertex points to
+   * @param {string} v - the name of a vertex
+   * @returns {string[]} an ordered list of all the vertices that v points to
+   * @see {@link DecisionGraph#adj}
+   */
+  this.adj = function (v) {
+    return decisionGraph.adj(v)
+  }
+
+  /**
+   * is this a type AND vertex (and not a type OR)?
+   * @param {string} v - the name of a vertex
+   * @returns {boolean} is this a type AND vertex (and not a type OR)?
+   * @see {@link DecisionGraph#isTypeAND}
+   */
+  this.isTypeAND = function (v) {
+    return decisionGraph.isTypeAND(v)
+  }
+
+  /**
+   * get a new GuidedDecisionGraph using this decision graph
+   * @param {string} start - the name of a vertex in the decision graph from which
+   * to start the guided expansion
+   * @returns {GuidedDecisionGraph} a new guide from the provided start point
+   * @see {@link GuidedDecisionGraph} for the methods available on the Guide
+   */
+  this.createGuide = function (start) {
+    return new GuidedDecisionGraph(decisionGraph, start)
+  }
+
+  /**
+   * Returns a new Recognizer from the given start vertex
+   * @param {string} start - the name of a vertex in the decision graph
+   * from which to start the recognizer test
+   * @returns {Recognizer} a new Recognizer
+   */
+  this.createRecognizer = function (start) {
+    return new Recognizer(decisionGraph, start)
+  }
+}
+
+module.exports = GrammarGraph
+
+
+/***/ }),
+
+/***/ "./node_modules/grammar-graph/lib/guided-decision-graph.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/grammar-graph/lib/guided-decision-graph.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var clone = __webpack_require__(/*! ./utils/clone.js */ "./node_modules/grammar-graph/lib/utils/clone.js")
+
+/**
+ * step-by-step construction of a language from a decision graph
+ * @constructor
+ *
+ * @param {DecisionGraph} dg - a Decision Graph that defines a grammar
+ * @param {string} start - the name of a vertex in the decision graph from which
+ * to start the guided expansion
+ */
+var GuidedDecisionGraph = function (dg, start) {
+  if (!(dg.isVertex(start))) throw new Error('given start is not a vertex in dg:', start)
+
+  var construction = []       // chosen terminals, i.e. the current construction
+  var expanded                // dictionary of possible next terminals, + their stateStacks
+  var acceptState = false     // could the current construction stand complete as-is?
+  var history = []            // stack of previous expanded objects (see previous line)
+  var acceptStateHistory = [] // stack of booleans remembering old acceptStates
+  var guide = this            // scope to be used in recursive functions: choose & choices
+
+  // expands all stateStacks in unexpanded until they begin in a terminal symbol
+  // and adds them to expanded
+  function expand (unexpanded) {
+    acceptState = false       // reset for this expansion
+    var expandedChoices = {}  // dictionary of possible next terminals, + their stateStacks
+    while (unexpanded.length !== 0) {
+      var stateStack = unexpanded.pop()
+      if (stateStack.length === 0) {      // if true, the current construction could be complete
+        acceptState = true
+      } else {
+        var node = stateStack.pop()
+
+        if (dg.isTerminal(node)) {        // terminal, add to expandedChoices dictionary
+          if (!(node in expandedChoices)) expandedChoices[node] = []
+          expandedChoices[node].push(stateStack)
+        } else if (dg.isTypeAND(node)) {  // type AND, expand and put back on unexpanded
+          var children = dg.adj(node)
+          // add to stateStack in reverse order
+          for (var i = children.length - 1; i >= 0; i--) {
+            stateStack.push(children[i])
+          }
+          unexpanded.push(stateStack)
+        } else {                          // type OR, add all possible stacks to unexpanded
+          var orChildren = dg.adj(node)
+          orChildren.forEach(function (child) {
+            var stackCopy = clone(stateStack)
+            stackCopy.push(child)
+            unexpanded.push(stackCopy)
+          })
+        }
+      }
+    }
+    return expandedChoices
+  }
+
+  // initialize the guided decision graph with an array of possible state stacks,
+  // in this case, just a single state stack consisting of the start symbol
+  expanded = expand([[start]])
+
+  /**
+   * the current construction
+   * @returns {string[]} a terminal symbol chain
+   */
+  this.construction = function () {
+    return clone(construction)
+  }
+
+  /**
+   * is the current construction a valid, complete construction from the starting
+   * nonterminal? ie, could the construction be haulted at this point? Depending
+   * on the grammar, this may be true even if there are more choices at this point.
+   * @returns {boolean} is the construction complete
+   */
+  this.isComplete = function () {
+    return acceptState
+  }
+
+  /**
+   * adds the given terminal to the construction
+   * @param {string|string[]} terminal - the name of a terminal vertex in the
+   * Decision Graph which is in the current set of possible choices. Or a valid
+   * sequence of terminal symbols as an array.
+   */
+  this.choose = function (terminal) {
+    if (Array.isArray(terminal)) {
+      terminal.forEach(function (t) {
+        guide.choose(t)
+      })
+    } else {
+      if (!(terminal in expanded)) throw new Error('Not a valid next terminal:', terminal)
+
+      construction.push(terminal)              // add terminal to construction
+      history.push(clone(expanded))            // add expanded dictionary to history
+      acceptStateHistory.push(acceptState)     // add acceptState to history
+      expanded = expand(expanded[terminal])    // expand the stateStacks of the choice
+    }
+  }
+
+  /**
+   * get a sorted array of possible construction strings from the current state,
+   * possibly including nonterminals after the next terminal
+   * @returns {string[]} a list of possible constructions
+   * @example
+   * // guide is an in-progress GuidedDecisionGraph
+   * guide.construction()   => ['the', 'dog', 'ate']
+   * guide.choices()        => ['', 'the']
+   * guide.constructs()
+   *  => [ 'the dog ate',
+   *       'the dog ate the Noun'
+   *       'the dog ate the Noun RelativeClause' ]
+   */
+  this.constructs = function () {
+    var states = []
+    for (var terminal in expanded) {
+      expanded[terminal].forEach(function (stack) {
+        var choice = clone(stack)
+        choice.push(terminal)
+        choice.reverse()
+        var cur = construction.length > 0 ? construction.join(' ')
+                                          : ''
+        var next = choice.join(' ')
+        var sentence = (cur && next) ? cur + ' ' + next
+                                     : cur + next
+        states.push(sentence)
+      })
+    }
+    if (guide.isComplete()) {   // also add the current construction as a seperate choice
+      states.push(guide.construction().join(' '))
+    }
+    return states.sort()
+  }
+
+  /**
+   * pop the last choice off the construction
+   * @throws throws an error if called when construction is empty
+   * @returns {string} the last element of the construction that was
+   * submitted through {@link GuidedDecisionGraph#choose}
+   */
+  this.pop = function () {
+    if (construction.length === 0) throw new Error('Cannot pop empty construction.')
+    expanded = history.pop()
+    acceptState = acceptStateHistory.pop()
+    return construction.pop()
+  }
+
+  /**
+   * @typedef {object} TreeNode
+   * @property {string} val - a terminal string
+   * @property {TreeNode[]} next - a list of TreeNodes this node links to
+   */
+
+  /**
+   * returns all possible next terminals, or an array of nDeep [TreeNodes]{@link TreeNode}
+   *
+   * @param {number} [nDeep=1] - will search for nDeep possible choices
+   * @returns {string[]|TreeNode[]} if nDeep=1, an array of terminal symbols (strings),
+   * else an array of [TreeNodes]{@link TreeNode}
+   * @example
+   * // guide is an in-progress GuidedDecisionGraph
+   * guide.construction()   => ['the', 'dog', 'ate']
+   * guide.choices()        => ['', 'the']
+   * guide.choices(3)       =>
+   * [ { val: '',
+   *     next: [] },
+   *   { val: 'the',
+   *     next: [ { val: 'squirrel',
+   *              next: [ { val: 'that', next: [] },
+   *                      { val: '',     next: [] } ]
+   *             },
+   *             { val: 'bird',
+   *              next: [ { val: 'that', next: [] },
+   *                      { val: '',     next: [] } ]
+   *             },
+   *             { val: 'cat',
+   *              next: [ { val: 'that', next: [] },
+   *                      { val: '',     next: [] } ]
+   *             },
+   *             { val: 'dog',
+   *              next: [ { val: 'that', next: [] },
+   *                      { val: '',     next: [] } ]
+   *             }
+   *           ]
+   *   }
+   * ]
+   */
+  this.choices = function (nDeep) {
+    if (nDeep === undefined || nDeep === 1) {
+      return Object.keys(expanded)
+    }
+    // if nDeep > 1, map to TreeNodes and recursively expand to nDeep choices
+    return Object.keys(expanded).map(function (choice) {
+      var node = new TreeNode(choice)
+      guide.choose(choice)
+      node.next = (nDeep - 1 > 1) ? guide.choices(nDeep - 1)
+                                  : guide.choices(nDeep - 1).map(TreeNode)
+      guide.pop()
+      return node
+    })
+  }
+}
+
+/*
+ * Tree nodes to return decision trees
+ *
+ * @param {string} val - a terminal string
+ * @property {string} val - a terminal string
+ * @property {TreeNode[]} next - a list of TreeNodes this node links to
+ * @see TreeNodes are returned from [GuidedDecisionGraph.choices]{@link GuidedDecisionGraph#choices}
+ */
+var TreeNode = function (val) {
+  if (!(this instanceof TreeNode)) return new TreeNode(val)
+  this.val = val
+  this.next = []
+}
+
+module.exports = GuidedDecisionGraph
+
+
+/***/ }),
+
+/***/ "./node_modules/grammar-graph/lib/parse-grammar.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/grammar-graph/lib/parse-grammar.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var reduceGrammar = __webpack_require__(/*! ./reduce-grammar.js */ "./node_modules/grammar-graph/lib/reduce-grammar.js")
+var DecisionGraph = __webpack_require__(/*! ./decision-graph.js */ "./node_modules/grammar-graph/lib/decision-graph.js")
+var assertNoSelfLoops = __webpack_require__(/*! ./assert-no-self-loops.js */ "./node_modules/grammar-graph/lib/assert-no-self-loops.js")
+
+/**
+ * parse a grammar given as an object and compile it into a decision graph
+ *
+ * @param {object} grammar - an object representing a grammar
+ * @param {string|RegExp} [seperator=/\s+/] - how tokens will be divided in rules
+ * @returns {DecisionGraph} the grammar converted into a decision graph
+ *
+ */
+var parseGrammar = function (grammar, seperator) {
+  seperator = (seperator === undefined) ? /\s+/
+                                          : seperator
+  // make sure the rules are in a one-to-one relationship
+  grammar = reduceGrammar(grammar, seperator)
+  assertNoSelfLoops(grammar)
+
+  var dg = new DecisionGraph()
+
+  // add all nontermintal vertices
+  var rules = Object.keys(grammar)
+  rules.forEach(function (rule) {
+    if (grammar[rule].length > 1) {
+      dg.addVertexOR(rule)
+    } else {
+      dg.addVertexAND(rule)
+    }
+  })
+  // add all edges as well as terminal vertices as they are encountered
+  rules.forEach(function (rule) {
+    grammar[rule].forEach(function (definition) {
+      var tokens = definition.split(seperator)
+      tokens.forEach(function (token) {
+        if (!(token in grammar)) {
+          dg.addVertexAND(token)
+        }
+      })
+      dg.addEdge(rule, tokens)
+    })
+  })
+  return dg
+}
+
+module.exports = parseGrammar
+
+
+/***/ }),
+
+/***/ "./node_modules/grammar-graph/lib/recognizer.js":
+/*!******************************************************!*\
+  !*** ./node_modules/grammar-graph/lib/recognizer.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var GuidedDecisionGraph = __webpack_require__(/*! ./guided-decision-graph.js */ "./node_modules/grammar-graph/lib/guided-decision-graph.js")
+
+/**
+ * create a Recognizer that can test if text is a valid sentence in a grammar
+ * @constructor
+ *
+ * @param {DecisionGraph} dg - a Decision Graph that defines a grammar
+ * @param {string} start - the name of a vertex in the decision graph from which
+ * to start the test
+ * @param {string|RegExp} [seperator=/\s+/] - how tokens will be divided in
+ * given text
+ */
+var Recognizer = function (dg, start, seperator) {
+  seperator = seperator || /\s+/
+
+  /*
+   * tries to add all tokens and return true if successful, else false
+   *
+   * @param {GuidedDecisionGraph} gdg - the guide to add tokens to
+   * @param {string[]} tokens - an array of strings to be tested as
+   * a terminal chain in the grammar
+   *
+   * @returns {boolean} were all tokens succesfully added to the gdg?
+   */
+  var addedTokens = function (gdg, tokens) {
+    for (var i = 0; i < tokens.length; i++) {
+      if (gdg.choices().indexOf(tokens[i]) === -1) {
+        return false            // next token cannot be added to guide
+      }
+      gdg.choose(tokens[i])
+    }
+    return true                 // all tokens were added to guide
+  }
+
+  /**
+   * is the text a valid in progress sentence in the grammar? Will return true
+   * even if the text is not complete.
+   * @param {string} text - the text to check
+   * @returns {boolean} is the text valid?
+   */
+  this.isValid = function (text) {
+    // by definition, an empty string is considered a valid start
+    if (text.length === 0) {
+      return true
+    }
+    var gdg = new GuidedDecisionGraph(dg, start)
+    return addedTokens(gdg, text.split(seperator))
+  }
+
+  /**
+   * is the text a valid and complete text in the grammar? Will return true
+   * only if the text is complete.
+   * @param {string} text - the text to check
+   * @returns {boolean} is the text valid and complete?
+   */
+  this.isComplete = function (text) {
+    var gdg = new GuidedDecisionGraph(dg, start)
+    if (!addedTokens(gdg, text.split(seperator))) {
+      return false          // guide is not valid, so no need to check completeness
+    }
+    return gdg.isComplete() // is this a complete construction?
+  }
+}
+
+module.exports = Recognizer
+
+
+/***/ }),
+
+/***/ "./node_modules/grammar-graph/lib/reduce-grammar.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/grammar-graph/lib/reduce-grammar.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var clone = __webpack_require__(/*! ./utils/clone.js */ "./node_modules/grammar-graph/lib/utils/clone.js")
+
+/**
+ * reduces the rules of a grammar into a one to one form by assigning a name
+ * to all non-terminals. The end result is that each option on a rule with
+ * more than one choice will either be a single AND-rule or a single terminal.
+ *
+ * @param {object} grammar - an object representing a grammar
+ * @param {string|RegExp} [seperator=/\s+/] - how tokens will be divided in rules
+ * @returns {object} the modified grammar object with newly created rules
+ * as needed. New rules will be given the name of their parent rule
+ * surrounded by underscores and followed by a number.
+ *
+ * @example
+ * var grammar = {
+ *       NounPhrase: ['the Noun', 'the Noun RelativeClause'],
+ *   RelativeClause: ['that VerbPhrase'],
+ *             Noun: ['dog', 'cat', 'bird']
+ * }
+ *
+ * reduceGrammar(grammar)   =>
+ * {
+ *       NounPhrase: ['_NounPhrase_1', '_NounPhrase_2'],
+ *    _NounPhrase_1: ['the Noun'],
+ *    _NounPhrase_2: ['the Noun RelativeClause'],
+ *   RelativeClause: ['that VerbPhrase'],
+ *             Noun: ['dog', 'cat', 'bird']
+ * }
+ *
+ */
+var reduceGrammar = function (grammar, seperator) {
+  grammar = clone(grammar) // clone to avoid mutating the argument
+  seperator = (seperator === undefined) ? /\s+/
+                                          : seperator
+  var rules = Object.keys(grammar)
+  rules.forEach(function (rule) {
+    if (grammar[rule].length > 1) {
+      var id = 1
+      grammar[rule].forEach(function (definition, i) {
+        var tokens = definition.split(seperator)
+        // create a new rule if length greater than 1
+        if (tokens.length > 1) {
+          var ruleName = '_' + rule + '_' + id
+          grammar[ruleName] = [definition]
+          grammar[rule][i] = ruleName
+          id++
+        }
+      })
+    }
+  })
+  return grammar
+}
+
+module.exports = reduceGrammar
+
+
+/***/ }),
+
+/***/ "./node_modules/grammar-graph/lib/utils/clone.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/grammar-graph/lib/utils/clone.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * helper function to clone a simple object/array made up of primitives.
+ * Will not work if the object or array contains non-primitives.
+ * @param {object|array} obj - an object array made up only of primitives
+ * @returns {object|array} a new clone of the provided object or array
+ */
+function clone (obj) {
+  return JSON.parse(JSON.stringify(obj))
+}
+
+module.exports = clone
 
 
 /***/ }),

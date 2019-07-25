@@ -29,7 +29,7 @@ function random(guide){
 var graph = new GrammarGraph(grammar)
 var guide = graph.createGuide('Sentence')
 
-function createSentence(guide, num){
+function createSentence(guide, num=3){
     if (guide.construction().length >= num && guide.isComplete()) {
             // console.log(guide.construction())
         return guide.construction().join(' ')
