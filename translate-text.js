@@ -1,11 +1,6 @@
 const request = require('request');
 const uuidv4 = require('uuid/v4');
 
-// for quickstart guide:
-// https://docs.microsoft.com/en-us/azure/cognitive-services/translator/quickstart-nodejs-translate
-// another reference:
-// https://docs.microsoft.com/en-us/azure/cognitive-services/translator/translator-text-how-to-signup
-
 let options = {
     method: 'POST',
     baseUrl: 'https://api.cognitive.microsofttranslator.com/',
@@ -30,3 +25,10 @@ let options = {
 request(options, function (err, res, body) {
     console.log(JSON.stringify(body, null, 4));
 });
+
+
+// for quickstart guide:
+// https://docs.microsoft.com/en-us/azure/cognitive-services/translator/quickstart-nodejs-translate
+// another reference:
+// https://docs.microsoft.com/en-us/azure/cognitive-services/translator/translator-text-how-to-signup
+

@@ -29,6 +29,20 @@ function random(guide){
 var graph = new GrammarGraph(grammar)
 var guide = graph.createGuide('Sentence')
 
+function createSentence(guide, num){
+    if (guide.construction().length >= num && guide.isComplete()) {
+            // console.log(guide.construction())
+        return guide.construction().join(' ')
+        
+    } else {
+
+        guide.choose(guide.choices()[random(guide)])
+        return createSentence(guide, num)
+    }
+}
+console.log(createSentence(guide, 6))
+
+
 // console.log(guide.choices()[Math.floor(Math.random() * (guide.choices.length - 0 + 1)) + 0] )
 // guide.choose( guide.choices()[random(guide)])
 // console.log(guide.choices())
@@ -45,17 +59,3 @@ var guide = graph.createGuide('Sentence')
 // guide.choose(guide.choices()[random(guide)])
 // console.log(guide.construction())
 // console.log(guide.isComplete())
-
-// console.log(guide.isComplete())
-function createSentence(guide, num){
-    if (guide.construction().length >= num && guide.isComplete()) {
-            // console.log(guide.construction())
-        return guide.construction().join(' ')
-        
-    } else {
-
-        guide.choose(guide.choices()[random(guide)])
-        return createSentence(guide, num)
-    }
-}
-console.log(createSentence(guide, 6))

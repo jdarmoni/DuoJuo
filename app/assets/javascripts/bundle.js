@@ -2597,11 +2597,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // // idea here is to use the words array; for practice, can just .sample a bunch of words you've completed.
-// const wordObj = {
-//     "chien": "Le chien est epouvantable",
-//     "oeufs": "Bonjour, je cache des oeufs"
-// }
 
 var grandLessonsObj = {
   //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct = { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />

@@ -3,12 +3,8 @@ import TranslateSentenceContainer from '../translate_sentence/translate_sentence
 import MarkMeaningContainer from '../mark_meaning/mark_meaning_container'
 import ConstructSentence from '../construct_sentence/construct_sentence'
 import CompletedContainer from '../../lessons/lesson_complete/completed_container'
-    // // idea here is to use the words array; for practice, can just .sample a bunch of words you've completed.
-    // const wordObj = {
-    //     "chien": "Le chien est epouvantable",
-    //     "oeufs": "Bonjour, je cache des oeufs"
-    // }
- export const grandLessonsObj = {
+
+export const grandLessonsObj = {
     //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct = { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />
     //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct = { ["the dog is scary"]} />
     //  < MarkMeaningContainer sentence = { "私の名前は"} correct = { ["My name is"]} phrase1 = { "My name is"} phrase2 = { "A girl's name is"} phrase3 = { "Your name is"} />,
@@ -37,4 +33,3 @@ import CompletedContainer from '../../lessons/lesson_complete/completed_containe
         }
     }
 
-    
