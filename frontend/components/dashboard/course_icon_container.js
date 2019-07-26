@@ -56,12 +56,12 @@ let grammar = {
         'found']
 }
 
-const graph = new GrammarGraph(grammar)
-const guide = graph.createGuide('Sentence')
-
+let graph = new GrammarGraph(grammar)
+let guide = graph.createGuide('Sentence')
+debugger
 const mapDispatchToProps = dispatch => ({
     translate: ()=>translate(options),
-    createSentence: ()=> createSentence(guide, 5)
+    createSentence: ()=> createSentence(guide, 5, graph)
 });
 
 export default connect(

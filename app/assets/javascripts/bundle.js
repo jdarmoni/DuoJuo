@@ -993,6 +993,7 @@ var grammar = {
 };
 var graph = new grammar_graph__WEBPACK_IMPORTED_MODULE_5___default.a(grammar);
 var guide = graph.createGuide('Sentence');
+debugger;
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
@@ -1000,7 +1001,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return Object(_actions_translate_actions__WEBPACK_IMPORTED_MODULE_2__["translate"])(options);
     },
     createSentence: function createSentence() {
-      return Object(_actions_grammar_actions__WEBPACK_IMPORTED_MODULE_3__["createSentence"])(guide, 5);
+      return Object(_actions_grammar_actions__WEBPACK_IMPORTED_MODULE_3__["createSentence"])(guide, 5, graph);
     }
   };
 };
@@ -1018,7 +1019,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../skill_tree/row1 */ "./frontend/components/skill_tree/row1.jsx");
 /* harmony import */ var _skill_tree_row_2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../skill_tree/row_2 */ "./frontend/components/skill_tree/row_2.jsx");
@@ -1066,6 +1067,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log(this.props.guide);
       return (// convert into component
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "course-content-container"
@@ -1091,6 +1093,7 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (CourseIconContent);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
 
 /***/ }),
 
@@ -1264,7 +1267,7 @@ function (_React$Component) {
       }, "learn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://www.linkedin.com/in/julien-darmoni-941a09154/",
+        href: "https://www.newyorker.com/contributors/julien-darmoni/",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "////d35aaqx5ub95lt.cloudfront.net/images/icons/stories-inactive2.svg",
@@ -1273,7 +1276,7 @@ function (_React$Component) {
         className: "dashboard-header-span"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "dashboard-header-text"
-      }, "LinkedIn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Stories"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https:www.github.com/jdarmoni/DuoJuo",

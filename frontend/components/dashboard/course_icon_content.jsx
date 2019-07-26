@@ -20,7 +20,7 @@ class CourseIconContent extends React.Component {
         
     }
     render(){
-        
+        console.log(this.props.guide)
         return (
             // convert into component
             <div className="course-content-container">
