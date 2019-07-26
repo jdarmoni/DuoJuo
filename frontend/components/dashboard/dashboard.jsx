@@ -108,7 +108,7 @@ class Dashboard extends React.Component {
                             </a>
                             <div className="dashboard-spacer"></div>
                             {/* one little header block */}
-                                <a href="https://www.newyorker.com/contributors/julien-darmoni/" className="dashboard-header-blocks">
+                                <a href="https://www.newyorker.com/contributors/julien-darmoni/" target="_blank" className="dashboard-header-blocks">
                                 <img src="////d35aaqx5ub95lt.cloudfront.net/images/icons/stories-inactive2.svg" className="dashboard-header-icon" />
                                 <span className="dashboard-header-span">
                                     <span className="dashboard-header-text">Stories</span>
@@ -116,7 +116,7 @@ class Dashboard extends React.Component {
                             </a>
                             <div className="dashboard-spacer"></div>
 
-                            <a href="https:www.github.com/jdarmoni/DuoJuo" className="dashboard-header-blocks">
+                                <a href="https:www.github.com/jdarmoni/DuoJuo" target="_blank" className="dashboard-header-blocks">
                                 <img src="//d35aaqx5ub95lt.cloudfront.net/images/icons/discuss-inactive.svg" className="dashboard-header-icon" />
                                 <span className="dashboard-header-span">
                                     <span className="dashboard-header-text">Github</span>
