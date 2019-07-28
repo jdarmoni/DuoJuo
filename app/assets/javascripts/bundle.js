@@ -1268,6 +1268,7 @@ function (_React$Component) {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.newyorker.com/contributors/julien-darmoni/",
+        target: "_blank",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "////d35aaqx5ub95lt.cloudfront.net/images/icons/stories-inactive2.svg",
@@ -1280,6 +1281,7 @@ function (_React$Component) {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https:www.github.com/jdarmoni/DuoJuo",
+        target: "_blank",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "//d35aaqx5ub95lt.cloudfront.net/images/icons/discuss-inactive.svg",
@@ -2750,8 +2752,8 @@ var grandLessonsObj = {
     "Hiragana-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "私の名前",
       eng: false,
-      correct: '["My name is"]',
-      phrase1: "My name is",
+      correct: '["My name"]',
+      phrase1: "My name",
       phrase2: "A girl's name is",
       phrase3: "Your name is"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
