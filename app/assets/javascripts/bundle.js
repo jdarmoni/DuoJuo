@@ -946,9 +946,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_grammar_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/grammar_actions */ "./frontend/actions/grammar_actions.js");
 /* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
 /* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var grammar_graph__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! grammar-graph */ "./node_modules/grammar-graph/lib/grammar-graph.js");
-/* harmony import */ var grammar_graph__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(grammar_graph__WEBPACK_IMPORTED_MODULE_5__);
-
 
 
 
@@ -983,17 +980,7 @@ var options = {
   }],
   json: true
 };
-var grammar = {
-  Sentence: ['NounPhrase VerbPhrase'],
-  NounPhrase: ['the Noun', 'the Noun RelativeClause'],
-  VerbPhrase: ['Verb', 'Verb NounPhrase'],
-  RelativeClause: ['that VerbPhrase', 'who VerbPhrase'],
-  Noun: ['dog', 'cat', 'bird', 'squirrel', 'boy'],
-  Verb: ['befriended', 'loved', 'ate', 'attacked', 'watched', 'found']
-};
-var graph = new grammar_graph__WEBPACK_IMPORTED_MODULE_5___default.a(grammar);
-var guide = graph.createGuide('Sentence');
-debugger;
+var guide;
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
@@ -1001,7 +988,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return Object(_actions_translate_actions__WEBPACK_IMPORTED_MODULE_2__["translate"])(options);
     },
     createSentence: function createSentence() {
-      return Object(_actions_grammar_actions__WEBPACK_IMPORTED_MODULE_3__["createSentence"])(guide, 5, graph);
+      return Object(_actions_grammar_actions__WEBPACK_IMPORTED_MODULE_3__["createSentence"])(guide, 5);
     }
   };
 };
@@ -6819,17 +6806,48 @@ var updateCalendar = function updateCalendar(calendars) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSentence", function() { return createSentence; });
-// use the sentence returned from createSentence in translate
+/* harmony import */ var grammar_graph__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! grammar-graph */ "./node_modules/grammar-graph/lib/grammar-graph.js");
+/* harmony import */ var grammar_graph__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(grammar_graph__WEBPACK_IMPORTED_MODULE_0__);
+ // use the sentence returned from createSentence in translate
+
+var grammar = {
+  Sentence: ['NounPhrase VerbPhrase'],
+  NounPhrase: ['the Noun', 'the Noun RelativeClause'],
+  VerbPhrase: ['Verb', 'Verb NounPhrase'],
+  RelativeClause: ['that VerbPhrase', 'who VerbPhrase'],
+  Noun: ['dog', 'cat', 'bird', 'squirrel', 'boy'],
+  Verb: ['befriended', 'loved', 'ate', 'attacked', 'watched', 'found']
+};
+var graph = new grammar_graph__WEBPACK_IMPORTED_MODULE_0___default.a(grammar);
+var guide = graph.createGuide('Sentence');
+
 function random(guide) {
   return Math.floor(Math.random() * (guide.choices().length - 1 - 0 + 1)) + 0;
 }
 
 var createSentence = function createSentence(guide, num) {
-  if (guide.construction().length >= num && guide.isComplete()) {
-    console.log(guide.construction().join(' '));
+  if (guide === undefined) {
+    var _grammar = {
+      Sentence: ['NounPhrase VerbPhrase'],
+      NounPhrase: ['the Noun', 'the Noun RelativeClause'],
+      VerbPhrase: ['Verb', 'Verb NounPhrase'],
+      RelativeClause: ['that VerbPhrase', 'who VerbPhrase'],
+      Noun: ['dog', 'cat', 'bird', 'squirrel', 'boy'],
+      Verb: ['befriended', 'loved', 'ate', 'attacked', 'watched', 'found']
+    };
+
+    var _graph = new grammar_graph__WEBPACK_IMPORTED_MODULE_0___default.a(_grammar);
+
+    var _guide = _graph.createGuide('Sentence');
+
+    createSentence(_guide, num);
   } else {
-    guide.choose(guide.choices()[random(guide)]);
-    return createSentence(guide, num);
+    if (guide.construction().length >= num && guide.isComplete()) {
+      console.log(guide.construction().join(' '));
+    } else {
+      guide.choose(guide.choices()[random(guide)]);
+      return createSentence(guide, num);
+    }
   }
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))

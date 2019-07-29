@@ -3,7 +3,6 @@ import CourseIconContent from './course_icon_content'
 import {translate} from '../../actions/translate_actions'
 import {createSentence} from '../../actions/grammar_actions'
 import uuidv4 from 'uuid/v4';
-import GrammarGraph from 'grammar-graph';
 
 const mapStateToProps = (state) => {
 
@@ -34,34 +33,11 @@ let options = {
     }],
     json: true,
 };
-let grammar = {
-    Sentence: ['NounPhrase VerbPhrase'],
-    NounPhrase: ['the Noun',
-        'the Noun RelativeClause'],
-    VerbPhrase: ['Verb',
-        'Verb NounPhrase'],
-    RelativeClause: ['that VerbPhrase',
-        'who VerbPhrase',
-    ],
-    Noun: ['dog',
-        'cat',
-        'bird',
-        'squirrel',
-        'boy'],
-    Verb: ['befriended',
-        'loved',
-        'ate',
-        'attacked',
-        'watched',
-        'found']
-}
+let guide;
 
-let graph = new GrammarGraph(grammar)
-let guide = graph.createGuide('Sentence')
-debugger
 const mapDispatchToProps = dispatch => ({
     translate: ()=>translate(options),
-    createSentence: ()=> createSentence(guide, 5, graph)
+    createSentence: ()=> createSentence(guide, 5)
 });
 
 export default connect(
