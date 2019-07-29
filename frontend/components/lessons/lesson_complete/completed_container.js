@@ -17,7 +17,9 @@ const mapStateToProps = (state) => {
     let sunday = grey;
     let date = [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
     let calendars = user.calendar
+
     for (let i = 0; i < calendars.length; i++) {
+        let week = 86400000 * 7;
         
         let dateNum = new Date(calendars[i].datetime).getDay();
         date[dateNum] = orange;
@@ -35,8 +37,9 @@ const mapStateToProps = (state) => {
         let dayBefore = calendars[i - 1].datetime;
         let CD = new Date(currentDay);
         let DB = new Date(dayBefore);
-        
+        debugger
         if (CD.getDay() - DB.getDay() <= 1) {
+            debugger
             if (site_streak === 0) {
                 site_streak += 2
             } else {
@@ -54,7 +57,7 @@ const mapStateToProps = (state) => {
         
         todayProgress = 10
     }
-    
+    debugger
     return {
         progress: todayProgress,
         site_streak: site_streak,

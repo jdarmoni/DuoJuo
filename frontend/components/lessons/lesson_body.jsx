@@ -24,7 +24,7 @@ class LessonBody extends React.Component {
         let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
 
         if (document.getElementById('skill-check-button')) {
-            debugger
+            
             this.setState({
                 correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase()),
                 lessonLength: grandLessonsObj[this.props.mini_lang][url].length
@@ -40,11 +40,11 @@ class LessonBody extends React.Component {
     }
     componentDidUpdate(){
         if (document.getElementById('skill-check-button')) {
-            debugger
+            
             let correct = JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase());
             // checking for equality before - now check for inclusion
             if (!this.state.correctAnswer.includes(correct[0])) {
-                debugger
+                
                 this.setState({
                     correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase())
                 })
@@ -110,7 +110,7 @@ class LessonBody extends React.Component {
             }
             
             //**** */ CHECK IF ANY OF THE DOWNCASED-ANSWERS IN THE CORRECTANSWER ARRAY MATCH GUESS DOWNCASED, 
-            debugger
+            
             let answers = this.state.correctAnswer
             if ( (answers.some(answer => answer.toLowerCase() === guess.toLowerCase())) || answers.some(answer => answer.toLowerCase() === guess.toLowerCase().slice(0, guess.length - 1) ) ) {
                 this.setState({

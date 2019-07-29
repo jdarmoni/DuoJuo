@@ -1255,7 +1255,7 @@ function (_React$Component) {
       }, "learn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://www.newyorker.com/contributors/julien-darmoni/",
+        href: "https://www.newyorker.com/humor/daily-shouts/pikachus-twentieth-anniversary-party",
         target: "_blank",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -2958,7 +2958,6 @@ function (_React$Component) {
       var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
 
       if (document.getElementById('skill-check-button')) {
-        debugger;
         this.setState({
           correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase()),
           lessonLength: _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url].length
@@ -2975,11 +2974,9 @@ function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
       if (document.getElementById('skill-check-button')) {
-        debugger;
         var correct = JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase()); // checking for equality before - now check for inclusion
 
         if (!this.state.correctAnswer.includes(correct[0])) {
-          debugger;
           this.setState({
             correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase())
           });
@@ -3043,7 +3040,6 @@ function (_React$Component) {
         } //**** */ CHECK IF ANY OF THE DOWNCASED-ANSWERS IN THE CORRECTANSWER ARRAY MATCH GUESS DOWNCASED, 
 
 
-        debugger;
         var answers = this.state.correctAnswer;
 
         if (answers.some(function (answer) {
@@ -3600,6 +3596,7 @@ var mapStateToProps = function mapStateToProps(state) {
   var calendars = user.calendar;
 
   for (var i = 0; i < calendars.length; i++) {
+    var week = 86400000 * 7;
     var dateNum = new Date(calendars[i].datetime).getDay();
     date[dateNum] = orange;
     var daySpan = document.getElementById("comp-".concat(dateNum));
@@ -3618,8 +3615,11 @@ var mapStateToProps = function mapStateToProps(state) {
     var dayBefore = calendars[i - 1].datetime;
     var CD = new Date(currentDay);
     var DB = new Date(dayBefore);
+    debugger;
 
     if (CD.getDay() - DB.getDay() <= 1) {
+      debugger;
+
       if (site_streak === 0) {
         site_streak += 2;
       } else {
@@ -3636,6 +3636,7 @@ var mapStateToProps = function mapStateToProps(state) {
     todayProgress = 10;
   }
 
+  debugger;
   return {
     progress: todayProgress,
     site_streak: site_streak,
