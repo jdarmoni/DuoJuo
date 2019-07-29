@@ -959,27 +959,28 @@ var mapStateToProps = function mapStateToProps(state) {
     currentUser: state.entities.users[state.session.id] // currentLanguage: currentLanguage
 
   };
-};
+}; // let options = {
+//     method: 'POST',
+//     baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+//     url: 'translate',
+//     qs: {
+//         'api-version': '3.0',
+//         'to': ['fr']
+//         // 'to': ['de', 'it']
+//     },
+//     headers: {
+//         'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
+//         'Content-type': 'application/json',
+//         'X-ClientTraceId': uuidv4().toString()
+//     },
+//     body: [{
+//         'text': 'the cat that found the dog loved'
+//     }],
+//     json: true,
+// };
 
-var options = {
-  method: 'POST',
-  baseUrl: 'https://api.cognitive.microsofttranslator.com/',
-  url: 'translate',
-  qs: {
-    'api-version': '3.0',
-    'to': ['fr'] // 'to': ['de', 'it']
 
-  },
-  headers: {
-    'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
-    'Content-type': 'application/json',
-    'X-ClientTraceId': uuid_v4__WEBPACK_IMPORTED_MODULE_4___default()().toString()
-  },
-  body: [{
-    'text': 'the cat that found the dog loved'
-  }],
-  json: true
-};
+var options;
 var guide;
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -1064,7 +1065,7 @@ function (_React$Component) {
           className: "skill-tree"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "global-practice",
-          onClick: this.props.createSentence
+          onClick: this.props.translate
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -7036,10 +7037,34 @@ __webpack_require__.r(__webpack_exports__);
 
 var translate = function translate(options) {
   debugger;
-  request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
-    debugger;
-    console.log(JSON.stringify(body, null, 4));
-  });
+
+  if (options === undefined) {
+    var _options = {
+      method: 'POST',
+      baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+      url: 'translate',
+      qs: {
+        'api-version': '3.0',
+        'to': ['fr'] // 'to': ['de', 'it']
+
+      },
+      headers: {
+        'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
+        'Content-type': 'application/json',
+        'X-ClientTraceId': uuid_v4__WEBPACK_IMPORTED_MODULE_1___default()().toString()
+      },
+      body: [{
+        'text': 'the cat that found the dog loved'
+      }],
+      json: true
+    };
+    translate(_options);
+  } else {
+    request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
+      debugger;
+      console.log(JSON.stringify(body, null, 4));
+    });
+  }
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
 
