@@ -27,7 +27,7 @@ class CourseIconContent extends React.Component {
                 <div>
                     <div className="course-module-container">
                         <div className="skill-tree">
-                            <a className="global-practice" onClick={this.props.translate} >
+                            <a className="global-practice" onClick={this.props.createSentence} >
                                 <img src="//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg" />
                             </a>
 

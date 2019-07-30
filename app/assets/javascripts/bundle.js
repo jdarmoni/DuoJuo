@@ -1065,7 +1065,7 @@ function (_React$Component) {
           className: "skill-tree"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "global-practice",
-          onClick: this.props.translate
+          onClick: this.props.createSentence
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], {
