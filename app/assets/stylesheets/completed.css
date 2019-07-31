@@ -8,7 +8,7 @@
     width: 100%;
 }
 .completed-container-sub-div {
-    height: calc(100vh - 125px);
+    /* height: calc(100vh - 125px); */
     overflow: hidden;
     text-align: center;
 }
@@ -173,7 +173,7 @@
 
 @media (min-width: 700px) {
     .completed-container-sub-div {
-        height: calc(100vh - 140px);
+        /* height: calc(100vh - 140px); */
         padding: 0;
         padding: initial;    
     }
