@@ -2956,10 +2956,11 @@ function (_React$Component) {
     value: function componentDidMount() {
       var correctAnswer = "first";
       var url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1];
+      var skillButton = document.getElementById('skill-check-button');
 
-      if (document.getElementById('skill-check-button')) {
+      if (skillButton) {
         this.setState({
-          correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase()),
+          correctAnswer: JSON.parse(skillButton.getAttribute('data-guess').toLowerCase()),
           lessonLength: _grand_lessons_obj_grand_lessons_obj__WEBPACK_IMPORTED_MODULE_2__["grandLessonsObj"][this.props.mini_lang][url].length
         });
       } // if you're on the completed page, but you refresh - overwrite the default False to True
@@ -2981,12 +2982,18 @@ function (_React$Component) {
             correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase())
           });
         }
-      }
+      } // ******* ENTER EVENT LISTENER ********
+      // if (document.getElementById('challenge-prompt')) {
+      //     let self = this
+      //     document.getElementById('challenge-prompt').addEventListener('keypress', function (e) {
+      //         const key = e.keyCode;
+      //         if (key === 13) { // 13 is enter
+      //             debugger
+      //             self.handleSubmit()
+      //         }
+      //     });
+      // }
 
-      if (this.state.lessonLength === this.props.skill.skill_level) {// let langData = this.props.user.language_data[this.props.mini_lang];
-        // langData['level'] = 0;
-        // this.props.updateLangData(langData);
-      }
     }
   }, {
     key: "renderLesson",
@@ -4132,7 +4139,8 @@ function (_React$Component) {
       })))))))), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "challenge-sentence"
       }, sentence)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "challenge-prompt-text-container"
+        className: "challenge-prompt-text-container",
+        id: "challenge-prompt"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "c-p-t-c-sub"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {

@@ -55,7 +55,7 @@ class TranslateSentence extends React.Component {
                         <span className="challenge-sentence">{sentence}</span>
                         {/* you'll interpolate above span from props later  */}
                     </div>
-                    <div className="challenge-prompt-text-container">
+                        <div className="challenge-prompt-text-container" id="challenge-prompt">
                         <div className="c-p-t-c-sub">
                             <textarea className="challenge-textarea" id="challenge-textarea" placeholder="Type in English"></textarea>
                         </div>

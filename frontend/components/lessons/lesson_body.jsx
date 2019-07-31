@@ -22,14 +22,15 @@ class LessonBody extends React.Component {
         
         let correctAnswer = "first";
         let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
-
-        if (document.getElementById('skill-check-button')) {
+        let skillButton = document.getElementById('skill-check-button')
+        if (skillButton) {
             
             this.setState({
-                correctAnswer: JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase()),
+                correctAnswer: JSON.parse(skillButton.getAttribute('data-guess').toLowerCase()),
                 lessonLength: grandLessonsObj[this.props.mini_lang][url].length
             })
         } 
+        
 
         // if you're on the completed page, but you refresh - overwrite the default False to True
         // if (document.getElementsByClassName('completed-container') && this.state.completed === false) {
@@ -50,13 +51,19 @@ class LessonBody extends React.Component {
                 })
             }
         } 
-        
-        if (this.state.lessonLength === this.props.skill.skill_level) {
-            
-            // let langData = this.props.user.language_data[this.props.mini_lang];
-            // langData['level'] = 0;
-            // this.props.updateLangData(langData);
-        }
+        // ******* ENTER EVENT LISTENER ********
+        // if (document.getElementById('challenge-prompt')) {
+        //     let self = this
+
+        //     document.getElementById('challenge-prompt').addEventListener('keypress', function (e) {
+
+        //         const key = e.keyCode;
+        //         if (key === 13) { // 13 is enter
+        //             debugger
+        //             self.handleSubmit()
+        //         }
+        //     });
+        // }
     }
     renderLesson(){
         // it's hitting completed first, because on first render the state's lesson length is 0 - use skill.num_levels; may require refactor :/
@@ -324,6 +331,7 @@ class LessonBody extends React.Component {
         
         // set currentLesson to an array so that you can use skip button
         // let currentLesson = grandLessonsObj[this.props.mini_lang][url][this.props.level] // another key for current level
+
         if (this.state.currentLesson === "") {
             let url = this.props.location.pathname.split('/')[this.props.location.pathname.split('/').length - 1]
             this.setState({currentLesson: grandLessonsObj[this.props.mini_lang][url]})
@@ -333,6 +341,7 @@ class LessonBody extends React.Component {
         if (progressBar){
             progressBar.style=`opacity: 1;width: ${this.props.skill.skill_level / this.state.currentLesson.length * 100}%;`;
         }
+
         return (
             <div className="first-skill-div">
                 <div className="second-skill-div">
