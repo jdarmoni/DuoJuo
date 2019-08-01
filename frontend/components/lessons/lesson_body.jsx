@@ -39,7 +39,8 @@ class LessonBody extends React.Component {
         //     })
         // }
     }
-    componentDidUpdate(){
+    componentDidUpdate(prevProps, prevState){
+        
         if (document.getElementById('skill-check-button')) {
             
             let correct = JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase());
@@ -52,17 +53,20 @@ class LessonBody extends React.Component {
             }
         } 
         // ******* ENTER EVENT LISTENER ********
+        // debugger
         // if (document.getElementById('challenge-prompt')) {
         //     let self = this
-
-        //     document.getElementById('challenge-prompt').addEventListener('keypress', function (e) {
-
-        //         const key = e.keyCode;
-        //         if (key === 13) { // 13 is enter
-        //             debugger
-        //             self.handleSubmit()
-        //         }
-        //     });
+        //     if (prevState.correct === this.state.correct) {
+        //         debugger
+        //         document.getElementById('challenge-prompt').addEventListener('keypress', function (e) {
+                    
+        //             const key = e.keyCode;
+        //             if (key === 13) { // 13 is enter
+        //                 debugger
+        //                 self.handleSubmit()
+        //             }
+        //         });
+        //     }
         // }
     }
     renderLesson(){

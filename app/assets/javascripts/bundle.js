@@ -944,9 +944,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _course_icon_content__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./course_icon_content */ "./frontend/components/dashboard/course_icon_content.jsx");
 /* harmony import */ var _actions_translate_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/translate_actions */ "./frontend/actions/translate_actions.js");
 /* harmony import */ var _actions_grammar_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/grammar_actions */ "./frontend/actions/grammar_actions.js");
-/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
-/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_4__);
-
 
 
 
@@ -959,26 +956,7 @@ var mapStateToProps = function mapStateToProps(state) {
     currentUser: state.entities.users[state.session.id] // currentLanguage: currentLanguage
 
   };
-}; // let options = {
-//     method: 'POST',
-//     baseUrl: 'https://api.cognitive.microsofttranslator.com/',
-//     url: 'translate',
-//     qs: {
-//         'api-version': '3.0',
-//         'to': ['fr']
-//         // 'to': ['de', 'it']
-//     },
-//     headers: {
-//         'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
-//         'Content-type': 'application/json',
-//         'X-ClientTraceId': uuidv4().toString()
-//     },
-//     body: [{
-//         'text': 'the cat that found the dog loved'
-//     }],
-//     json: true,
-// };
-
+};
 
 var options;
 var guide;
@@ -2973,7 +2951,7 @@ function (_React$Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate() {
+    value: function componentDidUpdate(prevProps, prevState) {
       if (document.getElementById('skill-check-button')) {
         var correct = JSON.parse(document.getElementById('skill-check-button').getAttribute('data-guess').toLowerCase()); // checking for equality before - now check for inclusion
 
@@ -2983,15 +2961,19 @@ function (_React$Component) {
           });
         }
       } // ******* ENTER EVENT LISTENER ********
+      // debugger
       // if (document.getElementById('challenge-prompt')) {
       //     let self = this
-      //     document.getElementById('challenge-prompt').addEventListener('keypress', function (e) {
-      //         const key = e.keyCode;
-      //         if (key === 13) { // 13 is enter
-      //             debugger
-      //             self.handleSubmit()
-      //         }
-      //     });
+      //     if (prevState.correct === this.state.correct) {
+      //         debugger
+      //         document.getElementById('challenge-prompt').addEventListener('keypress', function (e) {
+      //             const key = e.keyCode;
+      //             if (key === 13) { // 13 is enter
+      //                 debugger
+      //                 self.handleSubmit()
+      //             }
+      //         });
+      //     }
       // }
 
     }
