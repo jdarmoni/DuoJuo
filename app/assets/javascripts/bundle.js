@@ -407,8 +407,7 @@ var translate = function translate(options) {
 var translatePractice = function translatePractice(guide, options) {
   var num = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3;
   var lang = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "fr";
-  var promise = new Promise(function (resolve, reject) {
-    // do a thing, possibly async, then…
+  var promise1 = new Promise(function (resolve, reject) {
     var sentence = Object(_util_grammar_api_util__WEBPACK_IMPORTED_MODULE_1__["createSentence"])(guide, num);
 
     if (resolve) {
@@ -417,8 +416,24 @@ var translatePractice = function translatePractice(guide, options) {
       reject(Error("It broke"));
     }
   });
-  return promise.then(function (sentence) {
-    return _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__["translatePractice"](options, sentence, lang);
+  return promise1.then(function (sentence) {
+    // translation of sentence
+    debugger;
+    var promise2 = new Promise(function (resolve, reject) {
+      var translation = _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__["translatePractice"](options, sentence, lang);
+      debugger;
+
+      if (resolve) {
+        resolve(translation);
+      } else {
+        reject(Error("It broke"));
+      }
+    });
+    debugger;
+    return promise2.then(function (request) {
+      var result = request;
+      debugger;
+    });
   });
 };
 
@@ -7079,14 +7094,11 @@ var translate = function translate(options) {
     translate(_options);
   } else {
     request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
-      debugger;
       console.log(JSON.stringify(body, null, 4));
     });
   }
 };
 var translatePractice = function translatePractice(options, sentence, lang) {
-  debugger;
-
   if (options === undefined) {
     var _options2 = {
       method: 'POST',
@@ -7107,11 +7119,13 @@ var translatePractice = function translatePractice(options, sentence, lang) {
       }],
       json: true
     };
-    translate(_options2);
+    return translatePractice(_options2);
   } else {
-    request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
-      debugger;
+    return request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
       console.log(JSON.stringify(body, null, 4));
+      debugger;
+      var translation = JSON.parse(JSON.stringify(body, null, 4))[0].translations[0].text;
+      return translation;
     });
   }
 };

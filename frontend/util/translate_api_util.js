@@ -28,7 +28,7 @@ export const translate = (options)=> {
     } else {
 
         request(options, function (err, res, body) {
-            debugger
+            
             console.log(JSON.stringify(body, null, 4));
         });
     }
@@ -36,7 +36,7 @@ export const translate = (options)=> {
 
 
 export const translatePractice = (options, sentence, lang) => {
-    debugger
+
     if (options === undefined) {
         let options = {
             method: 'POST',
@@ -58,12 +58,15 @@ export const translatePractice = (options, sentence, lang) => {
             }],
             json: true,
         };
-        translate(options)
+        return translatePractice(options)
+        
     } else {
 
-        request(options, function (err, res, body) {
-            debugger
+        return request(options, function (err, res, body) {
             console.log(JSON.stringify(body, null, 4));
+            debugger
+            let translation = JSON.parse(JSON.stringify(body, null, 4))[0].translations[0].text
+            return translation
         });
     }
 }

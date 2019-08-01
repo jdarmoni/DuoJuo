@@ -11,9 +11,8 @@ export const translate = (options) => {
 
 // takes a sentence, then calls translate, feeding in the language it wants to translate sentence to, and passing said sentence
 export const translatePractice = (guide, options, num = 3, lang="fr")=> {
-    let promise = new Promise(function (resolve, reject) {
-        // do a thing, possibly async, then…
 
+    let promise1 = new Promise(function (resolve, reject) {
         let sentence = createSentence(guide, num)
         
         if (resolve) {
@@ -24,9 +23,27 @@ export const translatePractice = (guide, options, num = 3, lang="fr")=> {
         }
     });
 
-    return promise.then((sentence) => {
+    return promise1.then((sentence) => {
         
-        return APIUtil.translatePractice(options, sentence, lang)
+        // translation of sentence
+        debugger
+        let promise2 = new Promise( 
+            function(resolve, reject) {
+                let translation = APIUtil.translatePractice(options, sentence, lang)
+                debugger
+                if (resolve) {
+                    resolve(translation);
+                }
+                else {
+                    reject(Error("It broke"));
+                }
+            });
+        debugger
+        return promise2.then((request)=>{
+            let result = request
+            debugger
+            
+        })
 
     })
 } 
