@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CourseIconContent from './course_icon_content'
-import {translate} from '../../actions/translate_actions'
+import {translate, translatePractice} from '../../actions/translate_actions'
 import {createSentence} from '../../actions/grammar_actions'
 
 const mapStateToProps = (state) => {
@@ -15,11 +15,16 @@ const mapStateToProps = (state) => {
 
 let options;
 let guide;
+let lang;
 
-const mapDispatchToProps = dispatch => ({
-    translate: ()=>translate(options),
-    createSentence: ()=> createSentence(guide, 5)
-});
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        translate: ()=>translate(options),
+        createSentence: ()=> createSentence(guide, 5),
+        translatePractice: ()=>translatePractice(guide, options, 5, lang)
+    }
+};
 
 export default connect(
     mapStateToProps,

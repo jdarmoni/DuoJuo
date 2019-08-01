@@ -20,14 +20,14 @@ class CourseIconContent extends React.Component {
         
     }
     render(){
-        console.log(this.props.guide)
+
         return (
             // convert into component
             <div className="course-content-container">
                 <div>
                     <div className="course-module-container">
                         <div className="skill-tree">
-                            <a className="global-practice" onClick={this.props.createSentence} >
+                            <a className="global-practice" onClick={this.props.translatePractice} >
                                 <img src="//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg" />
                             </a>
 

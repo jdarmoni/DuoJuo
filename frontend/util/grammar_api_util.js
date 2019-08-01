@@ -59,13 +59,17 @@ export const createSentence = (guide, num)=> {
 
         let graph = new GrammarGraph(grammar)
         let guide = graph.createGuide('Sentence')
-        createSentence(guide, num)
+        return createSentence(guide, num)
 
     } else {
-
+        // when it's finished, console log it and return sentence
         if (guide.construction().length >= num && guide.isComplete()) {
-            console.log(guide.construction().join(' '))
             
+            let sentence = guide.construction().join(' ')
+            console.log(sentence)
+            
+            return sentence
+
         } else {
             
             guide.choose(guide.choices()[random(guide)])
@@ -74,4 +78,3 @@ export const createSentence = (guide, num)=> {
         }    
     }
 }
-

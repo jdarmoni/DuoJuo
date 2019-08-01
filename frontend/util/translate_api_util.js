@@ -33,3 +33,37 @@ export const translate = (options)=> {
         });
     }
 }
+
+
+export const translatePractice = (options, sentence, lang) => {
+    debugger
+    if (options === undefined) {
+        let options = {
+            method: 'POST',
+            baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+            url: 'translate',
+            qs: {
+                'api-version': '3.0',
+                'to': [lang]
+                // 'to': ['de', 'it']
+
+            },
+            headers: {
+                'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
+                'Content-type': 'application/json',
+                'X-ClientTraceId': uuidv4().toString()
+            },
+            body: [{
+                'text': sentence
+            }],
+            json: true,
+        };
+        translate(options)
+    } else {
+
+        request(options, function (err, res, body) {
+            debugger
+            console.log(JSON.stringify(body, null, 4));
+        });
+    }
+}

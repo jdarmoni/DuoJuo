@@ -382,23 +382,44 @@ var updateSkill = function updateSkill(skill) {
 /*!***********************************************!*\
   !*** ./frontend/actions/translate_actions.js ***!
   \***********************************************/
-/*! exports provided: translate */
+/*! exports provided: translate, translatePractice */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "translate", function() { return translate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "translatePractice", function() { return translatePractice; });
 /* harmony import */ var _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/translate_api_util */ "./frontend/util/translate_api_util.js");
-/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! request */ "./node_modules/request/index.js");
-/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(request__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
-/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _util_grammar_api_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/grammar_api_util */ "./frontend/util/grammar_api_util.js");
+/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! request */ "./node_modules/request/index.js");
+/* harmony import */ var request__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(request__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
+/* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(uuid_v4__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 var translate = function translate(options) {
   debugger;
   return _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__["translate"](options);
+}; // takes a sentence, then calls translate, feeding in the language it wants to translate sentence to, and passing said sentence
+
+var translatePractice = function translatePractice(guide, options) {
+  var num = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3;
+  var lang = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "fr";
+  var promise = new Promise(function (resolve, reject) {
+    // do a thing, possibly async, then…
+    var sentence = Object(_util_grammar_api_util__WEBPACK_IMPORTED_MODULE_1__["createSentence"])(guide, num);
+
+    if (resolve) {
+      resolve(sentence);
+    } else {
+      reject(Error("It broke"));
+    }
+  });
+  return promise.then(function (sentence) {
+    return _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__["translatePractice"](options, sentence, lang);
+  });
 };
 
 /***/ }),
@@ -960,6 +981,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var options;
 var guide;
+var lang;
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
@@ -968,6 +990,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     createSentence: function createSentence() {
       return Object(_actions_grammar_actions__WEBPACK_IMPORTED_MODULE_3__["createSentence"])(guide, 5);
+    },
+    translatePractice: function translatePractice() {
+      return Object(_actions_translate_actions__WEBPACK_IMPORTED_MODULE_2__["translatePractice"])(guide, options, 5, lang);
     }
   };
 };
@@ -985,7 +1010,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../skill_tree/row1 */ "./frontend/components/skill_tree/row1.jsx");
 /* harmony import */ var _skill_tree_row_2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../skill_tree/row_2 */ "./frontend/components/skill_tree/row_2.jsx");
@@ -1033,7 +1058,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props.guide);
       return (// convert into component
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "course-content-container"
@@ -1043,7 +1067,7 @@ function (_React$Component) {
           className: "skill-tree"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "global-practice",
-          onClick: this.props.createSentence
+          onClick: this.props.translatePractice
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "//d35aaqx5ub95lt.cloudfront.net/images/dumbbell-blue.svg"
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skill_tree_row1__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1059,7 +1083,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (CourseIconContent);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
 
 /***/ }),
 
@@ -6832,10 +6855,13 @@ var createSentence = function createSentence(guide, num) {
 
     var _guide = _graph.createGuide('Sentence');
 
-    createSentence(_guide, num);
+    return createSentence(_guide, num);
   } else {
+    // when it's finished, console log it and return sentence
     if (guide.construction().length >= num && guide.isComplete()) {
-      console.log(guide.construction().join(' '));
+      var sentence = guide.construction().join(' ');
+      console.log(sentence);
+      return sentence;
     } else {
       guide.choose(guide.choices()[random(guide)]);
       return createSentence(guide, num);
@@ -7014,12 +7040,13 @@ var updateSkill = function updateSkill(skill) {
 /*!*********************************************!*\
   !*** ./frontend/util/translate_api_util.js ***!
   \*********************************************/
-/*! exports provided: translate */
+/*! exports provided: translate, translatePractice */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "translate", function() { return translate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "translatePractice", function() { return translatePractice; });
 /* harmony import */ var request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! request */ "./node_modules/request/index.js");
 /* harmony import */ var request__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(request__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var uuid_v4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
@@ -7050,6 +7077,37 @@ var translate = function translate(options) {
       json: true
     };
     translate(_options);
+  } else {
+    request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
+      debugger;
+      console.log(JSON.stringify(body, null, 4));
+    });
+  }
+};
+var translatePractice = function translatePractice(options, sentence, lang) {
+  debugger;
+
+  if (options === undefined) {
+    var _options2 = {
+      method: 'POST',
+      baseUrl: 'https://api.cognitive.microsofttranslator.com/',
+      url: 'translate',
+      qs: {
+        'api-version': '3.0',
+        'to': [lang] // 'to': ['de', 'it']
+
+      },
+      headers: {
+        'Ocp-Apim-Subscription-Key': "a2fb1712983c4807a035c51720b545c1",
+        'Content-type': 'application/json',
+        'X-ClientTraceId': uuid_v4__WEBPACK_IMPORTED_MODULE_1___default()().toString()
+      },
+      body: [{
+        'text': sentence
+      }],
+      json: true
+    };
+    translate(_options2);
   } else {
     request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
       debugger;
