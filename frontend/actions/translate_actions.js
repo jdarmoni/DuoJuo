@@ -24,26 +24,25 @@ export const translatePractice = (guide, options, num = 3, lang="fr")=> {
     });
 
     return promise1.then((sentence) => {
-        
-        // translation of sentence
-        debugger
-        let promise2 = new Promise( 
-            function(resolve, reject) {
-                let translation = APIUtil.translatePractice(options, sentence, lang)
-                debugger
-                if (resolve) {
-                    resolve(translation);
-                }
-                else {
-                    reject(Error("It broke"));
-                }
-            });
-        debugger
-        return promise2.then((request)=>{
-            let result = request
-            debugger
+        return APIUtil.translatePractice(options, sentence, lang)
+
+        // let promise2 = new Promise( function(resolve, reject) {
+        //     let translation = APIUtil.translatePractice(options, sentence, lang)
             
-        })
+        //     if (resolve) {
+        //         resolve(translation);
+        //     }
+        //     else {
+        //         reject(Error("It broke"));
+        //     }
+        // });
+        
+        // debugger
+        // return promise2.then((request)=>{
+        //     let result = request
+        //     debugger
+            
+        // })
 
     })
 } 

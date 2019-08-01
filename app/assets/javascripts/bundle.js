@@ -417,23 +417,20 @@ var translatePractice = function translatePractice(guide, options) {
     }
   });
   return promise1.then(function (sentence) {
-    // translation of sentence
-    debugger;
-    var promise2 = new Promise(function (resolve, reject) {
-      var translation = _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__["translatePractice"](options, sentence, lang);
-      debugger;
-
-      if (resolve) {
-        resolve(translation);
-      } else {
-        reject(Error("It broke"));
-      }
-    });
-    debugger;
-    return promise2.then(function (request) {
-      var result = request;
-      debugger;
-    });
+    return _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__["translatePractice"](options, sentence, lang); // let promise2 = new Promise( function(resolve, reject) {
+    //     let translation = APIUtil.translatePractice(options, sentence, lang)
+    //     if (resolve) {
+    //         resolve(translation);
+    //     }
+    //     else {
+    //         reject(Error("It broke"));
+    //     }
+    // });
+    // debugger
+    // return promise2.then((request)=>{
+    //     let result = request
+    //     debugger
+    // })
   });
 };
 
