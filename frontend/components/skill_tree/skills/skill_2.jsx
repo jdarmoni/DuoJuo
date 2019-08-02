@@ -12,11 +12,16 @@ class Skill2 extends React.Component {
         const btn = document.getElementById("bscs2-a");
         let clicked = false;
         
-        btn.onclick = function () {
-            
-            if (clicked === false) {
+        btn.onclick = function () {            
+            // if clicked is true, but display is none from other modals
+            if (clicked && modal.style.display === "none") {
+                modal.style.display = "block"
+                document.getElementById("skm-bscs1").style.display = "none";
+                document.getElementById("skm-grtngs1").style.display = "none"
+            } else if (clicked === false) {
                 
                 modal.style.display = "block";
+                // hide other modals
                 const modal1 = document.getElementById("skm-bscs1");
                 const modal2 = document.getElementById("skm-grtngs1");
                 modal1.style.display = "none";

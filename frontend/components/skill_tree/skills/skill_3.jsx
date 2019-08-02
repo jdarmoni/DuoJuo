@@ -12,16 +12,21 @@ class Skill3 extends React.Component {
         // Get the button that opens the modal
         const btn = document.getElementById("grtngs-a");
         let clicked = false;
-        // When the user clicks anywhere outside of the modal, close it
      
         btn.onclick = function () {
-            
-            if (clicked === false) {
+            // if click is true, but display has been set to none by other modals, toggle!
+            if (clicked && modal.style.display === "none") {
+                debugger
                 modal.style.display = "block";
-                const modal1 = document.getElementById("skm-bscs1");
-                const modal2 = document.getElementById("skm-bscs2");
-                modal1.style.display = "none";
-                modal2.style.display = "none";
+                document.getElementById("skm-bscs1").style.display = "none";;
+                document.getElementById("skm-bscs2").style.display = "none";;
+
+            } else if (clicked === false) {
+                modal.style.display = "block";
+
+                // hide other modals
+                document.getElementById("skm-bscs1").style.display = "none";;
+                document.getElementById("skm-bscs2").style.display = "none";;
 
                 clicked = true;
             } else if (clicked === true) {

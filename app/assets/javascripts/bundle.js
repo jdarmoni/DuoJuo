@@ -5416,32 +5416,30 @@ function (_React$Component) {
   _createClass(Skill1, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var modal = document.getElementById("skm-bscs1");
-      var modal1 = document.getElementById("skm-bscs2");
-      var modal2 = document.getElementById("skm-grtngs1"); // Get the button that opens the modal
+      var modal = document.getElementById("skm-bscs1"); // normally:
+      // if clicked is false, display none
+      // if clicked is true, display block
+      // BUT! Could also be: 
+      // if clicked is true, but display is none from other modals
+      // Get the button that opens the modal
 
       var btn = document.getElementById("bscs1-a");
-      var clicked = false; // When the user clicks anywhere outside of the modal, close it
-      // modal.onclick = function (event) {
-      //     debugger
-      //     if (event.target == modal && clicked === true) {
-      //         debugger
-      //         modal.style.display = "none";
-      //         clicked = false;
-      //         return
-      //         // why does this get hit
-      //     }
-      // }
+      var clicked = false;
 
       btn.onclick = function () {
-        if (clicked === false) {
-          var _modal = document.getElementById("skm-bscs2");
-
-          var _modal2 = document.getElementById("skm-grtngs1");
-
+        // if clicked is true, but display is none from other modals
+        if (clicked && modal.style.display === "none") {
+          debugger;
+          document.getElementById("skm-bscs2").style.display = "none";
+          document.getElementById("skm-grtngs1").style.display = "none";
           modal.style.display = "block";
-          _modal.style.display = "none";
-          _modal2.style.display = "none";
+        } else if (clicked === false) {
+          modal.style.display = "block"; // hide other modals
+
+          var modal1 = document.getElementById("skm-bscs2");
+          var modal2 = document.getElementById("skm-grtngs1");
+          modal1.style.display = "none";
+          modal2.style.display = "none";
           clicked = true;
         } else if (clicked === true) {
           modal.style.display = "none";
@@ -5710,8 +5708,14 @@ function (_React$Component) {
       var clicked = false;
 
       btn.onclick = function () {
-        if (clicked === false) {
+        // if clicked is true, but display is none from other modals
+        if (clicked && modal.style.display === "none") {
           modal.style.display = "block";
+          document.getElementById("skm-bscs1").style.display = "none";
+          document.getElementById("skm-grtngs1").style.display = "none";
+        } else if (clicked === false) {
+          modal.style.display = "block"; // hide other modals
+
           var modal1 = document.getElementById("skm-bscs1");
           var modal2 = document.getElementById("skm-grtngs1");
           modal1.style.display = "none";
@@ -5981,15 +5985,24 @@ function (_React$Component) {
       var modal = document.getElementById("skm-grtngs1"); // Get the button that opens the modal
 
       var btn = document.getElementById("grtngs-a");
-      var clicked = false; // When the user clicks anywhere outside of the modal, close it
+      var clicked = false;
 
       btn.onclick = function () {
-        if (clicked === false) {
+        // if click is true, but display has been set to none by other modals, toggle!
+        if (clicked && modal.style.display === "none") {
+          debugger;
           modal.style.display = "block";
-          var modal1 = document.getElementById("skm-bscs1");
-          var modal2 = document.getElementById("skm-bscs2");
-          modal1.style.display = "none";
-          modal2.style.display = "none";
+          document.getElementById("skm-bscs1").style.display = "none";
+          ;
+          document.getElementById("skm-bscs2").style.display = "none";
+          ;
+        } else if (clicked === false) {
+          modal.style.display = "block"; // hide other modals
+
+          document.getElementById("skm-bscs1").style.display = "none";
+          ;
+          document.getElementById("skm-bscs2").style.display = "none";
+          ;
           clicked = true;
         } else if (clicked === true) {
           modal.style.display = "none";

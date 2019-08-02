@@ -9,33 +9,31 @@ class Skill1 extends React.Component {
     }
     componentDidMount() {
         const modal = document.getElementById("skm-bscs1");
-        const modal1 = document.getElementById("skm-bscs2");
-        const modal2 = document.getElementById("skm-grtngs1");
 
+        // normally:
+        // if clicked is false, display none
+        // if clicked is true, display block
+        // BUT! Could also be: 
+        // if clicked is true, but display is none from other modals
 
         // Get the button that opens the modal
         const btn = document.getElementById("bscs1-a");
         let clicked = false;
 
-        // When the user clicks anywhere outside of the modal, close it
-        // modal.onclick = function (event) {
-        //     debugger
-        //     if (event.target == modal && clicked === true) {
-        //         debugger
-        //         modal.style.display = "none";
-        //         clicked = false;
-        //         return
-        //         // why does this get hit
-        //     }
-        // }
         
         btn.onclick = function () {
-            
-            if (clicked === false) {
+            // if clicked is true, but display is none from other modals
+            if (clicked && modal.style.display === "none") {
+                debugger
+                document.getElementById("skm-bscs2").style.display="none";
+                document.getElementById("skm-grtngs1").style.display="none";
+                modal.style.display = "block";
+
+            } else if (clicked === false) {
+                modal.style.display = "block";
+                // hide other modals
                 const modal1 = document.getElementById("skm-bscs2");
                 const modal2 = document.getElementById("skm-grtngs1");
-
-                modal.style.display = "block";
                 modal1.style.display = "none";
                 modal2.style.display = "none";
 
