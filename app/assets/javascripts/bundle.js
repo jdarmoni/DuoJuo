@@ -417,22 +417,23 @@ var translatePractice = function translatePractice(guide, options) {
     }
   });
   return promise1.then(function (sentence) {
-    return _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__["translatePractice"](options, sentence, lang); // let promise2 = new Promise( function(resolve, reject) {
-    //     let translation = APIUtil.translatePractice(options, sentence, lang)
-    //     if (resolve) {
-    //         resolve(translation);
-    //     }
-    //     else {
-    //         reject(Error("It broke"));
-    //     }
-    // });
-    // debugger
-    // return promise2.then((request)=>{
-    //     let result = request
-    //     debugger
-    // })
+    return _util_translate_api_util__WEBPACK_IMPORTED_MODULE_0__["translatePractice"](options, sentence, lang); // undefined ^
+    // *
   });
-};
+}; // let promise2 = new Promise( function(resolve, reject) {
+//     let translation = APIUtil.translatePractice(options, sentence, lang)
+//     if (resolve) {
+//         resolve(translation);
+//     }
+//     else {
+//         reject(Error("It broke"));
+//     }
+// });
+// debugger
+// return promise2.then((request)=>{
+//     let result = request
+//     debugger
+// })
 
 /***/ }),
 
@@ -7118,10 +7119,11 @@ var translatePractice = function translatePractice(options, sentence, lang) {
     };
     return translatePractice(_options2);
   } else {
-    return request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
-      console.log(JSON.stringify(body, null, 4));
+    request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
+      // console.log(JSON.stringify(body, null, 4));
       debugger;
-      var translation = JSON.parse(JSON.stringify(body, null, 4))[0].translations[0].text;
+      var translation = body[0].translations[0].text;
+      console.log(translation);
       return translation;
     });
   }

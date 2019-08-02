@@ -34,7 +34,7 @@ Complete lessons to gain rupees and increase the yellow progress bar (up top)! T
 
 ## Need a hint?
 
-Mouse over a word and the Microsoft API will offer you a translated hint!
+Mouse over a word or phrase and the Microsoft API will offer you a translated hint!
 ![Lesson Image](readmeResources/hint.png)
 
 
