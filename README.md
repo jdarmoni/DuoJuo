@@ -32,11 +32,21 @@ Complete lessons to gain rupees and increase the yellow progress bar (up top)! T
 
 ![Lesson Image](readmeResources/lesson2.png)
 
+## Need a hint?
+
+Mouse over a word and the Microsoft API will offer you a translated hint!
+![Lesson Image](readmeResources/hint.png)
+
+
 ## State Shape
 
 Features a state shape that mirrors Duolingo's own production JSON!
 ![Lesson Image](readmeResources/duoState.png)
 
 ## Upcoming & Bonus
+
+Using grammarGraph for automated sentence construciton, allowing endless practice content
+
+Integration with Juolingo
 
 
