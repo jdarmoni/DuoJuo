@@ -17,14 +17,24 @@ class Skill3 extends React.Component {
         btn.onclick = function () {
             
             if (clicked === false) {
-                
                 modal.style.display = "block";
+                const modal1 = document.getElementById("skm-bscs1");
+                const modal2 = document.getElementById("skm-bscs2");
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+
                 clicked = true;
             } else if (clicked === true) {
                 modal.style.display = "none";
                 clicked = false;
             }
         }
+
+        // window.onclick = function (event) {
+        //     if (event.target !== modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
     }
 
     render() {

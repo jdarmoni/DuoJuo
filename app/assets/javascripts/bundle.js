@@ -5416,7 +5416,9 @@ function (_React$Component) {
   _createClass(Skill1, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var modal = document.getElementById("skm-bscs1"); // Get the button that opens the modal
+      var modal = document.getElementById("skm-bscs1");
+      var modal1 = document.getElementById("skm-bscs2");
+      var modal2 = document.getElementById("skm-grtngs1"); // Get the button that opens the modal
 
       var btn = document.getElementById("bscs1-a");
       var clicked = false; // When the user clicks anywhere outside of the modal, close it
@@ -5433,7 +5435,13 @@ function (_React$Component) {
 
       btn.onclick = function () {
         if (clicked === false) {
+          var _modal = document.getElementById("skm-bscs2");
+
+          var _modal2 = document.getElementById("skm-grtngs1");
+
           modal.style.display = "block";
+          _modal.style.display = "none";
+          _modal2.style.display = "none";
           clicked = true;
         } else if (clicked === true) {
           modal.style.display = "none";
@@ -5702,11 +5710,12 @@ function (_React$Component) {
       var clicked = false;
 
       btn.onclick = function () {
-        debugger;
-
         if (clicked === false) {
-          debugger;
           modal.style.display = "block";
+          var modal1 = document.getElementById("skm-bscs1");
+          var modal2 = document.getElementById("skm-grtngs1");
+          modal1.style.display = "none";
+          modal2.style.display = "none";
           clicked = true;
         } else if (clicked === true) {
           modal.style.display = "none";
@@ -5977,12 +5986,21 @@ function (_React$Component) {
       btn.onclick = function () {
         if (clicked === false) {
           modal.style.display = "block";
+          var modal1 = document.getElementById("skm-bscs1");
+          var modal2 = document.getElementById("skm-bscs2");
+          modal1.style.display = "none";
+          modal2.style.display = "none";
           clicked = true;
         } else if (clicked === true) {
           modal.style.display = "none";
           clicked = false;
         }
-      };
+      }; // window.onclick = function (event) {
+      //     if (event.target !== modal) {
+      //         modal.style.display = "none";
+      //     }
+      // }
+
     }
   }, {
     key: "render",
@@ -7120,8 +7138,6 @@ var translatePractice = function translatePractice(options, sentence, lang) {
     return translatePractice(_options2);
   } else {
     request__WEBPACK_IMPORTED_MODULE_0___default()(options, function (err, res, body) {
-      // console.log(JSON.stringify(body, null, 4));
-      debugger;
       var translation = body[0].translations[0].text;
       console.log(translation);
       return translation;

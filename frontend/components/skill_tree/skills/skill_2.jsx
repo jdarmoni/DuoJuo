@@ -13,10 +13,15 @@ class Skill2 extends React.Component {
         let clicked = false;
         
         btn.onclick = function () {
-            debugger
+            
             if (clicked === false) {
-                debugger
+                
                 modal.style.display = "block";
+                const modal1 = document.getElementById("skm-bscs1");
+                const modal2 = document.getElementById("skm-grtngs1");
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+
                 clicked = true;
             } else if (clicked === true) {
                 modal.style.display = "none";

@@ -63,8 +63,6 @@ export const translatePractice = (options, sentence, lang) => {
     } else {
 
         request(options, function (err, res, body) {
-            // console.log(JSON.stringify(body, null, 4));
-            debugger
             let translation = body[0].translations[0].text
             console.log(translation)
             return translation

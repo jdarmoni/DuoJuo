@@ -9,6 +9,9 @@ class Skill1 extends React.Component {
     }
     componentDidMount() {
         const modal = document.getElementById("skm-bscs1");
+        const modal1 = document.getElementById("skm-bscs2");
+        const modal2 = document.getElementById("skm-grtngs1");
+
 
         // Get the button that opens the modal
         const btn = document.getElementById("bscs1-a");
@@ -29,8 +32,13 @@ class Skill1 extends React.Component {
         btn.onclick = function () {
             
             if (clicked === false) {
-                
+                const modal1 = document.getElementById("skm-bscs2");
+                const modal2 = document.getElementById("skm-grtngs1");
+
                 modal.style.display = "block";
+                modal1.style.display = "none";
+                modal2.style.display = "none";
+
                 clicked = true;
                 
             } else if (clicked === true) {
@@ -38,6 +46,7 @@ class Skill1 extends React.Component {
                 clicked = false;
             }
         }
+        
     }
 
     render(){
