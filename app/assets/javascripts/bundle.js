@@ -1281,7 +1281,7 @@ function (_React$Component) {
       }, "Stories"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https:www.github.com/jdarmoni/DuoJuo",
+        href: "https://www.github.com/jdarmoni/DuoJuo",
         target: "_blank",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
