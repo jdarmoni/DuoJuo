@@ -1185,6 +1185,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchLanguageDatas(this.props.currentUser); // ****** CALENDAR & STREAK LOGIC ********
 
+      var week = 86400000 * 7;
       var calendars = this.props.currentUser.calendar;
       var streak = 0;
       var today = Date.now();
@@ -1198,28 +1199,31 @@ function (_React$Component) {
       var thurs = new Date(Date.now() - 86400000);
 
       if (calendars.length > 0) {
-        debugger; // if dif between today & latest cal is more than 24 hours, set streak to 0
-
+        // if dif between today & latest cal is more than 24 hours, set streak to 0
         for (var i = 0; i < calendars.length; i++) {
-          if (i === 0) {
-            debugger;
+          debugger;
 
-            if (today - calendars[i].datetime < twentyFourHrs) {
-              debugger;
+          if (i === 0) {
+            // grab last dateTime 8/8
+            if (today - latest > twentyFourHrs) {
+              streak = 0;
+              break;
+            } else if (today - calendars[i].datetime < twentyFourHrs) {
               streak = 1;
             }
 
             ;
             continue;
-          } // need to grab a range oa week
-
+          }
 
           var currentDay = calendars[i].datetime;
           var dayBefore = calendars[i - 1].datetime;
           var CD = new Date(currentDay);
-          var DB = new Date(dayBefore);
+          var DB = new Date(dayBefore); // make sure currentDay is within a week of today. So, today - currentDay !> week
 
-          if (CD.getDay() - DB.getDay() <= 1) {
+          debugger;
+
+          if (today - currentDay < week && CD.getDay() - DB.getDay() <= 1) {
             if (streak === 0) {
               streak += 2;
             } else {
@@ -3615,6 +3619,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  var today = Date.now();
   var todayProgress = Object.values(state.entities.users)[0].calendar;
   var user = state.entities.users[state.session.id];
   var site_streak = user.site_streak;
@@ -3632,8 +3637,14 @@ var mapStateToProps = function mapStateToProps(state) {
 
   for (var i = 0; i < calendars.length; i++) {
     var week = 86400000 * 7;
-    var dateNum = new Date(calendars[i].datetime).getDay();
-    date[dateNum] = orange;
+    debugger;
+    var dateNum = void 0;
+
+    if (today - calendars[i].datetime < week) {
+      dateNum = new Date(calendars[i].datetime).getDay();
+      date[dateNum] = orange;
+    }
+
     var daySpan = document.getElementById("comp-".concat(dateNum));
 
     if (daySpan) {
@@ -3644,7 +3655,8 @@ var mapStateToProps = function mapStateToProps(state) {
     if (i === 0) {
       site_streak = 1;
       continue;
-    }
+    } // right here is where I need to use week
+
 
     var currentDay = calendars[i].datetime;
     var dayBefore = calendars[i - 1].datetime;

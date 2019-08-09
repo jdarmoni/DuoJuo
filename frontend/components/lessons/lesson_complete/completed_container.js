@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Completed from './completed'
 
 const mapStateToProps = (state) => {
-    
+    let today = Date.now()
     let todayProgress = Object.values(state.entities.users)[0].calendar;
     let user = state.entities.users[state.session.id];
     let site_streak = user.site_streak;
@@ -20,9 +20,12 @@ const mapStateToProps = (state) => {
 
     for (let i = 0; i < calendars.length; i++) {
         let week = 86400000 * 7;
-        
-        let dateNum = new Date(calendars[i].datetime).getDay();
-        date[dateNum] = orange;
+        debugger
+        let dateNum;
+        if (today - calendars[i].datetime < week){
+            dateNum = new Date(calendars[i].datetime).getDay();
+            date[dateNum] = orange;
+        }
         let daySpan = document.getElementById(`comp-${dateNum}`);
         
         if (daySpan){
@@ -33,9 +36,11 @@ const mapStateToProps = (state) => {
             site_streak = 1;
             continue;
         }
+        // right here is where I need to use week
         let currentDay = calendars[i].datetime;
         let dayBefore = calendars[i - 1].datetime;
         let CD = new Date(currentDay);
+        
         let DB = new Date(dayBefore);
         debugger
         if (CD.getDay() - DB.getDay() <= 1) {
