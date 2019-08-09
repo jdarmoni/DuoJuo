@@ -52,7 +52,6 @@ class Dashboard extends React.Component {
         if (calendars.length > 0) {
             
             // if dif between today & latest cal is more than 24 hours, set streak to 0
-
             for (let i = 0; i < calendars.length; i++) {
                 debugger
                 if (i === 0) {   
@@ -73,17 +72,18 @@ class Dashboard extends React.Component {
                 let CD = new Date(currentDay);
                 let DB = new Date(dayBefore);
                 
-                // make sure currentDay is within a week of today. So, today - currentDay !> week
                 debugger
                 if ( (today - currentDay < week  ) && (CD.getDay() - DB.getDay() <= 1) ) {
+                    // make sure currentDay is within a week of today.
+                    // this is so that, after passing the first streak condition, we don't accrue old streaks 
                     
                     if (streak === 0) {
+                        // if you START a streak, account for today and yesterday
                         streak += 2
                     } else {
                         streak += 1
                     }
                 } else { 
-                    
                     streak = 0
                 }
             }

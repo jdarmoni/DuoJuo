@@ -20,8 +20,9 @@ const mapStateToProps = (state) => {
 
     for (let i = 0; i < calendars.length; i++) {
         let week = 86400000 * 7;
-        debugger
+        
         let dateNum;
+        // only define dateNum if it's within a week's range!
         if (today - calendars[i].datetime < week){
             dateNum = new Date(calendars[i].datetime).getDay();
             date[dateNum] = orange;
@@ -36,7 +37,6 @@ const mapStateToProps = (state) => {
             site_streak = 1;
             continue;
         }
-        // right here is where I need to use week
         let currentDay = calendars[i].datetime;
         let dayBefore = calendars[i - 1].datetime;
         let CD = new Date(currentDay);

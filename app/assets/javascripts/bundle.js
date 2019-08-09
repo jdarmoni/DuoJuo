@@ -1219,12 +1219,14 @@ function (_React$Component) {
           var currentDay = calendars[i].datetime;
           var dayBefore = calendars[i - 1].datetime;
           var CD = new Date(currentDay);
-          var DB = new Date(dayBefore); // make sure currentDay is within a week of today. So, today - currentDay !> week
-
+          var DB = new Date(dayBefore);
           debugger;
 
           if (today - currentDay < week && CD.getDay() - DB.getDay() <= 1) {
+            // make sure currentDay is within a week of today.
+            // this is so that, after passing the first streak condition, we don't accrue old streaks 
             if (streak === 0) {
+              // if you START a streak, account for today and yesterday
               streak += 2;
             } else {
               streak += 1;
@@ -3637,8 +3639,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
   for (var i = 0; i < calendars.length; i++) {
     var week = 86400000 * 7;
-    debugger;
-    var dateNum = void 0;
+    var dateNum = void 0; // only define dateNum if it's within a week's range!
 
     if (today - calendars[i].datetime < week) {
       dateNum = new Date(calendars[i].datetime).getDay();
@@ -3655,8 +3656,7 @@ var mapStateToProps = function mapStateToProps(state) {
     if (i === 0) {
       site_streak = 1;
       continue;
-    } // right here is where I need to use week
-
+    }
 
     var currentDay = calendars[i].datetime;
     var dayBefore = calendars[i - 1].datetime;
