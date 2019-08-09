@@ -1198,12 +1198,21 @@ function (_React$Component) {
       var thurs = new Date(Date.now() - 86400000);
 
       if (calendars.length > 0) {
-        // if dif between today & latest cal is more than 24 hours, set streak to 0
+        debugger; // if dif between today & latest cal is more than 24 hours, set streak to 0
+
         for (var i = 0; i < calendars.length; i++) {
           if (i === 0) {
-            streak = 1;
+            debugger;
+
+            if (today - calendars[i].datetime < twentyFourHrs) {
+              debugger;
+              streak = 1;
+            }
+
+            ;
             continue;
-          }
+          } // need to grab a range oa week
+
 
           var currentDay = calendars[i].datetime;
           var dayBefore = calendars[i - 1].datetime;
@@ -1224,6 +1233,7 @@ function (_React$Component) {
 
       if (streak === 0) {
         if (today - latest < twentyFourHrs) {
+          debugger;
           streak = 1;
         }
       }
