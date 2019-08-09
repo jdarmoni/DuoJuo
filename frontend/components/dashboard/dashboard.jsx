@@ -37,6 +37,7 @@ class Dashboard extends React.Component {
 
         // ****** CALENDAR & STREAK LOGIC ********
 
+        let week = 86400000 * 7;
         let calendars = this.props.currentUser.calendar
         let streak = 0;
         let today = Date.now();
@@ -47,28 +48,34 @@ class Dashboard extends React.Component {
         let tuesday = new Date(Date.now() - 86400000 * 3)
         let wednesday = new Date(Date.now() - 86400000 * 2)
         let thurs = new Date(Date.now() - 86400000 )
-
+        
         if (calendars.length > 0) {
-            debugger
+            
             // if dif between today & latest cal is more than 24 hours, set streak to 0
 
             for (let i = 0; i < calendars.length; i++) {
-                if (i === 0) { 
-                    debugger
-                    if (today - calendars[i].datetime < twentyFourHrs) {
-                        debugger
+                debugger
+                if (i === 0) {   
+                    // grab last dateTime 8/8
+                    if (today - latest > twentyFourHrs ) {
+                        streak = 0;
+                        
+                        break
+                    } else if (today - calendars[i].datetime < twentyFourHrs) {
+                        
                         streak = 1
                     }
 ; 
                     continue;
                 }
-                // need to grab a range oa week
                 let currentDay = calendars[i].datetime;
                 let dayBefore = calendars[i - 1].datetime;
                 let CD = new Date(currentDay);
                 let DB = new Date(dayBefore);
                 
-                if (CD.getDay() - DB.getDay() <= 1) {
+                // make sure currentDay is within a week of today. So, today - currentDay !> week
+                debugger
+                if ( (today - currentDay < week  ) && (CD.getDay() - DB.getDay() <= 1) ) {
                     
                     if (streak === 0) {
                         streak += 2
