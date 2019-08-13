@@ -1192,19 +1192,13 @@ function (_React$Component) {
       var latest = Math.max.apply(Math, _toConsumableArray(calendars.map(function (o) {
         return o.datetime;
       })).concat([0]));
-      var twentyFourHrs = 86450000; // tests:
-
-      var tuesday = new Date(Date.now() - 86400000 * 3);
-      var wednesday = new Date(Date.now() - 86400000 * 2);
-      var thurs = new Date(Date.now() - 86400000);
+      var twentyFourHrs = 86450000;
 
       if (calendars.length > 0) {
-        // if dif between today & latest cal is more than 24 hours, set streak to 0
+        // Step 1): Loop through calendars
         for (var i = 0; i < calendars.length; i++) {
-          debugger;
-
           if (i === 0) {
-            // grab last dateTime 8/8
+            // if dif between today & latest cal is more than 24 hours, set streak to 0, break. Save ourself some work!
             if (today - latest > twentyFourHrs) {
               streak = 0;
               break;
@@ -1220,10 +1214,9 @@ function (_React$Component) {
           var dayBefore = calendars[i - 1].datetime;
           var CD = new Date(currentDay);
           var DB = new Date(dayBefore);
-          debugger;
 
           if (today - currentDay < week && CD.getDay() - DB.getDay() <= 1) {
-            // make sure currentDay is within a week of today.
+            // make sure currentDay is within a week of today. Cuts out the Monday / Tuesday from different months trouble.
             // this is so that, after passing the first streak condition, we don't accrue old streaks 
             if (streak === 0) {
               // if you START a streak, account for today and yesterday
@@ -1238,8 +1231,8 @@ function (_React$Component) {
       }
 
       if (streak === 0) {
+        // at the end, you could have a zero streak but still have one more calendar to check. If that cal's been created within 24 hours, streak = 1
         if (today - latest < twentyFourHrs) {
-          debugger;
           streak = 1;
         }
       }

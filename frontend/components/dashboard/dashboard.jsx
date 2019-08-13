@@ -36,30 +36,26 @@ class Dashboard extends React.Component {
         this.props.fetchLanguageDatas(this.props.currentUser)
 
         // ****** CALENDAR & STREAK LOGIC ********
-
+    
         let week = 86400000 * 7;
         let calendars = this.props.currentUser.calendar
         let streak = 0;
         let today = Date.now();
         const latest = Math.max(...calendars.map(o => o.datetime), 0);
         let twentyFourHrs = 86450000;
-
-        // tests:
-        let tuesday = new Date(Date.now() - 86400000 * 3)
-        let wednesday = new Date(Date.now() - 86400000 * 2)
-        let thurs = new Date(Date.now() - 86400000 )
         
         if (calendars.length > 0) {
             
-            // if dif between today & latest cal is more than 24 hours, set streak to 0
+            // Step 1): Loop through calendars
             for (let i = 0; i < calendars.length; i++) {
-                debugger
+
                 if (i === 0) {   
-                    // grab last dateTime 8/8
+                    // if dif between today & latest cal is more than 24 hours, set streak to 0, break. Save ourself some work!
                     if (today - latest > twentyFourHrs ) {
-                        streak = 0;
                         
+                        streak = 0;
                         break
+
                     } else if (today - calendars[i].datetime < twentyFourHrs) {
                         
                         streak = 1
@@ -67,15 +63,17 @@ class Dashboard extends React.Component {
 ; 
                     continue;
                 }
+                // Step 2: We'll compare calendars for currentDay [i] and the day before [i -1]
+
                 let currentDay = calendars[i].datetime;
                 let dayBefore = calendars[i - 1].datetime;
                 let CD = new Date(currentDay);
                 let DB = new Date(dayBefore);
                 
-                debugger
+                // two conditions: 
+                        // 1: Calendar[i] and calendar[i -1] are within same week!
+                        // 2: Differences in their day is not greater than 1
                 if ( (today - currentDay < week  ) && (CD.getDay() - DB.getDay() <= 1) ) {
-                    // make sure currentDay is within a week of today.
-                    // this is so that, after passing the first streak condition, we don't accrue old streaks 
                     
                     if (streak === 0) {
                         // if you START a streak, account for today and yesterday
@@ -88,10 +86,11 @@ class Dashboard extends React.Component {
                 }
             }
         }
-
+        
         if (streak === 0) {
+            // at the end, you could have a zero streak but still have one more calendar to check. If that cal's been created within 24 hours, streak = 1
             if (today - latest < twentyFourHrs){
-                debugger
+                
                 streak = 1
             }
         }
