@@ -1206,18 +1206,18 @@ function (_React$Component) {
               streak = 1;
             }
 
-            ;
             continue;
-          }
+          } // Step 2: We'll compare calendars for currentDay [i] and the day before [i -1]
+
 
           var currentDay = calendars[i].datetime;
           var dayBefore = calendars[i - 1].datetime;
           var CD = new Date(currentDay);
-          var DB = new Date(dayBefore);
+          var DB = new Date(dayBefore); // two conditions: 
+          // 1: Calendar[i] and calendar[i -1] are within same week!
+          // 2: Differences in their day is not greater than 1
 
           if (today - currentDay < week && CD.getDay() - DB.getDay() <= 1) {
-            // make sure currentDay is within a week of today. Cuts out the Monday / Tuesday from different months trouble.
-            // this is so that, after passing the first streak condition, we don't accrue old streaks 
             if (streak === 0) {
               // if you START a streak, account for today and yesterday
               streak += 2;
@@ -3610,6 +3610,14 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _completed__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./completed */ "./frontend/components/lessons/lesson_complete/completed.jsx");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 
 
 
@@ -3629,6 +3637,10 @@ var mapStateToProps = function mapStateToProps(state) {
   var sunday = grey;
   var date = [sunday, monday, tuesday, wednesday, thursday, friday, saturday];
   var calendars = user.calendar;
+  var latest = Math.max.apply(Math, _toConsumableArray(calendars.map(function (o) {
+    return o.datetime;
+  })).concat([0]));
+  var twentyFourHrs = 86450000;
 
   for (var i = 0; i < calendars.length; i++) {
     var week = 86400000 * 7;
@@ -3647,20 +3659,28 @@ var mapStateToProps = function mapStateToProps(state) {
 
 
     if (i === 0) {
-      site_streak = 1;
+      // if dif between today & latest cal is more than 24 hours, set streak to 0, break. Save ourself some work!
+      if (today - latest > twentyFourHrs) {
+        site_streak = 0;
+        break;
+      } else if (today - calendars[i].datetime < twentyFourHrs) {
+        site_streak = 1;
+      }
+
       continue;
-    }
+    } // Step 2: We'll compare calendars for currentDay [i] and the day before [i -1]
+
 
     var currentDay = calendars[i].datetime;
     var dayBefore = calendars[i - 1].datetime;
     var CD = new Date(currentDay);
-    var DB = new Date(dayBefore);
-    debugger;
+    var DB = new Date(dayBefore); // two conditions: 
+    // 1: Calendar[i] and calendar[i -1] are within same week!
+    // 2: Differences in their day is not greater than 1
 
-    if (CD.getDay() - DB.getDay() <= 1) {
-      debugger;
-
+    if (today - currentDay < week && CD.getDay() - DB.getDay() <= 1) {
       if (site_streak === 0) {
+        // if you START a site_streak, account for today and yesterday
         site_streak += 2;
       } else {
         site_streak += 1;
@@ -3669,6 +3689,32 @@ var mapStateToProps = function mapStateToProps(state) {
       site_streak = 0;
     }
   }
+
+  if (site_streak === 0) {
+    // at the end, you could have a zero site_streak but still have one more calendar to check. If that cal's been created within 24 hours, site_streak = 1
+    if (today - latest < twentyFourHrs) {
+      site_streak = 1;
+    }
+  } // if (i === 0) {
+  //     site_streak = 1;
+  //     continue;
+  // }
+  // let currentDay = calendars[i].datetime;
+  // let dayBefore = calendars[i - 1].datetime;
+  // let CD = new Date(currentDay);
+  // let DB = new Date(dayBefore);
+  // debugger
+  // if (CD.getDay() - DB.getDay() <= 1) {
+  //     debugger
+  //     if (site_streak === 0) {
+  //         site_streak += 2
+  //     } else {
+  //         site_streak += 1
+  //     }
+  // } else {
+  //     site_streak = 0
+  // }
+
 
   if (todayProgress.length > 0) {
     todayProgress = todayProgress[todayProgress.length - 1].improvement;

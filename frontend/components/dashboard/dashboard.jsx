@@ -58,9 +58,9 @@ class Dashboard extends React.Component {
 
                     } else if (today - calendars[i].datetime < twentyFourHrs) {
                         
-                        streak = 1
+                        streak = 1;
                     }
-; 
+ 
                     continue;
                 }
                 // Step 2: We'll compare calendars for currentDay [i] and the day before [i -1]
