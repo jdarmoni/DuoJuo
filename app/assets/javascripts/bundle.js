@@ -1278,7 +1278,7 @@ function (_React$Component) {
       }, "learn"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dashboard-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://www.linkedin.com/pulse/draft/AgGt48i-c6U5hQAAAWywZ3e0PuHqCsXAZV0-0e8wN4uUgF3TmAmykklqucV7elFmcpAy3jo",
+        href: "https://www.linkedin.com/pulse/our-inspiring-professor-duolingo-owl-julien-darmoni/",
         target: "_blank",
         className: "dashboard-header-blocks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
