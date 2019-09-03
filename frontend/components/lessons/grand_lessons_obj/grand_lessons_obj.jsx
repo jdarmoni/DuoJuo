@@ -4,7 +4,7 @@ import MarkMeaningContainer from '../mark_meaning/mark_meaning_container'
 import ConstructSentence from '../construct_sentence/construct_sentence'
 import CompletedContainer from '../../lessons/lesson_complete/completed_container'
 
-
+    
 export const grandLessonsObj = {
     //  < ConstructSentence sentence = { "Hello, I am hiding eggs"} correct =' { ["Bonjour je cache des oeufs"]} words = { ["Bonjour", "je", "cache", "des", "oeufs"]} />
     //  < TranslateSentenceContainer sentence = { "Le chien est effrayant"} correct =' { ["the dog is scary"]} />
@@ -31,6 +31,7 @@ export const grandLessonsObj = {
             "Intro": [<TranslateSentenceContainer sentence={"El cerdo esta durmiendo"} correct={'["the pig is sleeping"]'} />, <ConstructSentence sentence={"Soy el chico que bebe leche"} correct={'["I am the boy who drinks milk"]'} words={["drinks", "am", "I", "the", "boy", "milk", "who"]} />, <TranslateSentenceContainer sentence={"Eres un pájaro?"} correct={'["are you a bird?", "are you a bird"]'} />, <MarkMeaningContainer sentence={"Dime porque sueño"} eng={false} correct={'["tell me why I dream"]'} phrase1={"The pork costs a dime"} phrase2={"Why do you dream of pork"} phrase3={"Tell me why I dream"}/>],
             "Phrases": [<MarkMeaningContainer sentence={"Mi nombre es Rafael Nadal"} eng={false} correct={'["My name is Rafael Nadal"]'} phrase1={"My name is Novak Djokovic"} phrase2={"My name is Roger Federer"} phrase3={"My name is Rafael Nadal"} />, <TranslateSentenceContainer sentence={"Soy apasionado"} correct={'["I am passionate", "i\'m passionate"]'} />, <ConstructSentence sentence={"My best friend is named Roger"} correct={'["Mi mejor amigo se llama Roger"]'} words={["llama", "Roger", "mejor", "amigo", "Mi", "se"]} />, <MarkMeaningContainer eng={false} sentence={"He ganado Roland Garros 12 veces, ¿no?"} correct={'["I have won Roland Garros 12 times, no?"]'} phrase1={"I have won Wimbledon 12 times, no?"} phrase2={"I have won Roland Garros 12 times, no?"} phrase3={"I have lost the Australian Open 4 times, no?"} />],
             "Travel": [<TranslateSentenceContainer sentence={"Yo soy de Mallorca"} correct={'["I am from Mallorca", "i\'m from Mallorca"]'} />, <TranslateSentenceContainer sentence={"Mis brazos son espectaculares"} correct={'["My arms are spectacular", "My arms sound spectacular"]'} />, <TranslateSentenceContainer sentence={"Siempre pelearé por ti"} correct={'["I will always fight for you", "I will always fight by you"]'} />, <TranslateSentenceContainer sentence={"My name is Rafael Nadal"} correct={'["Mi nombre es rafael nadal"]'} />]
-        }
+        },
+
     }
 
