@@ -2794,8 +2794,20 @@ var grandLessonsObj = {
       sentence: "私はインサイダー取引で非難されています",
       correct: '["I have been accused of insider trading", "i\'m accused of insider trading"]'
     })],
-    // "Hiragana-3": [<TranslateSentenceContainer sentence={"ポケットモンスター"} correct={'["Pokemon", "Pocket Monsters"]'} />, <TranslateSentenceContainer sentence={"男の子"} correct={'["boy", "boys"]'} />, <TranslateSentenceContainer sentence={"お父さん"} correct={'["father", "Dad"]'} />, <TranslateSentenceContainer sentence={"母"} correct={'["mother", "Mom"]'} />],
     "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "ポケットモンスター",
+      correct: '["Pokemon", "Pocket Monsters"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "男の子",
+      correct: '["boy", "boys"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "お父さん",
+      correct: '["father", "Dad"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "母",
+      correct: '["mother", "Mom"]'
+    })],
+    "Terrace House": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "こんばんは",
       correct: '["Good evening", "Good night"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2805,9 +2817,9 @@ var grandLessonsObj = {
       sentence: "見ず知らずの 男女 ６人が",
       eng: false,
       correct: '["six men and women who are strangers"]',
-      phrase1: "My name",
-      phrase2: "six men and women who are strangers",
-      phrase3: "Your name is"
+      phrase1: "Six models and aspiring actors who are 20",
+      phrase2: "Six men and women who are strangers",
+      phrase3: "Six eggs"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "共同生活する様子を記録したものです",
       eng: false,
@@ -2818,8 +2830,8 @@ var grandLessonsObj = {
       eng: false,
       correct: '["They are provided with a nice house and car only"]',
       phrase1: "They are provided with a nice house and car only",
-      phrase2: "eggs",
-      phrase3: "Your name is"
+      phrase2: "They have a pool and a tv room",
+      phrase3: "Yama-san is upset again"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sentence: "台本は一切ございません",
       eng: false,
