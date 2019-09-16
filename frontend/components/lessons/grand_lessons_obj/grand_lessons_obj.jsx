@@ -28,7 +28,7 @@ export const grandLessonsObj = {
                 correct={'["Good evening", "Good night"]'} />, 
             <TranslateSentenceContainer
                 sentence={"テラスハウスは"}
-                correct={'["Terrace House is", "Terrace House", The Terrace House is"]'} />, 
+                correct={'["Terrace House is", "Terrace House", "The Terrace House is"]'} />, 
             <MarkMeaningContainer
                 sentence={"見ず知らずの 男女 ６人が"}
                 eng={false}
@@ -42,7 +42,7 @@ export const grandLessonsObj = {
                 correct={'["A show about living together"]'} 
                 words={["about", "A", "together", "living", "show",]} />,
             <MarkMeaningContainer
-                sentence={"用意したのは ステキなおウチ とステキ車だけです"}
+                sentence={"用意したのはステキなおウチとステキ車だけです"}
                 eng={false}
                 correct={'["They are provided with a nice house and car only"]'}
                 phrase1={"They are provided with a nice house and car only"}

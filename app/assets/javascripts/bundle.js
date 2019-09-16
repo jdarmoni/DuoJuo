@@ -2800,7 +2800,7 @@ var grandLessonsObj = {
       correct: '["Good evening", "Good night"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "テラスハウスは",
-      correct: '["Terrace House is", "Terrace House", The Terrace House is"]'
+      correct: '["Terrace House is", "Terrace House", "The Terrace House is"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "見ず知らずの 男女 ６人が",
       eng: false,
@@ -2814,7 +2814,7 @@ var grandLessonsObj = {
       correct: '["A show about living together"]',
       words: ["about", "A", "together", "living", "show"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      sentence: "用意したのは ステキなおウチ とステキ車だけです",
+      sentence: "用意したのはステキなおウチとステキ車だけです",
       eng: false,
       correct: '["They are provided with a nice house and car only"]',
       phrase1: "They are provided with a nice house and car only",
