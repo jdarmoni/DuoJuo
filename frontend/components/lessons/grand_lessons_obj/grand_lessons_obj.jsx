@@ -18,19 +18,19 @@ export const grandLessonsObj = {
             //  
         },
         "jp": {
-            "Hiragana-1": [<MarkMeaningContainer sentence={"私の名前"} eng={false} correct={'["My name"]'} phrase1={"My name"} phrase2={"A girl's name is"} phrase3={"Your name is"} />, <TranslateSentenceContainer sentence={"に"} correct={'["two", "To the"]'} />, <MarkMeaningContainer sentence={"水"} eng={false} correct={'["water"]'} phrase1={"Milk"} phrase2={"Gatorade"} phrase3={"Water"} />, <TranslateSentenceContainer sentence={"こんにちは、さようなら"} correct={'["hello, goodbye", "hello, bye", "hello, farewell"]'} />],
-            "Hiragana-2": [<TranslateSentenceContainer sentence={"私の名前はマリアです"} correct={'["My name is maria"]'} />, <TranslateSentenceContainer sentence={"あなたは私の中央ビジネス地区への道を示すことができました"} correct={'["Could you show me the way to the central business district", "you could show me the way to the central business district"]'} />, <TranslateSentenceContainer sentence={"アメリカ"} correct={'["America", "American"]'} />, <TranslateSentenceContainer sentence={"私はインサイダー取引で非難されています"} correct={'["I have been accused of insider trading", "i\'m accused of insider trading"]'} />  ],
-            "Hiragana-3": [<TranslateSentenceContainer sentence={"ポケットモンスター"} correct={'["Pokemon", "Pocket Monsters"]'} />, <TranslateSentenceContainer sentence={"男の子"} correct={'["boy", "boys"]'} />, <TranslateSentenceContainer sentence={"お父さん"} correct={'["father", "Dad"]'} />, <TranslateSentenceContainer sentence={"母"} correct={'["mother", "Mom"]'} />],
+            "Intro-1": [<MarkMeaningContainer sentence={"私の名前"} eng={false} correct={'["My name"]'} phrase1={"My name"} phrase2={"A girl's name is"} phrase3={"Your name is"} />, <TranslateSentenceContainer sentence={"に"} correct={'["two", "To the"]'} />, <MarkMeaningContainer sentence={"水"} eng={false} correct={'["water"]'} phrase1={"Milk"} phrase2={"Gatorade"} phrase3={"Water"} />, <TranslateSentenceContainer sentence={"こんにちは、さようなら"} correct={'["hello, goodbye", "hello, bye", "hello, farewell"]'} />],
+            "Intro-2": [<TranslateSentenceContainer sentence={"私の名前はマリアです"} correct={'["My name is maria"]'} />, <TranslateSentenceContainer sentence={"あなたは私の中央ビジネス地区への道を示すことができました"} correct={'["Could you show me the way to the central business district", "you could show me the way to the central business district"]'} />, <TranslateSentenceContainer sentence={"アメリカ"} correct={'["America", "American"]'} />, <TranslateSentenceContainer sentence={"私はインサイダー取引で非難されています"} correct={'["I have been accused of insider trading", "i\'m accused of insider trading"]'} />  ],
+            // "Hiragana-3": [<TranslateSentenceContainer sentence={"ポケットモンスター"} correct={'["Pokemon", "Pocket Monsters"]'} />, <TranslateSentenceContainer sentence={"男の子"} correct={'["boy", "boys"]'} />, <TranslateSentenceContainer sentence={"お父さん"} correct={'["father", "Dad"]'} />, <TranslateSentenceContainer sentence={"母"} correct={'["mother", "Mom"]'} />],
            
-            "Terrace-House-Intro": [
+            "Phrases": [
             <TranslateSentenceContainer 
                 sentence={"こんばんは"} 
                 correct={'["Good evening", "Good night"]'} />, 
             <TranslateSentenceContainer
                 sentence={"テラスハウスは"}
-                correct={'["Terrace House is", "The Terrace House is"]'} />, 
+                correct={'["Terrace House is", "Terrace House", The Terrace House is"]'} />, 
             <MarkMeaningContainer
-                sentence={"見ず知らずの男女６人が"}
+                sentence={"見ず知らずの 男女 ６人が"}
                 eng={false}
                 correct={'["six men and women who are strangers"]'}
                 phrase1={"My name"}
@@ -42,7 +42,7 @@ export const grandLessonsObj = {
                 correct={'["A show about living together"]'} 
                 words={["about", "A", "together", "living", "show",]} />,
             <MarkMeaningContainer
-                sentence={"用意したのは ステキなおウチとステキ車だけです"}
+                sentence={"用意したのは ステキなおウチ とステキ車だけです"}
                 eng={false}
                 correct={'["They are provided with a nice house and car only"]'}
                 phrase1={"They are provided with a nice house and car only"}

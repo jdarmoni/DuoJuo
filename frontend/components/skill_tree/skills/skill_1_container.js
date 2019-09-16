@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
             }
         } else if (language ==="Japanese") {
             debugger
-            if (skill.url_title === "Hiragana-1") {
+            if (skill.url_title === "Intro-1") {
                 currentSkill = skill
             }
         } else if (language==="German") {

@@ -25,7 +25,7 @@ class Welcome extends React.Component {
                     skill = "Basics-1"
 
                 } else if(language==="Japanese"){
-                    skill = "Hiragana-1"
+                    skill = "Intro-1"
                 }
                 this.props.history.replace(`/skill/${skill}`)
             }

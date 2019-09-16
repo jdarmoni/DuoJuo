@@ -700,7 +700,7 @@ function (_React$Component) {
           Skill1 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Hiragana-1",
+            url_title: "Intro-1",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -711,7 +711,7 @@ function (_React$Component) {
           Skill2 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Hiragana-2",
+            url_title: "Intro-2",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -722,7 +722,7 @@ function (_React$Component) {
           Skill3 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Hiragana-3",
+            url_title: "Phrases",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -2760,7 +2760,7 @@ var grandLessonsObj = {
 
   },
   "jp": {
-    "Hiragana-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    "Intro-1": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sentence: "私の名前",
       eng: false,
       correct: '["My name"]',
@@ -2781,7 +2781,7 @@ var grandLessonsObj = {
       sentence: "こんにちは、さようなら",
       correct: '["hello, goodbye", "hello, bye", "hello, farewell"]'
     })],
-    "Hiragana-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Intro-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "私の名前はマリアです",
       correct: '["My name is maria"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2794,27 +2794,15 @@ var grandLessonsObj = {
       sentence: "私はインサイダー取引で非難されています",
       correct: '["I have been accused of insider trading", "i\'m accused of insider trading"]'
     })],
-    "Hiragana-3": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "ポケットモンスター",
-      correct: '["Pokemon", "Pocket Monsters"]'
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "男の子",
-      correct: '["boy", "boys"]'
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "お父さん",
-      correct: '["father", "Dad"]'
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "母",
-      correct: '["mother", "Mom"]'
-    })],
-    "Terrace-House-Intro": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    // "Hiragana-3": [<TranslateSentenceContainer sentence={"ポケットモンスター"} correct={'["Pokemon", "Pocket Monsters"]'} />, <TranslateSentenceContainer sentence={"男の子"} correct={'["boy", "boys"]'} />, <TranslateSentenceContainer sentence={"お父さん"} correct={'["father", "Dad"]'} />, <TranslateSentenceContainer sentence={"母"} correct={'["mother", "Mom"]'} />],
+    "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "こんばんは",
       correct: '["Good evening", "Good night"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "テラスハウスは",
-      correct: '["Terrace House is", "The Terrace House is"]'
+      correct: '["Terrace House is", "Terrace House", The Terrace House is"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      sentence: "見ず知らずの男女６人が",
+      sentence: "見ず知らずの 男女 ６人が",
       eng: false,
       correct: '["six men and women who are strangers"]',
       phrase1: "My name",
@@ -2826,7 +2814,7 @@ var grandLessonsObj = {
       correct: '["A show about living together"]',
       words: ["about", "A", "together", "living", "show"]
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      sentence: "用意したのは ステキなおウチとステキ車だけです",
+      sentence: "用意したのは ステキなおウチ とステキ車だけです",
       eng: false,
       correct: '["They are provided with a nice house and car only"]',
       phrase1: "They are provided with a nice house and car only",
@@ -4599,7 +4587,7 @@ function (_React$Component) {
           Skill1 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Hiragana-1",
+            url_title: "Intro-1",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -4610,7 +4598,7 @@ function (_React$Component) {
           Skill2 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Hiragana-2",
+            url_title: "Intro-2",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -4621,7 +4609,7 @@ function (_React$Component) {
           Skill3 = {
             "language_string": "Japanese",
             language_data_id: payload.language_data.id,
-            url_title: "Hiragana-3",
+            url_title: "Phrases",
             language_mini: "jp",
             skill_level: 0,
             num_levels: 4,
@@ -4948,7 +4936,7 @@ function (_React$Component) {
       } else if (language === "Spanish") {
         name = "Intro";
       } else if (language === "Japanese") {
-        name = "Hiragana";
+        name = "Intro 1";
       } else if (language === "German") {
         name = "Basics 1";
       }
@@ -5031,8 +5019,8 @@ function (_React$Component) {
         name1 = "Phrases";
         name2 = "Travel";
       } else if (language === "Japanese") {
-        name1 = "Hiragana 2";
-        name2 = "Hiragana 3";
+        name1 = "Intro 2";
+        name2 = "Phrases";
       } else if (language === "German") {
         name1 = "Basics 2";
         name2 = "Phrases";
@@ -5752,7 +5740,7 @@ var mapStateToProps = function mapStateToProps(state) {
     } else if (language === "Japanese") {
       debugger;
 
-      if (skill.url_title === "Hiragana-1") {
+      if (skill.url_title === "Intro-1") {
         currentSkill = skill;
       }
     } else if (language === "German") {
@@ -6032,7 +6020,7 @@ var mapStateToProps = function mapStateToProps(state) {
     } else if (language === "Japanese") {
       debugger;
 
-      if (skill.url_title === "Hiragana-2") {
+      if (skill.url_title === "Intro-2") {
         currentSkill = skill;
       }
     } else if (language === "German") {
@@ -6320,7 +6308,7 @@ var mapStateToProps = function mapStateToProps(state) {
     } else if (language === "Japanese") {
       debugger;
 
-      if (skill.url_title === "Hiragana-3") {
+      if (skill.url_title === "Phrases") {
         currentSkill = skill;
       }
     } else if (language === "German") {
@@ -6454,7 +6442,7 @@ function (_React$Component) {
           } else if (language === "German") {
             skill = "Basics-1";
           } else if (language === "Japanese") {
-            skill = "Hiragana-1";
+            skill = "Intro-1";
           }
 
           this.props.history.replace("/skill/".concat(skill));

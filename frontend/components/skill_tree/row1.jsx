@@ -17,7 +17,7 @@ class Row1 extends React.Component{
         } else if(language==="Spanish") {
             name = "Intro"
         } else if (language==="Japanese") {
-            name="Hiragana"
+            name="Intro 1"
         } else if (language==="German") {
             name="Basics 1"
         }
