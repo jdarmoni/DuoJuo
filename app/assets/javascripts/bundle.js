@@ -2806,6 +2806,70 @@ var grandLessonsObj = {
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "母",
       correct: '["mother", "Mom"]'
+    })],
+    "Terrace-House-Intro": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "こんばんは",
+      correct: '["Good evening", "Good night"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "テラスハウスは",
+      correct: '["Terrace House is", "The Terrace House is"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      sentence: "見ず知らずの男女６人が",
+      eng: false,
+      correct: '["six men and women who are strangers"]',
+      phrase1: "My name",
+      phrase2: "six men and women who are strangers",
+      phrase3: "Your name is"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      sentence: "共同生活する様子を記録したものです",
+      eng: false,
+      correct: '["A show about living together"]',
+      words: ["about", "A", "together", "living", "show"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      sentence: "用意したのは ステキなおウチとステキ車だけです",
+      eng: false,
+      correct: '["They are provided with a nice house and car only"]',
+      phrase1: "They are provided with a nice house and car only",
+      phrase2: "eggs",
+      phrase3: "Your name is"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_construct_sentence_construct_sentence__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      sentence: "台本は一切ございません",
+      eng: false,
+      correct: '["There is no script at all"]',
+      words: ["script", "is", "There", "no", "all", "at"]
+    })],
+    "Terrace-House-Vocab": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "肉はクライアントからのものでした",
+      correct: '["the meat was from a client", "the meat was from the client"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mark_meaning_mark_meaning_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      sentence: "私の名前",
+      eng: false,
+      correct: '["My name"]',
+      phrase1: "My name",
+      phrase2: "A girl's name is",
+      phrase3: "Your name is"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "彼は有罪の武士です",
+      correct: '["he is a guilty samurai", "the samurai is guilty"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "私は彼らの幸せにうんざりしています",
+      correct: '["I am bored of their happiness", "I am tired of their happiness"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "母",
+      correct: '["mother", "Mom"]'
+    })],
+    "Terrace-House-3": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "ポケットモンスター",
+      correct: '["Pokemon", "Pocket Monsters"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "男の子",
+      correct: '["boy", "boys"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "お父さん",
+      correct: '["father", "Dad"]'
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      sentence: "母",
+      correct: '["mother", "Mom"]'
     })]
   },
   "ge": {
@@ -80030,7 +80094,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
