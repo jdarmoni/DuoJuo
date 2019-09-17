@@ -19,8 +19,8 @@ class Row2 extends React.Component {
             name1 = "Phrases"
             name2 = "Travel"
         } else if (language === "Japanese") {
-            name1 = "Intro 2"
-            name2 = "Phrases"
+            name1 = "Phrases"
+            name2 = "Terrace House"
         } else if (language === "German") {
             name1 = "Basics 2"
             name2 = "Phrases"

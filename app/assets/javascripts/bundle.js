@@ -2781,19 +2781,7 @@ var grandLessonsObj = {
       sentence: "こんにちは、さようなら",
       correct: '["hello, goodbye", "hello, bye", "hello, farewell"]'
     })],
-    "Intro-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "私の名前はマリアです",
-      correct: '["My name is maria"]'
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "あなたは私の中央ビジネス地区への道を示すことができました",
-      correct: '["Could you show me the way to the central business district", "you could show me the way to the central business district"]'
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "アメリカ",
-      correct: '["America", "American"]'
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      sentence: "私はインサイダー取引で非難されています",
-      correct: '["I have been accused of insider trading", "i\'m accused of insider trading"]'
-    })],
+    // "Intro-2": [<TranslateSentenceContainer sentence={"私の名前はマリアです"} correct={'["My name is maria"]'} />, <TranslateSentenceContainer sentence={"あなたは私の中央ビジネス地区への道を示すことができました"} correct={'["Could you show me the way to the central business district", "you could show me the way to the central business district"]'} />, <TranslateSentenceContainer sentence={"アメリカ"} correct={'["America", "American"]'} />, <TranslateSentenceContainer sentence={"私はインサイダー取引で非難されています"} correct={'["I have been accused of insider trading", "i\'m accused of insider trading"]'} />  ],
     "Phrases": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "ポケットモンスター",
       correct: '["Pokemon", "Pocket Monsters"]'
@@ -2807,7 +2795,7 @@ var grandLessonsObj = {
       sentence: "母",
       correct: '["mother", "Mom"]'
     })],
-    "Terrace House": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    "Intro-2": [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       sentence: "こんばんは",
       correct: '["Good evening", "Good night"]'
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_translate_sentence_translate_sentence_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -5031,8 +5019,8 @@ function (_React$Component) {
         name1 = "Phrases";
         name2 = "Travel";
       } else if (language === "Japanese") {
-        name1 = "Intro 2";
-        name2 = "Phrases";
+        name1 = "Phrases";
+        name2 = "Terrace House";
       } else if (language === "German") {
         name1 = "Basics 2";
         name2 = "Phrases";
